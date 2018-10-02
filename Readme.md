@@ -1,4 +1,4 @@
-# Projecte PROP
+# Projecte PROP - Grup 13.2
 
 ## Quadrimestre de tardor, curs 2018/19
 
@@ -11,7 +11,7 @@
 ```
 Primer lliurament: divendres 16 de novembre
 
-Segon lliurament: divendres 21 de desembre (lliuraments interactius: a partir del 8 de gener) 
+Segon lliurament: divendres 21 de desembre (lliuraments interactius: a partir del 8 de gener)
 ```
 
 ### Enunciat:
