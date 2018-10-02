@@ -1,4 +1,4 @@
 # Projecte PROP
 ## To Do:
 
-- [] Prova
+- [ ] Prova
