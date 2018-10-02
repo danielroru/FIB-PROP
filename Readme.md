@@ -8,6 +8,14 @@
 
 > Professor: Borja Valles
 
+```
+Primer lliurament: divendres 16 de novembre
+
+Segon lliurament: divendres 21 de desembre (lliuraments interactius: a partir del 8 de gener) 
+```
+
+### Enunciat:
+
 Es tracta de construir un entorn per a la generació d’horaris de diverses unitats docents segons
 certes condicions establertes prèviament. El marc d’aplicació ha de ser el mes flexible possible.
 Podem considerar una unitat docent (per exemple la FIB) que ha d’organitzar els horaris
