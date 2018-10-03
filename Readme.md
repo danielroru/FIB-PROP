@@ -3,7 +3,7 @@
 ## Quadrimestre de tardor, curs 2018/19
 
 - Jesús Mercadal Mir
-- Júlia Bosch LLufriu
+- Júlia Bosch Llufriu
 - Marc Casellas Muns
 
 > Professor: Borja Valles
