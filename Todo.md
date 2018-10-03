@@ -39,3 +39,4 @@
 ## Millores:
 
 - [ ] Reservar hores pels examens
+- [ ] Evitar hores mortes
