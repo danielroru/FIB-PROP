@@ -4,7 +4,7 @@
 
 Interfície | | Funció | | Nivell
 - | - | - | - | -
-| -> |  crearNivell(numQuatrimestre)| -> |
+| -> |  crearNivell()| -> |
 
 **Atributs assignatura:**
 - id
@@ -16,12 +16,12 @@ Interfície | | Funció | | Nivell
 - numGrupsL (per cada un de teoria)
 - numGrupsP
 - numGrupsMati
-- nivell 
+- nivell
 
 
 Nivell | | Funció | | Assignatura
 - | - | - | - | -
-| -> |  crearAssignatura(id, nom, numHT, numHL, numHP)| -> |
+| -> |  crearAssignatura()| -> |
 | -> |  modificarAssignatura()| -> |
 
 Interfície | | Funció | | Aula
@@ -30,8 +30,9 @@ Interfície | | Funció | | Aula
 
 Interfície | | Funció | | Pla d'estudis
 - | - | - | - | -
-| -> |  setFranjaClasses(horaInici, horaFi)| -> |
-| -> |  setFranjaClasses(horaInici, horaFi)| -> |
+| -> |  setFranjaClasses()| -> |
+| -> |  setFranjaClasses()| -> |
+| -> |  generarHorari()| -> |
 | -> |  guardarHorari()| -> |
 | -> |  carregarHorari()| -> |
 | -> |  esborrarHorari()| -> |

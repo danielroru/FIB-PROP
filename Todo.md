@@ -19,6 +19,7 @@
 - [ ] Per a cada assignatura han d'existir tants grups de teoria com indica nGrupsT.
 - [ ] Per a cada grup de teoria han d'existir tants grups de laboratori com indica nGrupsL.
 - [ ] Els grups de teoria i laboratori han de anomenar-se amb numeració contigua al de teoria ```P.E. Grup 10 FM amb Grup 11, 12, 13.```.
+- [ ] Els subgrups no poden passar de 9.
 
 
 
