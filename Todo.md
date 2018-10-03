@@ -30,6 +30,7 @@
 - [ ] Agrupar teoria en blocs d'una duració determinada i deixar hores tirades?
 - [ ] On posar el número de grup.
 - [ ] On indicar LPT
+- [ ] Classe centre per gestionar
 
 ## To Do:
 
