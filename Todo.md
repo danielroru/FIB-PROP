@@ -28,7 +28,7 @@
 - [ ] Assignatures en blocs d'1h
 - [ ] Poden haver-hi 4h de teoria seguides?
 - [ ] Agrupar teoria en blocs d'una duració determinada i deixar hores tirades?
-- [ ] On posar el nombre de grups.
+- [ ] On posar el número de grup.
 - [ ] On indicar LPT
 
 ## To Do:
