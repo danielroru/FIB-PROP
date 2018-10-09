@@ -20,21 +20,21 @@
 - nivell
 
 
-Nivell | | Funció | | Assignatura
-- | - | - | - | -
-| -> |  crearAssignatura()| -> |
-| -> |  modificarAssignatura()| -> |
+| Nivell | | Funció | | Assignatura |
+| | - | - | - | - | - |
+| | -> |  crearAssignatura()| -> | |
+| | -> |  modificarAssignatura()| -> | |
 
-Interfície | | Funció | | Aula
-- | - | - | - | -
-| -> |  crearAula(id, capacitat, teOrdinadors)| -> |
+| Interfície | | Funció | | Aula |
+| - | - | - | - | - |
+| | -> |  crearAula(id, capacitat, teOrdinadors)| -> | |
 
-Interfície | | Funció | | Pla d'estudis
-- | - | - | - | -
-| -> |  setFranjaClasses()| -> |
-| -> |  setFranjaClasses()| -> |
-| -> |  generarHorari()| -> |
-| -> |  guardarHorari()| -> |
-| -> |  carregarHorari()| -> |
-| -> |  esborrarHorari()| -> |
-| -> |  modificarHorari()| -> |
+| Interfície | | Funció | | Pla d'estudis |
+| - | - | - | - | - |
+| | -> |  setFranjaClasses()| -> | |
+| | -> |  setFranjaClasses()| -> | |
+| | -> |  generarHorari()| -> | |
+| | -> |  guardarHorari()| -> | | 
+| | -> |  carregarHorari()| -> | |
+| | -> |  esborrarHorari()| -> | |
+| | -> |  modificarHorari()| -> | |
