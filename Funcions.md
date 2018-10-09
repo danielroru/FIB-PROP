@@ -6,6 +6,7 @@ Interfície | | Funció | | Nivell
 - | - | - | - | -
 | -> |  crearNivell()| -> |
 
+
 **Atributs assignatura:**
 - id
 - nomAssig
