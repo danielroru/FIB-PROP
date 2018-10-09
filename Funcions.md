@@ -2,9 +2,9 @@
 
 ## Funcions:
 
-Interfície | | Funció | | Nivell
-- | - | - | - | -
- | -> |  crearNivell()| -> | 
+| Interfície | | Funció | | Nivell |
+| - | - | - | - | - |
+| | -> |  crearNivell()| -> | |
 
 
 **Atributs assignatura:**
