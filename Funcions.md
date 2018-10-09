@@ -4,7 +4,7 @@
 
 Interfície | | Funció | | Nivell
 - | - | - | - | -
-| -> |  crearNivell()| -> |
+ | -> |  crearNivell()| -> | 
 
 
 **Atributs assignatura:**
