@@ -42,7 +42,7 @@
     - Nombre de nivells
 
 ### 4a pantalla:
-
+- hola
 - afegirAssignatura()
     - Nivell
     - Nom
