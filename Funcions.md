@@ -21,7 +21,7 @@
 
 
 | Nivell | | Funció | | Assignatura |
-| | - | - | - | - | - |
+| - | - | - | - | - |
 | | -> |  crearAssignatura()| -> | |
 | | -> |  modificarAssignatura()| -> | |
 
