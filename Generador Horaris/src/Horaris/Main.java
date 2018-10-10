@@ -1,4 +1,4 @@
-package com.Horaris;
+package Horaris;
 
 public class Main {
 
