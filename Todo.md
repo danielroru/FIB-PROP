@@ -14,7 +14,7 @@
 - [ ] No es pot realitzar una classe de laboratori a una aula que tingui teoria.
 - [ ] No es pot realitzar una classe de teoria en una aula de laboratori.
 - [ ] Una aula ha de tenir la capacitat => al número màxim d'assistents del grup que ha d'acollir.
-- [ ] A les UAH, la horaF >= horaI.
+- [ ] La horaF >= horaI.
 - [ ] Els grups de teoria i laboratori han de anomenar-se amb numeració contigua al de teoria ```P.E. Grup 10 FM amb Grup 11, 12, 13.```.
 - [ ] Els subgrups no poden passar de 9.
 
