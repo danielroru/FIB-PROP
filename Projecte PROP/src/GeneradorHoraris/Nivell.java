@@ -3,7 +3,6 @@ package GeneradorHoraris;
 public class Nivell {
 	
 	// Atributs
-	
 	private int id;
 	private String nom;
 	private int nAssignatura;
