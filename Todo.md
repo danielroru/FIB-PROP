@@ -18,6 +18,7 @@
 - [ ] Els grups de teoria i laboratori han de anomenar-se amb numeració contigua al de teoria ```P.E. Grup 10 FM amb Grup 11, 12, 13.```.
 - [ ] Els subgrups no poden passar de 9.
 
+
 ### Binàries:
 
 #### - Tocables:
@@ -85,10 +86,11 @@
 - Constructora nula
 - Restriccions (unàries...)
 - Classes lab mal escrites -> Aules de teoria pero horari de lab
+- Pot existir una assignatura amb 0h teoria? -> Restricció
 
 ## To Do:
 
-- [x] UML
+- [ ] UML
 - [ ] Funcions
 - [ ] Casos d'ús
 
