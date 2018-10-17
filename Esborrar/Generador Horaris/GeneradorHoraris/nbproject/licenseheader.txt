@@ -1,8 +1,0 @@
-<#if licenseFirst??>
-${licenseFirst}
-</#if>
-${licensePrefix}Generador d'horaris. Pràctica PROP 2018-19 T
-${licensePrefix}Jesús Mercadal, Júlia Bosch i Marc Casellas
-<#if licenseLast??>
-${licenseLast}
-</#if>

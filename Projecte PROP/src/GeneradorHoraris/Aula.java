@@ -6,9 +6,8 @@ public class Aula {
 	
 	private int id;
 	private int capacitat;
-	private boolean accesOrdinadors;
-	private boolean disponible; 
-	
+	private boolean esLaboratori;
+
 	// Mètodes
 	
 	// Constructores
@@ -16,17 +15,15 @@ public class Aula {
 	public Aula() {
 		this.id = 0;
 		this.capacitat = 0;
-		this.accesOrdinadors = false;
-		this.disponible = true;
+		this.esLaboratori = false;
 	}
 	
 	public Aula(int id, int capacitat, boolean accesOrdinadors, boolean disponible) {
 		this.id = id;
 		this.capacitat = capacitat;
-		this.accesOrdinadors = accesOrdinadors;
-		this.disponible = disponible;
+		this.esLaboratori = accesOrdinadors;
 	}
-	
+
 	// Consultores
 	
 	public int getId() {
@@ -37,14 +34,11 @@ public class Aula {
 		return this.capacitat;
 	}
 	
-	public boolean getAccesOrdinadors() {
-		return this.accesOrdinadors;
+	public boolean getEsLaboratori() {
+		return this.esLaboratori;
 	}
 	
-	public boolean getDisponible() {
-		return this.disponible;
-	}
-	
+
 	// Modificadores
 	
 	public void setId(int id) {
@@ -55,11 +49,9 @@ public class Aula {
 		this.capacitat = capacitat;
 	}
 	
-	public void setAccesOrdinadors(boolean accesOrdinadors) {
-		this.accesOrdinadors = accesOrdinadors;
+	public void setEsLaboratori(boolean esLaboratori) {
+		this.esLaboratori = esLaboratori;
 	}
 	
-	public void setDisponible(boolean disponible) {
-		this.disponible = disponible;
-	}
+
 }
