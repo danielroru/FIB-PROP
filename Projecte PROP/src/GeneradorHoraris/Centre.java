@@ -1,69 +1,64 @@
 package GeneradorHoraris;
 
 public class Centre {
-	
+
 	// Atributs
-	private int id;
-	private int nNivell;
-	private int nAula;
-	
+	private int horaInici;
+	private int horaFi;
+	private int horaCanviFranja;
+
 	// Mètodes
-	
+
 	// Constructores
 	public Centre() {
-		this.id = 0;
-		this.nNivell = 0;
-		this.nAula = 0;
+		this.horaInici = 8;
+		this.horaFi = 20;
+		this.horaCanviFranja = 14;
 	}
 	
-	public Centre(int id, int nNivell, int nAula) {
-		this.id = id;
-		this.nNivell = nNivell;
-		this.nAula = nAula;
+	public Centre(int horaInici, int horaFi, int horaCanviFranja) {
+		this.horaInici = horaInici;
+		this.horaFi = horaFi;
+		this.horaCanviFranja = horaCanviFranja;
 	}
 	
 	// Consultores
-	
-	public int getId() {
-		return id;
-	}
-	
-	public int getNNivell() {
-		return nNivell;
-	}
-	
-	public int getNAula() {
-		return nAula;
-	}
-	
+
+	public int getHoraInici() { return horaInici; }
+
+	public int getHoraFi() { return horaFi; }
+
+	public int getHoraCanviFranja() { return horaCanviFranja; }
+
+
 	// Modificadores
 	
-	public void setId(int id) {
-		this.id = id;
+	public void setHoraInici(int hora) {
+		this.horaInici = hora;
 	}
-	
-	public void getNNivell(int nNivell) {
-		this.nNivell = nNivell;
+
+	public void setHoraFi(int hora) {
+		this.horaFi = hora;
 	}
-	
-	public void getNAula(int nAula) {
-		this.nAula = nAula;
+
+	public void setHoraCanviFranja(int hora) {
+		this.horaCanviFranja = hora;
 	}
 	
 	// Otros Métodos
-	
+
 	public void crearAula() {
 		++nAula;
 	}
-	
+
 	public void crearNivell() {
 		++nNivell;
 	}
-	
+
 	public void eliminarAula() {
 		--nAula;
 	}
-	
+
 	public void eliminarNivell() {
 		--nNivell;
 	}

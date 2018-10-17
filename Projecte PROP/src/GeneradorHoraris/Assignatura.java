@@ -5,29 +5,53 @@ public class Assignatura {
 	// Atributs
 	private int id;
 	private String nom;
-	private int nHTeo;
-	private int nHLab;
-	private int nHProb;
 
-	
+
+	private int nHoresT;
+	private int nHoresL;
+	private int nHoresP;
+
+	// Número de grups
+	private int nGrupsT;
+	private int nGrupsL;
+	private int nGrupsP;
+
+	// Grups de tardes
+	private int nGrupsTarda;
+
+	// Agrupació de blocs
+	private int horesBlocT;
+	private int horesBlocL;
+	private int horesBlocP;
+
 	// Mètodes
-	
+
 	// Constructores
 	
 	public Assignatura() {
-		this.id = 0;
-		this.nom = "Hola";
-		this.nHTeo = 3;
-		this.nHLab = 2;
-		this.nHProb = 1;
+
 	}
 	
-	public Assignatura(String nom, int id, int nHTeo, int nHLab, int nHProb) {
+	public Assignatura(int id, String nom, int nHoresT, int nHoresL, int nHoresP,
+					   int nGrupsT, int nGrupsL, int nGrupsP, int nGrupsTarda,
+					   int horesBlocT, int horesBlocL, int horesBlocP) {
 		this.id = id;
 		this.nom = nom;
-		this.nHTeo = nHTeo;
-		this.nHLab = nHLab;
-		this.nHProb = nHProb;
+
+		// Quantitat d'hores
+		this.nHoresT = nHoresT;
+		this.nHoresL = nHoresL;
+		this.nHoresP = nHoresP;
+
+		// Quantitat de grups
+		this.nGrupsT = nGrupsT;
+		this.nGrupsL = nGrupsL; // Respecte el número de grups
+		this.nGrupsP = nGrupsP; // Respecte el número de grups
+
+		// Agrupació de les hores de classe amb blocs
+		this.horesBlocT = horesBlocT;
+		this.horesBlocL = horesBlocL;
+		this.horesBlocP = horesBlocP;
 	}
 	
 	// Consultores
@@ -39,19 +63,33 @@ public class Assignatura {
 	public String getNom() {
 		return this.nom;
 	}
-	
-	public int getnHTeo() {
-		return this.nHTeo;
+
+
+	public int getnHoresT() {
+		return this.nHoresT;
 	}
 	
-	public int getnHLab() {
-		return this.nHLab;
+	public int getnHoresL() {
+		return this.nHoresL;
 	}
-	
-	public int getnHProb() {
-		return this.nHProb;
+
+	public int getnHoresP() {
+		return this.nHoresP;
 	}
-	
+
+
+	public int getnGrupsT() {
+		return this.nGrupsT;
+	}
+
+	public int getnGrupsL() {
+		return this.nGrupsL;
+	}
+
+	public int getnGrupsP() {
+		return this.nGrupsP;
+	}
+
 	//Modificadores
 	
 	public void setId(int id) {
@@ -63,15 +101,15 @@ public class Assignatura {
 	}
 	
 	public void setHTeo(int HTeo) {
-		this.nHTeo = HTeo;
+		this.nHoresT = HTeo;
 	}
 	
 	public void setHLab(int HLab) {
-		this.nHLab = HLab;
+		this.nHoresL = HLab;
 	}
 	
 	public void setHProb(int HProb) {
-		this.nHProb = HProb;
+		this.nHoresP = HProb;
 	}
 	
 }
