@@ -1,8 +1,5 @@
 package GeneradorHoraris;
 
-
-
-
 public class Sessio {
 
 	// Atributs
