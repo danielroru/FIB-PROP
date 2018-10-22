@@ -5,7 +5,7 @@ public class PlaEstudis {
 
     // Consultora
 
-    public getAny() {
+    public int getAny() {
         return this.any;
     }
 }

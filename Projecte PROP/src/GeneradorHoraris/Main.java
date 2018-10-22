@@ -28,24 +28,8 @@ public class Main {
 			
 			int x  = Integer.parseInt(texto);
 			
-			if (x == 1) {
-				c.crearAula();
-			}
-			else if (x == 2) {
-				c.crearNivell();
-			}
-			else if (x == 3) {
-				c.eliminarAula();
-			}
-			else if (x == 4) {
-				c.eliminarNivell();
-			}
-			else if (x == 5) {
-				System.out.println(c.getNAula());
-			}
-			else {
-				System.out.println(c.getNNivell());
-			}
+
+
 		}
 	}
 

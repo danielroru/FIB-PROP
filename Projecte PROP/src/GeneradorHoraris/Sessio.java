@@ -46,7 +46,7 @@ public class Sessio {
 		return this.horaInici;
 	}
 
-	public boolean getHoraFi() {
+	public int getHoraFi() {
 		return this.horaFi;
 	}
 

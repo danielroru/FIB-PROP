@@ -47,20 +47,8 @@ public class Centre {
 	
 	// Otros Métodos
 
-	public void crearAula() {
-		++nAula;
-	}
 
-	public void crearNivell() {
-		++nNivell;
-	}
 
-	public void eliminarAula() {
-		--nAula;
-	}
 
-	public void eliminarNivell() {
-		--nNivell;
-	}
-	
+
 }
