@@ -15,7 +15,6 @@ public class Assignatura {
     private int nGrupsP;
 
     // Grups de matí/tarda
-    private int nGrupsMati;
     private int nGrupsTarda;
 
     // Agrupació de blocs
