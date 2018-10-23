@@ -120,7 +120,7 @@ public class Assignatura {
 
     public int getnGrupsTarda() { return this.nGrupsTarda; }
 
-    public int getnGrupsMati() { return this.nGrupsMati; }
+    public int getnGrupsMati() { return this.nGrupsT-this.nGrupsTarda; }
 
     public int getHoresBlocT() {return  this.horesBlocT; }
 
