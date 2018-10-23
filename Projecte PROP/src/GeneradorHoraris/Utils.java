@@ -1,4 +1,4 @@
-package Dominio;
+package GeneradorHoraris;
 import java.util.Scanner;
 
 public class Utils {

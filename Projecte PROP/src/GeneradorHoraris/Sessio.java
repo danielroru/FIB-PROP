@@ -1,4 +1,4 @@
-package Dominio;
+package GeneradorHoraris;
 
 public class Sessio {
 
