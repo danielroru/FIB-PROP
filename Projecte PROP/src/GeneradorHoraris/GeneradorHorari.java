@@ -1,15 +1,38 @@
-package GeneradorHoraris;
+package Dominio;
+
 import java.util.Scanner;
 
-public class Utils {
+public class GeneradorHorari {
+
+    public void generarHorari() {
+        PlaEstudis pe = crearPlaEstudis();
+        boolean on = true;
+        int accio;
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Indica el valor de l'operació:");
+        escriureMenu();
+
+        /////////////////////////////////////////////////////////////////////
+        ///// Implementats: crearAssignatura
+        ////////////////////////////////////////////////////////////////////
+        do {
+            accio = scanner.nextInt();
+            if (accio == 1) pe.crearAula();
+            if (accio == 2) pe.crearNivell();
+            if (accio == 3) pe.eliminarAula();
+            if (accio == 4) pe.eliminarNivell();
+            if (accio == 5) pe.crearAssignatura();
+            if (accio == 6) on = false;
+        } while (on);
+    }
+
     //Scanner scanner = new Scanner(System.in);
     public static void escriureMenu() {
         System.out.println("1] Crear Aula");
         System.out.println("2] Crear Nivel");
         System.out.println("3] Eliminar Aula");
         System.out.println("4] Eliminar Nivell");
-        //System.out.println("5] Aules");
-        //System.out.println("6] Nivells");
         System.out.println("5] Crear Assignatura");
         System.out.println(("6] Sortir"));
     }
@@ -113,7 +136,7 @@ public class Utils {
         }
 
         Assignatura as = new Assignatura(nom, nHoresT, nHoresL, nHoresP,
-        nGrupsT, nGrupsL, nGrupsP, nGrupsTarda, nGrupsMati, horesBlocT, horesBlocL, horesBlocP, nivell);
+                nGrupsT, nGrupsL, nGrupsP, nGrupsTarda, nGrupsMati, horesBlocT, horesBlocL, horesBlocP, nivell);
 
         System.out.println("S'ha creat l'assignatura "+ nom);
 
