@@ -11,7 +11,7 @@ public class Aula {
         LABORATORI, TEORIA
     }
 
-    private int id;
+    private String id;
     private int capacitat;
     private TipusAula tipus;
 
@@ -27,7 +27,7 @@ public class Aula {
 
     }
 
-    public Aula(int id, int capacitat, TipusAula tipus) {
+    public Aula(String id, int capacitat, TipusAula tipus) {
         this.id = id;
         this.capacitat = capacitat;
         this.tipus = tipus;
@@ -36,7 +36,7 @@ public class Aula {
     //  CONSULTORES
     // --------------------------------------------
 
-    public int getId() {
+    public String getId() {
         return this.id;
     }
 
@@ -52,7 +52,7 @@ public class Aula {
     //  MODIFICADORES
     // --------------------------------------------
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
