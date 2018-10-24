@@ -31,13 +31,12 @@ public class ConjuntAules {
         System.out.println("    Teoria      -> 1");
         System.out.println("    Laboratori  -> 2");
 
-        Aula.TipusAula tipus = Aula.TipusAula.TEORIA;
+        Aula.TipusAula tipus = null;
         int numTipusAula = scanner.nextInt();
 
         if (numTipusAula == 1 || numTipusAula == 2) {
             tipus = numTipusAula == 1 ? Aula.TipusAula.TEORIA : Aula.TipusAula.LABORATORI;
         }
-
 
         Aula a = new Aula(id,capacitat,tipus);
         conjuntAules.put(id, a);

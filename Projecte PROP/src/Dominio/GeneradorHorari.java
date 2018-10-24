@@ -18,13 +18,18 @@ public class GeneradorHorari {
         ////////////////////////////////////////////////////////////////////
         do {
             accio = scanner.nextInt();
-            if (accio == 1) pe.crearAula();
-            if (accio == 2) pe.crearNivell();
-            if (accio == 3) pe.eliminarAula();
-            if (accio == 4) pe.eliminarNivell();
+            if (accio == 1) crearAula();
+            if (accio == 2) //pe.crearNivell();
+            if (accio == 3) //pe.eliminarAula();
+            if (accio == 4) //pe.eliminarNivell();
             if (accio == 5) pe.crearAssignatura();
             if (accio == 6) on = false;
         } while (on);
+    }
+
+    public static void crearAula() {
+        ConjuntAules conjuntAs = new ConjuntAules();
+        conjuntAs.afegirAula();
     }
 
     //Scanner scanner = new Scanner(System.in);
@@ -45,7 +50,7 @@ public class GeneradorHorari {
         System.out.println("Hora de fi de les classes");
         int horaFi = scanner.nextInt();
 
-        System.out.println("Hora de canvi d'horari matí/tarda");
+        System.out.println("Hora de canvi de franja matí/tarda");
         boolean correcte = false;
         int horaCanviFranja = -1;
         while (!correcte) {
@@ -59,13 +64,15 @@ public class GeneradorHorari {
             }
         }
 
+        /*
         System.out.println("Nombre de nivells");
         int nNivell = scanner.nextInt();
 
         System.out.println("Nombre d'aules");
         int nAula = scanner.nextInt();
+        */
 
-        PlaEstudis pe = new PlaEstudis(horaInici, horaFi, horaCanviFranja, nNivell, nAula);
+        PlaEstudis pe = new PlaEstudis(horaInici, horaFi, horaCanviFranja);
 
         System.out.println("S'ha creat el pla d'estudis\n");
 
@@ -84,7 +91,8 @@ public class GeneradorHorari {
         while (!correcte) {
             System.out.println("Nivell:");
             nivell = scanner.nextInt();
-            if (nivell > 0 && nivell < pe.getNNivell()) {
+            // if (nivell > 0 && nivell < pe.getNNivell()) {
+            if (nivell > 0) {
                 correcte = true;
             } else
                 System.out.println("El nivell de l'assignatura ha d'estar entre el rang del pla d'estudis");
