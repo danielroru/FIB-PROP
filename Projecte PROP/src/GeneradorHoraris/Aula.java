@@ -1,41 +1,30 @@
-package GeneradorHoraris;
-
-
+package Dominio;
 
 public class Aula {
 
-    /* --------------------------------------------------------------------------
-        ATRIBUTS
-    -------------------------------------------------------------------------- */
-
-    public enum TipusAula {
-        LABORATORI, TEORIA
-    }
+    // Atributs
 
     private int id;
     private int capacitat;
-    private TipusAula tipus;
+    private boolean esLaboratori;
 
-    /* --------------------------------------------------------------------------
-        MÈTODES
-    -------------------------------------------------------------------------- */
+    // Mètodes
 
-    //  CONSTRUCTORES
-    // --------------------------------------------
+    // Constructores
 
-    // Constructora per defecte
     public Aula() {
-
+        this.id = 0;
+        this.capacitat = 0;
+        this.esLaboratori = false;
     }
 
-    public Aula(int id, int capacitat, TipusAula tipus) {
+    public Aula(int id, int capacitat, boolean accesOrdinadors, boolean disponible) {
         this.id = id;
         this.capacitat = capacitat;
-        this.tipus = tipus;
+        this.esLaboratori = accesOrdinadors;
     }
 
-    //  CONSULTORES
-    // --------------------------------------------
+    // Consultores
 
     public int getId() {
         return this.id;
@@ -45,13 +34,12 @@ public class Aula {
         return this.capacitat;
     }
 
-    public TipusAula getTipusAula() {
-        return this.tipus;
+    public boolean getEsLaboratori() {
+        return this.esLaboratori;
     }
 
 
-    //  MODIFICADORES
-    // --------------------------------------------
+    // Modificadores
 
     public void setId(int id) {
         this.id = id;
@@ -61,7 +49,7 @@ public class Aula {
         this.capacitat = capacitat;
     }
 
-    public void setTipus(TipusAula tipus) {
-        this.tipus = tipus;
+    public void setEsLaboratori(boolean esLaboratori) {
+        this.esLaboratori = esLaboratori;
     }
 }
