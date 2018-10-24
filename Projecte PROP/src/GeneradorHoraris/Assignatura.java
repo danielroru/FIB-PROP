@@ -15,7 +15,7 @@ public class Assignatura {
     private int nGrupsP;
 
     // Grups de matí/tarda
-    private int nGrupsTarda;
+    private int nGrupsMati;
 
     // Agrupació de blocs
     private int horesBlocT;
@@ -49,7 +49,6 @@ public class Assignatura {
         this.nGrupsP = nGrupsP; // Respecte el número de grups
 
         // Quantitat grups matí/tarda
-        this.nGrupsTarda = nGrupsTarda;
         this.nGrupsMati = nGrupsMati;
 
         // Agrupació de les hores de classe amb blocs
@@ -74,7 +73,6 @@ public class Assignatura {
         this.nGrupsP = as.getnGrupsP(); // Respecte el número de grups
 
         // Quantitat grups matí/tarda
-        this.nGrupsTarda = as.getnGrupsTarda();
         this.nGrupsMati = as.getnGrupsMati();
 
         // Agrupació de les hores de classe amb blocs
@@ -117,9 +115,9 @@ public class Assignatura {
         return this.nGrupsP;
     }
 
-    public int getnGrupsTarda() { return this.nGrupsTarda; }
+    public int getnGrupsTarda() { return this.nGrupsT-this.nGrupsMati; }
 
-    public int getnGrupsMati() { return this.nGrupsT-this.nGrupsTarda; }
+    public int getnGrupsMati() { return this.nGrupsMati; }
 
     public int getHoresBlocT() {return  this.horesBlocT; }
 
@@ -161,10 +159,6 @@ public class Assignatura {
 
     public void setnGrupsP(int nGrupsP) {
         this.nGrupsP = nGrupsP;
-    }
-
-    public void setnGrupsTarda(int nGrupsTarda) {
-        this.nGrupsTarda = nGrupsTarda;
     }
 
     public void setnGrupsMati(int nGrupsMati) {
