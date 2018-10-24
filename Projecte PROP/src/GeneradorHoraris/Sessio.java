@@ -9,13 +9,13 @@ public class Sessio {
     private int horaFi;
 
     public enum Dia {
-        dilluns, dimarts, dimecres, dijous, divendres
+        DILLUNS, DIMARTS, DIMECRES, DIJOUS, DIVENDRES
     }
 
     Dia dia;
 
     public enum Tipus {
-        teoria, laboratori, problemes
+        TEORIA, LABORATORI, PROBLEMES
     }
 
     Tipus tipus;
