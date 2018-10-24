@@ -1,4 +1,4 @@
-package Dominio;
+package GeneradorHoraris;
 
 public class Assignatura {
 
@@ -15,7 +15,7 @@ public class Assignatura {
     private int nGrupsP;
 
     // Grups de matí/tarda
-    private int nGrupsTarda;
+    private int nGrupsMati;
 
     // Agrupació de blocs
     private int horesBlocT;
@@ -49,8 +49,12 @@ public class Assignatura {
         this.nGrupsP = nGrupsP; // Respecte el número de grups
 
         // Quantitat grups matí/tarda
+<<<<<<< HEAD:Projecte PROP/src/Assignatura.java
         this.nGrupsTarda = nGrupsTarda;
         //this.nGrupsMati = nGrupsMati;
+=======
+        this.nGrupsMati = nGrupsMati;
+>>>>>>> 886b7d241e5fb0aaddef05061af26e2783517170:Projecte PROP/src/GeneradorHoraris/Assignatura.java
 
         // Agrupació de les hores de classe amb blocs
         this.horesBlocT = horesBlocT;
@@ -74,8 +78,12 @@ public class Assignatura {
         this.nGrupsP = as.getnGrupsP(); // Respecte el número de grups
 
         // Quantitat grups matí/tarda
+<<<<<<< HEAD:Projecte PROP/src/Assignatura.java
         this.nGrupsTarda = as.getnGrupsTarda();
         //this.nGrupsMati = as.getnGrupsMati();
+=======
+        this.nGrupsMati = as.getnGrupsMati();
+>>>>>>> 886b7d241e5fb0aaddef05061af26e2783517170:Projecte PROP/src/GeneradorHoraris/Assignatura.java
 
         // Agrupació de les hores de classe amb blocs
         this.horesBlocT = as.getHoresBlocT();
@@ -117,9 +125,9 @@ public class Assignatura {
         return this.nGrupsP;
     }
 
-    public int getnGrupsTarda() { return this.nGrupsTarda; }
+    public int getnGrupsTarda() { return this.nGrupsT-this.nGrupsMati; }
 
-    public int getnGrupsMati() { return this.nGrupsT-this.nGrupsTarda; }
+    public int getnGrupsMati() { return this.nGrupsMati; }
 
     public int getHoresBlocT() {return  this.horesBlocT; }
 
@@ -163,11 +171,14 @@ public class Assignatura {
         this.nGrupsP = nGrupsP;
     }
 
+<<<<<<< HEAD:Projecte PROP/src/Assignatura.java
     public void setnGrupsTarda(int nGrupsTarda) {
         this.nGrupsTarda = nGrupsTarda;
     }
 
     /*
+=======
+>>>>>>> 886b7d241e5fb0aaddef05061af26e2783517170:Projecte PROP/src/GeneradorHoraris/Assignatura.java
     public void setnGrupsMati(int nGrupsMati) {
 
         this.nGrupsMati = nGrupsMati;
