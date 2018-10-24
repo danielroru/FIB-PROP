@@ -1,4 +1,4 @@
-package GeneradorHoraris;
+package Dominio;
 
 public class Sessio {
 
@@ -9,13 +9,13 @@ public class Sessio {
     private int horaFi;
 
     public enum Dia {
-        DILLUNS, DIMARTS, DIMECRES, DIJOUS, DIVENDRES
+        dilluns, dimarts, dimecres, dijous, divendres
     }
 
     Dia dia;
 
     public enum Tipus {
-        TEORIA, LABORATORI, PROBLEMES
+        teoria, laboratori, problemes
     }
 
     Tipus tipus;

@@ -1,4 +1,4 @@
-package GeneradorHoraris;
+package Dominio;
 
 public class UAH {
 

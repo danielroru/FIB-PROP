@@ -1,11 +1,11 @@
-package GeneradorHoraris;
+package Dominio;
 
 import java.util.*;
 
 public class PlaEstudis {
 
     // Atributs2
-    private Set<Assignatura> setAssignatures = new HashSet<Assignatura>();
+    private Set<String> setAssignatures = new HashSet<String>();
     private int horaInici;
     private int horaFi;
     private int horaCanviFranja;
@@ -86,8 +86,8 @@ public class PlaEstudis {
         this.nAula = num;
     }
 
-    public void addAssignatura(Assignatura as) {
-        setAssignatures.add(as);
+    public void addAssignatura(String nom) {
+        setAssignatures.add(nom);
     }
 
     // Otros Métodos
@@ -109,9 +109,9 @@ public class PlaEstudis {
     }
 
     void crearAssignatura() {
-        Assignatura as = Utils.crearAssignatura(this );
-        setAssignatures.add(as);
-        if (setAssignatures.contains(as)) System.out.println("El PE conté "+ as.getNom());
+        Assignatura as = GeneradorHorari.crearAssignatura(this);
+        setAssignatures.add(as.getNom());
+        if (setAssignatures.contains(as.getNom())) System.out.println("El PE conté "+ as.getNom());
     }
 
 }
