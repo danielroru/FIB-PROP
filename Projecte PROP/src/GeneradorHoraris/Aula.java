@@ -4,37 +4,38 @@ package GeneradorHoraris;
 
 public class Aula {
 
-    // Atributs
+    /* --------------------------------------------------------------------------
+        ATRIBUTS
+    -------------------------------------------------------------------------- */
 
-    private int id;
-    private int capacitat;
-
-    private enum TipusAula {
+    public enum TipusAula {
         LABORATORI, TEORIA
     }
 
+    private int id;
+    private int capacitat;
     private TipusAula tipus;
 
     /* --------------------------------------------------------------------------
-        Mètodes
+        MÈTODES
     -------------------------------------------------------------------------- */
 
-    //  Constructores
-    //  --------------------------------------------
+    //  CONSTRUCTORES
+    // --------------------------------------------
 
     // Constructora per defecte
     public Aula() {
 
     }
 
-    public Aula(int id, int capacitat, boolean accesOrdinadors) {
+    public Aula(int id, int capacitat, TipusAula tipus) {
         this.id = id;
         this.capacitat = capacitat;
-        this.tipus = accesOrdinadors ? TipusAula.LABORATORI : TipusAula.TEORIA;
+        this.tipus = tipus;
     }
 
-    //  Consultores
-    //  --------------------------------------------
+    //  CONSULTORES
+    // --------------------------------------------
 
     public int getId() {
         return this.id;
@@ -49,8 +50,8 @@ public class Aula {
     }
 
 
-    //  Modificadores
-    //  --------------------------------------------
+    //  MODIFICADORES
+    // --------------------------------------------
 
     public void setId(int id) {
         this.id = id;
@@ -60,7 +61,7 @@ public class Aula {
         this.capacitat = capacitat;
     }
 
-    public void settipus(TipusAula tipus) {
+    public void setTipus(TipusAula tipus) {
         this.tipus = tipus;
     }
 }
