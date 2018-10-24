@@ -11,7 +11,7 @@ public class ConjuntAules {
 
     //Set<Aula> conjuntAules = new HashSet<Aula>();
 
-    Map<String,Assignatura> conjuntAules = new HashMap<String,Assignatura>();
+    Map<String,Aula> conjuntAules = new HashMap<String,Aula>();
 
     /* --------------------------------------------------------------------------
         MÈTODES
@@ -22,7 +22,7 @@ public class ConjuntAules {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("ID de l'aula:");
-        int id = scanner.nextLine();
+        String id = scanner.nextLine();
 
         System.out.println("Capacitat de l'aula:");
         int capacitat = scanner.nextInt();
@@ -31,7 +31,7 @@ public class ConjuntAules {
         System.out.println("    Teoria      -> 1");
         System.out.println("    Laboratori  -> 2");
 
-        Aula.TipusAula tipus;
+        Aula.TipusAula tipus = Aula.TipusAula.TEORIA;
         int numTipusAula = scanner.nextInt();
 
         if (numTipusAula == 1 || numTipusAula == 2) {
