@@ -23,7 +23,6 @@ public class ConjuntAules {
 
         System.out.println("ID de l'aula:");
         String id = scanner.nextLine();
-
         System.out.println("Capacitat de l'aula:");
         int capacitat = scanner.nextInt();
 
@@ -39,7 +38,7 @@ public class ConjuntAules {
         }
 
 
-        Aula a = new Aula(id,capacitat,tipus);
+        Aula a = new Aula(id, capacitat, tipus);
         conjuntAules.put(id, a);
     }
 
