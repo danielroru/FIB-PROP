@@ -1,30 +1,40 @@
 package Dominio;
 
+
 public class Aula {
 
-    // Atributs
+    /* --------------------------------------------------------------------------
+        ATRIBUTS
+    -------------------------------------------------------------------------- */
+
+    public enum TipusAula {
+        LABORATORI, TEORIA
+    }
 
     private int id;
     private int capacitat;
-    private boolean esLaboratori;
+    private TipusAula tipus;
 
-    // Mètodes
+    /* --------------------------------------------------------------------------
+        MÈTODES
+    -------------------------------------------------------------------------- */
 
-    // Constructores
+    //  CONSTRUCTORES
+    // --------------------------------------------
 
+    // Constructora per defecte
     public Aula() {
-        this.id = 0;
-        this.capacitat = 0;
-        this.esLaboratori = false;
+
     }
 
-    public Aula(int id, int capacitat, boolean accesOrdinadors, boolean disponible) {
+    public Aula(int id, int capacitat, TipusAula tipus) {
         this.id = id;
         this.capacitat = capacitat;
-        this.esLaboratori = accesOrdinadors;
+        this.tipus = tipus;
     }
 
-    // Consultores
+    //  CONSULTORES
+    // --------------------------------------------
 
     public int getId() {
         return this.id;
@@ -34,12 +44,13 @@ public class Aula {
         return this.capacitat;
     }
 
-    public boolean getEsLaboratori() {
-        return this.esLaboratori;
+    public TipusAula getTipusAula() {
+        return this.tipus;
     }
 
 
-    // Modificadores
+    //  MODIFICADORES
+    // --------------------------------------------
 
     public void setId(int id) {
         this.id = id;
@@ -49,7 +60,7 @@ public class Aula {
         this.capacitat = capacitat;
     }
 
-    public void setEsLaboratori(boolean esLaboratori) {
-        this.esLaboratori = esLaboratori;
+    public void setTipus(TipusAula tipus) {
+        this.tipus = tipus;
     }
 }
