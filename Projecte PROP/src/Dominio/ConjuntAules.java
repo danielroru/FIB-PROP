@@ -37,8 +37,6 @@ public class ConjuntAules {
             tipus = numTipusAula == 1 ? Aula.TipusAula.TEORIA : Aula.TipusAula.LABORATORI;
         }
 
-
-
         Aula a = new Aula(id, capacitat, tipus);
         conjuntAules.put(id, a);
     }
