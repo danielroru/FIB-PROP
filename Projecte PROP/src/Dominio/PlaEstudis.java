@@ -96,6 +96,11 @@ public class PlaEstudis {
         ++nAula;
     }
 
+    public void llistarAula() {
+
+        System.out.println(nAula);
+    };
+
     public void crearNivell() {
         ++nNivell;
     }
@@ -107,6 +112,10 @@ public class PlaEstudis {
     public void eliminarNivell() {
         --nNivell;
     }
+
+
+
+
 
     void crearAssignatura() {
         Assignatura as = GeneradorHorari.crearAssignatura(this);

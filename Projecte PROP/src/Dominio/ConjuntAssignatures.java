@@ -1,4 +1,6 @@
 package Dominio;
+import java.util.Scanner;
+
 
 public class ConjuntAssignatures {
 
@@ -11,4 +13,27 @@ public class ConjuntAssignatures {
 
         }
     }*/
+    /*
+    public ConjuntAssignatures() {
+
+    }
+
+    public afegirAssignatura(Assignatura a) {
+       // assignatures.push(a);
+    }
+
+    public eliminarAssignatura(Assignatura a) {
+        //assignatures.pop(a)
+    }
+
+    public llistarAssignatures() {
+        /*
+        Scanner scanner = new Scanner(System.in);
+        for (int i = 0; i < assignatures.length(); ++i) {
+            System.out.println(assignatures[i]);
+        }
+    }*/
+
+    // Nivell que pugui agafar conjunts de ses assignatures interessades
+
 }
