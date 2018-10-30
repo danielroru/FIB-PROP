@@ -21,8 +21,8 @@ public class GeneradorHorari {
             escriureMenu();
             accio = scanner.nextInt();
             if (accio == 1) crearAula(conjuntAules);
-            if (accio == 2) //pe.crearNivell();
-            if (accio == 3) //pe.eliminarAula();
+            //if (accio == 2) pe.crearNivell();
+            if (accio == 3) eliminarAula(conjuntAules);
             if (accio == 4) //pe.eliminarNivell();
             if (accio == 5) pe.crearAssignatura();
             if (accio == 6) on = false;
@@ -33,9 +33,11 @@ public class GeneradorHorari {
         conjuntAules.afegirAula();
     }
 
-    public static void eliminarAula(ConjuntAules conjuntAules, Aula aula) {
-        conjuntAules.eliminarAula(aula);
+    public static void eliminarAula(ConjuntAules conjuntAules) {
+        conjuntAules.eliminarAula();
     }
+
+
 
     //Scanner scanner = new Scanner(System.in);
     public static void escriureMenu() {
