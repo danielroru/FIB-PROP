@@ -9,8 +9,6 @@ public class PlaEstudis {
     private int horaInici;
     private int horaFi;
     private int horaCanviFranja;
-    private int nAula;
-    private int nNivell;
 
     // Mètodes
 
@@ -29,12 +27,12 @@ public class PlaEstudis {
 
     }
 
-    public PlaEstudis(int horaInici, int horaFi, int horaCanviFranja, int nNivell, int nAula) {
+    public PlaEstudis(int horaInici, int horaFi, int horaCanviFranja) {
         this.horaInici = horaInici;
         this.horaFi = horaFi;
         this.horaCanviFranja = horaCanviFranja;
-        this.nNivell = nNivell;
-        this.nAula = nAula;
+//        this.nNivell = nNivell;
+//        this.nAula = nAula;
     }
 
     // Consultores
@@ -54,7 +52,7 @@ public class PlaEstudis {
     public int getNAssignatures() {
         return setAssignatures.size();
     }
-
+/*
     public int getNAula() {
         return nAula;
     }
@@ -62,7 +60,7 @@ public class PlaEstudis {
     public int getNNivell() {
         return nNivell;
     }
-
+*/
 
     // Modificadores
 
@@ -77,7 +75,7 @@ public class PlaEstudis {
     public void setHoraCanviFranja(int hora) {
         this.horaCanviFranja = hora;
     }
-
+/*
     public void setNNivells(int num) {
         this.nNivell = num;
     }
@@ -85,6 +83,7 @@ public class PlaEstudis {
     public void setNAula(int num) {
         this.nAula = num;
     }
+    */
 
     public void addAssignatura(String nom) {
         setAssignatures.add(nom);
@@ -92,26 +91,6 @@ public class PlaEstudis {
 
     // Otros Métodos
 
-    public void crearAula() {
-        ++nAula;
-    }
-
-    public void llistarAula() {
-
-        System.out.println(nAula);
-    };
-
-    public void crearNivell() {
-        ++nNivell;
-    }
-
-    public void eliminarAula() {
-        --nAula;
-    }
-
-    public void eliminarNivell() {
-        --nNivell;
-    }
 
 
 

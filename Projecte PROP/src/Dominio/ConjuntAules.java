@@ -11,7 +11,7 @@ public class ConjuntAules {
 
     //Set<Aula> conjuntAules = new HashSet<Aula>();
 
-    Map<String,Aula> conjuntAules = new HashMap<String,Aula>();
+    private Map<String,Aula> conjuntAules = new HashMap<String,Aula>();
 
     /* --------------------------------------------------------------------------
         MÈTODES
@@ -30,20 +30,25 @@ public class ConjuntAules {
         System.out.println("    Teoria      -> 1");
         System.out.println("    Laboratori  -> 2");
 
-        Aula.TipusAula tipus = Aula.TipusAula.TEORIA;
+        Aula.TipusAula tipus = null;
         int numTipusAula = scanner.nextInt();
 
         if (numTipusAula == 1 || numTipusAula == 2) {
             tipus = numTipusAula == 1 ? Aula.TipusAula.TEORIA : Aula.TipusAula.LABORATORI;
         }
 
-
         Aula a = new Aula(id, capacitat, tipus);
         conjuntAules.put(id, a);
     }
 
-    public void eliminarAula(Aula a) {
-        conjuntAules.remove(a);
+
+    public void eliminarAula() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Entra la ID de l'aula que vols eliminar:");
+        String id = scanner.nextLine();
+
+        conjuntAules.remove(conjuntAules.get(id));
     }
 
 }
