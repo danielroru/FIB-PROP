@@ -18,16 +18,17 @@ public class GeneradorHorari {
         /////////////////////////////////////////////////////////////////////
         ///// Implementats: crearAssignatura
         ////////////////////////////////////////////////////////////////////
-
+        escriureMenu();
         accio = scanner.nextInt();
         do {
+
             if (accio == 1) {
                 boolean on_Gestio = true;
                 escriureMenuGestioConfiguracio();
                 do {
                     accio = scanner.nextInt();
                     if (accio == 1)
-                        configuracioAula(scanner, pe);
+                        configuracioAula(conjuntAules);
                     else if (accio == 2)
                         configuracioNivell(scanner, pe);
                     else if (accio == 3)
@@ -86,15 +87,6 @@ public class GeneradorHorari {
             if (on) accio = scanner.nextInt();
         } while (on);
     }
-
-    public static void crearAula(ConjuntAules conjuntAules) {
-        conjuntAules.afegirAula();
-    }
-
-    public static void eliminarAula(ConjuntAules conjuntAules) {
-        conjuntAules.eliminarAula();
-    }
-
 
 
     //Scanner scanner = new Scanner(System.in);
@@ -192,16 +184,20 @@ public class GeneradorHorari {
     // Nivell 1: GESTIÓ CONFIGURACIÓ
     /* ............................. */
 
+
+
+
     /*  +  [1 - 1] Configuració Aules    */
-    public static void configuracioAula(Scanner scanner, PlaEstudis pe) {
+    public static void configuracioAula(ConjuntAules conjuntAules) {
+        Scanner scanner = new Scanner(System.in);
         int accio;
         boolean on_Aula = true;
         escriureMenuAula();
         do {
             accio = scanner.nextInt();
-            if (accio == 1) pe.llistarAula();
-            else if (accio == 2) pe.crearAula();
-            else if (accio == 3) pe.eliminarAula();
+            if (accio == 1)  conjuntAules.llistarAules();
+            else if (accio == 2) conjuntAules.afegirAula();
+            else if (accio == 3) conjuntAules.eliminarAula();
             else if (accio == 4) on_Aula = false;
             else {
                 System.out.println("Error: Indica una de les següents opcións");
@@ -213,7 +209,7 @@ public class GeneradorHorari {
 
     /*  +  [1 - 2] Configuració Nivells    */
     public static void configuracioNivell(Scanner scanner, PlaEstudis pe) {
-        int accio;
+        /*int accio;
         boolean on_Nivell = true;
         escriureMenuNivell();
         do {
@@ -230,7 +226,7 @@ public class GeneradorHorari {
                 escriureMenuNivell();
             }
         } while (on_Nivell);
-        escriureMenuGestioConfiguracio();
+        escriureMenuGestioConfiguracio();*/
     }
 
     /*  +  [1 - 3] Configuració Assignatures */

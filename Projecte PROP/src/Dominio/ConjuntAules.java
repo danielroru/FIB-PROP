@@ -17,6 +17,8 @@ public class ConjuntAules {
         MÈTODES
     -------------------------------------------------------------------------- */
 
+    public void llistarAules() {}
+
     public void afegirAula() {
 
         Scanner scanner = new Scanner(System.in);

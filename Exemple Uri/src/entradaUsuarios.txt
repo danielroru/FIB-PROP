@@ -1,0 +1,15 @@
+Usuario15:3:titulo241:autor36661:titulo241:autor12935:titulo407:autor8701
+Usuario14:2:titulo142:autor5932:titulo259:autor5947
+Usuario13:1:titulo47:autor6580
+Usuario12:8:titulo17:autor34678:titulo359:autor2425:titulo530:autor20341:titulo537:autor25282:titulo508:autor4119:titulo338:autor21477:titulo483:autor30462:titulo5:autor12682
+Usuario11:9:titulo585:autor13557:titulo658:autor16210:titulo623:autor18814:titulo330:autor21746:titulo602:autor26305:titulo532:autor19166:titulo432:autor10261:titulo601:autor22000:titulo547:autor27176
+Usuario10:9:titulo460:autor25515:titulo251:autor27211:titulo199:autor4690:titulo519:autor15425:titulo122:autor10092:titulo624:autor5035:titulo245:autor10174:titulo357:autor13948:titulo656:autor13485
+Usuario9:10:titulo657:autor38413:titulo166:autor11689:titulo35:autor26767:titulo378:autor24082:titulo262:autor23481:titulo319:autor28478:titulo611:autor23946:titulo638:autor8813:titulo150:autor22612:titulo628:autor19625
+Usuario8:7:titulo548:autor25473:titulo364:autor38193:titulo195:autor14194:titulo601:autor24682:titulo642:autor31058:titulo261:autor33778:titulo601:autor4628
+Usuario7:10:titulo177:autor7698:titulo544:autor19468:titulo460:autor25515:titulo405:autor21650:titulo50:autor17553:titulo318:autor30815:titulo690:autor9782:titulo341:autor9218:titulo580:autor34408:titulo244:autor33631
+Usuario6:10:titulo114:autor11235:titulo349:autor19159:titulo372:autor24759:titulo611:autor23946:titulo274:autor3045:titulo459:autor39698:titulo547:autor13987:titulo140:autor2208:titulo444:autor9839:titulo582:autor7802
+Usuario5:8:titulo610:autor25261:titulo323:autor18846:titulo384:autor37791:titulo258:autor5313:titulo637:autor19233:titulo464:autor4787:titulo644:autor33708:titulo515:autor18485
+Usuario4:6:titulo591:autor7713:titulo61:autor20371:titulo261:autor33778:titulo603:autor12487:titulo474:autor1601:titulo215:autor18181
+Usuario3:6:titulo81:autor35305:titulo296:autor6073:titulo140:autor2941:titulo123:autor28462:titulo168:autor23778:titulo244:autor20673
+Usuario2:7:titulo588:autor25557:titulo429:autor32412:titulo137:autor25717:titulo652:autor39799:titulo273:autor10891:titulo173:autor31015:titulo675:autor19749
+Usuario1:6:titulo188:autor16115:titulo563:autor6323:titulo594:autor39322:titulo681:autor11066:titulo320:autor32450:titulo460:autor37494
