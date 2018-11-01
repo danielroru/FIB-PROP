@@ -75,15 +75,6 @@ public class PlaEstudis {
     public void setHoraCanviFranja(int hora) {
         this.horaCanviFranja = hora;
     }
-/*
-    public void setNNivells(int num) {
-        this.nNivell = num;
-    }
-
-    public void setNAula(int num) {
-        this.nAula = num;
-    }
-    */
 
     public void addAssignatura(String nom) {
         setAssignatures.add(nom);

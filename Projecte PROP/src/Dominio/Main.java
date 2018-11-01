@@ -5,7 +5,327 @@ import java.util.*;
 
 public class Main {
 
+    /////////////////////////////////////////////////////////////////
+    /// MENÚ GESTIÓ CONFIGURACIÓ
+    /////////////////////////////////////////////////////////////////
 
+    public static void menuGestioConfiguracio(CapaDomini CD) {
+        Scanner scanner = new Scanner(System.in);
+        boolean on = true;
+        int accio;
+
+        while (on) {
+            escriureMenuGestioConfiguracio();
+            accio = scanner.nextInt();
+            switch (accio) {
+                case 1:
+                    configuracioAules(CD);
+                    break;
+                case 2:
+                    configuracioAssignatures(CD);
+                    break;
+                case 3:
+                    on = false;
+                    break;
+                default:
+                    escriureError(1);
+                    break;
+            }
+        }
+    }
+
+        /////////////////////////////////////////////////////////////////
+        /// AULES
+        /////////////////////////////////////////////////////////////////
+
+        // Gestió
+
+        public static void configuracioAules(CapaDomini CD) {
+            Scanner scanner = new Scanner(System.in);
+            boolean on = true;
+            int accio;
+
+            while (on) {
+                escriureMenuAula();
+                accio = scanner.nextInt();
+                switch (accio) {
+                    case 1:
+                        llistarAules(CD);
+                        break;
+                    case 2:
+                        afegirAula(CD);
+                        break;
+                    case 3:
+                        eliminarAula(CD);
+                        break;
+                    case 4:
+                        on = false;
+                        break;
+                    default:
+                        escriureError(1);
+                        break;
+                }
+            }
+        }
+
+        // Operacions
+
+        public static void llistarAules(CapaDomini CD) {
+
+        }
+
+        public static void afegirAula(CapaDomini CD) {
+            /*Scanner scanner = new Scanner(System.in);
+
+            System.out.println("ID de l'aula:");
+            String id = scanner.nextLine();
+            System.out.println("Capacitat de l'aula:");
+            int capacitat = scanner.nextInt();
+
+            System.out.println("Tipus de l'aula:");
+            System.out.println("    Teoria      -> 1");
+            System.out.println("    Laboratori  -> 2");
+
+            Aula.TipusAula tipus = null;
+            int numTipusAula = scanner.nextInt();
+
+            if (numTipusAula == 1 || numTipusAula == 2) {
+                tipus = numTipusAula == 1 ? Aula.TipusAula.TEORIA : Aula.TipusAula.LABORATORI;
+            }
+            */
+        }
+
+        public static void eliminarAula(CapaDomini CD) {
+
+        }
+
+        /////////////////////////////////////////////////////////////////
+        /// ASSIGNATURES
+        /////////////////////////////////////////////////////////////////
+
+        // Gestió
+
+        public static void configuracioAssignatures(CapaDomini CD) {
+            Scanner scanner = new Scanner(System.in);
+            boolean on = true;
+            int accio;
+
+            while (on) {
+                escriureMenuAssignatura();
+                accio = scanner.nextInt();
+                switch (accio) {
+                    case 1:
+                        llistarAssignatures(CD);
+                        break;
+                    case 2:
+                        afegirAssignatura(CD);
+                        break;
+                    case 3:
+                        eliminarAssignatura(CD);
+                        break;
+                    case 4:
+                        on = false;
+                        break;
+                    default:
+                        escriureError(1);
+                        break;
+                }
+            }
+        }
+
+        // Operacions
+
+        public static void llistarAssignatures(CapaDomini CD) {
+
+        }
+
+        public static void afegirAssignatura(CapaDomini CD) {
+
+        }
+
+        public static void eliminarAssignatura(CapaDomini CD) {
+
+        }
+
+
+    /////////////////////////////////////////////////////////////////
+    /// MENÚ GENERAR HORARI
+    /////////////////////////////////////////////////////////////////
+
+    public static void menuGenerarHorari(CapaDomini CD) {
+        Scanner scanner = new Scanner(System.in);
+        boolean on = true;
+        int accio;
+
+        while (on) {
+            escriureMenuGenerarHorari();
+            accio = scanner.nextInt();
+            switch (accio) {
+                case 1:
+                    crearHorari(CD);
+                    break;
+                case 2:
+                    llistarHorari(CD);
+                    break;
+                case 3:
+                    eliminarHorari(CD);
+                    break;
+                case 4:
+                    on = false;
+                    break;
+                default:
+                    escriureError(1);
+                    break;
+            }
+        }
+    }
+
+        /////////////////////////////////////////////////////////////////
+        /// CREAR HORARI
+        /////////////////////////////////////////////////////////////////
+
+        // Gestió
+
+        public static void crearHorari(CapaDomini CD) {
+
+        }
+
+        /////////////////////////////////////////////////////////////////
+        /// LLISTAR HORARI
+        /////////////////////////////////////////////////////////////////
+
+        // Gestió
+
+        public static void llistarHorari(CapaDomini CD) {
+
+        }
+
+        // Operacions
+
+        /////////////////////////////////////////////////////////////////
+        /// ELIMINAR HORARI
+        /////////////////////////////////////////////////////////////////
+
+        // Gestió
+
+        public static void eliminarHorari(CapaDomini CD) {
+
+        }
+
+        // Operacions
+
+
+    /////////////////////////////////////////////////////////////////
+    /// MENÚ CONFIGURACIO
+    /////////////////////////////////////////////////////////////////
+
+    public static void menuConfiguracio(CapaDomini CD) {
+        Scanner scanner = new Scanner(System.in);
+        boolean on = true;
+        int accio;
+
+        while (on) {
+            escriureMenuConfiguracio();
+            accio = scanner.nextInt();
+            switch (accio) {
+                case 1:
+                    intervalHores(CD);
+                    break;
+                case 2:
+                    canviFranja(CD);
+                    break;
+                case 3:
+                    on = false;
+                    break;
+                default:
+                    escriureError(1);
+                    break;
+            }
+        }
+    }
+
+        /////////////////////////////////////////////////////////////////
+        /// INTERVAL HORES (HORA INICI / HORA FI)
+        /////////////////////////////////////////////////////////////////
+
+        // Gestió
+
+        public static void intervalHores(CapaDomini CD) {
+
+        }
+
+            // Operacions GET
+
+            public static void getHoraInici(CapaDomini CD) {
+
+            }
+
+            public static void getHoraFi(CapaDomini CD) {
+
+            }
+
+            // Operacions SET
+
+            public static void setHoraInici(CapaDomini CD) {
+
+            }
+
+            public static void setHoraFi(CapaDomini CD) {
+
+            }
+
+        /////////////////////////////////////////////////////////////////
+        /// CANVI FRANJA
+        /////////////////////////////////////////////////////////////////
+
+        // Gestió
+
+        public static void canviFranja(CapaDomini CD) {
+
+        }
+
+        // Operacions GET
+
+        public static void getHoraCF(CapaDomini CD) {
+
+        }
+
+        // Operacions SET
+
+        public static void setHoraCF(CapaDomini CD) {
+
+        }
+
+    public static void main(String[] args) {
+        CapaDomini CD = new CapaDomini();
+        Scanner scanner = new Scanner(System.in);
+
+        boolean on = true;
+        int accio;
+
+        while (on) {
+            System.out.println("Indica el valor de l'operació:");
+            escriureMenu();
+            accio = scanner.nextInt();
+            switch (accio) {
+                case 1:
+                    menuGestioConfiguracio(CD);
+                    break;
+                case 2:
+                    menuGenerarHorari(CD);
+                    break;
+                case 3:
+                    menuConfiguracio(CD);
+                    break;
+                case 4:
+                    on = false;
+                    break;
+                default:
+                    escriureError(1);
+                    break;
+            }
+        }
+    }
 
     // Nivell 1
     public static void escriureMenu() {
@@ -18,9 +338,9 @@ public class Main {
     // Nivell 2 - [1] opció: Gestió Configuració
     public static  void escriureMenuGestioConfiguracio() {
         System.out.println("1] Configuració Aules");
-        System.out.println("2] Configuració Nivells");
-        System.out.println("3] Configuració Assignatures");
-        System.out.println("4] Sortir");
+        //System.out.println("2] Configuració Nivells");
+        System.out.println("2] Configuració Assignatures");
+        System.out.println("3] Sortir");
     }
 
     // Nivell 3 - [1 - 1] opcionó: Menú Aules
@@ -28,14 +348,6 @@ public class Main {
         System.out.println("1] Llistar Aules Disponibles");
         System.out.println("2] Crear Aules");
         System.out.println("3] Eliminar Aules  ");
-        System.out.println("4] Sortir");
-    }
-
-    // Nivell 3 - [1 - 2] opció: Menú Nivells
-    public static void escriureMenuNivell() {
-        System.out.println("1] Llistar Nivells Disponibles");
-        System.out.println("2] Crear Nivell");
-        System.out.println("3] Eliminar Nivell");
         System.out.println("4] Sortir");
     }
 
@@ -64,7 +376,7 @@ public class Main {
 
     // Nivell 3 - [3 - 1] opció: Hora Inici / Hora Fi
 
-    public static  void escriureMenuHoraIniciFi() {
+    public static  void escriureMenuInterval() {
         System.out.println("1] Ensenyar Hora [Inici - Fi]");
         System.out.println("2] Modificar Hora [Inici - Fi]");
         System.out.println("3] Sortir");
@@ -76,85 +388,11 @@ public class Main {
         System.out.println("3] Sortir");
     }
 
-    public static void main(String[] args) {
-        PlaEstudis pe = new PlaEstudis();
-        CapaDomini CD = new CapaDomini();
-        CD.crearPlaEstudis();
-        ConjuntAules conjuntAules = new ConjuntAules();
-        boolean on = true;
-        boolean escMenu = true;
-        int accio;
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Indica el valor de l'operació:");
-
-
-        /////////////////////////////////////////////////////////////////////
-        ///// Implementats: crearAssignatura
-        ////////////////////////////////////////////////////////////////////
-        escriureMenu();
-        accio = scanner.nextInt();
-        do {
-
-            if (accio == 1) {
-                boolean on_Gestio = true;
-                escriureMenuGestioConfiguracio();
-                do {
-                    accio = scanner.nextInt();
-                    if (accio == 1)
-                        CD.configuracioAula(conjuntAules);
-                    else if (accio == 2)
-                        CD.configuracioNivell(scanner, pe);
-                    else if (accio == 3)
-                        CD.configuracioAssignatura(scanner, pe);
-                    else if (accio == 4)
-                        on_Gestio = false;
-                    else {
-                        System.out.println("Error: Indica una de les següents opcións");
-                        escriureMenuGestioConfiguracio();
-                    }
-                } while (on_Gestio);
-            } else if (accio == 2) {
-                boolean on_Horari = true;
-                escriureMenuGenerarHorari();
-                do {
-                    accio = scanner.nextInt();
-                    if (accio == 1)
-                        CD.crearHorari();
-                    else if (accio == 2)
-                        CD.llistarHorari();
-                    else if (accio == 3)
-                        CD.eliminarHorari();
-                    else if (accio == 4)
-                        on_Horari = false;
-                    else {
-                        System.out.println("Error: Indica una de les següents opcións");
-                        escriureMenuGenerarHorari();
-                    }
-                } while (on_Horari);
-            } else if (accio == 3) {
-                boolean on_Configuracio = true;
-                escriureMenuConfiguracio();
-                do {
-                    accio = scanner.nextInt();
-                    if (accio == 1)
-                        CD.hInihFi(scanner, pe);
-                    else if (accio == 2)
-                        CD.hCanviFranja(scanner, pe);
-                    else if (accio == 3)
-                        on_Configuracio = false;
-                    else {
-                        System.out.println("Error: Indica una de les següents opcións");
-                        escriureMenuConfiguracio();
-                    }
-
-                } while (on_Configuracio);
-            } else if (accio == 4) {
-                on = false;
-                escMenu = false;
-            } else System.out.println("Error: Indica una de les següents opcións");
-            if (escMenu) escriureMenu();
-            if (on) accio = scanner.nextInt();
-        } while (on);
+    public static void escriureError(int nError) {
+        switch (nError){
+            case 1:
+                System.out.println("Error: Indica una de les opcions!");
+                break;
+        }
     }
 }
