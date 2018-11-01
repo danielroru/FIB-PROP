@@ -42,24 +42,29 @@ public class CapaDomini {
 
     /*  +  [1 - 2] Configuració Nivells    */
     public static void configuracioNivell(Scanner scanner, PlaEstudis pe) {
-        /*int accio;
+        int accio;
         boolean on_Nivell = true;
         escriureMenuNivell();
         do {
             accio = scanner.nextInt();
             if (accio == 1) {
-                int nNivell =pe.getNNivell();
-                System.out.println(nNivell);
+                System.out.println("No està implementat");
             }
-            else if (accio == 2) pe.crearNivell();
-            else if (accio == 3) pe.eliminarNivell();
-            else if (accio == 4) on_Nivell = false;
+            else if (accio == 2) {
+                System.out.println("No està implementat");
+            }
+            else if (accio == 3) {
+                System.out.println("No està implementat");
+            }
+            else if (accio == 4) {
+                System.out.println("No està implementat");
+            }
             else {
                 System.out.println("Error: Indica una de les següents opcións");
                 escriureMenuNivell();
             }
         } while (on_Nivell);
-        escriureMenuGestioConfiguracio();*/
+        escriureMenuGestioConfiguracio();
     }
 
     /*  +  [1 - 3] Configuració Assignatures */

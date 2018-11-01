@@ -3,7 +3,7 @@ package Dominio;
 import java.util.Scanner;
 
 public class GeneradorHorari {
-
+    /*
     public void generarHorari() {
         PlaEstudis pe = crearPlaEstudis();
         ConjuntAules conjuntAules = new ConjuntAules();
@@ -29,10 +29,10 @@ public class GeneradorHorari {
                     accio = scanner.nextInt();
                     if (accio == 1)
                         configuracioAula(conjuntAules);
-                    else if (accio == 2)
-                        configuracioNivell(scanner, pe);
+                    else if (accio == 2);
+                        configuracioNivell();
                     else if (accio == 3)
-                        configuracioAssignatura(scanner, pe);
+                        configuracioAssignatura(pe);
                     else if (accio == 4)
                         on_Gestio = false;
                     else {
@@ -66,9 +66,9 @@ public class GeneradorHorari {
                 do {
                     accio = scanner.nextInt();
                     if(accio == 1)
-                        hInihFi (scanner, pe);
+                        hInihFi (pe);
                     else if(accio == 2)
-                        hCanviFranja(scanner, pe);
+                        hCanviFranja(pe);
                     else if (accio == 3)
                         on_Configuracio = false;
                     else {
@@ -98,7 +98,7 @@ public class GeneradorHorari {
     /* --------------------- */
 
     /*      - Opcions        */
-
+    /*
     // Nivell 1
     public static void escriureMenu() {
         System.out.println("1] Gestió Configuració");
@@ -188,6 +188,7 @@ public class GeneradorHorari {
 
 
     /*  +  [1 - 1] Configuració Aules    */
+    /*
     public static void configuracioAula(ConjuntAules conjuntAules) {
         Scanner scanner = new Scanner(System.in);
         int accio;
@@ -208,14 +209,14 @@ public class GeneradorHorari {
     }
 
     /*  +  [1 - 2] Configuració Nivells    */
-    public static void configuracioNivell(Scanner scanner, PlaEstudis pe) {
+    /*public static void configuracioNivell(Scanner scanner, PlaEstudis pe) {
         /*int accio;
         boolean on_Nivell = true;
         escriureMenuNivell();
         do {
             accio = scanner.nextInt();
             if (accio == 1) {
-                int nNivell =pe.getNNivell();
+                int nNivell = pe.getNNivell();
                 System.out.println(nNivell);
             }
             else if (accio == 2) pe.crearNivell();
@@ -226,12 +227,14 @@ public class GeneradorHorari {
                 escriureMenuNivell();
             }
         } while (on_Nivell);
-        escriureMenuGestioConfiguracio();*/
-    }
+        escriureMenuGestioConfiguracio();
+    }*/
 
     /*  +  [1 - 3] Configuració Assignatures */
-    public static void configuracioAssignatura(Scanner scanner, PlaEstudis pe) {
+    /*
+    public static void configuracioAssignatura(PlaEstudis pe) {
         int accio;
+        Scanner scanner;
         boolean on_Assignatura = true;
         escriureMenuAssignatura();
         do {
@@ -253,7 +256,7 @@ public class GeneradorHorari {
         } while (on_Assignatura);
         escriureMenuGestioConfiguracio();
     }
-
+    */
     /*////////////////////////////////////////////////////////////////////////////*/
 
     /* ............................. */
@@ -261,31 +264,32 @@ public class GeneradorHorari {
     /* ............................. */
 
     /*  + [2 - 1] Crear Horari */
-
+    /*
     public static void crearHorari() {
         System.out.println("Aplicar Algoritme Generador Horari");
     }
-
+    */
     /*  + [2 - 2] Llistar Horari */
-
+    /*
     public static void llistarHorari() {
         System.out.println("Llista Tots Els Horaris");
     }
-
+    */
     /*  + [2 - 3] Eliminar Horari */
-
+    /*
     public static  void eliminarHorari() {
         System.out.println("Elimina Horari Seleccionat");
     }
-
+    */
     /*////////////////////////////////////////////////////////////////////////////*/
 
     /* ............................. */
     // Nivell 3: CONFIGURACIÓ
     /* ............................. */
-
-    public static void hInihFi (Scanner scanner, PlaEstudis pe) {
+    /*
+    public static void hInihFi (PlaEstudis pe) {
         int accio;
+        Scanner scanner;
         boolean on_hIniFi = true;
         escriureMenuHoraIniciFi();
         do {
@@ -337,8 +341,9 @@ public class GeneradorHorari {
         escriureMenuConfiguracio();
     }
 
-    public static void hCanviFranja (Scanner scanner, PlaEstudis pe) {
+    public static void hCanviFranja (PlaEstudis pe) {
         int accio;
+        Scanner scanner;
         boolean on_hCanviFranja = true;
         escriureMenuHoraCanviFranja();
         do {
@@ -410,7 +415,7 @@ public class GeneradorHorari {
         System.out.println("Nombre d'aules");
         int nAula = scanner.nextInt();
         */
-
+        /*
         PlaEstudis pe = new PlaEstudis(horaInici, horaFi, horaCanviFranja);
 
         System.out.println("S'ha creat el pla d'estudis\n");
@@ -489,5 +494,5 @@ public class GeneradorHorari {
 
         return as;
     }
-
+    */
 }
