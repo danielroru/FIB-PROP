@@ -1,0 +1,6 @@
+1- Generate *class files: $ javac -encoding UTF8 Dominio/*.java GestionDatos/*.java Interficie/*.java
+
+2- Generate *jar file: $ jar cvfm YouTubeMix.jar manifest.txt Dominio/*.class GestionDatos/*.class Interficie/*.class
+
+
+OJO!! LAS CARPETAS HAY QUE INDICARLAS CON MAYUSCULAS O MINUSCULAS, SEGUN CORRESPONDA

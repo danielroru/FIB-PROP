@@ -1,0 +1,5 @@
+Conjunto 0: [0, 2]
+Conjunto 1: [1, 4]
+Conjunto 2: [3, 8]
+Conjunto 3: [5, 9]
+Conjunto 4: [6, 7]

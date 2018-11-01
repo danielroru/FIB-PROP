@@ -95,11 +95,11 @@ public class PlaEstudis {
 
 
 
-
+/*
     void crearAssignatura() {
         Assignatura as = GeneradorHorari.crearAssignatura(this);
         setAssignatures.add(as.getNom());
         if (setAssignatures.contains(as.getNom())) System.out.println("El PE conté "+ as.getNom());
     }
-
+*/
 }

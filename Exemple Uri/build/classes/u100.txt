@@ -1,0 +1,10 @@
+Usuario10:4:titulo31:autor18:titulo9:autor12:titulo32:autor13:titulo6:autor13
+Usuario9:9:titulo39:autor16:titulo31:autor9:titulo31:autor19:titulo18:autor9:titulo31:autor19:titulo29:autor12:titulo43:autor12:titulo50:autor18:titulo11:autor8
+Usuario8:8:titulo50:autor18:titulo9:autor7:titulo35:autor19:titulo4:autor10:titulo25:autor17:titulo45:autor17:titulo45:autor8:titulo39:autor9
+Usuario7:3:titulo34:autor1:titulo18:autor9:titulo6:autor14
+Usuario6:1:titulo42:autor12
+Usuario5:7:titulo20:autor7:titulo44:autor20:titulo4:autor3:titulo17:autor20:titulo8:autor19:titulo50:autor18:titulo22:autor13
+Usuario4:5:titulo23:autor16:titulo32:autor13:titulo6:autor13:titulo31:autor18:titulo46:autor12
+Usuario3:5:titulo31:autor9:titulo8:autor19:titulo12:autor8:titulo38:autor16:titulo13:autor20
+Usuario2:6:titulo23:autor6:titulo4:autor8:titulo12:autor1:titulo18:autor15:titulo4:autor10:titulo12:autor9
+Usuario1:7:titulo17:autor20:titulo37:autor6:titulo14:autor14:titulo22:autor17:titulo35:autor20:titulo47:autor3:titulo41:autor18
