@@ -58,6 +58,9 @@ public class Main {
                     case 3:
                         eliminarAula(CD);
                         break;
+                    case 5:
+                        modificarAula(CD);
+                        break;
                     case 4:
                         on = false;
                         break;
@@ -95,9 +98,13 @@ public class Main {
             */
         }
 
-        public static void eliminarAula(CapaDomini CD) {
+        public static void modificarAula(CapaDomini CD) {
 
         }
+
+        public static void eliminarAula(CapaDomini CD) {
+
+    }
 
         /////////////////////////////////////////////////////////////////
         /// ASSIGNATURES
@@ -121,9 +128,12 @@ public class Main {
                         afegirAssignatura(CD);
                         break;
                     case 3:
-                        eliminarAssignatura(CD);
+                        modificarAssignatura(CD);
                         break;
                     case 4:
+                        eliminarAssignatura(CD);
+                        break;
+                    case 5:
                         on = false;
                         break;
                     default:
@@ -140,6 +150,10 @@ public class Main {
         }
 
         public static void afegirAssignatura(CapaDomini CD) {
+
+        }
+
+        public static void modificarAssignatura(CapaDomini CD) {
 
         }
 
@@ -251,16 +265,36 @@ public class Main {
         // Gestió
 
         public static void intervalHores(CapaDomini CD) {
+            Scanner scanner = new Scanner(System.in);
+            boolean on = true;
+            int accio;
 
+            while (on) {
+                escriureMenuIntervalHores();
+                accio = scanner.nextInt();
+                switch (accio) {
+                    case 1:
+                        getIntervalHores(CD);
+                        break;
+                    case 2:
+                        setHoraInici(CD);
+                        break;
+                    case 3:
+                        setHoraFi(CD);
+                        break;
+                    case 4:
+                        on = false;
+                        break;
+                    default:
+                        escriureError(1);
+                        break;
+                }
+            }
         }
 
             // Operacions GET
 
-            public static void getHoraInici(CapaDomini CD) {
-
-            }
-
-            public static void getHoraFi(CapaDomini CD) {
+            public static void getIntervalHores(CapaDomini CD) {
 
             }
 
@@ -281,7 +315,28 @@ public class Main {
         // Gestió
 
         public static void canviFranja(CapaDomini CD) {
+            Scanner scanner = new Scanner(System.in);
+            boolean on = true;
+            int accio;
 
+            while (on) {
+                escriureMenuHoraCanviFranja();
+                accio = scanner.nextInt();
+                switch (accio) {
+                    case 1:
+                        getHoraCF(CD);
+                        break;
+                    case 2:
+                        setHoraCF(CD);
+                        break;
+                    case 3:
+                        on = false;
+                        break;
+                    default:
+                        escriureError(1);
+                        break;
+                }
+            }
         }
 
         // Operacions GET
@@ -332,7 +387,7 @@ public class Main {
         System.out.println("1] Gestió Configuració");
         System.out.println("2] Generar Horari");
         System.out.println("3] Configuració");
-        System.out.println("4] Sortir");
+        System.out.println("4] Sortir de l'aplicació");
     }
 
     // Nivell 2 - [1] opció: Gestió Configuració
@@ -340,23 +395,25 @@ public class Main {
         System.out.println("1] Configuració Aules");
         //System.out.println("2] Configuració Nivells");
         System.out.println("2] Configuració Assignatures");
-        System.out.println("3] Sortir");
+        System.out.println("3] Enrere");
     }
 
     // Nivell 3 - [1 - 1] opcionó: Menú Aules
     public static void escriureMenuAula() {
         System.out.println("1] Llistar Aules Disponibles");
-        System.out.println("2] Crear Aules");
-        System.out.println("3] Eliminar Aules  ");
-        System.out.println("4] Sortir");
+        System.out.println("2] Crear Aula");
+        System.out.println("2] Modificar Aula");
+        System.out.println("4] Eliminar Aula");
+        System.out.println("5] Enrere");
     }
 
     // Nivell 3 - [1 - 3] opció: Menú Assignatures
     public static void escriureMenuAssignatura() {
         System.out.println("1] Llistar Assignatures Disponibles");
-        System.out.println("2] Crear Assignatures");
-        System.out.println("3] Eliminar Assignatures");
-        System.out.println("4] Sortir");
+        System.out.println("2] Crear Assignatura");
+        System.out.println("3] Modificar Assignatura");
+        System.out.println("4] Eliminar Assignatura");
+        System.out.println("5] Enrere");
     }
 
     // Nivell 2 - [2] opció: Generar Horari
@@ -364,28 +421,29 @@ public class Main {
         System.out.println("1] Crear Horari");
         System.out.println("2] Llistar Horari");
         System.out.println("3] Eliminar Horari");
-        System.out.println("4] Sortir");
+        System.out.println("4] Enrere");
     }
 
     // Nivell 2 - [3] opció: Configuració
     public static  void escriureMenuConfiguracio() {
         System.out.println("1] Hora Inici / Hora Fi");
         System.out.println("2] Hora Canvi Franja");
-        System.out.println("3] Sortir");
+        System.out.println("3] Enrere");
     }
 
     // Nivell 3 - [3 - 1] opció: Hora Inici / Hora Fi
 
-    public static  void escriureMenuInterval() {
-        System.out.println("1] Ensenyar Hora [Inici - Fi]");
-        System.out.println("2] Modificar Hora [Inici - Fi]");
-        System.out.println("3] Sortir");
+    public static  void escriureMenuIntervalHores() {
+        System.out.println("1] Mostrar Hores [Inici - Fi]");
+        System.out.println("2] Modificar Hora Inici");
+        System.out.println("3] Modificar Hora Fi");
+        System.out.println("4] Enrere");
     }
 
     public static  void escriureMenuHoraCanviFranja() {
-        System.out.println("1] Ensenyar Hora Cannvi Franja");
-        System.out.println("2] Modificar Hora Cannvi Franja");
-        System.out.println("3] Sortir");
+        System.out.println("1] Mostrar Hora Canvi Franja");
+        System.out.println("2] Modificar Hora Canvi Franja");
+        System.out.println("3] Enrere");
     }
 
     public static void escriureError(int nError) {
