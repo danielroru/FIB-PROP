@@ -23,38 +23,17 @@ public class ConjuntAules {
     }
 
 
-    public void afegirAula() {
-
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("ID de l'aula:");
-        String id = scanner.nextLine();
-        System.out.println("Capacitat de l'aula:");
-        int capacitat = scanner.nextInt();
-
-        System.out.println("Tipus de l'aula:");
-        System.out.println("    Teoria      -> 1");
-        System.out.println("    Laboratori  -> 2");
-
-        Aula.TipusAula tipus = null;
-        int numTipusAula = scanner.nextInt();
-
-        if (numTipusAula == 1 || numTipusAula == 2) {
-            tipus = numTipusAula == 1 ? Aula.TipusAula.TEORIA : Aula.TipusAula.LABORATORI;
-        }
-
+    public void afegirAula(String id, int capacitat, Aula.TipusAula tipus) {
         Aula a = new Aula(id, capacitat, tipus);
-        conjuntAules.put(id, a);
+        this.conjuntAules.put(id, a);
+    }
+
+    public void modificarAula(String id) {
+
     }
 
 
-    public void eliminarAula() {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Entra la ID de l'aula que vols eliminar:");
-        String id = scanner.nextLine();
-
-        conjuntAules.remove(conjuntAules.get(id));
+    public void eliminarAula(String id) {
+            this.conjuntAules.remove(id);
     }
-
 }
