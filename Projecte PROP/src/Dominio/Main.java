@@ -296,36 +296,6 @@ public class Main {
 
         }
 
-    public static void main(String[] args) {
-        CapaDomini CD = new CapaDomini();
-        Scanner scanner = new Scanner(System.in);
-
-        boolean on = true;
-        int accio;
-
-        while (on) {
-            System.out.println("Indica el valor de l'operació:");
-            escriureMenu();
-            accio = scanner.nextInt();
-            switch (accio) {
-                case 1:
-                    menuGestioConfiguracio(CD);
-                    break;
-                case 2:
-                    menuGenerarHorari(CD);
-                    break;
-                case 3:
-                    menuConfiguracio(CD);
-                    break;
-                case 4:
-                    on = false;
-                    break;
-                default:
-                    escriureError(1);
-                    break;
-            }
-        }
-    }
 
     // Nivell 1
     public static void escriureMenu() {
@@ -393,6 +363,37 @@ public class Main {
             case 1:
                 System.out.println("Error: Indica una de les opcions!");
                 break;
+        }
+    }
+
+    public static void main(String[] args) {
+        CapaDomini CD = new CapaDomini();
+        Scanner scanner = new Scanner(System.in);
+
+        boolean on = true;
+        int accio;
+
+        while (on) {
+            System.out.println("Indica el valor de l'operació:");
+            escriureMenu();
+            accio = scanner.nextInt();
+            switch (accio) {
+                case 1:
+                    menuGestioConfiguracio(CD);
+                    break;
+                case 2:
+                    menuGenerarHorari(CD);
+                    break;
+                case 3:
+                    menuConfiguracio(CD);
+                    break;
+                case 4:
+                    on = false;
+                    break;
+                default:
+                    escriureError(1);
+                    break;
+            }
         }
     }
 }
