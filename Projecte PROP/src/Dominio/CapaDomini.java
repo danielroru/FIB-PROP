@@ -16,7 +16,9 @@ public class CapaDomini {
     // Nivell 1: GESTIÓ CONFIGURACIÓ
     /* ............................. */
 
-
+    private ConjuntAssignatures ConjuntAssignatures = new ConjuntAssignatures();
+    private ConjuntAules ConjuntAules = new ConjuntAules();
+    private ConjuntRestriccions ConjuntRestriccions = new ConjuntRestriccions();
 
 
     /*  +  [1 - 1] Configuració Aules    */
