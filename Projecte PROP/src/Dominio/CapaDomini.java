@@ -4,12 +4,13 @@ import java.util.Scanner;
 
 public class CapaDomini {
 
+    private final PlaEstudis pe = new PlaEstudis();
+    private final ConjuntAules conjuntAules = new ConjuntAules();
 
     /* --------------------- */
     /*   - Funcionalitat:    */
     /* --------------------- */
 
-    //  -> Scanner i Pla Estudis es pot passar per valor ¿?
 
     /*////////////////////////////////////////////////////////////////////////////*/
     /* ............................. */
@@ -372,7 +373,7 @@ public class CapaDomini {
     }
 
     // Nivell 2 - [3] opció: Configuració
-    public static  void escriureMenuConfiguracio() {
+    public static void escriureMenuConfiguracio() {
         System.out.println("1] Hora Inici / Hora Fi");
         System.out.println("2] Hora Canvi Franja");
         System.out.println("3] Sortir");
@@ -380,13 +381,13 @@ public class CapaDomini {
 
     // Nivell 3 - [3 - 1] opció: Hora Inici / Hora Fi
 
-    public static  void escriureMenuHoraIniciFi() {
+    public static void escriureMenuHoraIniciFi() {
         System.out.println("1] Ensenyar Hora [Inici - Fi]");
         System.out.println("2] Modificar Hora [Inici - Fi]");
         System.out.println("3] Sortir");
     }
 
-    public static  void escriureMenuHoraCanviFranja() {
+    public static void escriureMenuHoraCanviFranja() {
         System.out.println("1] Ensenyar Hora Cannvi Franja");
         System.out.println("2] Modificar Hora Cannvi Franja");
         System.out.println("3] Sortir");

@@ -17,7 +17,11 @@ public class ConjuntAules {
         MÈTODES
     -------------------------------------------------------------------------- */
 
-    public void llistarAules() {}
+    public List<Aula> llistarAules() {
+        List<Aula> resultat = new ArrayList<>(conjuntAules.values());
+        return resultat;
+    }
+
 
     public void afegirAula() {
 
