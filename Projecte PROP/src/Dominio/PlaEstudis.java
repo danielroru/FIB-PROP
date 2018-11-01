@@ -3,6 +3,7 @@ package Dominio;
 import java.util.*;
 
 public class PlaEstudis {
+    private ConjuntAssignatures ConjuntAssignatures = new ConjuntAssignatures();
 
     // Atributs2
     private Set<String> setAssignatures = new HashSet<String>();

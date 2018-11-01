@@ -1,133 +1,41 @@
 package Dominio;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class CapaDomini {
 
-    private final PlaEstudis pe = new PlaEstudis();
-    private final ConjuntAules conjuntAules = new ConjuntAules();
-
-    /* --------------------- */
-    /*   - Funcionalitat:    */
-    /* --------------------- */
-
-
-    /*////////////////////////////////////////////////////////////////////////////*/
-    /* ............................. */
-    // Nivell 1: GESTIÓ CONFIGURACIÓ
-    /* ............................. */
-
-    private ConjuntAssignatures ConjuntAssignatures = new ConjuntAssignatures();
-    private ConjuntAules ConjuntAules = new ConjuntAules();
+    private PlaEstudis pe = new PlaEstudis();
+    private ConjuntAules conjuntAules = new ConjuntAules();
     private ConjuntRestriccions ConjuntRestriccions = new ConjuntRestriccions();
 
-
-    /*  +  [1 - 1] Configuració Aules    */
-    public static void configuracioAula(ConjuntAules conjuntAules) {
-        Scanner scanner = new Scanner(System.in);
-        int accio;
-        boolean on_Aula = true;
-        escriureMenuAula();
-        do {
-            accio = scanner.nextInt();
-            if (accio == 1)  conjuntAules.llistarAules();
-            else if (accio == 2) conjuntAules.afegirAula();
-            else if (accio == 3) conjuntAules.eliminarAula();
-            else if (accio == 4) on_Aula = false;
-            else {
-                System.out.println("Error: Indica una de les següents opcións");
-                escriureMenuAula();
-            }
-        } while (on_Aula);
-        escriureMenuGestioConfiguracio();
+    public List<Aula> llistarAules() {
+        return conjuntAules.llistarAules();
     }
 
-    /*  +  [1 - 2] Configuració Nivells    */
-    public static void configuracioNivell(Scanner scanner, PlaEstudis pe) {
-        int accio;
-        boolean on_Nivell = true;
-        escriureMenuNivell();
-        do {
-            accio = scanner.nextInt();
-            if (accio == 1) {
-                System.out.println("No està implementat");
-            }
-            else if (accio == 2) {
-                System.out.println("No està implementat");
-            }
-            else if (accio == 3) {
-                System.out.println("No està implementat");
-            }
-            else if (accio == 4) {
-                System.out.println("No està implementat");
-            }
-            else {
-                System.out.println("Error: Indica una de les següents opcións");
-                escriureMenuNivell();
-            }
-        } while (on_Nivell);
-        escriureMenuGestioConfiguracio();
+    public void afegirAula(String id, int capacitat, Aula.TipusAula tipus) {
+        conjuntAules.afegirAula(id,capacitat,tipus);
     }
 
-    /*  +  [1 - 3] Configuració Assignatures */
-    public static void configuracioAssignatura(Scanner scanner, PlaEstudis pe) {
-        int accio;
-        boolean on_Assignatura = true;
-        escriureMenuAssignatura();
-        do {
-            accio = scanner.nextInt();
-            if (accio == 1) {
-                System.out.println("No està implementat");
-            }
-            else if (accio == 2) {
-                System.out.println("No està implementat");
-            }
-            else if (accio == 3) {
-                System.out.println("No està implementat");
-            }
-            else if (accio == 4) on_Assignatura = false;
-            else {
-                System.out.println("Error: Indica una de les següents opcións");
-                escriureMenuAssignatura();
-            }
-        } while (on_Assignatura);
-        escriureMenuGestioConfiguracio();
+    public void modificarAula(String id) {
+        conjuntAules.modificarAula(id);
     }
 
-    /*////////////////////////////////////////////////////////////////////////////*/
-
-    /* ............................. */
-    // Nivell 2: GENERAR HORARI
-    /* ............................. */
-
-    /*  + [2 - 1] Crear Horari */
-
-    public static void crearHorari() {
-        System.out.println("Aplicar Algoritme Generador Horari");
+    public void eliminarAula(String id) {
+        conjuntAules.eliminarAula(id);
     }
 
-    /*  + [2 - 2] Llistar Horari */
 
-    public static void llistarHorari() {
-        System.out.println("Llista Tots Els Horaris");
-    }
+    // Per eliminar
+    // -------------------// -------------------// -------------------// -------------------// -------------------
+    // -------------------// -------------------// -------------------// -------------------// -------------------
+    // -------------------// -------------------// -------------------// -------------------// -------------------
 
-    /*  + [2 - 3] Eliminar Horari */
 
-    public static  void eliminarHorari() {
-        System.out.println("Elimina Horari Seleccionat");
-    }
 
-    /*////////////////////////////////////////////////////////////////////////////*/
-
-    /* ............................. */
-    // Nivell 3: CONFIGURACIÓ
-    /* ............................. */
 
     public static void hInihFi (Scanner scanner, PlaEstudis pe) {
         int accio;
         boolean on_hIniFi = true;
-        escriureMenuHoraIniciFi();
         do {
             accio = scanner.nextInt();
             if (accio == 1) {
@@ -171,16 +79,13 @@ public class CapaDomini {
             else if (accio == 3) on_hIniFi = false;
             else {
                 System.out.println("Error: Indica una de les següents opcións");
-                escriureMenuHoraIniciFi();
             }
         } while (on_hIniFi);
-        escriureMenuConfiguracio();
     }
 
     public static void hCanviFranja (Scanner scanner, PlaEstudis pe) {
         int accio;
         boolean on_hCanviFranja = true;
-        escriureMenuHoraCanviFranja();
         do {
             accio = scanner.nextInt();
             if (accio == 1) {
@@ -204,10 +109,8 @@ public class CapaDomini {
             else if (accio == 3) on_hCanviFranja = false;
             else {
                 System.out.println("Error: Indica una de les següents opcións");
-                escriureMenuHoraCanviFranja();
             }
         } while (on_hCanviFranja);
-        escriureMenuConfiguracio();
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////////
@@ -331,72 +234,4 @@ public class CapaDomini {
     }
 
 
-    // Nivell 1
-    public static void escriureMenu() {
-        System.out.println("1] Gestió Configuració");
-        System.out.println("2] Generar Horari");
-        System.out.println("3] Configuració");
-        System.out.println("4] Sortir");
-    }
-
-    // Nivell 2 - [1] opció: Gestió Configuració
-    public static  void escriureMenuGestioConfiguracio() {
-        System.out.println("1] Configuració Aules");
-        System.out.println("2] Configuració Nivells");
-        System.out.println("3] Configuració Assignatures");
-        System.out.println("4] Sortir");
-    }
-
-    // Nivell 3 - [1 - 1] opcionó: Menú Aules
-    public static void escriureMenuAula() {
-        System.out.println("1] Llistar Aules Disponibles");
-        System.out.println("2] Crear Aules");
-        System.out.println("3] Eliminar Aules  ");
-        System.out.println("4] Sortir");
-    }
-
-    // Nivell 3 - [1 - 2] opció: Menú Nivells
-    public static void escriureMenuNivell() {
-        System.out.println("1] Llistar Nivells Disponibles");
-        System.out.println("2] Crear Nivell");
-        System.out.println("3] Eliminar Nivell");
-        System.out.println("4] Sortir");
-    }
-
-    // Nivell 3 - [1 - 3] opció: Menú Assignatures
-    public static void escriureMenuAssignatura() {
-        System.out.println("1] Llistar Assignatures Disponibles");
-        System.out.println("2] Crear Assignatures");
-        System.out.println("3] Eliminar Assignatures");
-        System.out.println("4] Sortir");
-    }
-
-    // Nivell 2 - [2] opció: Generar Horari
-    public static  void escriureMenuGenerarHorari() {
-        System.out.println("1] Crear Horari");
-        System.out.println("2] Llistar Horari");
-        System.out.println("3] Eliminar Horari");
-        System.out.println("4] Sortir");
-    }
-
-    // Nivell 2 - [3] opció: Configuració
-    public static void escriureMenuConfiguracio() {
-        System.out.println("1] Hora Inici / Hora Fi");
-        System.out.println("2] Hora Canvi Franja");
-        System.out.println("3] Sortir");
-    }
-
-    // Nivell 3 - [3 - 1] opció: Hora Inici / Hora Fi
-
-    public static void escriureMenuHoraIniciFi() {
-        System.out.println("1] Ensenyar Hora [Inici - Fi]");
-        System.out.println("2] Modificar Hora [Inici - Fi]");
-        System.out.println("3] Sortir");
-    }
-
-    public static void escriureMenuHoraCanviFranja() {
-        System.out.println("1] Ensenyar Hora Cannvi Franja");
-        System.out.println("2] Modificar Hora Cannvi Franja");
-        System.out.println("3] Sortir");
-    }
 }

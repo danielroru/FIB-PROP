@@ -56,12 +56,12 @@ public class Main {
                         afegirAula(CD);
                         break;
                     case 3:
-                        eliminarAula(CD);
-                        break;
-                    case 5:
                         modificarAula(CD);
                         break;
                     case 4:
+                        eliminarAula(CD);
+                        break;
+                    case 5:
                         on = false;
                         break;
                     default:
@@ -74,11 +74,34 @@ public class Main {
         // Operacions
 
         public static void llistarAules(CapaDomini CD) {
+            System.out.println("Llista d'aules:");
+            System.out.println(" ");
 
+            int nTeoria = 0;
+            int nLaboratori = 0;
+
+            for(Aula a : CD.llistarAules()){
+                Aula.TipusAula tipus = a.getTipusAula();
+                System.out.println("    ID:         " + a.getId());
+                System.out.println("    Capacitat:  " + a.getCapacitat());
+                System.out.println("    Tipus:      " + tipus);
+                System.out.println(" ");
+
+                if (tipus == Aula.TipusAula.TEORIA) {
+                    nTeoria++;
+                }
+                else {
+                    nLaboratori++;
+                }
+            }
+
+            System.out.println("    Número de classes de teoria:  " + nTeoria);
+            System.out.println("    Número de classes de laboratori: " + nLaboratori);
+            System.out.println(" ");
         }
 
         public static void afegirAula(CapaDomini CD) {
-            /*Scanner scanner = new Scanner(System.in);
+            Scanner scanner = new Scanner(System.in);
 
             System.out.println("ID de l'aula:");
             String id = scanner.nextLine();
@@ -95,16 +118,29 @@ public class Main {
             if (numTipusAula == 1 || numTipusAula == 2) {
                 tipus = numTipusAula == 1 ? Aula.TipusAula.TEORIA : Aula.TipusAula.LABORATORI;
             }
-            */
+
+            CD.afegirAula(id, capacitat, tipus);
+            System.out.println("-- AULA AFEGIDA CORRECTAMENT --");
         }
 
         public static void modificarAula(CapaDomini CD) {
+            Scanner scanner = new Scanner(System.in);
 
+            System.out.println("ID de l'aula:");
+            String id = scanner.nextLine();
+
+            CD.modificarAula(id);
         }
 
         public static void eliminarAula(CapaDomini CD) {
+            Scanner scanner = new Scanner(System.in);
 
-    }
+            System.out.println("ID de l'aula:");
+            String id = scanner.nextLine();
+
+            CD.eliminarAula(id);
+            System.out.println("-- AULA ELIMINADA CORRECTAMENT --");
+        }
 
         /////////////////////////////////////////////////////////////////
         /// ASSIGNATURES
@@ -384,6 +420,7 @@ public class Main {
 
     // Nivell 1
     public static void escriureMenu() {
+        System.out.println("");
         System.out.println("1] Gestió Configuració");
         System.out.println("2] Generar Horari");
         System.out.println("3] Configuració");
@@ -392,6 +429,7 @@ public class Main {
 
     // Nivell 2 - [1] opció: Gestió Configuració
     public static  void escriureMenuGestioConfiguracio() {
+        System.out.println("");
         System.out.println("1] Configuració Aules");
         //System.out.println("2] Configuració Nivells");
         System.out.println("2] Configuració Assignatures");
@@ -400,17 +438,19 @@ public class Main {
 
     // Nivell 3 - [1 - 1] opcionó: Menú Aules
     public static void escriureMenuAula() {
+        System.out.println("");
         System.out.println("1] Llistar Aules Disponibles");
-        System.out.println("2] Crear Aula");
-        System.out.println("2] Modificar Aula");
+        System.out.println("2] Afegir Aula");
+        System.out.println("3] Modificar Aula");
         System.out.println("4] Eliminar Aula");
         System.out.println("5] Enrere");
     }
 
     // Nivell 3 - [1 - 3] opció: Menú Assignatures
     public static void escriureMenuAssignatura() {
+        System.out.println("");
         System.out.println("1] Llistar Assignatures Disponibles");
-        System.out.println("2] Crear Assignatura");
+        System.out.println("2] Afegir Assignatura");
         System.out.println("3] Modificar Assignatura");
         System.out.println("4] Eliminar Assignatura");
         System.out.println("5] Enrere");
@@ -418,6 +458,7 @@ public class Main {
 
     // Nivell 2 - [2] opció: Generar Horari
     public static  void escriureMenuGenerarHorari() {
+        System.out.println("");
         System.out.println("1] Crear Horari");
         System.out.println("2] Llistar Horari");
         System.out.println("3] Eliminar Horari");
@@ -426,6 +467,7 @@ public class Main {
 
     // Nivell 2 - [3] opció: Configuració
     public static  void escriureMenuConfiguracio() {
+        System.out.println("");
         System.out.println("1] Hora Inici / Hora Fi");
         System.out.println("2] Hora Canvi Franja");
         System.out.println("3] Enrere");
@@ -434,6 +476,7 @@ public class Main {
     // Nivell 3 - [3 - 1] opció: Hora Inici / Hora Fi
 
     public static  void escriureMenuIntervalHores() {
+        System.out.println("");
         System.out.println("1] Mostrar Hores [Inici - Fi]");
         System.out.println("2] Modificar Hora Inici");
         System.out.println("3] Modificar Hora Fi");
@@ -441,6 +484,7 @@ public class Main {
     }
 
     public static  void escriureMenuHoraCanviFranja() {
+        System.out.println("");
         System.out.println("1] Mostrar Hora Canvi Franja");
         System.out.println("2] Modificar Hora Canvi Franja");
         System.out.println("3] Enrere");
