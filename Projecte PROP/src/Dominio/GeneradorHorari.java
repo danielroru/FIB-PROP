@@ -27,7 +27,6 @@ public class GeneradorHorari {
                 do {
                     accio = scanner.nextInt();
                     if (accio == 1)
-                        configuracioAula(scanner, pe);
                         configuracioAula(pe);
                     else if (accio == 2)
                         configuracioNivell(pe);
