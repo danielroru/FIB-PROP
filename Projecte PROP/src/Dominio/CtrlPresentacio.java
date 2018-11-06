@@ -3,11 +3,11 @@ package Dominio;
 public class CtrlPresentacio {
 
     private CtrlDomini CD;
-    private CtrlDominiAula CA;
+    private CtrlDominiAula CDaula;
 
     public CtrlPresentacio() {
         CD = new CtrlDomini();
-        CA = CD.getCtrlDominiAula();
+        CDaula = CD.getCtrlDominiAula();
     }
 
     public void iniciControlador() {

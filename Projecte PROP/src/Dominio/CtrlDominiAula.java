@@ -50,4 +50,14 @@ public class CtrlDominiAula {
     }
 
 
+    Aula.TipusAula tipus = null;
+    int numTipusAula = scanner.nextInt();
+
+        if (numTipusAula == 1 || numTipusAula == 2) {
+        tipus = numTipusAula == 1 ? Aula.TipusAula.TEORIA : Aula.TipusAula.LABORATORI;
+    }
+
+        CD.afegirAula(id, capacitat, tipus);
+        System.out.println("-- AULA AFEGIDA CORRECTAMENT --");
+
 }
