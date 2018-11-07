@@ -7,7 +7,7 @@ import java.util.*;
 public class CtrlPresentacioAula {
 
     private VistaAula vAula;
-    private CtrlDominiAula CDaula;
+    private CtrlDominiAula cdAula;
 
     ////////////////////////////////////////////////////////////////////
     ///// CONSTRUCTORES
@@ -15,7 +15,7 @@ public class CtrlPresentacioAula {
 
     CtrlPresentacioAula (CtrlDominiAula c) {
         vAula = new VistaAula();
-        CDaula = c;
+        cdAula = c;
     }
 
     ////////////////////////////////////////////////////////////////////
@@ -25,7 +25,7 @@ public class CtrlPresentacioAula {
     public void gestioAules() throws Exception {
 
         int accio = -1;
-        while (accio != 0) {
+        while (accio != 5) {
             accio = vAula.getOpcioMenu();
 
             switch (accio) {
@@ -56,7 +56,7 @@ public class CtrlPresentacioAula {
     private void llistarAules() throws Exception {
         vAula.mostrarMissatge("- Llistar Aules");
 
-        Vector<String> dades = CDaula.llistarAules();
+        Vector<String> dades = cdAula.llistarAules();
         vAula.llistarAules(dades);
     }
 
@@ -77,7 +77,7 @@ public class CtrlPresentacioAula {
         String tipusAula = tipus == 1 ? "Teoria" : "Laboratori";
         dades.add(tipusAula);
 
-        int codiError = CDaula.afegirAula(id, dades);
+        int codiError = cdAula.afegirAula(id, dades);
 
         switch (codiError) {
             case 0:
@@ -100,7 +100,7 @@ public class CtrlPresentacioAula {
 
         String id = vAula.getID();
 
-        Vector<String> aula = CDaula.getAula(id);
+        Vector<String> aula = cdAula.getAula(id);
 
         vAula.mostrarMissatge("Paràmetre a modificar:");
 
@@ -129,7 +129,7 @@ public class CtrlPresentacioAula {
 
         aula.set(accio-1, modificar);
 
-        CDaula.modificarAula(id, aula);
+        cdAula.modificarAula(id, aula);
     }
 
     private void eliminarAula() throws Exception {
@@ -137,7 +137,7 @@ public class CtrlPresentacioAula {
 
         String id = vAula.getID();
 
-        int codiError = CDaula.eliminarAula(id);
+        int codiError = cdAula.eliminarAula(id);
 
         switch (codiError) {
             case 0:

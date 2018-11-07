@@ -9,12 +9,15 @@ public class VistaAula {
     private int numOpcionsMenu = 5;
     private int numOpcionsModificar = 3;
 
+    ////////////////////////////////////////////////////////////////////
+    ///// PRINT
+    ////////////////////////////////////////////////////////////////////
+
     private void mostrarMenu() throws Exception {
 
         io.writeln("");
 
-        String missatge = "Menú Gestió Aules";
-        mostrarMissatge(missatge);
+        mostrarMissatge("Menú Gestió Aules");
 
         io.writeln("    1] Llistar Aules Disponibles");
         io.writeln("    2] Afegir Aula");
@@ -66,7 +69,7 @@ public class VistaAula {
 
 
     ////////////////////////////////////////////////////////////////////
-    ///// GETS
+    ///// GETTERS
     ////////////////////////////////////////////////////////////////////
 
     public int getOpcioMenu() throws Exception {

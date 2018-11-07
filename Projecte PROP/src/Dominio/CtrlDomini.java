@@ -2,13 +2,19 @@ package Dominio;
 
 public class CtrlDomini {
 
-    private CtrlDominiAula CDaula;
+    private CtrlDominiAula cdAula;
+    private CtrlDominiPlaEstudis cdPlaEstudis;
 
     public CtrlDomini() {
-        CDaula = new CtrlDominiAula();
+        cdAula = new CtrlDominiAula();
+        cdPlaEstudis = new CtrlDominiPlaEstudis();
     }
 
     public CtrlDominiAula getCtrlDominiAula() {
-        return CDaula;
+        return cdAula;
+    }
+
+    public CtrlDominiPlaEstudis getCdPlaEstudis() {
+        return cdPlaEstudis;
     }
 }
