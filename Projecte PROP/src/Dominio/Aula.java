@@ -1,3 +1,5 @@
+// Marc Casellas
+
 package Dominio;
 
 
@@ -7,13 +9,12 @@ public class Aula {
         ATRIBUTS
     -------------------------------------------------------------------------- */
 
-    public enum TipusAula {
-        LABORATORI, TEORIA
-    }
-
     private String id;
     private int capacitat;
-    private TipusAula tipus;
+
+    // 1 -> Teoria
+    // 0 -> Laboratori
+    private String tipusAula;
 
     /* --------------------------------------------------------------------------
         MÈTODES
@@ -26,10 +27,10 @@ public class Aula {
     // Constructora per defecte
     public Aula() { }
 
-    public Aula(String id, int capacitat, TipusAula tipus) {
+    public Aula(String id, int capacitat, String tipusAula) {
         this.id = id;
         this.capacitat = capacitat;
-        this.tipus = tipus;
+        this.tipusAula = tipusAula;
     }
 
     ////////////////////////////////////////////////////////////////////
@@ -44,23 +45,26 @@ public class Aula {
         return this.capacitat;
     }
 
-    public TipusAula getTipusAula() {
-        return this.tipus;
+    public String getTipusAula() {
+        return tipusAula;
     }
 
     ////////////////////////////////////////////////////////////////////
     ///// MODIFICADORES
     ////////////////////////////////////////////////////////////////////
 
-    public void setId(String id) {
+    public boolean setId(String id) {
         this.id = id;
+        return true;
     }
 
-    public void setCapacitat(int capacitat) {
+    public boolean setCapacitat(int capacitat) {
         this.capacitat = capacitat;
+        return true;
     }
 
-    public void setTipus(TipusAula tipus) {
-        this.tipus = tipus;
+    public boolean setTipusAula (String tipusAula) {
+        this.tipusAula = tipusAula;
+        return true;
     }
 }

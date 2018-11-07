@@ -1,7 +1,8 @@
+// Marc Casellas
+
 package Dominio;
 
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class CtrlDominiAula {
 
@@ -12,19 +13,44 @@ public class CtrlDominiAula {
     /////////////////////////////////////////////////////////////////
 
     public CtrlDominiAula() {
-        Aules = new Map<String, Aula>();
+        Aules = new HashMap<String, Aula>();
     }
 
     /////////////////////////////////////////////////////////////////
     /// CONSULTORES
     /////////////////////////////////////////////////////////////////
 
-    public List<Aula> llistarAules() {
-        List<Aula> resultat = new List<>(Aules.values());
+    public Vector<String> llistarAules() {
+
+        Vector<String> resultat = new Vector<String>();
+
+        Set<String> m = Aules.keySet();
+        Iterator<String> it = ((Set) m).iterator();
+        while(it.hasNext()){
+            String id = (String) it.next();
+            Aula a = Aules.get(id);
+            resultat.add(id);
+            resultat.add(String.valueOf(a.getCapacitat()));
+            resultat.add(a.getTipusAula());
+        }
         return resultat;
+
     }
 
-    public boolean existeixAula(String id) {
+    public Vector<String> getAula(String id) {
+
+        Vector<String> resultat = new Vector<String>();
+
+        Aula a = Aules.get(id);
+        resultat.add(id);
+        resultat.add(String.valueOf(a.getCapacitat()));
+        resultat.add(a.getTipusAula());
+
+        return resultat;
+
+    }
+
+    private boolean existeixAula(String id) {
         return Aules.containsKey(id);
     }
 
@@ -32,32 +58,56 @@ public class CtrlDominiAula {
     /// MODIFICADORES
     /////////////////////////////////////////////////////////////////
 
-    public int void afegirAula(String id, int capacitat, Aula.TipusAula tipus) {
+    public int afegirAula(String id, Vector<String> dades) {
 
-        if (!existeixAula(id)) {
-            Aula a = new Aula(id, capacitat, tipus);
+        if (existeixAula(id)) return 1;
+
+        else {
+            if (id != dades.get(0)) return 2;
+
+            else {
+                Aula a = new Aula();
+                if (!a.setId(id)) return -1;
+                if (!a.setCapacitat(Integer.valueOf(dades.get(1)))) return -1;
+                if (!a.setTipusAula(dades.get(2))) return -1;
+
+                Aules.put(id, a);
+            }
+        }
+
+        return 0;
+    }
+
+    public int modificarAula(String id, Vector<String> dades) {
+
+        if (!existeixAula(id)) return 1;
+
+        else {
+            Aula a = Aules.get(id);
+
+            a.setId(dades.get(0));
+            a.setCapacitat(Integer.valueOf(dades.get(1)));
+            a.setTipusAula(dades.get(2));
+
+            if (id != a.getId()) {
+                Aules.remove(id);
+                id = dades.get(0);
+            }
+
             Aules.put(id, a);
         }
 
+        return 0;
     }
 
-    public void modificarAula(String id) {
+    public int eliminarAula(String id) {
 
+        if (!existeixAula(id)) return 1;
+
+        else {
+            Aules.remove(id);
+        }
+
+        return 0;
     }
-
-    public void eliminarAula(String id) {
-        Aules.remove(id);
-    }
-
-
-    Aula.TipusAula tipus = null;
-    int numTipusAula = scanner.nextInt();
-
-        if (numTipusAula == 1 || numTipusAula == 2) {
-        tipus = numTipusAula == 1 ? Aula.TipusAula.TEORIA : Aula.TipusAula.LABORATORI;
-    }
-
-        CD.afegirAula(id, capacitat, tipus);
-        System.out.println("-- AULA AFEGIDA CORRECTAMENT --");
-
 }
