@@ -25,7 +25,7 @@ public class CtrlPresentacioAula {
     public void gestioAules() throws Exception {
 
         int accio = -1;
-        while (accio != 5) {
+        while (accio !=VistaAula.getNumOpcionsMenu()) {
             accio = vAula.getOpcioMenu();
 
             switch (accio) {
@@ -104,28 +104,29 @@ public class CtrlPresentacioAula {
 
         vAula.mostrarMissatge("Paràmetre a modificar:");
 
-        vAula.modificarAules(aula);
-
+        int accio = -1;
         String modificar = null;
+        while (accio != VistaAula.getNumOpcionsModificar()) {
+            vAula.modificarAules(aula);
 
-        int accio = vAula.getOpcioModificar();
+            accio = vAula.getOpcioModificar();
 
-        switch (accio) {
-            case 1:
-                modificar = vAula.getID();
-                break;
-            case 2:
-                int capacitat = vAula.getCapacitat();
-                modificar = String.valueOf(capacitat);
-                break;
-            case 3:
-                int tipus = vAula.getTipus();
-                modificar = tipus == 1 ? "Teoria" : "Laboratori";
-                break;
-            default:
-                break;
+            switch (accio) {
+                case 1:
+                    modificar = vAula.getID();
+                    break;
+                case 2:
+                    int capacitat = vAula.getCapacitat();
+                    modificar = String.valueOf(capacitat);
+                    break;
+                case 3:
+                    int tipus = vAula.getTipus();
+                    modificar = tipus == 1 ? "Teoria" : "Laboratori";
+                    break;
+                default:
+                    break;
+            }
         }
-
 
         aula.set(accio-1, modificar);
 

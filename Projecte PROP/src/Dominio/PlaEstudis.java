@@ -6,9 +6,10 @@ public class PlaEstudis {
     ///// ATRIBUTS
     ////////////////////////////////////////////////////////////////////
 
-    private int horaFi;
-    private int horaCanviFranja;
-    private int horaInici;
+    private static int horaInici;
+    private static int horaFi;
+    private static int horaCanviFranja;
+
 
     ////////////////////////////////////////////////////////////////////
     ///// CONSTRUCTORES
@@ -28,15 +29,15 @@ public class PlaEstudis {
     ///// GETTERS
     ////////////////////////////////////////////////////////////////////
 
-    public int getHoraInici() {
+    public static int getHoraInici() {
         return horaInici;
     }
 
-    public int getHoraFi() {
+    public static int getHoraFi() {
         return horaFi;
     }
 
-    public int getHoraCanviFranja() {
+    public static int getHoraCanviFranja() {
         return horaCanviFranja;
     }
 

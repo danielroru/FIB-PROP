@@ -9,6 +9,7 @@ public class VistaPlaEstudis {
     private inout io = new inout();
 
     private int numOpcionsMenu = 3;
+    private int numOpcionsMenuFinestraHoraria = 4;
 
     public void mostrarMissatge(String missatge) throws Exception {
         io.writeln(missatge);
@@ -34,6 +35,21 @@ public class VistaPlaEstudis {
 
     }
 
+    private void mostrarMenuFinestraHoraria() throws Exception {
+
+        io.writeln("");
+
+        mostrarMissatge("Menú Gestió Pla d'Estudis");
+
+        io.writeln("    1] Mostrar Finestra horaria [Inici - Fi]");
+        io.writeln("    2] Modificar Hora Inici");
+        io.writeln("    3] Modificar Hora Fi");
+        io.writeln("    4] Enrere");
+
+        io.writeln("");
+
+    }
+
 
     public int getOpcioMenu() throws Exception {
         int valor = 0;
@@ -45,7 +61,7 @@ public class VistaPlaEstudis {
         return valor;
     }
 
-    public void mostrarHores(Vector<int> dades) throws Exception {
+    public void mostrarHores(Vector<Integer> dades) throws Exception {
         int mida = dades.size();
 
         if (mida == 0) io.writeln("Encara no s'han establit les hores");

@@ -6,8 +6,25 @@ public class VistaAula {
 
     private inout io = new inout();
 
-    private int numOpcionsMenu = 5;
-    private int numOpcionsModificar = 3;
+    private static int numOpcionsMenu;
+    private static int numOpcionsModificar;
+
+    public static int getNumOpcionsMenu() {
+        return numOpcionsMenu;
+    }
+
+    public static int getNumOpcionsModificar() {
+        return numOpcionsModificar;
+    }
+
+    ////////////////////////////////////////////////////////////////////
+    ///// CONSTRUCTORA
+    ////////////////////////////////////////////////////////////////////
+
+    public void VistaAula() {
+        numOpcionsMenu = 0;
+        numOpcionsModificar = 0;
+    }
 
     ////////////////////////////////////////////////////////////////////
     ///// PRINT
@@ -19,11 +36,11 @@ public class VistaAula {
 
         mostrarMissatge("Menú Gestió Aules");
 
-        io.writeln("    1] Llistar Aules Disponibles");
-        io.writeln("    2] Afegir Aula");
-        io.writeln("    3] Modificar Aula");
-        io.writeln("    4] Eliminar Aula");
-        io.writeln("    5] Enrere");
+        io.writeln("    1] Llistar Aules Disponibles"); ++numOpcionsMenu;
+        io.writeln("    2] Afegir Aula"); ++numOpcionsMenu;
+        io.writeln("    3] Modificar Aula"); ++numOpcionsMenu;
+        io.writeln("    4] Eliminar Aula"); ++numOpcionsMenu;
+        io.writeln("    5] Enrere"); ++numOpcionsMenu;
 
         io.writeln("");
 
@@ -36,9 +53,9 @@ public class VistaAula {
         else {
             for (int i = 0; i < mida; i += 3) {
                 io.writeln("");
-                io.writeln("    1] Id:         " + dades.get(i));
-                io.writeln("    2] Capacitat:  " + dades.get(i + 1));
-                io.writeln("    3] Tipus:      " + dades.get(i + 2));
+                io.writeln("    1] Id:         " + dades.get(i)); ++numOpcionsModificar;
+                io.writeln("    2] Capacitat:  " + dades.get(i + 1)); ++numOpcionsModificar;
+                io.writeln("    3] Tipus:      " + dades.get(i + 2)); ++numOpcionsModificar;
             }
         }
     }
