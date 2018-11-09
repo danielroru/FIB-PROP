@@ -26,7 +26,7 @@ public class ConjuntAssignatures {
     }
 
     public Set<Assignatura> getNivell(Integer nombre) {
-        return = cjtNivell.get(nombre);
+        return cjtNivell.get(nombre);
     }
 
     // Modificadores
