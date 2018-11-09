@@ -4,7 +4,6 @@ public class Sessio {
 
     // Atributs
 
-    private int id;
     private String nomAssig;
     private int idGrup;
     private int duracio;
@@ -27,9 +26,6 @@ public class Sessio {
 
     // Consultores
 
-    public int getId() {
-        return this.id;
-    }
 
     public String getNomAssig() {
         return this.nomAssig;
@@ -48,10 +44,6 @@ public class Sessio {
     }
 
     // Modificadores
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public void setNomAssig(String nomAssig) {
         this.nomAssig = nomAssig;

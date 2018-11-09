@@ -3,23 +3,32 @@ import java.util.*;
 
 public class CtrlDomini {
 
-    public Set<Sessio> transfAssigSessio(ConjuntAssignatures cjtAssig) {
-        Set<Sessio> cjtSessio = new HashSet<>();
-        for (Assignatura a : cjtAssig.getConjuntAssignatures()) {
+    private static HashSet<Sessio> sessionsTeoria;
+    private static HashSet<Sessio> sessionsLaboratori;
+    private static HashSet<Sessio> sessionsProblemes;
+
+    public static void crearSessions(Set<Assignatura> cjtAssig) {
+
+        sessionsTeoria = new HashSet<Sessio>();
+        sessionsLaboratori = new HashSet<Sessio>();
+        sessionsProblemes = new HashSet<Sessio>();
+
+
+        for (Assignatura a : cjtAssig) {
             for(int i = 1; i <= a.getnGrupsT(); ++i) {
                 Sessio sT = new Sessio();
                 sT.setNomAssig(a.getNom());
                 sT.setIdGrup(i * 10);
                 sT.setDuracio(a.getnHoresT());
                 sT.setTipus(Enumeracio.TipusSessio.TEORIA);
-                cjtSessio.add(sT);
+                sessionsTeoria.add(sT);
                 for (int j = 1; j <= a.getnGrupsL(); ++j) {
                     Sessio sL = new Sessio();
                     sL.setNomAssig(a.getNom());
                     sL.setIdGrup(i * 10 + j);
                     sL.setDuracio(a.getnHoresL());
                     sL.setTipus(Enumeracio.TipusSessio.LABORATORI);
-                    cjtSessio.add(sL);
+                    sessionsLaboratori.add(sL);
                 }
                 for (int j = 1; j <= a.getnGrupsP(); ++j) {
                     Sessio sP = new Sessio();
@@ -27,11 +36,10 @@ public class CtrlDomini {
                     sP.setIdGrup(i * 10 + j);
                     sP.setDuracio(a.getnHoresP());
                     sP.setTipus(Enumeracio.TipusSessio.PROBLEMES);
-                    cjtSessio.add(sP);
+                    sessionsProblemes.add(sP);
                 }
             }
         }
-        return cjtSessio;
     }
 
 }
