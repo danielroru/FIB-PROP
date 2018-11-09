@@ -14,10 +14,6 @@ public class UAH {
     // Constructores
 
     public UAH() {
-        this.id = 0;
-        this.idAssig = 0;
-        this.idAula = 0;
-        this.idHora = 0;
     }
 
     public UAH(int id, int idAssig, int idAula, int idHora) {

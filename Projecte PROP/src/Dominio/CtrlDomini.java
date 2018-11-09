@@ -3,12 +3,12 @@ import java.util.*;
 
 public class CtrlDomini {
 
-    public Set<Sessio> transfAssigSessio(ConjuntAssignatures cjtAssig) {
-        Set<Assignatura> cjtAssignatures = new HashSet<>();
+    public Set<Sessio> crearSessions(ConjuntAssignatures cjtAssig) {
+
         Set<Sessio> cjtSessio = new HashSet<>();
-        cjtAssignatures = cjtAssig.getConjuntAssignatures();
+
         int i = 1;
-        for (Assignatura a : cjtAssignatures) {
+        for (Assignatura a : cjtAssig.getConjuntAssignatures()) {
             Sessio sT = new Sessio();
             sT.setNomAssig(a.getNom());
             sT.setIdGrup(i*10);

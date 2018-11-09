@@ -17,11 +17,6 @@ public class ConjuntAules {
         MÈTODES
     -------------------------------------------------------------------------- */
 
-    public List<Aula> llistarAules() {
-        List<Aula> resultat = new ArrayList<>(conjuntAules.values());
-        return resultat;
-    }
-
     public Map<String,Aula> getConjuntAules() {
         return this.conjuntAules;
     }

@@ -26,9 +26,7 @@ public class ConjuntAssignatures {
     }
 
     public Set<Assignatura> getNivell(Integer nombre) {
-        Set<Assignatura> nivell = new HashSet<>();
-        nivell = cjtNivell.get(nombre);
-        return nivell;
+        return = cjtNivell.get(nombre);
     }
 
     // Modificadores
