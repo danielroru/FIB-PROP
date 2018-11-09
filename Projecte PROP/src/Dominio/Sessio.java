@@ -5,7 +5,7 @@ public class Sessio {
     // Atributs
 
     private int id;
-    private int idAssig;
+    private String nomAssig;
     private int idGrup;
     private int duracio;
     private Enumeracio.TipusSessio tipus;
@@ -18,9 +18,8 @@ public class Sessio {
 
     }
 
-    public Sessio(int id, int idAssig, int idGrup, int duracio, Enumeracio.TipusSessio tipus) {
-        this.id = id;
-        this.idAssig = idAssig;
+    public Sessio(int id, String nomAssig, int idGrup, int duracio, Enumeracio.TipusSessio tipus) {
+        this.nomAssig = nomAssig;
         this.idGrup = idGrup;
         this.duracio = duracio;
         this.tipus = tipus;
@@ -32,8 +31,8 @@ public class Sessio {
         return this.id;
     }
 
-    public int getIdAssig() {
-        return this.idAssig;
+    public String getNomAssig() {
+        return this.nomAssig;
     }
 
     public int getIdGrup() {
@@ -54,8 +53,8 @@ public class Sessio {
         this.id = id;
     }
 
-    public void setIdAssig(int idAssig) {
-        this.idAssig = idAssig;
+    public void setNomAssig(String nomAssig) {
+        this.nomAssig = nomAssig;
     }
 
     public void setIdGrup(int idGrup) {
