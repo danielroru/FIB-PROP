@@ -1,5 +1,13 @@
 package Dominio;
 
+import JSON.JSONArray;
+import JSON.JSONObject;
+import JSON.parser.JSONParser;
+import JSON.parser.ParseException;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.*;
 
 public class ConjuntAules {
@@ -34,7 +42,4 @@ public class ConjuntAules {
         this.conjuntAules.put(a.getId(), a);
     }
 
-    public void afegirAules() {
-
-    }
 }

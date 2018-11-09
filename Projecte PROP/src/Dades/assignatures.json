@@ -12,11 +12,9 @@
     "nGrupsP": 4,
 
     "nGrupsMati": 4,
-    "nGrupsTarda": 3,
-
     "horesBlocT": 2,
     "horesBlocL": 2,
-    "horesBlocP": 1,
+    "horesBlocP": 1
   },
   {
     "nom": "EC",
@@ -31,11 +29,10 @@
     "nGrupsP": 0,
 
     "nGrupsMati": 1,
-    "nGrupsTarda": 1,
 
     "horesBlocT": 2,
     "horesBlocL": 1,
-    "horesBlocP": 0,
+    "horesBlocP": 0
   },
   {
     "nom": "IC",
@@ -50,11 +47,10 @@
     "nGrupsP": 4,
 
     "nGrupsMati": 4,
-    "nGrupsTarda": 3,
 
     "horesBlocT": 2,
     "horesBlocL": 2,
-    "horesBlocP": 1,
+    "horesBlocP": 1
   }
   {
     "nom": "AC",
@@ -69,11 +65,10 @@
     "nGrupsP": 3,
 
     "nGrupsMati": 2,
-    "nGrupsTarda": 1,
 
     "horesBlocT": 2,
     "horesBlocL": 1,
-    "horesBlocP": 1,
+    "horesBlocP": 1
   }
 ]
 

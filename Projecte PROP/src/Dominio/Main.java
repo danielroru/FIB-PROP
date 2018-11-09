@@ -57,9 +57,8 @@ public class Main {
 
     private static void escriureMenuPrincipal() {
         System.out.println("");
-        System.out.println("1] Gestió Configuració");
-        System.out.println("2] Generar Horari");
-        System.out.println("3] Gestió Pla d'Estudis");
+        System.out.println("1] Generar Horari");
+        System.out.println("2] Mostrar Horari");
         System.out.println("0] Sortir de l'aplicació");
     }
 
@@ -101,6 +100,19 @@ public class Main {
 
             }
 
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+
+        try {
+
+
             JSONArray arrayAssignatures = (JSONArray) parser.parse(new FileReader("./src/Dades/assignatures.json"));
 
             for (int i = 0; i < arrayAssignatures.size(); i++) {
@@ -123,7 +135,6 @@ public class Main {
 
 
                 a.setnGrupsMati((int) (long) jsonObject.get("nGrupsMati"));
-                a.setnGrupsTarda((int) (long) jsonObject.get("nGrupsTarda"));
 
                 a.setHoresBlocT((int) (long) jsonObject.get("horesBlocT"));
                 a.setHoresBlocL((int) (long) jsonObject.get("horesBlocL"));
