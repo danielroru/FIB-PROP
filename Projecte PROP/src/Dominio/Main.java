@@ -19,7 +19,7 @@ public class Main {
             accio = scanner.nextInt();
             switch (accio) {
                 case 1:
-                    configuracioAules(CD);
+                    //configuracioAules(CD);
                     break;
                 case 2:
                     configuracioAssignatures(CD);
@@ -39,7 +39,7 @@ public class Main {
         /////////////////////////////////////////////////////////////////
 
         // Gestió
-
+        /*
         public static void configuracioAules(CapaDomini CD) {
             Scanner scanner = new Scanner(System.in);
             boolean on = true;
@@ -70,9 +70,10 @@ public class Main {
                 }
             }
         }
-
+        */
         // Operacions
 
+        /*
         public static void llistarAules(CapaDomini CD) {
             System.out.println("Llista d'aules:");
             System.out.println(" ");
@@ -141,7 +142,7 @@ public class Main {
             CD.eliminarAula(id);
             System.out.println("-- AULA ELIMINADA CORRECTAMENT --");
         }
-
+        */
         /////////////////////////////////////////////////////////////////
         /// ASSIGNATURES
         /////////////////////////////////////////////////////////////////
@@ -469,6 +470,8 @@ public class Main {
     }
 
     public static void main(String[] args) {
+        PlaEstudis pe = new PlaEstudis();
+        ConjuntRestriccions ConjuntRestriccions = new ConjuntRestriccions();
         CapaDomini CD = new CapaDomini();
         Scanner scanner = new Scanner(System.in);
 

@@ -22,6 +22,13 @@ public class ConjuntAules {
         return resultat;
     }
 
+    public Map<String,Aula> getConjuntAules() {
+        return this.conjuntAules;
+    }
+
+    public void setConjuntAules(Map<String, Aula> cjtAules) {
+        this.conjuntAules = cjtAules;
+    }
 
     public void afegirAula(String id, int capacitat, Aula.TipusAula tipus) {
         Aula a = new Aula(id, capacitat, tipus);

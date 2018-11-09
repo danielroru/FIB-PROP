@@ -44,7 +44,7 @@ public class Sessio {
         return this.duracio;
     }
 
-    public int getTipus() {
+    public Enumeracio.TipusSessio getTipus() {
         return this.tipus;
     }
 
@@ -66,7 +66,7 @@ public class Sessio {
         this.duracio = duracio;
     }
 
-    public void setTipus(TipusSessio tipus) {
+    public void setTipus(Enumeracio.TipusSessio tipus) {
         this.tipus = tipus;
     }
 }

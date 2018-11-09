@@ -3,10 +3,9 @@ package Dominio;
 import java.util.*;
 
 public class PlaEstudis {
-    private ConjuntAssignatures ConjuntAssignatures = new ConjuntAssignatures();
-
+    private ConjuntAssignatures cjtAssignatures = new ConjuntAssignatures();
+    private ConjuntAules cjtAules = new ConjuntAules();
     // Atributs2
-    private Set<String> setAssignatures = new HashSet<String>();
     private int horaInici;
     private int horaFi;
     private int horaCanviFranja;
@@ -36,62 +35,50 @@ public class PlaEstudis {
 //        this.nAula = nAula;
     }
 
-    // Consultores
+    // Hora Inici, Fi, Canvi Franja.
 
+    // Consultores
     public int getHoraInici() {
         return horaInici;
     }
-
     public int getHoraFi() {
         return horaFi;
     }
-
     public int getHoraCanviFranja() {
         return horaCanviFranja;
     }
 
-    public int getNAssignatures() {
-        return setAssignatures.size();
-    }
-/*
-    public int getNAula() {
-        return nAula;
-    }
-
-    public int getNNivell() {
-        return nNivell;
-    }
-*/
 
     // Modificadores
-
     public void setHoraInici(int hora) {
         this.horaInici = hora;
     }
-
     public void setHoraFi(int hora) {
         this.horaFi = hora;
     }
-
     public void setHoraCanviFranja(int hora) {
         this.horaCanviFranja = hora;
     }
 
-    public void addAssignatura(String nom) {
-        setAssignatures.add(nom);
+
+    // Conjunt Aules
+
+    // Conjunt Assignatures
+    public Set<Assignatura> getCjtAssig() {
+        return this.cjtAssignatures.getConjuntAssignatures();
     }
 
-    // Otros Métodos
-
-
-
-
-
-/*
-    void crearAssignatura() {
-        Assignatura as = GeneradorHorari.crearAssignatura(this);
-        setAssignatures.add(as.getNom());
-        if (setAssignatures.contains(as.getNom())) System.out.println("El PE conté "+ as.getNom());
+    public void setCjtAssignatures(ConjuntAssignatures cjtAssignatures) {
+        this.cjtAssignatures = cjtAssignatures;
     }
-*/
+
+    // Conjunt Aula
+    public  Map<String,Aula> getCjtAules() {
+        return this.cjtAules.getConjuntAules();
+    }
+
+    public void setCjtAules(Map<String,Aula> cjtAssig) {
+        this.cjtAules = cjtAules;
+    }
+
 }
