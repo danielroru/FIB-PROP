@@ -25,33 +25,52 @@ public class PlaEstudis {
 */
 
 
+    // Consultores
     public int getHoraInici() {
         return horaInici;
     }
-
     public int getHoraFi() {
         return horaFi;
     }
-
     public int getHoraCanviFranja() {
         return horaCanviFranja;
     }
 
+
+    // Modificadores
     public void setHoraInici(int hora) {
         this.horaInici = hora;
     }
-
     public void setHoraFi(int hora) {
         this.horaFi = hora;
     }
-
     public void setHoraCanviFranja(int hora) {
         this.horaCanviFranja = hora;
     }
 
+
+    // Conjunt Aules
+
     public void afegirAula(Aula a) {
         cjtAules.afegirAula(a);
     }
+    
+    // Conjunt Assignatures
+    public Set<Assignatura> getCjtAssig() {
+        return this.cjtAssignatures.getConjuntAssignatures();
+    }
 
+    public void setCjtAssignatures(ConjuntAssignatures cjtAssignatures) {
+        this.cjtAssignatures = cjtAssignatures;
+    }
+
+    // Conjunt Aula
+    public  Map<String,Aula> getCjtAules() {
+        return this.cjtAules.getConjuntAules();
+    }
+
+    public void setCjtAules(Map<String,Aula> cjtAssig) {
+        this.cjtAules = cjtAules;
+    }
 
 }

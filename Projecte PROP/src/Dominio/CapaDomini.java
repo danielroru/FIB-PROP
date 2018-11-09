@@ -4,6 +4,7 @@ import java.util.*;
 
 public class CapaDomini {
 
+    /*
     private PlaEstudis pe = new PlaEstudis();
     private ConjuntAules conjuntAules = new ConjuntAules();
     private ConjuntRestriccions ConjuntRestriccions = new ConjuntRestriccions();
@@ -14,7 +15,18 @@ public class CapaDomini {
 
 
 
+<<<<<<< HEAD
+    public void modificarAula(String id) {
+        conjuntAules.modificarAula(id);
+    }
 
+    public void eliminarAula(String id) {
+        conjuntAules.eliminarAula(id);
+    }
+    */
+=======
+
+>>>>>>> 667ed0551a4d9dbc069cc04cb44ab1d981bc9823
 
     // Per eliminar
     // -------------------// -------------------// -------------------// -------------------// -------------------
@@ -223,6 +235,11 @@ public class CapaDomini {
 
         return as;
     }
-
+    /*
+    public Set<Sessio> crearSessions() {
+        Set<Sessio> cjtSessions = new HashSet<>();
+        Set<Assignatura> cjtAssig = pe.get();
+    }
+    */
 
 }
