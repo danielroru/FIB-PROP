@@ -1,5 +1,12 @@
 package Dominio;
+import JSON.JSONArray;
+import JSON.JSONObject;
+import JSON.parser.JSONParser;
+import JSON.parser.ParseException;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.*;
 
 
@@ -26,7 +33,9 @@ public class ConjuntAssignatures {
     }
 
     public Set<Assignatura> getNivell(Integer nombre) {
-        return cjtNivell.get(nombre);
+        Set<Assignatura> nivell = new HashSet<>();
+        nivell = cjtNivell.get(nombre);
+        return nivell;
     }
 
     // Modificadores

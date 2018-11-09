@@ -60,8 +60,8 @@ public class PlaEstudis {
     }
     
     // Conjunt Assignatures
-    public ConjuntAssignatures getConjuntAssignatures() {
-        return cjtAssignatures;
+    public Set<Assignatura> getCjtAssig() {
+        return this.cjtAssignatures.getConjuntAssignatures();
     }
 
     public void setCjtAssignatures(ConjuntAssignatures cjtAssignatures) {
@@ -69,8 +69,8 @@ public class PlaEstudis {
     }
 
     // Conjunt Aula
-    public ConjuntAules getConjuntAules() {
-        return cjtAules;
+    public  Map<String,Aula> getCjtAules() {
+        return this.cjtAules.getConjuntAules();
     }
 
     public void setCjtAules(Map<String,Aula> cjtAssig) {

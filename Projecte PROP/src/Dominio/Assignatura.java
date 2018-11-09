@@ -14,22 +14,15 @@ public class Assignatura {
     private int nGrupsL;
     private int nGrupsP;
 
+    // Grups de matí/tarda
+    private int nGrupsMati;
+
     // Agrupació de blocs
     private int horesBlocT;
     private int horesBlocL;
     private int horesBlocP;
 
-    // Capacitat grups
-    private int nAlumnesT;
-    private int nAlumnesL;
-    private int nAlumnesP;
-
-    // Grups de matí/tarda
-    private int nGrupsMati;
-
     private int nivell;
-
-    ConjuntAssignatures correquisits;
 
     // Mètodes
 
@@ -40,8 +33,8 @@ public class Assignatura {
     }
     // Constructora amb nivell
     public Assignatura(String nom, int nHoresT, int nHoresL, int nHoresP,
-                       int nGrupsT, int nGrupsL, int nGrupsP, int nAlumnesT, int nAlumnesL, int nAlumnesP,
-                       int nGrupsMati, int horesBlocT, int horesBlocL, int horesBlocP, int nivell, ConjuntAssignatures correquisits) {
+                       int nGrupsT, int nGrupsL, int nGrupsP, int nGrupsTarda,
+                       int nGrupsMati, int horesBlocT, int horesBlocL, int horesBlocP, int nivell) {
 
         this.nom = nom;
 
@@ -50,15 +43,10 @@ public class Assignatura {
         this.nHoresL = nHoresL;
         this.nHoresP = nHoresP;
 
-        // Alumnes
+        // Quantitat de grups
         this.nGrupsT = nGrupsT;
         this.nGrupsL = nGrupsL; // Respecte el número de grups
         this.nGrupsP = nGrupsP; // Respecte el número de grups
-
-        // Quantitat de grups
-        this.nAlumnesT = nAlumnesT;
-        this.nAlumnesL = nAlumnesL;
-        this.nAlumnesP = nAlumnesP;
 
         // Quantitat grups matí
         this.nGrupsMati = nGrupsMati;
@@ -67,10 +55,7 @@ public class Assignatura {
         this.horesBlocT = horesBlocT;
         this.horesBlocL = horesBlocL;
         this.horesBlocP = horesBlocP;
-
-
         this.nivell = nivell;
-        this.correquisits = correquisits;
     }
 
     public Assignatura(Assignatura as) {
@@ -87,11 +72,6 @@ public class Assignatura {
         this.nGrupsL = as.getnGrupsL(); // Respecte el número de grups
         this.nGrupsP = as.getnGrupsP(); // Respecte el número de grups
 
-        // Capacitat
-        this.nAlumnesT = as.getnAlumnesT();
-        this.nAlumnesL = as.getnAlumnesL();
-        this.nAlumnesP = as.getnAlumnesP();
-
         // Quantitat grups matí
         this.nGrupsMati = as.getnGrupsMati();
 
@@ -101,7 +81,6 @@ public class Assignatura {
         this.horesBlocP = as.getHoresBlocP();
 
         this.nivell = as.getNivell();
-        this.correquisits = as.getCorrequisits();
     }
 
     // Consultores
@@ -123,6 +102,7 @@ public class Assignatura {
         return this.nHoresP;
     }
 
+
     public int getnGrupsT() {
         return this.nGrupsT;
     }
@@ -133,18 +113,6 @@ public class Assignatura {
 
     public int getnGrupsP() {
         return this.nGrupsP;
-    }
-
-    public int getnAlumnesT() {
-        return nAlumnesT;
-    }
-
-    public int getnAlumnesL() {
-        return nAlumnesL;
-    }
-
-    public int getnAlumnesP() {
-        return nAlumnesP;
     }
 
     public int getnGrupsTarda() { return this.nGrupsT-this.nGrupsMati; }
@@ -159,8 +127,6 @@ public class Assignatura {
 
     public int getNivell() {return this.nivell; }
 
-    public ConjuntAssignatures getCorrequisits() { return this.correquisits; }
-
 
 
     //Modificadores
@@ -168,6 +134,7 @@ public class Assignatura {
     public void setNom(String nom) {
         this.nom = nom;
     }
+
 
     public void setnHoresT(int nHoresT) {
         this.nHoresT = nHoresT;
@@ -180,6 +147,7 @@ public class Assignatura {
     public void setnHoresP(int nHoresP) {
         this.nHoresP = nHoresP;
     }
+
 
     public void setnGrupsT(int nGrupsT) {
         this.nGrupsT = nGrupsT;
@@ -212,18 +180,4 @@ public class Assignatura {
     public void setNivell(int nivell) {
         this.nivell = nivell;
     }
-
-    public void setnAlumnesT(int nAlumnesT) {
-        this.nAlumnesT = nAlumnesT;
-    }
-
-    public void setnAlumnesL(int nAlumnesL) {
-        this.nAlumnesL = nAlumnesL;
-    }
-
-    public void setnAlumnesP(int nAlumnesP) {
-        this.nAlumnesP = nAlumnesP;
-    }
-
-    public void setCorrequisits(ConjuntAssignatures correquisits) {this.correquisits = correquisits; }
 }

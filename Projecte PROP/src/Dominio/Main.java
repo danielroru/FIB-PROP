@@ -19,23 +19,28 @@ public class Main {
     /// GENERAR HORARI
     /////////////////////////////////////////////////////////////////
 
-    private static void menuPrincipal() throws Exception {
+    private void menuGenerarHorari() {
+        Scanner scanner = new Scanner(System.in);
+        boolean on = true;
+        int accio;
 
-        inout io = new inout();
-
-        int accio = -1;
-
-        while (accio != 0) {
-            escriureMenuPrincipal();
-            accio = io.readint();
+        while (on) {
+            accio = scanner.nextInt();
             switch (accio) {
                 case 1:
-                    generarHorari();
+
                     break;
                 case 2:
-                    mostrarHorari();
+
+                    break;
+                case 3:
+
+                    break;
+                case 4:
+                    on = false;
                     break;
                 default:
+                    escriureError(1);
                     break;
             }
         }
@@ -51,9 +56,6 @@ public class Main {
 
 
     private static void escriureMenuPrincipal() {
-        System.out.println("////////////////////////////////");
-        System.out.println("//  Menú principal");
-        System.out.println("////////////////////////////////");
         System.out.println("");
         System.out.println("1] Generar Horari");
         System.out.println("2] Mostrar Horari");
@@ -68,7 +70,7 @@ public class Main {
         }
     }
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
 
         PlaEstudis pe = new PlaEstudis();
 
@@ -88,15 +90,16 @@ public class Main {
                 Integer capacitat = (int) (long) jsonObject.get("capacitat");
                 String tipus = (String) jsonObject.get("tipus");
 
-
-                Enumeracio.TipusAula tAula = tipus.equals("TEORIA") ? Enumeracio.TipusAula.TEORIA : Enumeracio.TipusAula.LABORATORI;
+                Enumeracio.TipusAula tAula = tipus == "TEORIA" ? Enumeracio.TipusAula.TEORIA : Enumeracio.TipusAula.LABORATORI;
 
                 a.setId(id);
                 a.setCapacitat(capacitat);
                 a.setTipus(tAula);
 
                 pe.afegirAula(a);
+
             }
+
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -142,36 +145,12 @@ public class Main {
             }
 
 
-        }
-        catch (FileNotFoundException e) {
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
             e.printStackTrace();
         }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
-        catch (ParseException e) {
-            e.printStackTrace();
-        }
-
-        try {
-
-            JSONObject ObjectPlaEstudis = (JSONObject) parser.parse(new FileReader("./src/Dades/plaestudis.json"));
-
-            pe.setHoraInici((int) (long) ObjectPlaEstudis.get("horaInici"));
-            pe.setHoraFi((int) (long) ObjectPlaEstudis.get("horaFi"));
-            pe.setHoraCanviFranja((int) (long) ObjectPlaEstudis.get("horaCanviFranja"));
-
-        }
-        catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
-        catch (ParseException e) {
-            e.printStackTrace();
-        }
-
-        menuPrincipal();
     }
 }
