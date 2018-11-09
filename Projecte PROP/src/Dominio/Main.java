@@ -19,28 +19,22 @@ public class Main {
     /// GENERAR HORARI
     /////////////////////////////////////////////////////////////////
 
-    private void menuGenerarHorari() {
-        Scanner scanner = new Scanner(System.in);
-        boolean on = true;
-        int accio;
+    private void menuPrincipal() {
 
-        while (on) {
-            accio = scanner.nextInt();
+        inout io = new inout();
+
+        int accio = -1;
+
+        while (!accio) {
+            escriureMenuPrincipal();
             switch (accio) {
                 case 1:
-
+                    generarHorari();
                     break;
                 case 2:
-
-                    break;
-                case 3:
-
-                    break;
-                case 4:
-                    on = false;
+                    mostrarHorari();
                     break;
                 default:
-                    escriureError(1);
                     break;
             }
         }
@@ -90,16 +84,16 @@ public class Main {
                 Integer capacitat = (int) (long) jsonObject.get("capacitat");
                 String tipus = (String) jsonObject.get("tipus");
 
-                Enumeracio.TipusAula tAula = tipus == "TEORIA" ? Enumeracio.TipusAula.TEORIA : Enumeracio.TipusAula.LABORATORI;
+                System.out.println(tipus);
+
+                Enumeracio.TipusAula tAula = tipus.equals("TEORIA") ? Enumeracio.TipusAula.TEORIA : Enumeracio.TipusAula.LABORATORI;
 
                 a.setId(id);
                 a.setCapacitat(capacitat);
                 a.setTipus(tAula);
 
                 pe.afegirAula(a);
-
             }
-
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -145,12 +139,17 @@ public class Main {
             }
 
 
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
+        }
+        catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        menuPrincipal();
     }
 }
