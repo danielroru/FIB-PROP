@@ -89,17 +89,48 @@ public class Main {
                 JSONObject jsonObject = (JSONObject) arrayAules.get(i);
 
                 String id = (String) jsonObject.get("id");
-
                 Integer capacitat = (int) (long) jsonObject.get("capacitat");
-
                 String tipus = (String) jsonObject.get("tipus");
+
+                Enumeracio.TipusAula tAula = tipus == "TEORIA" ? Enumeracio.TipusAula.TEORIA : Enumeracio.TipusAula.LABORATORI;
 
                 a.setId(id);
                 a.setCapacitat(capacitat);
-                Enumeracio.TipusAula tAula = tipus == "TEORIA" ? Enumeracio.TipusAula.TEORIA : Enumeracio.TipusAula.LABORATORI;
                 a.setTipus(tAula);
 
                 pe.afegirAula(a);
+
+            }
+
+            JSONArray arrayAssignatures = (JSONArray) parser.parse(new FileReader("./src/Dades/assignatures.json"));
+
+            for (int i = 0; i < arrayAssignatures.size(); i++) {
+
+                Assignatura a = new Assignatura();
+
+                JSONObject jsonObject = (JSONObject) arrayAssignatures.get(i);
+
+                a.setNom((String) jsonObject.get("nom"));
+
+                a.setNivell((int) (long) jsonObject.get("nivell"));
+
+                a.setnHoresT((int) (long) jsonObject.get("nHoresT"));
+                a.setnHoresL((int) (long) jsonObject.get("nHoresL"));
+                a.setnHoresP((int) (long) jsonObject.get("nHoresP"));
+
+                a.setnGrupsT((int) (long) jsonObject.get("nGrupsT"));
+                a.setnGrupsL((int) (long) jsonObject.get("nGrupsL"));
+                a.setnGrupsP((int) (long) jsonObject.get("nGrupsP"));
+
+
+                a.setnGrupsMati((int) (long) jsonObject.get("nGrupsMati"));
+                a.setnGrupsTarda((int) (long) jsonObject.get("nGrupsTarda"));
+
+                a.setHoresBlocT((int) (long) jsonObject.get("horesBlocT"));
+                a.setHoresBlocL((int) (long) jsonObject.get("horesBlocL"));
+                a.setHoresBlocP((int) (long) jsonObject.get("horesBlocP"));
+
+                pe.afegirAssignatura(a);
 
             }
 

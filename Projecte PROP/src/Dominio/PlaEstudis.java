@@ -54,6 +54,10 @@ public class PlaEstudis {
     public void afegirAula(Aula a) {
         cjtAules.afegirAula(a);
     }
+
+    public void afegirAssignatura(Assignatura a) {
+        cjtAssignatures.afegirAssignatura(a);
+    }
     
     // Conjunt Assignatures
     public Set<Assignatura> getCjtAssig() {

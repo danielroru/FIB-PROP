@@ -43,7 +43,7 @@ public class ConjuntAssignatures {
 
     // Afegir Assignatura
 
-    public void addAssignatura(Assignatura assig) {
+    public void afegirAssignatura(Assignatura assig) {
         this.cjtAssignatures.add(assig);
         Set<Assignatura> nivell = cjtNivell.get(assig.getNivell());
         if (nivell == null) {

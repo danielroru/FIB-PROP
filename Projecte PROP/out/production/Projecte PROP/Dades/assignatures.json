@@ -57,22 +57,22 @@
     "horesBlocP": 1,
   }
   {
-    "nom": "F",
-    "nivell" : 1,
+    "nom": "AC",
+    "nivell" : 4,
 
     "nHoresT": 2,
-    "nHoresL": 2,
+    "nHoresL": 1,
     "nHoresP": 1,
 
-    "nGrupsT": 7,
-    "nGrupsL": 4,
-    "nGrupsP": 4,
+    "nGrupsT": 3,
+    "nGrupsL": 3,
+    "nGrupsP": 3,
 
-    "nGrupsMati": 4,
-    "nGrupsTarda": 3,
+    "nGrupsMati": 2,
+    "nGrupsTarda": 1,
 
     "horesBlocT": 2,
-    "horesBlocL": 2,
+    "horesBlocL": 1,
     "horesBlocP": 1,
   }
 ]
