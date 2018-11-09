@@ -4,10 +4,10 @@ public class UAH {
 
     // Atributs
 
-    private int id;
     private int idAssig;
     private int idAula;
     private int idHora;
+    private Enumeracio.Dia dia;
 
     // Mètodes
 
@@ -16,18 +16,14 @@ public class UAH {
     public UAH() {
     }
 
-    public UAH(int id, int idAssig, int idAula, int idHora) {
-        this.id = id;
+    public UAH(int idAssig, int idAula, int idHora, Enumeracio.Dia dia) {
         this.idAssig = idAssig;
         this.idAula = idAula;
         this.idHora = idHora;
+        this.dia = dia;
     }
 
     // Consultores
-
-    public int getId() {
-        return this.id;
-    }
 
     public int GetIdAssig() {
         return this.idAssig;
@@ -41,11 +37,11 @@ public class UAH {
         return this.idHora;
     }
 
-    // Modificadores
-
-    public void setId(int id) {
-        this.id = id;
+    public Enumeracio.Dia getDia() {
+        return dia;
     }
+
+    // Modificadores
 
     public void setIdAssig(int idAssig) {
         this.idAssig = idAssig;
@@ -57,5 +53,9 @@ public class UAH {
 
     public void setIdHora(int idHora) {
         this.idHora = idHora;
+    }
+
+    public void setDia(Enumeracio.Dia dia) {
+        this.dia = dia;
     }
 }
