@@ -17,6 +17,7 @@ public class CapaDomini {
         conjuntAules.afegirAula(id,capacitat,tipus);
     }
 
+<<<<<<< HEAD
     public void modificarAula(String id) {
         conjuntAules.modificarAula(id);
     }
@@ -25,6 +26,9 @@ public class CapaDomini {
         conjuntAules.eliminarAula(id);
     }
     */
+=======
+
+>>>>>>> 667ed0551a4d9dbc069cc04cb44ab1d981bc9823
 
     // Per eliminar
     // -------------------// -------------------// -------------------// -------------------// -------------------

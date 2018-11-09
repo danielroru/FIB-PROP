@@ -35,12 +35,7 @@ public class ConjuntAules {
         this.conjuntAules.put(id, a);
     }
 
-    public void modificarAula(String id) {
+    public void afegirAules() {
 
-    }
-
-
-    public void eliminarAula(String id) {
-            this.conjuntAules.remove(id);
     }
 }
