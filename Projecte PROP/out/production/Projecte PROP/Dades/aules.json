@@ -13,10 +13,10 @@
     "id": "A6101",
     "capacitat" : 60,
     "tipus": "TEORIA"
-  }
+  },
   {
-    "id": "A6101",
-    "capacitat" : 60,
-    "tipus": "TEORIA"
+    "id": "C6S03",
+    "capacitat" : 50,
+    "tipus": "LABORATORI"
   }
 ]

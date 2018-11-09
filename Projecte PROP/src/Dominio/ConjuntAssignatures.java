@@ -1,4 +1,12 @@
 package Dominio;
+import JSON.JSONArray;
+import JSON.JSONObject;
+import JSON.parser.JSONParser;
+import JSON.parser.ParseException;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.*;
 
 
@@ -43,7 +51,7 @@ public class ConjuntAssignatures {
 
     // Afegir Assignatura
 
-    public void addAssignatura(Assignatura assig) {
+    public void afegirAssignatura(Assignatura assig) {
         this.cjtAssignatures.add(assig);
         Set<Assignatura> nivell = cjtNivell.get(assig.getNivell());
         if (nivell == null) {
@@ -56,5 +64,7 @@ public class ConjuntAssignatures {
             cjtNivell.put(assig.getNivell(), nivell);
         }
     }
+
+
 
 }

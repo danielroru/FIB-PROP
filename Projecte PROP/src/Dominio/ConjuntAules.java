@@ -1,5 +1,13 @@
 package Dominio;
 
+import JSON.JSONArray;
+import JSON.JSONObject;
+import JSON.parser.JSONParser;
+import JSON.parser.ParseException;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.*;
 
 public class ConjuntAules {
@@ -30,12 +38,8 @@ public class ConjuntAules {
         this.conjuntAules = cjtAules;
     }
 
-    public void afegirAula(String id, int capacitat, Aula.TipusAula tipus) {
-        Aula a = new Aula(id, capacitat, tipus);
-        this.conjuntAules.put(id, a);
+    public void afegirAula(Aula a) {
+        this.conjuntAules.put(a.getId(), a);
     }
 
-    public void afegirAules() {
-
-    }
 }

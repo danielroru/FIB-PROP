@@ -3,39 +3,27 @@ package Dominio;
 import java.util.*;
 
 public class PlaEstudis {
-    private ConjuntAssignatures cjtAssignatures = new ConjuntAssignatures();
-    private ConjuntAules cjtAules = new ConjuntAules();
-    // Atributs2
+
+    private ConjuntAssignatures cjtAssignatures;
+    private ConjuntAules cjtAules;
+
     private int horaInici;
     private int horaFi;
     private int horaCanviFranja;
 
-    // Mètodes
-
-    // Constructores
-
-    /*
-     Constructora de PlaEstudis
-     * @param horaInici
-     * @param horaFi
-     * @param horaCanviFranja
-     * @param nNivell
-     * @param nAula
-     */
 
     public PlaEstudis(){
-
+        cjtAssignatures = new ConjuntAssignatures();
+        cjtAules = new ConjuntAules();
     }
-
+/*
     public PlaEstudis(int horaInici, int horaFi, int horaCanviFranja) {
         this.horaInici = horaInici;
         this.horaFi = horaFi;
         this.horaCanviFranja = horaCanviFranja;
-//        this.nNivell = nNivell;
-//        this.nAula = nAula;
     }
+*/
 
-    // Hora Inici, Fi, Canvi Franja.
 
     // Consultores
     public int getHoraInici() {
@@ -63,6 +51,14 @@ public class PlaEstudis {
 
     // Conjunt Aules
 
+    public void afegirAula(Aula a) {
+        cjtAules.afegirAula(a);
+    }
+
+    public void afegirAssignatura(Assignatura a) {
+        cjtAssignatures.afegirAssignatura(a);
+    }
+    
     // Conjunt Assignatures
     public Set<Assignatura> getCjtAssig() {
         return this.cjtAssignatures.getConjuntAssignatures();

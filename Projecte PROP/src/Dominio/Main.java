@@ -4,210 +4,14 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 
 import java.io.IOException;
-import java.util.Iterator;
 import java.util.Scanner;
-
-<<<<<<< HEAD
-public class Main {
-
-    /////////////////////////////////////////////////////////////////
-    /// MENÚ GESTIÓ CONFIGURACIÓ
-    /////////////////////////////////////////////////////////////////
-
-    public static void menuGestioConfiguracio(CapaDomini CD) {
-        Scanner scanner = new Scanner(System.in);
-        boolean on = true;
-        int accio;
-
-        while (on) {
-            escriureMenuGestioConfiguracio();
-            accio = scanner.nextInt();
-            switch (accio) {
-                case 1:
-                    //configuracioAules(CD);
-                    break;
-                case 2:
-                    configuracioAssignatures(CD);
-                    break;
-                case 3:
-                    on = false;
-                    break;
-                default:
-                    escriureError(1);
-                    break;
-            }
-        }
-    }
-=======
->>>>>>> 667ed0551a4d9dbc069cc04cb44ab1d981bc9823
 
 import JSON.JSONArray;
 import JSON.JSONObject;
 import JSON.parser.JSONParser;
 import JSON.parser.ParseException;
 
-<<<<<<< HEAD
-        // Gestió
-        /*
-        public static void configuracioAules(CapaDomini CD) {
-            Scanner scanner = new Scanner(System.in);
-            boolean on = true;
-            int accio;
 
-            while (on) {
-                escriureMenuAula();
-                accio = scanner.nextInt();
-                switch (accio) {
-                    case 1:
-                        llistarAules(CD);
-                        break;
-                    case 2:
-                        afegirAula(CD);
-                        break;
-                    case 3:
-                        modificarAula(CD);
-                        break;
-                    case 4:
-                        eliminarAula(CD);
-                        break;
-                    case 5:
-                        on = false;
-                        break;
-                    default:
-                        escriureError(1);
-                        break;
-                }
-            }
-        }
-        */
-        // Operacions
-
-        /*
-        public static void llistarAules(CapaDomini CD) {
-            System.out.println("Llista d'aules:");
-            System.out.println(" ");
-
-            int nTeoria = 0;
-            int nLaboratori = 0;
-
-            for(Aula a : CD.llistarAules()){
-                Aula.TipusAula tipus = a.getTipusAula();
-                System.out.println("    ID:         " + a.getId());
-                System.out.println("    Capacitat:  " + a.getCapacitat());
-                System.out.println("    Tipus:      " + tipus);
-                System.out.println(" ");
-
-                if (tipus == Aula.TipusAula.TEORIA) {
-                    nTeoria++;
-                }
-                else {
-                    nLaboratori++;
-                }
-            }
-
-            System.out.println("    Número de classes de teoria:  " + nTeoria);
-            System.out.println("    Número de classes de laboratori: " + nLaboratori);
-            System.out.println(" ");
-        }
-
-        public static void afegirAula(CapaDomini CD) {
-            Scanner scanner = new Scanner(System.in);
-
-            System.out.println("ID de l'aula:");
-            String id = scanner.nextLine();
-            System.out.println("Capacitat de l'aula:");
-            int capacitat = scanner.nextInt();
-
-            System.out.println("Tipus de l'aula:");
-            System.out.println("    Teoria      -> 1");
-            System.out.println("    Laboratori  -> 2");
-
-            Aula.TipusAula tipus = null;
-            int numTipusAula = scanner.nextInt();
-
-            if (numTipusAula == 1 || numTipusAula == 2) {
-                tipus = numTipusAula == 1 ? Aula.TipusAula.TEORIA : Aula.TipusAula.LABORATORI;
-            }
-
-            CD.afegirAula(id, capacitat, tipus);
-            System.out.println("-- AULA AFEGIDA CORRECTAMENT --");
-        }
-
-        public static void modificarAula(CapaDomini CD) {
-            Scanner scanner = new Scanner(System.in);
-
-            System.out.println("ID de l'aula:");
-            String id = scanner.nextLine();
-
-            CD.modificarAula(id);
-        }
-
-        public static void eliminarAula(CapaDomini CD) {
-            Scanner scanner = new Scanner(System.in);
-
-            System.out.println("ID de l'aula:");
-            String id = scanner.nextLine();
-
-            CD.eliminarAula(id);
-            System.out.println("-- AULA ELIMINADA CORRECTAMENT --");
-        }
-        */
-        /////////////////////////////////////////////////////////////////
-        /// ASSIGNATURES
-        /////////////////////////////////////////////////////////////////
-
-        // Gestió
-
-        public static void configuracioAssignatures(CapaDomini CD) {
-            Scanner scanner = new Scanner(System.in);
-            boolean on = true;
-            int accio;
-
-            while (on) {
-                escriureMenuAssignatura();
-                accio = scanner.nextInt();
-                switch (accio) {
-                    case 1:
-                        llistarAssignatures(CD);
-                        break;
-                    case 2:
-                        afegirAssignatura(CD);
-                        break;
-                    case 3:
-                        modificarAssignatura(CD);
-                        break;
-                    case 4:
-                        eliminarAssignatura(CD);
-                        break;
-                    case 5:
-                        on = false;
-                        break;
-                    default:
-                        escriureError(1);
-                        break;
-                }
-            }
-        }
-
-        // Operacions
-
-        public static void llistarAssignatures(CapaDomini CD) {
-
-        }
-
-        public static void afegirAssignatura(CapaDomini CD) {
-
-        }
-
-        public static void modificarAssignatura(CapaDomini CD) {
-
-        }
-
-        public static void eliminarAssignatura(CapaDomini CD) {
-
-        }
-=======
->>>>>>> 667ed0551a4d9dbc069cc04cb44ab1d981bc9823
 
 public class Main {
 
@@ -253,9 +57,8 @@ public class Main {
 
     private static void escriureMenuPrincipal() {
         System.out.println("");
-        System.out.println("1] Gestió Configuració");
-        System.out.println("2] Generar Horari");
-        System.out.println("3] Gestió Pla d'Estudis");
+        System.out.println("1] Generar Horari");
+        System.out.println("2] Mostrar Horari");
         System.out.println("0] Sortir de l'aplicació");
     }
 
@@ -268,29 +71,32 @@ public class Main {
     }
 
     public static void main(String[] args) {
-<<<<<<< HEAD
+
         PlaEstudis pe = new PlaEstudis();
-        ConjuntRestriccions ConjuntRestriccions = new ConjuntRestriccions();
-        CapaDomini CD = new CapaDomini();
-        Scanner scanner = new Scanner(System.in);
-=======
+
         JSONParser parser = new JSONParser();
->>>>>>> 667ed0551a4d9dbc069cc04cb44ab1d981bc9823
+
 
         try {
             JSONArray arrayAules = (JSONArray) parser.parse(new FileReader("./src/Dades/aules.json"));
 
             for (int i = 0; i < arrayAules.size(); i++) {
+
+                Aula a = new Aula();
+
                 JSONObject jsonObject = (JSONObject) arrayAules.get(i);
 
                 String id = (String) jsonObject.get("id");
-                System.out.println("id: " + id);
-
                 Integer capacitat = (int) (long) jsonObject.get("capacitat");
-                System.out.println("capacitat: " + capacitat);
-
                 String tipus = (String) jsonObject.get("tipus");
-                System.out.println("tipus: " + tipus);
+
+                Enumeracio.TipusAula tAula = tipus == "TEORIA" ? Enumeracio.TipusAula.TEORIA : Enumeracio.TipusAula.LABORATORI;
+
+                a.setId(id);
+                a.setCapacitat(capacitat);
+                a.setTipus(tAula);
+
+                pe.afegirAula(a);
 
             }
 
@@ -304,5 +110,47 @@ public class Main {
         }
 
 
+        try {
+
+
+            JSONArray arrayAssignatures = (JSONArray) parser.parse(new FileReader("./src/Dades/assignatures.json"));
+
+            for (int i = 0; i < arrayAssignatures.size(); i++) {
+
+                Assignatura a = new Assignatura();
+
+                JSONObject jsonObject = (JSONObject) arrayAssignatures.get(i);
+
+                a.setNom((String) jsonObject.get("nom"));
+
+                a.setNivell((int) (long) jsonObject.get("nivell"));
+
+                a.setnHoresT((int) (long) jsonObject.get("nHoresT"));
+                a.setnHoresL((int) (long) jsonObject.get("nHoresL"));
+                a.setnHoresP((int) (long) jsonObject.get("nHoresP"));
+
+                a.setnGrupsT((int) (long) jsonObject.get("nGrupsT"));
+                a.setnGrupsL((int) (long) jsonObject.get("nGrupsL"));
+                a.setnGrupsP((int) (long) jsonObject.get("nGrupsP"));
+
+
+                a.setnGrupsMati((int) (long) jsonObject.get("nGrupsMati"));
+
+                a.setHoresBlocT((int) (long) jsonObject.get("horesBlocT"));
+                a.setHoresBlocL((int) (long) jsonObject.get("horesBlocL"));
+                a.setHoresBlocP((int) (long) jsonObject.get("horesBlocP"));
+
+                pe.afegirAssignatura(a);
+
+            }
+
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
     }
 }

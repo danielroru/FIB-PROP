@@ -7,13 +7,9 @@ public class Aula {
         ATRIBUTS
     -------------------------------------------------------------------------- */
 
-    public enum TipusAula {
-        LABORATORI, TEORIA
-    }
-
     private String id;
     private int capacitat;
-    private TipusAula tipus;
+    private Enumeracio.TipusAula tipus;
 
     /* --------------------------------------------------------------------------
         MÈTODES
@@ -26,7 +22,7 @@ public class Aula {
     // Constructora per defecte
     public Aula() { }
 
-    public Aula(String id, int capacitat, TipusAula tipus) {
+    public Aula(String id, int capacitat, Enumeracio.TipusAula tipus) {
         this.id = id;
         this.capacitat = capacitat;
         this.tipus = tipus;
@@ -44,7 +40,7 @@ public class Aula {
         return this.capacitat;
     }
 
-    public TipusAula getTipusAula() {
+    public Enumeracio.TipusAula getTipusAula() {
         return this.tipus;
     }
 
@@ -60,7 +56,7 @@ public class Aula {
         this.capacitat = capacitat;
     }
 
-    public void setTipus(TipusAula tipus) {
+    public void setTipus(Enumeracio.TipusAula tipus) {
         this.tipus = tipus;
     }
 }
