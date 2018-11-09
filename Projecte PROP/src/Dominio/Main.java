@@ -1,6 +1,17 @@
 package Dominio;
 
-import java.util.*;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+
+import java.io.IOException;
+import java.util.Iterator;
+import java.util.Scanner;
+
+
+import JSON.JSONArray;
+import JSON.JSONObject;
+import JSON.parser.JSONParser;
+import JSON.parser.ParseException;
 
 
 public class Main {
@@ -62,26 +73,34 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        JSONParser parser = new JSONParser();
 
-        int accio = -1;
+        try {
+            JSONArray arrayAules = (JSONArray) parser.parse(new FileReader("./src/Dades/aules.json"));
 
-        while (accio != 0) {
-            System.out.println("Indica el valor de l'operació:");
-            escriureMenuPrincipal();
-            accio = scanner.nextInt();
+            for (int i = 0; i < arrayAules.size(); i++) {
+                JSONObject jsonObject = (JSONObject) arrayAules.get(i);
 
-            switch (accio) {
-                case 1:
-                    generarHorari();
-                    break;
-                case 2:
-                    mostrarHorari();
-                    break;
-                default:
-                    escriureError(1);
-                    break;
+                String id = (String) jsonObject.get("id");
+                System.out.println("id: " + id);
+
+                Integer capacitat = (int) (long) jsonObject.get("capacitat");
+                System.out.println("capacitat: " + capacitat);
+
+                String tipus = (String) jsonObject.get("tipus");
+                System.out.println("tipus: " + tipus);
+
             }
+
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
         }
+
+
     }
 }
