@@ -5,20 +5,10 @@ public class Sessio {
     // Atributs
 
     private int id;
-    private int horaInici;
-    private int horaFi;
-
-    public enum Dia {
-        dilluns, dimarts, dimecres, dijous, divendres
-    }
-
-    Dia dia;
-
-    public enum Tipus {
-        teoria, laboratori, problemes
-    }
-
-    Tipus tipus;
+    private int idAssig;
+    private int idGrup;
+    private int duracio;
+    private Enumeracio.TipusSessio tipus;
 
     // Mètodes
 
@@ -28,12 +18,12 @@ public class Sessio {
 
     }
 
-    public Sessio(int id, String tipus, String dia, int horaInici, int horaFi) {
+    public Sessio(int id, int idAssig, int idGrup, int duracio, Enumeracio.TipusSessio tipus) {
         this.id = id;
-        this.horaInici = horaInici;
-        this.horaFi = horaFi;
-        this.dia = Dia.valueOf(dia);
-        this.tipus = Tipus.valueOf(tipus);
+        this.idAssig = idAssig;
+        this.idGrup = idGrup;
+        this.duracio = duracio;
+        this.tipus = tipus;
     }
 
     // Consultores
@@ -42,19 +32,19 @@ public class Sessio {
         return this.id;
     }
 
-    public int getHoraInici() {
-        return this.horaInici;
+    public int getIdAssig() {
+        return this.idAssig;
     }
 
-    public int getHoraFi() {
-        return this.horaFi;
+    public int getIdGrup() {
+        return this.idGrup;
     }
 
-    public Dia getDia() {
-        return this.dia;
+    public int getDuracio() {
+        return this.duracio;
     }
 
-    public Tipus getProblemes() {
+    public int getTipus() {
         return this.tipus;
     }
 
@@ -62,5 +52,21 @@ public class Sessio {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public void setIdAssig(int idAssig) {
+        this.idAssig = idAssig;
+    }
+
+    public void setIdGrup(int idGrup) {
+        this.idGrup = idGrup;
+    }
+
+    public void setDuracio(int duracio) {
+        this.duracio = duracio;
+    }
+
+    public void setTipus(TipusSessio tipus) {
+        this.tipus = tipus;
     }
 }
