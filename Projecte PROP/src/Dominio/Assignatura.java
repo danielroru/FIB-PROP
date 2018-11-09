@@ -29,6 +29,8 @@ public class Assignatura {
 
     private int nivell;
 
+    ConjuntAssignatures correquisits;
+
     // Mètodes
 
     // Constructores
@@ -39,7 +41,7 @@ public class Assignatura {
     // Constructora amb nivell
     public Assignatura(String nom, int nHoresT, int nHoresL, int nHoresP,
                        int nGrupsT, int nGrupsL, int nGrupsP, int nAlumnesT, int nAlumnesL, int nAlumnesP,
-                       int nGrupsMati, int horesBlocT, int horesBlocL, int horesBlocP, int nivell) {
+                       int nGrupsMati, int horesBlocT, int horesBlocL, int horesBlocP, int nivell, ConjuntAssignatures correquisits) {
 
         this.nom = nom;
 
@@ -68,6 +70,7 @@ public class Assignatura {
 
 
         this.nivell = nivell;
+        this.correquisits = correquisits;
     }
 
     public Assignatura(Assignatura as) {
@@ -98,6 +101,7 @@ public class Assignatura {
         this.horesBlocP = as.getHoresBlocP();
 
         this.nivell = as.getNivell();
+        this.correquisits = as.getCorrequisits();
     }
 
     // Consultores
@@ -154,6 +158,8 @@ public class Assignatura {
     public int getHoresBlocP() {return  this.horesBlocP; }
 
     public int getNivell() {return this.nivell; }
+
+    public ConjuntAssignatures getCorrequisits() { return this.correquisits; }
 
 
 
@@ -218,4 +224,6 @@ public class Assignatura {
     public void setnAlumnesP(int nAlumnesP) {
         this.nAlumnesP = nAlumnesP;
     }
+
+    public void setCorrequisits(ConjuntAssignatures correquisits) {this.correquisits = correquisits; }
 }
