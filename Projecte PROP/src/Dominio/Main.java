@@ -73,22 +73,32 @@ public class Main {
     }
 
     public static void main(String[] args) {
+
+        PlaEstudis pe = new PlaEstudis();
+
         JSONParser parser = new JSONParser();
 
         try {
             JSONArray arrayAules = (JSONArray) parser.parse(new FileReader("./src/Dades/aules.json"));
 
             for (int i = 0; i < arrayAules.size(); i++) {
+
+                Aula a = new Aula();
+
                 JSONObject jsonObject = (JSONObject) arrayAules.get(i);
 
                 String id = (String) jsonObject.get("id");
-                System.out.println("id: " + id);
 
                 Integer capacitat = (int) (long) jsonObject.get("capacitat");
-                System.out.println("capacitat: " + capacitat);
 
                 String tipus = (String) jsonObject.get("tipus");
-                System.out.println("tipus: " + tipus);
+
+                a.setId(id);
+                a.setCapacitat(capacitat);
+                Enumeracio.TipusAula tAula = tipus == "TEORIA" ? Enumeracio.TipusAula.TEORIA : Enumeracio.TipusAula.LABORATORI;
+                a.setTipus(tAula);
+
+                pe.afegirAula(a);
 
             }
 
@@ -100,7 +110,5 @@ public class Main {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-
-
     }
 }

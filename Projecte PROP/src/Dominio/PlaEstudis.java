@@ -3,40 +3,27 @@ package Dominio;
 import java.util.*;
 
 public class PlaEstudis {
-    private ConjuntAssignatures ConjuntAssignatures = new ConjuntAssignatures();
 
-    // Atributs2
-    private Set<String> setAssignatures = new HashSet<String>();
+    private ConjuntAssignatures cjtAssignatures;
+    private ConjuntAules cjtAules;
+
     private int horaInici;
     private int horaFi;
     private int horaCanviFranja;
 
-    // Mètodes
-
-    // Constructores
-
-    /*
-     Constructora de PlaEstudis
-     * @param horaInici
-     * @param horaFi
-     * @param horaCanviFranja
-     * @param nNivell
-     * @param nAula
-     */
 
     public PlaEstudis(){
-
+        cjtAssignatures = new ConjuntAssignatures();
+        cjtAules = new ConjuntAules();
     }
-
+/*
     public PlaEstudis(int horaInici, int horaFi, int horaCanviFranja) {
         this.horaInici = horaInici;
         this.horaFi = horaFi;
         this.horaCanviFranja = horaCanviFranja;
-//        this.nNivell = nNivell;
-//        this.nAula = nAula;
     }
+*/
 
-    // Consultores
 
     public int getHoraInici() {
         return horaInici;
@@ -50,21 +37,6 @@ public class PlaEstudis {
         return horaCanviFranja;
     }
 
-    public int getNAssignatures() {
-        return setAssignatures.size();
-    }
-/*
-    public int getNAula() {
-        return nAula;
-    }
-
-    public int getNNivell() {
-        return nNivell;
-    }
-*/
-
-    // Modificadores
-
     public void setHoraInici(int hora) {
         this.horaInici = hora;
     }
@@ -77,21 +49,9 @@ public class PlaEstudis {
         this.horaCanviFranja = hora;
     }
 
-    public void addAssignatura(String nom) {
-        setAssignatures.add(nom);
+    public void afegirAula(Aula a) {
+        cjtAules.afegirAula(a);
     }
 
-    // Otros Métodos
 
-
-
-
-
-/*
-    void crearAssignatura() {
-        Assignatura as = GeneradorHorari.crearAssignatura(this);
-        setAssignatures.add(as.getNom());
-        if (setAssignatures.contains(as.getNom())) System.out.println("El PE conté "+ as.getNom());
-    }
-*/
 }

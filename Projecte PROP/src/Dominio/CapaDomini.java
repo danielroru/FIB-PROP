@@ -12,9 +12,7 @@ public class CapaDomini {
         return conjuntAules.llistarAules();
     }
 
-    public void afegirAula(String id, int capacitat, Aula.TipusAula tipus) {
-        conjuntAules.afegirAula(id,capacitat,tipus);
-    }
+
 
 
 
@@ -147,7 +145,7 @@ public class CapaDomini {
         int nAula = scanner.nextInt();
         */
 
-        PlaEstudis pe = new PlaEstudis(horaInici, horaFi, horaCanviFranja);
+        PlaEstudis pe = new PlaEstudis();
 
         System.out.println("S'ha creat el pla d'estudis\n");
 

@@ -23,9 +23,8 @@ public class ConjuntAules {
     }
 
 
-    public void afegirAula(String id, int capacitat, Aula.TipusAula tipus) {
-        Aula a = new Aula(id, capacitat, tipus);
-        this.conjuntAules.put(id, a);
+    public void afegirAula(Aula a) {
+        this.conjuntAules.put(a.getId(), a);
     }
 
     public void afegirAules() {
