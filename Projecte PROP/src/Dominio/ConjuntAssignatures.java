@@ -2,22 +2,22 @@ package Dominio;
 import java.util.*;
 
 
-public class CjtAssignatures {
+public class ConjuntAssignatures {
 
-    private Set<Assignatura> cjtAssignatures;
+    private Set<Assignatura> ConjuntAssignatures;
     private HashMap<Integer, Set<Assignatura>> cjtNivell = new HashMap<>() ;
 
     // Conjunt Assignatures
 
-    public CjtAssignatures() {
-        this.cjtAssignatures = new HashSet<>();
+    public ConjuntAssignatures() {
+        this.ConjuntAssignatures = new HashSet<>();
         this.cjtNivell = new HashMap<Integer, Set<Assignatura>>();
     }
 
     // Consultora
 
-    public Set<Assignatura> getCjtAssignatures() {
-        return this.cjtAssignatures;
+    public Set<Assignatura> getConjuntAssignatures() {
+        return this.ConjuntAssignatures;
     }
 
     public HashMap<Integer,Set<Assignatura>> getCjtNivells() {
@@ -32,8 +32,8 @@ public class CjtAssignatures {
 
     // Modificadores
 
-    public void setCjtAssig(Set<Assignatura> cjtAssignatures) {
-        this.cjtAssignatures = cjtAssignatures;
+    public void setCjtAssig(Set<Assignatura> ConjuntAssignatures) {
+        this.ConjuntAssignatures = ConjuntAssignatures;
     }
 
     public void setCjtNivells(HashMap<Integer,Set<Assignatura>> cjtNivells) {
@@ -44,7 +44,7 @@ public class CjtAssignatures {
     // Afegir Assignatura
 
     public void addAssignatura(Assignatura assig) {
-        this.cjtAssignatures.add(assig);
+        this.ConjuntAssignatures.add(assig);
         Set<Assignatura> nivell = cjtNivell.get(assig.getNivell());
         if (nivell == null) {
             Set<Assignatura> aux = new HashSet<>();
