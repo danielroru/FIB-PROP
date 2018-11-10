@@ -11,27 +11,23 @@ public class ConjuntAules {
 
     //Set<Aula> conjuntAules = new HashSet<Aula>();
 
-    private Map<String,Aula> conjuntAules = new HashMap<String,Aula>();
+    private Set<Aula> conjuntAules = new HashSet<Aula>();
 
     /* --------------------------------------------------------------------------
         MÈTODES
     -------------------------------------------------------------------------- */
 
-    public List<Aula> llistarAules() {
-        List<Aula> resultat = new ArrayList<>(conjuntAules.values());
-        return resultat;
-    }
 
-    public Map<String,Aula> getConjuntAules() {
+    public Set<Aula> getConjuntAules() {
         return this.conjuntAules;
     }
 
-    public void setConjuntAules(Map<String, Aula> cjtAules) {
+    public void setConjuntAules(Set<Aula> cjtAules) {
         this.conjuntAules = cjtAules;
     }
 
     public void afegirAula(Aula a) {
-        this.conjuntAules.put(a.getId(), a);
+        this.conjuntAules.add(a);
     }
 
 }

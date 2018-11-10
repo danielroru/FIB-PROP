@@ -69,7 +69,7 @@ public class PlaEstudis {
     }
 
     // Conjunt Aula
-    public  Map<String,Aula> getCjtAules() {
+    public  Set<Aula> getCjtAules() {
         return cjtAules.getConjuntAules();
     }
 

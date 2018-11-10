@@ -90,7 +90,7 @@ public class Main {
                 Integer capacitat = (int) (long) jsonObject.get("capacitat");
                 String tipus = (String) jsonObject.get("tipus");
 
-                Enumeracio.TipusAula tAula = tipus == "TEORIA" ? Enumeracio.TipusAula.TEORIA : Enumeracio.TipusAula.LABORATORI;
+                Enumeracio.TipusAula tAula = tipus.equals("TEORIA") ? Enumeracio.TipusAula.TEORIA : Enumeracio.TipusAula.LABORATORI;
 
                 a.setId(id);
                 a.setCapacitat(capacitat);
@@ -153,6 +153,26 @@ public class Main {
             e.printStackTrace();
         }
 
+        try {
+
+
+            JSONObject plaEstudisOjbect = (JSONObject) parser.parse(new FileReader("./src/Dades/plaEstudis.json"));
+
+            pe.setHoraInici((int) (long) plaEstudisOjbect.get("horaInici"));
+            pe.setHoraFi((int) (long) plaEstudisOjbect.get("horaFi"));
+            pe.setHoraCanviFranja((int) (long) plaEstudisOjbect.get("horaCanviFranja"));
+
+
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
         CtrlDomini.crearSessions(pe.getCjtAssig());
+        CtrlDomini.crearUAHs(pe);
     }
 }
