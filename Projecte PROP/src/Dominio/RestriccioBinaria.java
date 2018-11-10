@@ -7,7 +7,7 @@ public class RestriccioBinaria {
     public static HashSet<Sessio> arestesNivell(Sessio s) {
         HashSet<Sessio> sessionsNivell = new HashSet<>();
         Assignatura assig = CtrlDomini.getPlaEstudis().getCjtAssig().getConjuntAssignatures().get(s.getNomAssig());
-        Set<Assignatura> CjtNivells = CtrlDomini.getPlaEstudis().getCjtNivells().getNivell(assig.getNivell());
+        Set<Assignatura> CjtNivells = CtrlDomini.getPlaEstudis().getCjtNivells().get(assig.getNivell());
         for (Assignatura a : CjtNivells) {
             //Iterar per totes les sessions d'assignatures del mateix nivell que s
             for (Sessio sessio : CtrlDomini.getSessionsByIdAssig(a.getNom())) {
