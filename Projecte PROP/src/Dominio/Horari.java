@@ -11,7 +11,7 @@ public class Horari {
 
     public Horari() {}
 
-    public void addSessio(Sessio se, UAH uah) {
+    public void assigarUAH(Sessio se, UAH uah) {
         if (horari.isEmpty()) {
             horari = new HashMap<Sessio, Set<UAH>>();
         }
@@ -27,6 +27,13 @@ public class Horari {
             temp = new HashSet<>();
             temp.add(uah);
             horari.put(se,temp);
+        }
+    }
+
+    // TODO remove nomès una
+    public void eliminarUAH(Sessio se, UAH uah) {
+        if (horari.containsKey(se)) {
+            horari.values().clear();
         }
     }
 }
