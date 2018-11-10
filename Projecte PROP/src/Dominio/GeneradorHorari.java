@@ -4,12 +4,10 @@ import java.util.*;
 
 public class GeneradorHorari {
     private Graph G = new Graph();
-    private Horari solucio = new Horari();
 
+    private void iniGraf(PlaEstudis pe, ConjuntAules cjtAules) {
 
-    private static void iniGraf() {
-
-        Set<Sessio> sessions = CtrlDomini.crearSessions();
+        Set<Sessio> sessions = CtrlDomini.getSessions();
         HashMap<Sessio, Set<UAH>> vertexs = new HashMap<>();
         HashMap<Sessio, Set<Sessio>> arestes = new HashMap<>();
 
@@ -26,10 +24,32 @@ public class GeneradorHorari {
 
     }
 
-    public Horari generarHorari() {
+    private Set<UAH> getValors(Sessio s) {
+        return G.getVertexs().get(s);
+    }
 
-        iniGraf();
+    private void assignar(Sessio s, UAH uah) {
+        G.getVertexs().get(s).clear();
+        G.getVertexs().put(s, uah);
+    }
 
+    private Horari backtracking_cronologic(Queue<Sessio> vfutures, Horari solucio) {
+        if (vfutures.isEmpty())
+            return solucio;
+        else {
+            Sessio vactual = vfutures.element();
+            for (UAH uah : getValors(vactual)) {
+                assignar(vactual, uah);
+            }
+        }
+    }
+
+    public static Horari generarHorari(PlaEstudis pe, ConjuntAules cjtAules) {
+
+        iniGraf(pe, cjtAules);
+        Horari solucio = new Horari();
+        Queue<Sessio> vfutures = new Queue<Sessio>(vfutures.addAll(CtrlDomini.crearSessions()));
+        solucio = backtracking_cronologic(vfutures, solucio);
         return solucio;
 
     }
