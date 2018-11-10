@@ -2,6 +2,8 @@ package Dominio;
 
 public class Sessio {
 
+
+
     // Atributs
 
     private String nomAssig;

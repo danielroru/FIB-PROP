@@ -171,8 +171,8 @@ public class Main {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-
-        CtrlDomini.crearSessions(pe.getCjtAssig());
+        CtrlDomini.setConjuntAssignatures(pe.getCjtAssig());
+        CtrlDomini.crearSessions(pe);
         CtrlDomini.crearUAHs(pe);
     }
 }

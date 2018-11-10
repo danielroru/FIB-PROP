@@ -5,19 +5,19 @@ import java.util.*;
 
 public class ConjuntAssignatures {
 
-    private Set<Assignatura> cjtAssignatures;
+    private Map<String, Assignatura> cjtAssignatures;
     private HashMap<Integer, Set<Assignatura>> cjtNivell = new HashMap<>() ;
 
     // Conjunt Assignatures
 
     public ConjuntAssignatures() {
-        this.cjtAssignatures = new HashSet<>();
+        this.cjtAssignatures = new HashMap<String, Assignatura>();
         this.cjtNivell = new HashMap<Integer, Set<Assignatura>>();
     }
 
     // Consultora
 
-    public Set<Assignatura> getConjuntAssignatures() {
+    public Map<String, Assignatura> getConjuntAssignatures() {
         return this.cjtAssignatures;
     }
 
@@ -33,7 +33,7 @@ public class ConjuntAssignatures {
 
     // Modificadores
 
-    public void setCjtAssig(Set<Assignatura> cjtAssignatures) {
+    public void setCjtAssig(Map<String, Assignatura> cjtAssignatures) {
         this.cjtAssignatures = cjtAssignatures;
     }
 
@@ -45,7 +45,7 @@ public class ConjuntAssignatures {
     // Afegir Assignatura
 
     public void afegirAssignatura(Assignatura assig) {
-        this.cjtAssignatures.add(assig);
+        this.cjtAssignatures.get(assig);
         Set<Assignatura> nivell = cjtNivell.get(assig.getNivell());
         if (nivell == null) {
             Set<Assignatura> aux = new HashSet<>();

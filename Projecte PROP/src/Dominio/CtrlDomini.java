@@ -1,22 +1,43 @@
 package Dominio;
+import com.sun.deploy.util.SessionState;
+
 import java.util.*;
 
 public class CtrlDomini {
 
     private static HashSet<Sessio> sessions;
 
-
     private static HashSet<UAH> UAHmatins;
     private static HashSet<UAH> UAHtardes;
     private static HashSet<UAH> UAHteoria;
     private static HashSet<UAH> UAHlaboratori;
 
+    private static ConjuntAssignatures cjtAssig;
 
-    public static HashSet<Sessio> crearSessions(Set<Assignatura> cjtAssig) {
+    public static void setConjuntAssignatures(ConjuntAssignatures ca) {
+        cjtAssig = ca;
+    }
+
+    public Set<UAH> crearDomini(Sessio s) {
+        Set<UAH> result = new HashSet<UAH>();
+        result = (s.getTipus().equals(Enumeracio.TipusSessio.TEORIA)) ? UAHteoria : UAHlaboratori;
+        Assignatura as = cjtAssig.getConjuntAssignatures().get(s.getNomAssig());
+
+        result = (s.getIdGrup() < (as.getnGrupsMati()+1)*10) ? UAHmatins : UAHtardes;
+        if ((s.getTipus().equals(Enumeracio.TipusSessio.TEORIA))) result.retainAll(UAHteoria);
+        else result.retainAll(UAHlaboratori);
+
+        return result;
+
+    }
+
+    public static HashSet<Sessio> crearSessions(PlaEstudis pe) {
+
+        ConjuntAssignatures cjtAssig = pe.getCjtAssig();
 
         sessions = new HashSet<Sessio>();
 
-        for (Assignatura a : cjtAssig) {
+        for (Assignatura a : cjtAssig.getConjuntAssignatures().values()) {
             for(int i = 1; i <= a.getnGrupsT(); ++i) {
                 Sessio sT = new Sessio();
                 sT.setNomAssig(a.getNom());

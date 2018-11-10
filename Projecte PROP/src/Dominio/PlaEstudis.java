@@ -60,8 +60,8 @@ public class PlaEstudis {
     }
     
     // Conjunt Assignatures
-    public Set<Assignatura> getCjtAssig() {
-        return cjtAssignatures.getConjuntAssignatures();
+    public ConjuntAssignatures getCjtAssig() {
+        return cjtAssignatures;
     }
 
     public void setCjtAssignatures(ConjuntAssignatures cjtAssignatures) {
