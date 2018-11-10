@@ -14,6 +14,14 @@ public class CtrlDomini {
 
     private static PlaEstudis PlaE;
 
+    public static HashSet<Sessio> getSessionsByIdAssig(String idAssig) {
+        HashSet<Sessio> SessionsAssig = new HashSet<>();
+        for (Sessio s : sessions) {
+            if (s.getNomAssig() == idAssig) SessionsAssig.add(s);
+        }
+        return SessionsAssig;
+    }
+
     public static void setPlaEstudis(PlaEstudis pe) {
         PlaE = pe;
     }

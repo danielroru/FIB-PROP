@@ -16,7 +16,8 @@ public class GeneradorHorari {
             Set<UAH> domini = RestriccioUnaria.crearDomini(s);
             vertexs.put(s, domini);
             //INICIALITZACIÓ ARESTES
-            //Set<Sessio> restriccio = CtrlDomini.crearRestriccions(s);
+            Set<Sessio> arestesSessio = RestriccioBinaria.arestesNivell(s);
+            arestes.put(s, arestesSessio);
         }
 
 
