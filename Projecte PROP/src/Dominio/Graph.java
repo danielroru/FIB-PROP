@@ -30,4 +30,8 @@ public class Graph {
         this.vertexs = vertexs;
     }
 
+    public void setArestes (HashMap<Sessio, Set<Sessio>> arestes) {
+        this.arestes = arestes;
+    }
+
 }

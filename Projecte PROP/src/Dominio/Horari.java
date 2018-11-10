@@ -9,6 +9,8 @@ public class Horari {
 
     private Map<Sessio, Set<UAH>> horari;
 
+    public Horari() {}
+
     public void addSessio(Sessio se, UAH uah) {
         if (horari.isEmpty()) {
             horari = new HashMap<Sessio, Set<UAH>>();
