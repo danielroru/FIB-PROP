@@ -52,7 +52,7 @@ public class PlaEstudis {
     }
 
     public Map<Integer, Set<Assignatura>> getCjtNivells() {
-        return cjtAssignatures.getCjtNivells();
+        return cjtAssignatures.getConjuntNivells();
     }
 
     public void setCjtAssignatures(ConjuntAssignatures cjtAssignatures) {

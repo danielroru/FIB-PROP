@@ -1,5 +1,4 @@
 package Dominio;
-import com.sun.deploy.util.SessionState;
 
 import java.util.*;
 
@@ -82,11 +81,12 @@ public class CtrlDomini {
                     UAH uah = new UAH();
 
                     uah.setIdAula(a.getId());
-                    uah.setIdHora(i);
+                    uah.setHora(i);
                     uah.setDia(dia);
 
                     if (i < PlaE.getHoraCanviFranja()) UAHmatins.add(uah);
                     else UAHtardes.add(uah);
+
                     if ((a.getTipusAula()).equals(Enumeracio.TipusAula.TEORIA)) UAHteoria.add(uah);
                     else UAHlaboratori.add(uah);
                 }

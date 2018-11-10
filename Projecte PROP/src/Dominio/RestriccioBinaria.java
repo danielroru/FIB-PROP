@@ -1,28 +1,64 @@
 package Dominio;
 
+import com.sun.tools.javah.Gen;
+
 import java.util.*;
 
 public class RestriccioBinaria {
 
     public static HashSet<Sessio> arestesNivell(ConjuntAssignatures cjtAssig, Sessio s) {
-        HashSet<Sessio> sessionsNivell = new HashSet<>();
-        Assignatura assig = cjtAssig.getConjuntAssignatures().get(s.getNomAssig());
-        Map<Integer, Set<Assignatura>> CjtNivells = cjtAssig.getCjtNivells();
-        for (Set<Assignatura> sa : CjtNivells.values()) {
-            for (Assignatura a : sa) {
-                //Iterar per totes les sessions d'assignatures del mateix nivell que s
-                for (Sessio sessio : CtrlDomini.getSessionsByIdAssig(a.getNom())) {
-                    //Si la sessió és de teoria no es pot solapar amb les altres del mateix grup
-                    if (s.getIdGrup() % 10 == 0 && sessio.getIdGrup() == s.getIdGrup())
-                        sessionsNivell.add(sessio);
-                        //si la sessió és de lab no es pot solapar amb les de teoria del mateix grup ni les altres del mateix grup de lab
-                    else if (s.getIdGrup() % 10 != 0 &&
-                            ((sessio.getIdGrup() % 10 == 0 && sessio.getIdGrup() / 10 == s.getIdGrup() / 10) || (sessio.getIdGrup() == s.getIdGrup())))
-                        sessionsNivell.add(sessio);
+        HashSet<Sessio> resultat = new HashSet<>();
+
+        int NivellSessio = cjtAssig.getConjuntAssignatures().get(s.getNomAssig()).getNivell();
+
+        // Iterem per totes les assignatures del mateix nivell que s
+        for (Assignatura a : cjtAssig.getConjuntNivells().get(NivellSessio)) {
+            // Iterem per totes les sessions de totes les assignatures del nivell de s
+            for (Sessio sAssig : CtrlDomini.getSessionsByIdAssig(a.getNom())) {
+                if (s != sAssig) {
+                    // Si la sessió s és de teoria
+                    if (s.getTipus().equals(Enumeracio.TipusSessio.TEORIA)) {
+                        // Si es de teoria no es pot solapar amb el mateix grup T/L [10,11]
+                        if ((s.getIdGrup()/10) == (sAssig.getIdGrup()/10)) {
+                            resultat.add(sAssig);
+                        }
+                    }
+                    // Si és de LAB o PROB
+                    else {
+                        if (sAssig.getTipus().equals(Enumeracio.TipusSessio.TEORIA)) {
+                            if ((s.getIdGrup()/10) == (sAssig.getIdGrup()/10)) {
+                                resultat.add(sAssig);
+                            }
+                        }
+                        else {
+                            if (s.getIdGrup() == sAssig.getIdGrup()) {
+                                resultat.add(sAssig);
+                            }
+                        }
+                    }
                 }
+
             }
         }
-        return sessionsNivell;
+        return resultat;
+    }
+
+    public static boolean validaSolucio(Map<Sessio, Set<UAH>>  solucio, Sessio s, UAH uah) {
+
+        // Les Sessions que tenen conflicte amb s
+        for(Sessio sessioConflicte : GeneradorHorari.getG().getArestes().get(s)) {
+            // Si la solució té un valor assignat per una sessió conflictiva (s)
+           if (solucio.containsKey(sessioConflicte)) {
+               for (UAH uahConflicte : solucio.get(sessioConflicte)) {
+                   if (coincideixenUAH(uah, uahConflicte)) return false;
+               }
+           }
+        }
+        return true;
+    }
+
+    public static boolean coincideixenUAH (UAH a, UAH b) {
+        return ((a.getDia() == b.getDia()) && (a.getHora() == b.getHora()));
     }
 
     public static HashSet<Sessio> arestesCorrequisit(Sessio s) {

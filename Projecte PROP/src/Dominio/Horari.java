@@ -7,21 +7,32 @@ import java.util.Set;
 
 public class Horari {
 
-    private static Map<Sessio, Set<UAH>> horari;
+    private Map<Sessio, Set<UAH>> horari;
 
-    public Horari() {}
+    public Map<Sessio, Set<UAH>> getHorari() {
+        return horari;
+    }
 
-    public static void assignarUAH(Sessio se, UAH uah) {
-        if (horari.isEmpty()) {
-            horari = new HashMap<Sessio, Set<UAH>>();
-        }
+    public void setHorari(Map<Sessio, Set<UAH>> horari) {
+        this.horari = horari;
+    }
+
+    public Horari() {
+        horari = new HashMap<>();
+    }
+
+    public Horari(Horari h) {
+        horari = h.getHorari();
+    }
+
+    public void assignarUAH(Sessio se, UAH uah) {
 
         Set<UAH> temp;
 
         if (horari.containsKey(se)) {
             temp = horari.get(se);
             temp.add(uah);
-            horari.replace(se, temp);
+            horari.put(se, temp);
         }
         else {
             temp = new HashSet<>();
@@ -31,9 +42,17 @@ public class Horari {
     }
 
     // TODO remove nomès una
-    public static void eliminarUAH(Sessio se, UAH uah) {
+    public void eliminarUAH(Sessio se, UAH uah) {
         if (horari.containsKey(se)) {
             horari.values().clear();
         }
+    }
+
+    public boolean valida(Sessio s, UAH uah) {
+        return RestriccioBinaria.validaSolucio(this.horari, s, uah);
+    }
+
+    public boolean esfallo() {
+        return horari.isEmpty();
     }
 }

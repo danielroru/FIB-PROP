@@ -8,7 +8,8 @@ public class Graph {
     private HashMap<Sessio, Set<Sessio>> arestes; //una aresta vertex tipus k te (midaSet) relacions amb altres arestes de tipus k
 
     public Graph() {
-
+        vertexs = new HashMap<>();
+        arestes = new HashMap<>();
     }
 
     public Graph(HashMap<Sessio, Set<UAH>> vertexs, HashMap<Sessio, Set<Sessio>> arestes) {
@@ -22,8 +23,21 @@ public class Graph {
         arestes.put(s1, newSet);
     }
 
+
     public HashMap<Sessio, Set<UAH>> getVertexs() {
         return this.vertexs;
+    }
+
+    public HashMap<Sessio, Set<Sessio>> getArestes() {
+        return this.arestes;
+    }
+
+    public void afegirVertex(Sessio s, Set<UAH> sUAH) {
+        vertexs.put(s,sUAH);
+    }
+
+    public void afegirAresta(Sessio s, Set<Sessio> sSessio) {
+        arestes.put(s,sSessio);
     }
 
     public void setVertexs (HashMap<Sessio, Set<UAH>> vertexs) {

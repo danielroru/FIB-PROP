@@ -21,7 +21,7 @@ public class ConjuntAssignatures {
         return this.cjtAssignatures;
     }
 
-    public HashMap<Integer,Set<Assignatura>> getCjtNivells() {
+    public HashMap<Integer,Set<Assignatura>> getConjuntNivells() {
         return this.cjtNivell;
     }
 

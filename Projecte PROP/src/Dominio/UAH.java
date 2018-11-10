@@ -5,7 +5,7 @@ public class UAH {
     // Atributs
 
     private String idAula;
-    private int idHora;
+    private int hora;
     private Enumeracio.Dia dia;
 
     // Mètodes
@@ -15,9 +15,9 @@ public class UAH {
     public UAH() {
     }
 
-    public UAH(String idAula, int idHora, Enumeracio.Dia dia) {
+    public UAH(String idAula, int hora, Enumeracio.Dia dia) {
         this.idAula = idAula;
-        this.idHora = idHora;
+        this.hora = hora;
         this.dia = dia;
     }
 
@@ -27,8 +27,8 @@ public class UAH {
         return this.idAula;
     }
 
-    public int getIdHora() {
-        return this.idHora;
+    public int getHora() {
+        return this.hora;
     }
 
     public Enumeracio.Dia getDia() {
@@ -41,8 +41,8 @@ public class UAH {
         this.idAula = idAula;
     }
 
-    public void setIdHora(int idHora) {
-        this.idHora = idHora;
+    public void setHora(int hora) {
+        this.hora = hora;
     }
 
     public void setDia(Enumeracio.Dia dia) {
