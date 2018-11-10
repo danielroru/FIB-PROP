@@ -12,6 +12,11 @@
     "nGrupsP": 4,
 
     "nGrupsMati": 4,
+
+    "nAlumnesT": 60,
+    "nAlumnesL": 15,
+    "nAlumnesP": 15,
+
     "horesBlocT": 2,
     "horesBlocL": 2,
     "horesBlocP": 1
@@ -29,6 +34,10 @@
     "nGrupsP": 0,
 
     "nGrupsMati": 1,
+
+    "nAlumnesT": 60,
+    "nAlumnesL": 20,
+    "nAlumnesP": 0,
 
     "horesBlocT": 2,
     "horesBlocL": 1,
@@ -48,10 +57,14 @@
 
     "nGrupsMati": 4,
 
+    "nAlumnesT": 60,
+    "nAlumnesL": 15,
+    "nAlumnesP": 15,
+
     "horesBlocT": 2,
     "horesBlocL": 2,
     "horesBlocP": 1
-  }
+  },
   {
     "nom": "AC",
     "nivell" : 4,
@@ -65,6 +78,10 @@
     "nGrupsP": 3,
 
     "nGrupsMati": 2,
+
+    "nAlumnesT": 60,
+    "nAlumnesL": 20,
+    "nAlumnesP": 20,
 
     "horesBlocT": 2,
     "horesBlocL": 1,

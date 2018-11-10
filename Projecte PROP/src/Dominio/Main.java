@@ -15,70 +15,49 @@ import JSON.parser.ParseException;
 
 public class Main {
 
+    private static inout io = new inout();
+
+    private static String dataPath = new String();
+
     /////////////////////////////////////////////////////////////////
     /// GENERAR HORARI
     /////////////////////////////////////////////////////////////////
 
-    private void menuGenerarHorari() {
-        Scanner scanner = new Scanner(System.in);
-        boolean on = true;
-        int accio;
+    private static void menuGenerarHorari(PlaEstudis pe) throws Exception {
 
-        while (on) {
-            accio = scanner.nextInt();
+        int accio = -1;
+
+        while (accio != 0) {
+            escriureMenuPrincipal();
+            accio = io.readint();
+
             switch (accio) {
                 case 1:
-
+                    carregarDades(pe);
                     break;
                 case 2:
-
                     break;
                 case 3:
-
-                    break;
-                case 4:
-                    on = false;
                     break;
                 default:
-                    escriureError(1);
                     break;
             }
         }
-    }
-
-    private static void generarHorari () {
 
     }
 
-    private static void mostrarHorari () {
-
-    }
-
-
-    private static void escriureMenuPrincipal() {
-        System.out.println("");
-        System.out.println("1] Generar Horari");
-        System.out.println("2] Mostrar Horari");
-        System.out.println("0] Sortir de l'aplicació");
-    }
-
-    private static void escriureError(int nError) {
-        switch (nError){
-            case 1:
-                System.out.println("Error: Indica una de les opcions!");
-                break;
-        }
-    }
-
-    public static void main(String[] args) {
-
-        PlaEstudis pe = new PlaEstudis();
+    private static void carregarDades(PlaEstudis pe) throws Exception {
+        io.writeln("- Selecciona el conjunt de dades que vols carregar");
+        io.writeln("");
+        String folder = new String();
+        folder = io.readname();
+        dataPath = "./src/Dades/" + folder + "/";
 
         JSONParser parser = new JSONParser();
 
 
         try {
-            JSONArray arrayAules = (JSONArray) parser.parse(new FileReader("./src/Dades/aules.json"));
+            JSONArray arrayAules = (JSONArray) parser.parse(new FileReader(dataPath + "aules.json"));
 
             for (int i = 0; i < arrayAules.size(); i++) {
 
@@ -113,7 +92,7 @@ public class Main {
         try {
 
 
-            JSONArray arrayAssignatures = (JSONArray) parser.parse(new FileReader("./src/Dades/assignatures.json"));
+            JSONArray arrayAssignatures = (JSONArray) parser.parse(new FileReader(dataPath + "assignatures.json"));
 
             for (int i = 0; i < arrayAssignatures.size(); i++) {
 
@@ -133,8 +112,11 @@ public class Main {
                 a.setnGrupsL((int) (long) jsonObject.get("nGrupsL"));
                 a.setnGrupsP((int) (long) jsonObject.get("nGrupsP"));
 
-
                 a.setnGrupsMati((int) (long) jsonObject.get("nGrupsMati"));
+
+                a.setnAlumnesT((int) (long) jsonObject.get("nAlumnesT"));
+                a.setnAlumnesL((int) (long) jsonObject.get("nAlumnesL"));
+                a.setnAlumnesP((int) (long) jsonObject.get("nAlumnesP"));
 
                 a.setHoresBlocT((int) (long) jsonObject.get("horesBlocT"));
                 a.setHoresBlocL((int) (long) jsonObject.get("horesBlocL"));
@@ -156,7 +138,7 @@ public class Main {
         try {
 
 
-            JSONObject plaEstudisOjbect = (JSONObject) parser.parse(new FileReader("./src/Dades/plaEstudis.json"));
+            JSONObject plaEstudisOjbect = (JSONObject) parser.parse(new FileReader(dataPath + "plaEstudis.json"));
 
             pe.setHoraInici((int) (long) plaEstudisOjbect.get("horaInici"));
             pe.setHoraFi((int) (long) plaEstudisOjbect.get("horaFi"));
@@ -171,6 +153,42 @@ public class Main {
         } catch (ParseException e) {
             e.printStackTrace();
         }
+    }
+
+    private static void generarHorari () {
+
+    }
+
+    private static void mostrarHorari () {
+
+    }
+
+
+    private static void escriureMenuPrincipal() throws Exception {
+        io.writeln("////////////////////////////");
+        io.writeln("// MENÚ PRINCIPAL");
+        io.writeln("////////////////////////////");
+        io.writeln("");
+        io.writeln("1] Carregar Set De Dades");
+        io.writeln("2] Generar Horari");
+        io.writeln("3] Mostrar Horari");
+        io.writeln("0] Sortir de l'aplicació");
+    }
+
+    private void escriureError(int nError) throws Exception {
+        switch (nError){
+            case 1:
+                io.writeln("Error: Indica una de les opcions!");
+                break;
+        }
+    }
+
+    public static void main(String[] args) throws Exception {
+
+        PlaEstudis pe = new PlaEstudis();
+
+        menuGenerarHorari(pe);
+
         CtrlDomini.setPlaEstudis(pe);
         CtrlDomini.crearSessions();
         CtrlDomini.crearUAHs();

@@ -5,7 +5,6 @@ import java.util.*;
 public class PlaEstudis {
 
     private ConjuntAssignatures cjtAssignatures;
-    private ConjuntAssignatures cjtNivells;
     private ConjuntAules cjtAules;
 
     private int horaInici;
@@ -15,7 +14,6 @@ public class PlaEstudis {
 
     public PlaEstudis(){
         cjtAssignatures = new ConjuntAssignatures();
-        cjtNivells = new ConjuntAssignatures();
         cjtAules = new ConjuntAules();
     }
 /*
@@ -66,8 +64,8 @@ public class PlaEstudis {
         return cjtAssignatures;
     }
 
-    public ConjuntAssignatures getCjtNivells() {
-        return cjtNivells;
+    public Map<Integer, Set<Assignatura>> getCjtNivells() {
+        return cjtAssignatures.getCjtNivells();
     }
 
     public void setCjtAssignatures(ConjuntAssignatures cjtAssignatures) {

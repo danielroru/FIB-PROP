@@ -40,7 +40,7 @@ public class Assignatura {
     // Constructora amb nivell
     public Assignatura(String nom, int nHoresT, int nHoresL, int nHoresP,
                        int nGrupsT, int nGrupsL, int nGrupsP, int nGrupsTarda,
-                       int nGrupsMati, int horesBlocT, int horesBlocL, int horesBlocP, int nivell) {
+                       int nGrupsMati, int nAlumnesT, int nAlumnesL, int nAlumnesP, int horesBlocT, int horesBlocL, int horesBlocP, int nivell) {
 
         this.nom = nom;
 
@@ -57,10 +57,15 @@ public class Assignatura {
         // Quantitat grups matí
         this.nGrupsMati = nGrupsMati;
 
-        // Agrupació de les hores de classe amb blocs
+        // Alumnes
         this.horesBlocT = horesBlocT;
         this.horesBlocL = horesBlocL;
         this.horesBlocP = horesBlocP;
+
+        // Agrupació de les hores de classe amb blocs
+        this.nAlumnesT = nAlumnesT;
+        this.nAlumnesL = nAlumnesL;
+        this.nAlumnesP = nAlumnesP;
 
 
         this.nivell = nivell;
@@ -82,6 +87,11 @@ public class Assignatura {
 
         // Quantitat grups matí
         this.nGrupsMati = as.getnGrupsMati();
+
+        // Alumnes
+        this.nAlumnesT = as.nAlumnesT;
+        this.nAlumnesL = as.nAlumnesL;
+        this.nAlumnesP = as.nAlumnesP;
 
         // Agrupació de les hores de classe amb blocs
         this.horesBlocT = as.getHoresBlocT();
