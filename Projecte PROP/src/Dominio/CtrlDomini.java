@@ -4,20 +4,14 @@ import java.util.*;
 
 public class CtrlDomini {
 
-    public static HashSet<Sessio> getSessions() {
-        return sessions;
-    }
 
-    public static void setSessions(HashSet<Sessio> sessions) {
-        CtrlDomini.sessions = sessions;
-    }
 
     private static HashSet<Sessio> sessions;
 
-    private static HashSet<UAH> UAHmatins;
-    private static HashSet<UAH> UAHtardes;
-    private static HashSet<UAH> UAHteoria;
-    private static HashSet<UAH> UAHlaboratori;
+    private final static HashSet<UAH> UAHmatins = new HashSet<>();
+    private final static HashSet<UAH> UAHtardes = new HashSet<>();
+    private final static HashSet<UAH> UAHteoria = new HashSet<>();
+    private final static HashSet<UAH> UAHlaboratori = new HashSet<>();
 
     public static void generarHorari(PlaEstudis pe, ConjuntAules cjtAules) {
         crearSessions(pe, cjtAules);
@@ -70,10 +64,6 @@ public class CtrlDomini {
 
 
     private static void crearUAHs(PlaEstudis PlaE, ConjuntAules cjtAules) {
-        UAHmatins = new HashSet<UAH>();
-        UAHtardes = new HashSet<UAH>();
-        UAHteoria = new HashSet<UAH>();
-        UAHlaboratori = new HashSet<UAH>();
 
         for (Aula a : cjtAules.getConjuntAules()) {
             for (Enumeracio.Dia dia : Enumeracio.Dia.values()) {
@@ -98,32 +88,22 @@ public class CtrlDomini {
         return UAHmatins;
     }
 
-    public static void setUAHmatins(HashSet<UAH> UAHmatins) {
-        CtrlDomini.UAHmatins = UAHmatins;
-    }
-
     public static HashSet<UAH> getUAHtardes() {
         return UAHtardes;
-    }
-
-    public static void setUAHtardes(HashSet<UAH> UAHtardes) {
-        CtrlDomini.UAHtardes = UAHtardes;
     }
 
     public static HashSet<UAH> getUAHteoria() {
         return UAHteoria;
     }
 
-    public static void setUAHteoria(HashSet<UAH> UAHteoria) {
-        CtrlDomini.UAHteoria = UAHteoria;
-    }
-
     public static HashSet<UAH> getUAHlaboratori() {
         return UAHlaboratori;
     }
-
-    public static void setUAHlaboratori(HashSet<UAH> UAHlaboratori) {
-        CtrlDomini.UAHlaboratori = UAHlaboratori;
+    public static HashSet<Sessio> getSessions() {
+        return sessions;
     }
 
+    public static void setSessions(HashSet<Sessio> sessions) {
+        CtrlDomini.sessions = sessions;
+    }
 }

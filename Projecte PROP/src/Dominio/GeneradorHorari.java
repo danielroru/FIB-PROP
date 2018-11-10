@@ -44,7 +44,6 @@ public class GeneradorHorari {
     }
 
     private static Horari backtracking_cronologic(Queue<Sessio> vfutures, Horari solucio) {
-        Horari solucioFallo = new Horari(solucio);
         if (vfutures.isEmpty())
             return solucio;
         else {
@@ -71,7 +70,7 @@ public class GeneradorHorari {
 
         iniGraf(pe, cjtAules);
         Horari solucio = new Horari();
-        LinkedList<Sessio> vfutures = new LinkedList<Sessio>(CtrlDomini.getSessions());
+        Queue<Sessio> vfutures = new LinkedList<Sessio>(CtrlDomini.getSessions());
 
         solucio = backtracking_cronologic(vfutures, solucio);
         return solucio;
