@@ -64,7 +64,7 @@ public class GeneradorHorari {
                 else solucio.eliminarUAH(vactual, uah);
             }
         }
-        return solucioFallo;
+        return new Horari();
     }
 
     public static Horari generarHorari(PlaEstudis pe, ConjuntAules cjtAules) {
