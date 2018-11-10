@@ -7,11 +7,11 @@ import java.util.Set;
 
 public class Horari {
 
-    private Map<Sessio, Set<UAH>> horari;
+    private static Map<Sessio, Set<UAH>> horari;
 
     public Horari() {}
 
-    public void assigarUAH(Sessio se, UAH uah) {
+    public static void assignarUAH(Sessio se, UAH uah) {
         if (horari.isEmpty()) {
             horari = new HashMap<Sessio, Set<UAH>>();
         }
@@ -31,7 +31,7 @@ public class Horari {
     }
 
     // TODO remove nomès una
-    public void eliminarUAH(Sessio se, UAH uah) {
+    public static void eliminarUAH(Sessio se, UAH uah) {
         if (horari.containsKey(se)) {
             horari.values().clear();
         }

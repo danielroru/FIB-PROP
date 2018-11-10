@@ -23,6 +23,7 @@ public class CtrlDomini {
     public static void generarHorari(PlaEstudis pe, ConjuntAules cjtAules) {
         crearSessions(pe, cjtAules);
         crearUAHs(pe,cjtAules);
+        GeneradorHorari.generarHorari(pe, cjtAules);
     }
 
     public static HashSet<Sessio> getSessionsByIdAssig(String idAssig) {

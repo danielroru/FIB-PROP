@@ -34,19 +34,19 @@ public class GeneradorHorari {
 
     }
 
-    private Horari backtracking_cronologic(Queue<Sessio> vfutures, Horari solucio) {
+    private static Horari backtracking_cronologic(Queue<Sessio> vfutures, Horari solucio) {
         if (vfutures.isEmpty())
             return solucio;
         else {
             Sessio vactual = vfutures.element();
-            for (UAH uah : getValors(vactual)) {
-                assignar(vactual, uah);
+            for (UAH uah : G.getVertexs().get(vactual)) {
+                solucio.assignarUAH(vactual, uah);
             }
         }
         return solucio;
     }
 
-    public Horari generarHorari(PlaEstudis pe, ConjuntAules cjtAules) {
+    public static Horari generarHorari(PlaEstudis pe, ConjuntAules cjtAules) {
 
         iniGraf(pe, cjtAules);
         Horari solucio = new Horari();
