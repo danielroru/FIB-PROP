@@ -5,6 +5,7 @@ import java.util.*;
 public class PlaEstudis {
 
     private ConjuntAssignatures cjtAssignatures;
+    private ConjuntAssignatures cjtNivells;
     private ConjuntAules cjtAules;
 
     private int horaInici;
@@ -14,6 +15,7 @@ public class PlaEstudis {
 
     public PlaEstudis(){
         cjtAssignatures = new ConjuntAssignatures();
+        cjtNivells = new ConjuntAssignatures();
         cjtAules = new ConjuntAules();
     }
 /*
@@ -62,6 +64,10 @@ public class PlaEstudis {
     // Conjunt Assignatures
     public ConjuntAssignatures getCjtAssig() {
         return cjtAssignatures;
+    }
+
+    public ConjuntAssignatures getCjtNivells() {
+        return cjtNivells;
     }
 
     public void setCjtAssignatures(ConjuntAssignatures cjtAssignatures) {
