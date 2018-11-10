@@ -12,23 +12,19 @@ public class CtrlDomini {
     private static HashSet<UAH> UAHteoria;
     private static HashSet<UAH> UAHlaboratori;
 
-    public static ConjuntAssignatures getCjtAssig() {
-        return cjtAssig;
+    private static PlaEstudis PlaE;
+
+    public static void setPlaEstudis(PlaEstudis pe) {
+        PlaE = pe;
     }
 
-    public static void setCjtAssig(ConjuntAssignatures cjtAssig) {
-        CtrlDomini.cjtAssig = cjtAssig;
+    public static PlaEstudis getPlaEstudis() {
+        return PlaE;
     }
 
-    private static ConjuntAssignatures cjtAssig;
+    public static HashSet<Sessio> crearSessions() {
 
-    public static void setConjuntAssignatures(ConjuntAssignatures ca) {
-        cjtAssig = ca;
-    }
-
-    public static HashSet<Sessio> crearSessions(PlaEstudis pe) {
-
-        ConjuntAssignatures cjtAssig = pe.getCjtAssig();
+        ConjuntAssignatures cjtAssig = PlaE.getCjtAssig();
 
         sessions = new HashSet<Sessio>();
 
@@ -63,22 +59,22 @@ public class CtrlDomini {
     }
 
 
-    public static void crearUAHs(PlaEstudis pe) {
+    public static void crearUAHs() {
         UAHmatins = new HashSet<UAH>();
         UAHtardes = new HashSet<UAH>();
         UAHteoria = new HashSet<UAH>();
         UAHlaboratori = new HashSet<UAH>();
 
-        for (Aula a : pe.getCjtAules()) {
+        for (Aula a : PlaE.getCjtAules()) {
             for (Enumeracio.Dia dia : Enumeracio.Dia.values()) {
-                for (int i = pe.getHoraInici(); i < pe.getHoraFi(); i++) {
+                for (int i = PlaE.getHoraInici(); i < PlaE.getHoraFi(); i++) {
                     UAH uah = new UAH();
 
                     uah.setIdAula(a.getId());
                     uah.setIdHora(i);
                     uah.setDia(dia);
 
-                    if (i < pe.getHoraCanviFranja()) UAHmatins.add(uah);
+                    if (i < PlaE.getHoraCanviFranja()) UAHmatins.add(uah);
                     else UAHtardes.add(uah);
                     if ((a.getTipusAula()).equals(Enumeracio.TipusAula.TEORIA)) UAHteoria.add(uah);
                     else UAHlaboratori.add(uah);

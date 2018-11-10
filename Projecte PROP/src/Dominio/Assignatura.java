@@ -22,7 +22,13 @@ public class Assignatura {
     private int horesBlocL;
     private int horesBlocP;
 
+    private int nAlumnesT;
+    private int nAlumnesL;
+    private int nAlumnesP;
+
     private int nivell;
+
+    private ConjuntAssignatures correquisits;
 
     // Mètodes
 
@@ -55,6 +61,8 @@ public class Assignatura {
         this.horesBlocT = horesBlocT;
         this.horesBlocL = horesBlocL;
         this.horesBlocP = horesBlocP;
+
+
         this.nivell = nivell;
     }
 
@@ -179,5 +187,23 @@ public class Assignatura {
 
     public void setNivell(int nivell) {
         this.nivell = nivell;
+    }
+
+    public void setnAlumnesT(int nAlumnesT) {
+        this.nAlumnesT = nAlumnesT;
+    }
+
+    public void setnAlumnesL(int nAlumnesL) {
+        this.nAlumnesL = nAlumnesL;
+    }
+
+    public void setnAlumnesP(int nAlumnesP) {
+        this.nAlumnesP = nAlumnesP;
+    }
+
+    public void setCorrequisits(ConjuntAssignatures correquisits) {this.correquisits = correquisits; }
+
+    public void afegirCorrequisit(Assignatura a) {
+
     }
 }

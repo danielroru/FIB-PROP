@@ -6,7 +6,7 @@ import java.util.Set;
 public class RestriccioUnaria {
 
     public static Set<UAH> crearDomini(Sessio s) {
-        ConjuntAssignatures ca = CtrlDomini.getCjtAssig();
+        ConjuntAssignatures ca = CtrlDomini.getPlaEstudis().getCjtAssig();
             Set<UAH> result = new HashSet<UAH>();
             result = (s.getTipus().equals(Enumeracio.TipusSessio.TEORIA)) ? CtrlDomini.getUAHteoria() : CtrlDomini.getUAHlaboratori();
             Assignatura as = ca.getConjuntAssignatures().get(s.getNomAssig());

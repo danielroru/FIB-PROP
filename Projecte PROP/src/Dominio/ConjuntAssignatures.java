@@ -6,7 +6,7 @@ import java.util.*;
 public class ConjuntAssignatures {
 
     private Map<String, Assignatura> cjtAssignatures;
-    private HashMap<Integer, Set<Assignatura>> cjtNivell = new HashMap<>() ;
+    private HashMap<Integer, Set<Assignatura>> cjtNivell;
 
     // Conjunt Assignatures
 
