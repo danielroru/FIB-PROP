@@ -43,13 +43,17 @@ public class RestriccioBinaria {
         return resultat;
     }
 
-    public static boolean validaSolucio(Map<Sessio, Set<UAH>>  solucio, Sessio s, UAH uah) {
+    public static boolean validaSolucio(Horari h, Sessio s, UAH uah) {
+        if (h.getHorari().values().contains(uah)) {
+            return false;
+        }
+
 
         // Les Sessions que tenen conflicte amb s
         for(Sessio sessioConflicte : GeneradorHorari.getG().getArestes().get(s)) {
             // Si la solució té un valor assignat per una sessió conflictiva (s)
-           if (solucio.containsKey(sessioConflicte)) {
-               for (UAH uahConflicte : solucio.get(sessioConflicte)) {
+           if (h.getHorari().containsKey(sessioConflicte)) {
+               for (UAH uahConflicte : h.getHorari().get(sessioConflicte)) {
                    if (coincideixenUAH(uah, uahConflicte)) return false;
                }
            }

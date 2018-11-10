@@ -49,7 +49,7 @@ public class Horari {
     }
 
     public boolean valida(Sessio s, UAH uah) {
-        return RestriccioBinaria.validaSolucio(this.horari, s, uah);
+        return RestriccioBinaria.validaSolucio(this, s, uah);
     }
 
     public boolean esfallo() {

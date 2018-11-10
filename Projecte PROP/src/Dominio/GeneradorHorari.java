@@ -74,6 +74,5 @@ public class GeneradorHorari {
 
         solucio = backtracking_cronologic(vfutures, solucio);
         return solucio;
-
     }
 }
