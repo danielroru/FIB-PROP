@@ -22,4 +22,8 @@ public class RestriccioBinaria {
         }
         return sessionsNivell;
     }
+
+    public static HashSet<Sessio> arestesCorrequisit(Sessio s) {
+        return new HashSet<>();
+    }
 }
