@@ -12,6 +12,14 @@ public class CtrlDomini {
     private static HashSet<UAH> UAHteoria;
     private static HashSet<UAH> UAHlaboratori;
 
+    public static ConjuntAssignatures getCjtAssig() {
+        return cjtAssig;
+    }
+
+    public static void setCjtAssig(ConjuntAssignatures cjtAssig) {
+        CtrlDomini.cjtAssig = cjtAssig;
+    }
+
     private static ConjuntAssignatures cjtAssig;
 
     public static void setConjuntAssignatures(ConjuntAssignatures ca) {
