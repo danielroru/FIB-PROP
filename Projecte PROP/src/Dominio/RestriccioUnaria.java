@@ -11,9 +11,13 @@ public class RestriccioUnaria {
             result = (s.getTipus().equals(Enumeracio.TipusSessio.TEORIA)) ? CtrlDomini.getUAHteoria() : CtrlDomini.getUAHlaboratori();
             Assignatura as = ca.getConjuntAssignatures().get(s.getNomAssig());
 
-            (s.getIdGrup() < (as.getnGrupsMati()+1)*10) ? result.retainAll(CtrlDomini.getUAHmatins()) : result.retainAll(CtrlDomini.getUAHtardes());
+        if ((s.getIdGrup() < (as.getnGrupsMati() + 1) * 10)) {
+            result.retainAll(CtrlDomini.getUAHmatins());
+        } else {
+            result.retainAll(CtrlDomini.getUAHtardes());
+        }
 
-            return result;
+        return result;
 
 
     }
