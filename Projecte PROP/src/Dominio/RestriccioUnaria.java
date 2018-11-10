@@ -1,9 +1,21 @@
 package Dominio;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class RestriccioUnaria {
 
+    public static Set<UAH> crearDomini(ConjuntAssignatures ca, Sessio s) {
+        public Set<UAH> crearDomini(Sessio s) {
+            Set<UAH> result = new HashSet<UAH>();
+            result = (s.getTipus().equals(Enumeracio.TipusSessio.TEORIA)) ? CtrlDomini.getUAHteoria() : CtrlDomini.getUAHlaboratori();
+            Assignatura as = ca.getConjuntAssignatures().get(s.getNomAssig());
 
+            (s.getIdGrup() < (as.getnGrupsMati()+1)*10) ? result.retainAll(CtrlDomini.getUAHmatins()) : result.retainAll(CtrlDomini.getUAHtardes());
+
+            return result;
+
+        }
+    }
 
 }

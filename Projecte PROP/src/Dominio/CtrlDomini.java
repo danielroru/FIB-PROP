@@ -18,19 +18,6 @@ public class CtrlDomini {
         cjtAssig = ca;
     }
 
-    public Set<UAH> crearDomini(Sessio s) {
-        Set<UAH> result = new HashSet<UAH>();
-        result = (s.getTipus().equals(Enumeracio.TipusSessio.TEORIA)) ? UAHteoria : UAHlaboratori;
-        Assignatura as = cjtAssig.getConjuntAssignatures().get(s.getNomAssig());
-
-        result = (s.getIdGrup() < (as.getnGrupsMati()+1)*10) ? UAHmatins : UAHtardes;
-        if ((s.getTipus().equals(Enumeracio.TipusSessio.TEORIA))) result.retainAll(UAHteoria);
-        else result.retainAll(UAHlaboratori);
-
-        return result;
-
-    }
-
     public static HashSet<Sessio> crearSessions(PlaEstudis pe) {
 
         ConjuntAssignatures cjtAssig = pe.getCjtAssig();
