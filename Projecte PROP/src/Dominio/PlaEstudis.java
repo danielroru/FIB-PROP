@@ -5,7 +5,6 @@ import java.util.*;
 public class PlaEstudis {
 
     private ConjuntAssignatures cjtAssignatures;
-    private ConjuntAules cjtAules;
 
     private int horaInici;
     private int horaFi;
@@ -14,15 +13,7 @@ public class PlaEstudis {
 
     public PlaEstudis(){
         cjtAssignatures = new ConjuntAssignatures();
-        cjtAules = new ConjuntAules();
     }
-/*
-    public PlaEstudis(int horaInici, int horaFi, int horaCanviFranja) {
-        this.horaInici = horaInici;
-        this.horaFi = horaFi;
-        this.horaCanviFranja = horaCanviFranja;
-    }
-*/
 
 
     // Consultores
@@ -51,10 +42,6 @@ public class PlaEstudis {
 
     // Conjunt Aules
 
-    public void afegirAula(Aula a) {
-        cjtAules.afegirAula(a);
-    }
-
     public void afegirAssignatura(Assignatura a) {
         cjtAssignatures.afegirAssignatura(a);
     }
@@ -72,13 +59,5 @@ public class PlaEstudis {
         this.cjtAssignatures = cjtAssignatures;
     }
 
-    // Conjunt Aula
-    public  Set<Aula> getCjtAules() {
-        return cjtAules.getConjuntAules();
-    }
-
-    public void setCjtAules(Map<String,Aula> cjtAssig) {
-        this.cjtAules = cjtAules;
-    }
 
 }

@@ -3,9 +3,9 @@ package Dominio;
 import java.util.*;
 
 public class GeneradorHorari {
-    private Graph G = new Graph();
+    private static Graph G = new Graph();
 
-    private void iniGraf() {
+    private static void iniGraf() {
 
         Set<Sessio> sessions = CtrlDomini.crearSessions();
         HashMap<Sessio, Set<UAH>> vertexs = new HashMap<>();

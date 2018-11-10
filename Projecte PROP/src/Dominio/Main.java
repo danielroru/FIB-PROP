@@ -15,15 +15,16 @@ import JSON.parser.ParseException;
 
 public class Main {
 
-    private static inout io = new inout();
+    private static PlaEstudis pe = new PlaEstudis();
+    private static ConjuntAules cjtAules = new ConjuntAules();
 
-    private static String dataPath = new String();
+    private static inout io = new inout();
 
     /////////////////////////////////////////////////////////////////
     /// GENERAR HORARI
     /////////////////////////////////////////////////////////////////
 
-    private static void menuGenerarHorari(PlaEstudis pe) throws Exception {
+    private static void menuGenerarHorari() throws Exception {
 
         int accio = -1;
 
@@ -33,9 +34,10 @@ public class Main {
 
             switch (accio) {
                 case 1:
-                    carregarDades(pe);
+                    carregarDades();
                     break;
                 case 2:
+                    CtrlDomini.generarHorari(pe, cjtAules);
                     break;
                 case 3:
                     break;
@@ -46,13 +48,7 @@ public class Main {
 
     }
 
-    private static void carregarDades(PlaEstudis pe) throws Exception {
-        io.writeln("- Selecciona el conjunt de dades que vols carregar");
-        io.writeln("");
-        String folder = new String();
-        folder = io.readname();
-        dataPath = "./src/Dades/" + folder + "/";
-
+    private static void carregarAules(String dataPath) {
         JSONParser parser = new JSONParser();
 
 
@@ -75,7 +71,7 @@ public class Main {
                 a.setCapacitat(capacitat);
                 a.setTipus(tAula);
 
-                pe.afegirAula(a);
+                cjtAules.afegirAula(a);
 
             }
 
@@ -87,10 +83,11 @@ public class Main {
         } catch (ParseException e) {
             e.printStackTrace();
         }
+    }
 
-
+    private static void carregarAssignatures(String dataPath) {
+        JSONParser parser = new JSONParser();
         try {
-
 
             JSONArray arrayAssignatures = (JSONArray) parser.parse(new FileReader(dataPath + "assignatures.json"));
 
@@ -134,7 +131,10 @@ public class Main {
         } catch (ParseException e) {
             e.printStackTrace();
         }
+    }
 
+    private static void carregarPlaEstudis(String dataPath) {
+        JSONParser parser = new JSONParser();
         try {
 
 
@@ -153,6 +153,19 @@ public class Main {
         } catch (ParseException e) {
             e.printStackTrace();
         }
+    }
+
+    private static void carregarDades() throws Exception {
+        String dataPath = new String();
+        io.writeln("- Selecciona el conjunt de dades que vols carregar");
+        io.writeln("");
+        String folder = new String();
+        folder = io.readname();
+        dataPath = "./src/Dades/" + folder + "/";
+
+        carregarAules(dataPath);
+        carregarAssignatures(dataPath);
+        carregarPlaEstudis(dataPath);
     }
 
     private static void generarHorari () {
@@ -185,12 +198,6 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
-        PlaEstudis pe = new PlaEstudis();
-
-        menuGenerarHorari(pe);
-
-        CtrlDomini.setPlaEstudis(pe);
-        CtrlDomini.crearSessions();
-        CtrlDomini.crearUAHs();
+        menuGenerarHorari();
     }
 }

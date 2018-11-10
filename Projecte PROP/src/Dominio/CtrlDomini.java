@@ -12,7 +12,10 @@ public class CtrlDomini {
     private static HashSet<UAH> UAHteoria;
     private static HashSet<UAH> UAHlaboratori;
 
-    private static PlaEstudis PlaE;
+    public static void generarHorari(PlaEstudis pe, ConjuntAules cjtAules) {
+        crearSessions(pe, cjtAules);
+        crearUAHs(pe,cjtAules);
+    }
 
     public static HashSet<Sessio> getSessionsByIdAssig(String idAssig) {
         HashSet<Sessio> SessionsAssig = new HashSet<>();
@@ -22,15 +25,7 @@ public class CtrlDomini {
         return SessionsAssig;
     }
 
-    public static void setPlaEstudis(PlaEstudis pe) {
-        PlaE = pe;
-    }
-
-    public static PlaEstudis getPlaEstudis() {
-        return PlaE;
-    }
-
-    public static HashSet<Sessio> crearSessions() {
+    private static void crearSessions(PlaEstudis PlaE, ConjuntAules cjtAules) {
 
         ConjuntAssignatures cjtAssig = PlaE.getCjtAssig();
 
@@ -63,17 +58,16 @@ public class CtrlDomini {
             }
         }
 
-        return sessions;
     }
 
 
-    public static void crearUAHs() {
+    private static void crearUAHs(PlaEstudis PlaE, ConjuntAules cjtAules) {
         UAHmatins = new HashSet<UAH>();
         UAHtardes = new HashSet<UAH>();
         UAHteoria = new HashSet<UAH>();
         UAHlaboratori = new HashSet<UAH>();
 
-        for (Aula a : PlaE.getCjtAules()) {
+        for (Aula a : cjtAules.getConjuntAules()) {
             for (Enumeracio.Dia dia : Enumeracio.Dia.values()) {
                 for (int i = PlaE.getHoraInici(); i < PlaE.getHoraFi(); i++) {
                     UAH uah = new UAH();
