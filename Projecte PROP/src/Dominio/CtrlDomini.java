@@ -5,6 +5,14 @@ import java.util.*;
 
 public class CtrlDomini {
 
+    public static HashSet<Sessio> getSessions() {
+        return sessions;
+    }
+
+    public static void setSessions(HashSet<Sessio> sessions) {
+        CtrlDomini.sessions = sessions;
+    }
+
     private static HashSet<Sessio> sessions;
 
     private static HashSet<UAH> UAHmatins;
