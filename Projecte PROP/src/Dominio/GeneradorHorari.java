@@ -55,15 +55,13 @@ public class GeneradorHorari {
 
                 if (solucio.valida(vactual, uah)) {
                     solucio = backtracking_cronologic(vfutures, solucio);
-                    if (!solucio.esfallo()) {
+                    if (!solucio.getHorari().isEmpty()) {
                         return solucio;
-                    }
-                    else solucio.eliminarUAH(vactual, uah);
-                }
-                else solucio.eliminarUAH(vactual, uah);
+                    } else solucio.eliminarUAH(vactual);
+                } else solucio.eliminarUAH(vactual);
             }
+            return new Horari();
         }
-        return new Horari();
     }
 
     public static Horari generarHorari(PlaEstudis pe, ConjuntAules cjtAules) {

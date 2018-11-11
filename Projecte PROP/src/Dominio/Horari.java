@@ -42,9 +42,9 @@ public class Horari {
     }
 
     // TODO remove nomès una
-    public void eliminarUAH(Sessio se, UAH uah) {
+    public void eliminarUAH(Sessio se) {
         if (horari.containsKey(se)) {
-            horari.values().clear();
+            horari.remove(se);
         }
     }
 
@@ -53,6 +53,6 @@ public class Horari {
     }
 
     public boolean esfallo() {
-        return horari.isEmpty();
+        return this.horari.isEmpty();
     }
 }
