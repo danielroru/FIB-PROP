@@ -1,7 +1,5 @@
 package Dominio;
 
-import com.sun.tools.javah.Gen;
-
 import java.util.*;
 
 public class RestriccioBinaria {
@@ -47,7 +45,6 @@ public class RestriccioBinaria {
         if (h.getHorari().values().contains(uah)) {
             return false;
         }
-
 
         // Les Sessions que tenen conflicte amb s
         for(Sessio sessioConflicte : GeneradorHorari.getG().getArestes().get(s)) {
