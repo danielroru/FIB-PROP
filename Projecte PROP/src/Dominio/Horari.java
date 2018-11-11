@@ -44,7 +44,7 @@ public class Horari {
     // TODO remove nomès una
     public void eliminarUAH(Sessio se, UAH uah) {
         if (horari.containsKey(se)) {
-            horari.values().clear();
+            horari.get(se).remove(uah);
         }
     }
 

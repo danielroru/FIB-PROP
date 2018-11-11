@@ -44,10 +44,16 @@ public class RestriccioBinaria {
     }
 
     public static boolean validaSolucio(Horari h, Sessio s, UAH uah) {
-        if (h.getHorari().values().contains(uah)) {
-            return false;
-        }
 
+
+
+        for (Sessio s1 : h.getHorari().keySet()) {
+            if (s1 != s) {
+                for (UAH uah1 : h.getHorari().get(s1)) {
+                    if (coincideixenUAH(uah,uah1)) return false;
+                }
+            }
+        }
 
         // Les Sessions que tenen conflicte amb s
         for(Sessio sessioConflicte : GeneradorHorari.getG().getArestes().get(s)) {
