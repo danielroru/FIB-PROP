@@ -55,7 +55,7 @@ public class GeneradorHorari {
 
                 if (solucio.valida(vactual, uah)) {
                     solucio = backtracking_cronologic(vfutures, solucio);
-                    if (!solucio.getHorari().isEmpty()) {
+                    if (!solucio.esfallo()) {
                         return solucio;
                     } else solucio.eliminarUAH(vactual);
                 } else solucio.eliminarUAH(vactual);
