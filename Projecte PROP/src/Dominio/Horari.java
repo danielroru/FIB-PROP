@@ -9,6 +9,18 @@ public class Horari {
 
     private Map<Sessio, Set<UAH>> horari;
 
+    private Map<String, Set<Sessio>> assignacio;
+
+    public Map<UAH, Sessio> getAssignacio() {
+        return assignacio;
+    }
+
+    public void setAssignacio(Map<UAH, Sessio> assignacio) {
+        this.assignacio = assignacio;
+    }
+
+    private Map<UAH, Sessio> assignacio;
+
     public Horari() {
         horari = new HashMap<>();
     }
