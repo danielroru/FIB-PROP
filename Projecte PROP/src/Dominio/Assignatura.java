@@ -143,6 +143,18 @@ public class Assignatura {
 
     public int getHoresBlocP() {return  this.horesBlocP; }
 
+    public int getnAlumnesT() {
+        return this.nAlumnesT;
+    }
+
+    public int getnAlumnesL() {
+        return this.nAlumnesL;
+    }
+
+    public int getnAlumnesP() {
+        return this.nAlumnesP;
+    }
+
     public int getNivell() {return this.nivell; }
 
 

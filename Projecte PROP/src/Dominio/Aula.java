@@ -20,7 +20,13 @@ public class Aula {
     ////////////////////////////////////////////////////////////////////
 
     // Constructora per defecte
-    public Aula() { }
+    public Aula() {};
+
+    public Aula (Aula a) {
+        this.id = a.id;
+        this.capacitat = a.capacitat;
+        this.tipus = a.tipus;
+    }
 
     public Aula(String id, int capacitat, Enumeracio.TipusAula tipus) {
         this.id = id;

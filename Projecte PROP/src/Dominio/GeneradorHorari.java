@@ -18,8 +18,8 @@ public class GeneradorHorari {
 
         Set<Sessio> sessions = CtrlDomini.getSessions();
 
-
         for (Sessio s : sessions) {
+
             //INICIALITZACIÓ VÈRTEXS
             Set<UAH> domini = new HashSet<UAH>(RestriccioUnaria.crearDomini(pe.getCjtAssig(), s));
             G.afegirVertex(s, domini);

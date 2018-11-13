@@ -9,20 +9,20 @@ public class Horari {
 
     private Map<Sessio, Set<UAH>> horari;
 
-    public Map<Sessio, Set<UAH>> getHorari() {
-        return horari;
-    }
-
-    public void setHorari(Map<Sessio, Set<UAH>> horari) {
-        this.horari = horari;
-    }
-
     public Horari() {
         horari = new HashMap<>();
     }
 
     public Horari(Horari h) {
         horari = h.getHorari();
+    }
+
+    public Map<Sessio, Set<UAH>> getHorari() {
+        return horari;
+    }
+
+    public void setHorari(Map<Sessio, Set<UAH>> horari) {
+        this.horari = horari;
     }
 
     public void assignarUAH(Sessio se, UAH uah) {
@@ -39,6 +39,7 @@ public class Horari {
             temp.add(uah);
             horari.put(se,temp);
         }
+
     }
 
     // TODO remove nomès una

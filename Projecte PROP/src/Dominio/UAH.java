@@ -1,10 +1,9 @@
 package Dominio;
 
-public class UAH {
+public class UAH extends Aula {
 
     // Atributs
 
-    private String idAula;
     private int hora;
     private Enumeracio.Dia dia;
 
@@ -15,17 +14,17 @@ public class UAH {
     public UAH() {
     }
 
-    public UAH(String idAula, int hora, Enumeracio.Dia dia) {
-        this.idAula = idAula;
+    public UAH (Aula a) {
+        super(a);
+    }
+
+    public UAH(Aula a, int hora, Enumeracio.Dia dia) {
+        super(a);
         this.hora = hora;
         this.dia = dia;
     }
 
     // Consultores
-
-    public String getIdAula() {
-        return this.idAula;
-    }
 
     public int getHora() {
         return this.hora;
@@ -36,10 +35,6 @@ public class UAH {
     }
 
     // Modificadores
-
-    public void setIdAula(String idAula) {
-        this.idAula = idAula;
-    }
 
     public void setHora(int hora) {
         this.hora = hora;

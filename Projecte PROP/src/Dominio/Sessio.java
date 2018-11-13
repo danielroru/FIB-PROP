@@ -1,12 +1,9 @@
 package Dominio;
 
-public class Sessio {
-
-
+public class Sessio extends Assignatura{
 
     // Atributs
 
-    private String nomAssig;
     private int idGrup;
     private int duracio;
     private Enumeracio.TipusSessio tipus;
@@ -16,11 +13,14 @@ public class Sessio {
     // Constructores
 
     public Sessio() {
-
     }
 
-    public Sessio(int id, String nomAssig, int idGrup, int duracio, Enumeracio.TipusSessio tipus) {
-        this.nomAssig = nomAssig;
+    public Sessio(Assignatura a) {
+        super(a);
+    }
+
+    public Sessio(Assignatura a, int idGrup, int duracio, Enumeracio.TipusSessio tipus) {
+        super(a);
         this.idGrup = idGrup;
         this.duracio = duracio;
         this.tipus = tipus;
@@ -28,10 +28,6 @@ public class Sessio {
 
     // Consultores
 
-
-    public String getNomAssig() {
-        return this.nomAssig;
-    }
 
     public int getIdGrup() {
         return this.idGrup;
@@ -46,10 +42,6 @@ public class Sessio {
     }
 
     // Modificadores
-
-    public void setNomAssig(String nomAssig) {
-        this.nomAssig = nomAssig;
-    }
 
     public void setIdGrup(int idGrup) {
         this.idGrup = idGrup;

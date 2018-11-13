@@ -7,7 +7,7 @@ public class RestriccioBinaria {
     public static HashSet<Sessio> arestesNivell(ConjuntAssignatures cjtAssig, Sessio s) {
         HashSet<Sessio> resultat = new HashSet<>();
 
-        int NivellSessio = cjtAssig.getConjuntAssignatures().get(s.getNomAssig()).getNivell();
+        int NivellSessio = cjtAssig.getConjuntAssignatures().get(s.getNom()).getNivell();
 
         // Iterem per totes les assignatures del mateix nivell que s
         for (Assignatura a : cjtAssig.getConjuntNivells().get(NivellSessio)) {
@@ -42,6 +42,24 @@ public class RestriccioBinaria {
     }
 
     public static boolean validaSolucio(Horari h, Sessio s, UAH uah) {
+
+        switch (s.getTipus()) {
+            case TEORIA:
+                if (uah.getCapacitat() < s.getnAlumnesT()) return false;
+                break;
+            case LABORATORI:
+                if (uah.getCapacitat() < s.getnAlumnesL()) return false;
+                break;
+            case PROBLEMES:
+                if (uah.getCapacitat() < s.getnAlumnesP()) return false;
+                break;
+            default:
+                break;
+        }
+
+
+
+        // Comprovem si la UAH ja ha estat assignada previament
         if (h.getHorari().values().contains(uah)) {
             return false;
         }
