@@ -14,11 +14,9 @@ public class GeneradorHorari {
         G = g;
     }
 
-    private static void iniGraf(PlaEstudis pe, ConjuntAules cjtAules) {
+    private static void iniGraf(PlaEstudis pe) {
 
-        Set<Sessio> sessions = CtrlDomini.getSessions();
-
-        for (Sessio s : sessions) {
+        for (Sessio s : CtrlDomini.getSessions()) {
 
             //INICIALITZACIÓ VÈRTEXS
             Set<UAH> domini = new HashSet<UAH>(RestriccioUnaria.crearDomini(pe.getCjtAssig(), s));
@@ -33,32 +31,22 @@ public class GeneradorHorari {
 
     }
 
-    private Set<UAH> getValors(Sessio s) {
-        return G.getVertexs().get(s);
-    }
-
-    private void assignar(Sessio s, UAH uah) {
-
-        G.getVertexs().get(s).add(uah);
-
-    }
-
-    private static Horari backtracking_cronologic(Queue<Sessio> vfutures, Horari solucio) {
-        if (vfutures.isEmpty())
+    private static Horari backtracking_cronologic(Queue<Sessio> sFutures, Horari solucio) {
+        if (sFutures.isEmpty())
             return solucio;
         else {
-            Sessio vactual = vfutures.element();
-            vfutures.remove();
+            Sessio sActual = sFutures.element();
+            sFutures.remove();
 
-            for (UAH uah : G.getVertexs().get(vactual)) {
-                solucio.assignarUAH(vactual, uah);
+            for (UAH uah : G.getUAHbySessio(sActual)) {
+                solucio.assignarUAH(sActual, uah);
 
-                if (solucio.valida(vactual, uah)) {
-                    solucio = backtracking_cronologic(vfutures, solucio);
+                if (solucio.valida(sActual, uah)) {
+                    solucio = backtracking_cronologic(sFutures, solucio);
                     if (!solucio.esfallo()) {
                         return solucio;
-                    } else solucio.eliminarUAH(vactual, uah);
-                } else solucio.eliminarUAH(vactual, uah);
+                    } else solucio.eliminarUAH(sActual, uah);
+                } else solucio.eliminarUAH(sActual, uah);
             }
             return new Horari();
         }

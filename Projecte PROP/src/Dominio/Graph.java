@@ -28,6 +28,10 @@ public class Graph {
         return this.vertexs;
     }
 
+    public Set<UAH> getUAHbySessio(Sessio s) {
+        return this.vertexs.get(s);
+    }
+
     public HashMap<Sessio, Set<Sessio>> getArestes() {
         return this.arestes;
     }

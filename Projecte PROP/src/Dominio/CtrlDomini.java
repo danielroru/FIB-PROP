@@ -29,20 +29,18 @@ public class CtrlDomini {
     }
 
     public static HashSet<Sessio> getSessionsByIdAssig(String idAssig) {
-        HashSet<Sessio> SessionsAssig = new HashSet<>();
+        Set<Sessio> SessionsAssig = new HashSet<>();
         for (Sessio s : sessions) {
-            if (s.getNom() == idAssig) SessionsAssig.add(s);
+            if (s.getAssignatura().getNom() == idAssig) SessionsAssig.add(s);
         }
         return SessionsAssig;
     }
 
-    private static void crearSessions(PlaEstudis PlaE, ConjuntAules cjtAules) {
-
-        ConjuntAssignatures cjtAssig = PlaE.getCjtAssig();
+    private static void crearSessions(PlaEstudis PlaE) {
 
         sessions = new HashSet<Sessio>();
 
-        for (Assignatura a : cjtAssig.getConjuntAssignatures().values()) {
+        for (Assignatura a : PlaE.getCjtAssig().getConjuntAssignatures()) {
             for(int i = 1; i <= a.getnGrupsT(); ++i) {
                 Sessio sT = new Sessio(a);
 
@@ -50,6 +48,7 @@ public class CtrlDomini {
                 sT.setDuracio(a.getnHoresT());
                 sT.setTipus(Enumeracio.TipusSessio.TEORIA);
                 sessions.add(sT);
+
                 for (int j = 1; j <= a.getnGrupsL(); ++j) {
                     Sessio sL = new Sessio(a);
                     sL.setIdGrup(i * 10 + j);
@@ -57,6 +56,7 @@ public class CtrlDomini {
                     sL.setTipus(Enumeracio.TipusSessio.LABORATORI);
                     sessions.add(sL);
                 }
+
                 for (int j = 1; j <= a.getnGrupsP(); ++j) {
                     Sessio sP = new Sessio(a);
                     sP.setIdGrup(i * 10 + j);

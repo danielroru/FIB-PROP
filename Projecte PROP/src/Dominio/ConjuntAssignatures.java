@@ -17,8 +17,8 @@ public class ConjuntAssignatures {
 
     // Consultora
 
-    public Map<String, Assignatura> getConjuntAssignatures() {
-        return this.cjtAssignatures;
+    public Set<Assignatura> getConjuntAssignatures() {
+        return this.cjtAssignatures.values();
     }
 
     public HashMap<Integer,Set<Assignatura>> getConjuntNivells() {
@@ -29,16 +29,9 @@ public class ConjuntAssignatures {
         return cjtNivell.get(nombre);
     }
 
-    // Modificadores
-
-    public void setCjtAssig(Map<String, Assignatura> cjtAssignatures) {
-        this.cjtAssignatures = cjtAssignatures;
+    public Assignatura getAssignatura(String nom) {
+        return cjtAssignatures.get(nom);
     }
-
-    public void setCjtNivells(HashMap<Integer,Set<Assignatura>> cjtNivells) {
-        this.cjtNivell = cjtNivell;
-    }
-
 
     // Afegir Assignatura
 

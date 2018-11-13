@@ -1,11 +1,12 @@
 package Dominio;
 
-public class Sessio extends Assignatura{
+public class Sessio implements Comparable<Sessio> {
 
     // Atributs
     private Enumeracio.TipusSessio tipus;
     private int idGrup;
     private int duracio;
+    private Assignatura assignatura;
 
 
     // Mètodes
@@ -16,11 +17,10 @@ public class Sessio extends Assignatura{
     }
 
     public Sessio(Assignatura a) {
-        super(a);
     }
 
-    public Sessio(Assignatura a, int idGrup, int duracio, Enumeracio.TipusSessio tipus) {
-        super(a);
+    public Sessio(Assignatura assig, int idGrup, int duracio, Enumeracio.TipusSessio tipus) {
+        this.assignatura = assig;
         this.idGrup = idGrup;
         this.duracio = duracio;
         this.tipus = tipus;
@@ -28,6 +28,13 @@ public class Sessio extends Assignatura{
 
     // Consultores
 
+    public Assignatura getAssignatura() {
+        return assignatura;
+    }
+
+    public void setAssignatura(Assignatura assignatura) {
+        this.assignatura = assignatura;
+    }
 
     public int getIdGrup() {
         return this.idGrup;
@@ -53,5 +60,10 @@ public class Sessio extends Assignatura{
 
     public void setTipus(Enumeracio.TipusSessio tipus) {
         this.tipus = tipus;
+    }
+
+    @Override
+    public int compareTo(Sessio o) {
+        return 0;
     }
 }

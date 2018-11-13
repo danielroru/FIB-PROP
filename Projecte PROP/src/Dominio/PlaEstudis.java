@@ -4,54 +4,54 @@ import java.util.*;
 
 public class PlaEstudis {
 
-    private ConjuntAssignatures cjtAssignatures;
+    private ConjuntAssignatures cjtAssignatures = new ConjuntAssignatures();
 
-    private int horaInici;
-    private int horaFi;
-    private int horaCanviFranja;
+    private static int horaInici;
+    private static int horaFi;
+    private static int horaCanviFranja;
 
 
-    public PlaEstudis(){
-        cjtAssignatures = new ConjuntAssignatures();
+    private PlaEstudis(){
     }
+
 
 
     // Consultores
-    public int getHoraInici() {
+    public static int getHoraInici() {
         return horaInici;
     }
-    public int getHoraFi() {
+    public static int getHoraFi() {
         return horaFi;
     }
-    public int getHoraCanviFranja() {
+    public static int getHoraCanviFranja() {
         return horaCanviFranja;
     }
 
 
     // Modificadores
-    public void setHoraInici(int hora) {
+    public static void setHoraInici(int hora) {
         this.horaInici = hora;
     }
-    public void setHoraFi(int hora) {
+    public static void setHoraFi(int hora) {
         this.horaFi = hora;
     }
-    public void setHoraCanviFranja(int hora) {
+    public static void setHoraCanviFranja(int hora) {
         this.horaCanviFranja = hora;
     }
 
 
     // Conjunt Aules
 
-    public void afegirAssignatura(Assignatura a) {
+    public static void afegirAssignatura(Assignatura a) {
         cjtAssignatures.afegirAssignatura(a);
     }
     
     // Conjunt Assignatures
-    public ConjuntAssignatures getCjtAssig() {
+    public static ConjuntAssignatures getCjtAssig() {
         return cjtAssignatures;
     }
 
-    public Map<Integer, Set<Assignatura>> getCjtNivells() {
+    public static Map<Integer, Set<Assignatura>> getCjtNivells() {
         return cjtAssignatures.getConjuntNivells();
     }
 

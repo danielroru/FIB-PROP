@@ -1,11 +1,13 @@
 package Dominio;
 
-public class UAH extends Aula {
+public class UAH {
 
     // Atributs
 
     private int hora;
     private Enumeracio.Dia dia;
+    private Sessio sessio;
+    private Aula aula;
 
     // Mètodes
 
@@ -15,16 +17,33 @@ public class UAH extends Aula {
     }
 
     public UAH (Aula a) {
-        super(a);
     }
 
-    public UAH(Aula a, int hora, Enumeracio.Dia dia) {
-        super(a);
+    public UAH (Sessio sessio, Aula aula, int hora, Enumeracio.Dia dia) {
+        this.sessio = sessio;
+        this.aula = aula;
         this.hora = hora;
         this.dia = dia;
     }
 
     // Consultores
+
+
+    public Sessio getSessio() {
+        return sessio;
+    }
+
+    public void setSessio(Sessio sessio) {
+        this.sessio = sessio;
+    }
+
+    public Aula getAula() {
+        return aula;
+    }
+
+    public void setAula(Aula aula) {
+        this.aula = aula;
+    }
 
     public int getHora() {
         return this.hora;

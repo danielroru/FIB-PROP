@@ -7,7 +7,7 @@ public class RestriccioBinaria {
     public static HashSet<Sessio> arestesNivell(ConjuntAssignatures cjtAssig, Sessio s) {
         HashSet<Sessio> resultat = new HashSet<>();
 
-        int NivellSessio = cjtAssig.getConjuntAssignatures().get(s.getNom()).getNivell();
+        int NivellSessio = cjtAssig.getAssignatura(s.getAssignatura().getNom()).getNivell();
 
         // Iterem per totes les assignatures del mateix nivell que s
         for (Assignatura a : cjtAssig.getConjuntNivells().get(NivellSessio)) {
@@ -43,33 +43,32 @@ public class RestriccioBinaria {
 
     public static boolean validaSolucio(Horari h, Sessio s, UAH uah) {
 
+        // Comprovem si la UAH ja ha estat assignada previament
+        if (!h.existeixUAH(uah)) {
+            return false;
+        }
+
         switch (s.getTipus()) {
             case TEORIA:
-                if (uah.getCapacitat() < s.getnAlumnesT()) return false;
+                if (uah.getAula().getCapacitat() < s.getAssignatura().getnAlumnesT()) return false;
                 break;
             case LABORATORI:
-                if (uah.getCapacitat() < s.getnAlumnesL()) return false;
+                if (uah.getAula().getCapacitat() < s.getAssignatura().getnAlumnesL()) return false;
                 break;
             case PROBLEMES:
-                if (uah.getCapacitat() < s.getnAlumnesP()) return false;
+                if (uah.getAula().getCapacitat() < s.getAssignatura().getnAlumnesP()) return false;
                 break;
             default:
                 break;
         }
 
-
-
-        // Comprovem si la UAH ja ha estat assignada previament
-        if (h.getHorari().values().contains(uah)) {
-            return false;
-        }
-
         // Les Sessions que tenen conflicte amb s
-        for(Sessio sessioConflicte : GeneradorHorari.getG().getArestes().get(s)) {
-            // Si la solució té un valor assignat per una sessió conflictiva (s)
-           if (h.getHorari().containsKey(sessioConflicte)) {
-               for (UAH uahConflicte : h.getHorari().get(sessioConflicte)) {
-                   if (coincideixenUAH(uah, uahConflicte)) return false;
+        for (Sessio sessioConflicte : GeneradorHorari.getG().getArestes().get(s)) {
+
+           // Si la solució té un valor assignat per una sessió conflictiva (s)
+           if (h.existeixSessio(sessioConflicte)) {
+               for (UAH uahconflicte : h.getUAHbySessio(sessioConflicte)) {
+                   if (coincideixenUAH(uah, uahconflicte)) return false;
                }
            }
         }
