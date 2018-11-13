@@ -8,9 +8,6 @@ public class ConjuntAules {
         ATRIBUTS
     -------------------------------------------------------------------------- */
 
-
-    //Set<Aula> conjuntAules = new HashSet<Aula>();
-
     private Set<Aula> conjuntAules = new HashSet<Aula>();
 
     /* --------------------------------------------------------------------------

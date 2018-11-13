@@ -15,7 +15,6 @@ import JSON.parser.ParseException;
 
 public class Main {
 
-    private static PlaEstudis pe = new PlaEstudis();
     private static ConjuntAules cjtAules = new ConjuntAules();
 
     private static inout io = new inout();
@@ -37,7 +36,7 @@ public class Main {
                     carregarDades();
                     break;
                 case 2:
-                    CtrlDomini.generarHorari(pe, cjtAules);
+                    CtrlDomini.generarHorari();
                     break;
                 case 3:
                     break;

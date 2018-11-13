@@ -18,14 +18,14 @@ public class ConjuntAssignatures {
     // Consultora
 
     public Set<Assignatura> getConjuntAssignatures() {
-        return this.cjtAssignatures.values();
+        return (Set<Assignatura>) this.cjtAssignatures.values();
     }
 
-    public HashMap<Integer,Set<Assignatura>> getConjuntNivells() {
-        return this.cjtNivell;
+    public Set<Assignatura> getConjuntNivells(int nivell) {
+        return this.cjtNivell.get(nivell);
     }
 
-    public Set<Assignatura> getNivell(Integer nombre) {
+    public Set<Assignatura> getAssigsByNivell(Integer nombre) {
         return cjtNivell.get(nombre);
     }
 

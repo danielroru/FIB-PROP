@@ -10,7 +10,7 @@ public class RestriccioBinaria {
         int NivellSessio = cjtAssig.getAssignatura(s.getAssignatura().getNom()).getNivell();
 
         // Iterem per totes les assignatures del mateix nivell que s
-        for (Assignatura a : cjtAssig.getConjuntNivells().get(NivellSessio)) {
+        for (Assignatura a : cjtAssig.getAssigsByNivell(NivellSessio)) {
             // Iterem per totes les sessions de totes les assignatures del nivell de s
             for (Sessio sAssig : CtrlDomini.getSessionsByIdAssig(a.getNom())) {
                 if (s != sAssig) {

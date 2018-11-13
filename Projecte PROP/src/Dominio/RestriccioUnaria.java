@@ -16,7 +16,7 @@ public class RestriccioUnaria {
         }
 
         Assignatura as = new Assignatura();
-        as = cjtAssig.getConjuntAssignatures().get(s.getAssignatura().getNom());
+        as = cjtAssig.getAssignatura(s.getAssignatura().getNom());
 
         if ((s.getIdGrup() < (as.getnGrupsMati() + 1) * 10)) {
             result.retainAll(CtrlDomini.getUAHmatins());

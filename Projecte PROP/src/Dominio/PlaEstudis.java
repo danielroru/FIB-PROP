@@ -15,7 +15,6 @@ public class PlaEstudis {
     }
 
 
-
     // Consultores
     public static int getHoraInici() {
         return horaInici;
@@ -29,13 +28,13 @@ public class PlaEstudis {
 
 
     // Modificadores
-    public static void setHoraInici(int hora) {
+    public void setHoraInici(int hora) {
         this.horaInici = hora;
     }
-    public static void setHoraFi(int hora) {
+    public void setHoraFi(int hora) {
         this.horaFi = hora;
     }
-    public static void setHoraCanviFranja(int hora) {
+    public void setHoraCanviFranja(int hora) {
         this.horaCanviFranja = hora;
     }
 
@@ -43,16 +42,12 @@ public class PlaEstudis {
     // Conjunt Aules
 
     public static void afegirAssignatura(Assignatura a) {
-        cjtAssignatures.afegirAssignatura(a);
+        this.cjtAssignatures.afegirAssignatura(a);
     }
     
     // Conjunt Assignatures
-    public static ConjuntAssignatures getCjtAssig() {
-        return cjtAssignatures;
-    }
-
-    public static Map<Integer, Set<Assignatura>> getCjtNivells() {
-        return cjtAssignatures.getConjuntNivells();
+    public static Set<Assignatura> getCjtAssig() {
+        return this.cjtAssignatures.getConjuntAssignatures();
     }
 
     public void setCjtAssignatures(ConjuntAssignatures cjtAssignatures) {

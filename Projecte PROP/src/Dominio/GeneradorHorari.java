@@ -35,6 +35,7 @@ public class GeneradorHorari {
         if (sFutures.isEmpty())
             return solucio;
         else {
+            // Obtenim el seguent element
             Sessio sActual = sFutures.element();
             sFutures.remove();
 
@@ -54,7 +55,7 @@ public class GeneradorHorari {
 
     public static Horari generarHorari(PlaEstudis pe, ConjuntAules cjtAules) {
 
-        iniGraf(pe, cjtAules);
+        iniGraf(pe);
         Horari solucio = new Horari();
         Queue<Sessio> vfutures = new LinkedList<Sessio>(CtrlDomini.getSessions());
 

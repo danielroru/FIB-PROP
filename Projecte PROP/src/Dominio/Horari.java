@@ -22,17 +22,8 @@ public class Horari {
         return horari;
     }
 
-    public void setHorari(Map<UAH, Sessio> horari) {
-        this.horari = horari;
-    }
-
-
     public Map<Sessio, Set<UAH>> getAssignacio() {
         return assignacio;
-    }
-
-    public void setAssignacio(Map<Sessio, Set<UAH>> assignacio) {
-        this.assignacio = assignacio;
     }
 
     public Sessio getSessiobyUAH(UAH uah) {
