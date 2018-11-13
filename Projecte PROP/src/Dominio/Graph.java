@@ -17,16 +17,12 @@ public class Graph {
         this.arestes = arestes;
     }
 
-    public void afegirAresta(Sessio s1, Sessio s2) {
+    public void afegirArestes(Sessio s1, Sessio s2) {
         Set<Sessio> newSet = arestes.get(s1);
         newSet.add(s2);
         arestes.put(s1, newSet);
     }
 
-
-    public HashMap<Sessio, Set<UAH>> getVertexs() {
-        return this.vertexs;
-    }
 
     public Set<UAH> getUAHbySessio(Sessio s) {
         return this.vertexs.get(s);
@@ -44,12 +40,5 @@ public class Graph {
         arestes.put(s,sSessio);
     }
 
-    public void setVertexs (HashMap<Sessio, Set<UAH>> vertexs) {
-        this.vertexs = vertexs;
-    }
-
-    public void setArestes (HashMap<Sessio, Set<Sessio>> arestes) {
-        this.arestes = arestes;
-    }
 
 }

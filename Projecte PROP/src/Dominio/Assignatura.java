@@ -37,6 +37,7 @@ public class Assignatura {
     public Assignatura() {
 
     }
+
     // Constructora amb nivell
     public Assignatura(String nom, int nHoresT, int nHoresL, int nHoresP,
                        int nGrupsT, int nGrupsL, int nGrupsP, int nGrupsTarda,
@@ -89,9 +90,9 @@ public class Assignatura {
         this.nGrupsMati = as.getnGrupsMati();
 
         // Alumnes
-        this.nAlumnesT = as.nAlumnesT;
-        this.nAlumnesL = as.nAlumnesL;
-        this.nAlumnesP = as.nAlumnesP;
+        this.nAlumnesT = as.getnAlumnesT();
+        this.nAlumnesL = as.getnAlumnesL();
+        this.nAlumnesP = as.getnAlumnesP();
 
         // Agrupació de les hores de classe amb blocs
         this.horesBlocT = as.getHoresBlocT();
@@ -99,6 +100,8 @@ public class Assignatura {
         this.horesBlocP = as.getHoresBlocP();
 
         this.nivell = as.getNivell();
+
+        this.correquisits = as.getCorrequisits();
     }
 
     // Consultores
@@ -165,7 +168,6 @@ public class Assignatura {
         this.nom = nom;
     }
 
-
     public void setnHoresT(int nHoresT) {
         this.nHoresT = nHoresT;
     }
@@ -177,7 +179,6 @@ public class Assignatura {
     public void setnHoresP(int nHoresP) {
         this.nHoresP = nHoresP;
     }
-
 
     public void setnGrupsT(int nGrupsT) {
         this.nGrupsT = nGrupsT;
@@ -223,9 +224,11 @@ public class Assignatura {
         this.nAlumnesP = nAlumnesP;
     }
 
-    public void setCorrequisits(ConjuntAssignatures correquisits) {this.correquisits = correquisits; }
+    public ConjuntAssignatures getCorrequisits() {
+        return correquisits;
+    }
 
-    public void afegirCorrequisit(Assignatura a) {
-
+    public void setCorrequisits(ConjuntAssignatures correquisits) {
+        this.correquisits = correquisits;
     }
 }

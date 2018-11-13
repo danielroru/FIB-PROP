@@ -1,6 +1,7 @@
 package Dominio;
 
-public class Sessio implements Comparable<Sessio> {
+// implements Comparable<Sessio>
+public class Sessio {
 
     // Atributs
     private Enumeracio.TipusSessio tipus;
@@ -16,9 +17,6 @@ public class Sessio implements Comparable<Sessio> {
     public Sessio() {
     }
 
-    public Sessio(Assignatura a) {
-    }
-
     public Sessio(Assignatura assig, int idGrup, int duracio, Enumeracio.TipusSessio tipus) {
         this.assignatura = assig;
         this.idGrup = idGrup;
@@ -29,11 +27,11 @@ public class Sessio implements Comparable<Sessio> {
     // Consultores
 
     public Assignatura getAssignatura() {
-        return assignatura;
+        return this.assignatura;
     }
 
-    public void setAssignatura(Assignatura assignatura) {
-        this.assignatura = assignatura;
+    public void setAssignatura(Assignatura assig) {
+        this.assignatura = assig;
     }
 
     public int getIdGrup() {
@@ -62,8 +60,9 @@ public class Sessio implements Comparable<Sessio> {
         this.tipus = tipus;
     }
 
-    @Override
+    /*@Override
     public int compareTo(Sessio o) {
         return 0;
     }
+    */
 }

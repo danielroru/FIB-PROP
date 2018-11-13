@@ -15,8 +15,6 @@ import JSON.parser.ParseException;
 
 public class Main {
 
-    private static ConjuntAules cjtAules = new ConjuntAules();
-
     private static inout io = new inout();
 
     /////////////////////////////////////////////////////////////////
@@ -70,7 +68,7 @@ public class Main {
                 a.setCapacitat(capacitat);
                 a.setTipus(tAula);
 
-                cjtAules.afegirAula(a);
+                PlaEstudis.getConjuntAules().afegirAula(a);
 
             }
 
@@ -118,7 +116,7 @@ public class Main {
                 a.setHoresBlocL((int) (long) jsonObject.get("horesBlocL"));
                 a.setHoresBlocP((int) (long) jsonObject.get("horesBlocP"));
 
-                pe.afegirAssignatura(a);
+                PlaEstudis.afegirAssignatura(a);
 
             }
 
@@ -139,9 +137,9 @@ public class Main {
 
             JSONObject plaEstudisOjbect = (JSONObject) parser.parse(new FileReader(dataPath + "plaEstudis.json"));
 
-            pe.setHoraInici((int) (long) plaEstudisOjbect.get("horaInici"));
-            pe.setHoraFi((int) (long) plaEstudisOjbect.get("horaFi"));
-            pe.setHoraCanviFranja((int) (long) plaEstudisOjbect.get("horaCanviFranja"));
+            PlaEstudis.setHoraInici((int) (long) plaEstudisOjbect.get("horaInici"));
+            PlaEstudis.setHoraFi((int) (long) plaEstudisOjbect.get("horaFi"));
+            PlaEstudis.setHoraCanviFranja((int) (long) plaEstudisOjbect.get("horaCanviFranja"));
 
 
 

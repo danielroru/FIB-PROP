@@ -15,7 +15,7 @@ public class ConjuntAules {
     -------------------------------------------------------------------------- */
 
 
-    public Set<Aula> getConjuntAules() {
+    public Set<Aula> getAules() {
         return this.conjuntAules;
     }
 

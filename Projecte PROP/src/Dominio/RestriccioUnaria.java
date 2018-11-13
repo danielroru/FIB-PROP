@@ -5,7 +5,7 @@ import java.util.Set;
 
 public class RestriccioUnaria {
 
-    public static Set<UAH> crearDomini(ConjuntAssignatures cjtAssig, Sessio s) {
+    public static Set<UAH> crearDomini(Sessio s) {
         Set<UAH> result;
 
         if (s.getTipus().equals(Enumeracio.TipusSessio.LABORATORI)) {
@@ -15,12 +15,12 @@ public class RestriccioUnaria {
             result = new HashSet<>(CtrlDomini.getUAHteoria());
         }
 
-        Assignatura as = new Assignatura();
-        as = cjtAssig.getAssignatura(s.getAssignatura().getNom());
+        Assignatura as = PlaEstudis.getConjuntAssignatures().getAssignatura(s.getAssignatura().getNom());
 
         if ((s.getIdGrup() < (as.getnGrupsMati() + 1) * 10)) {
             result.retainAll(CtrlDomini.getUAHmatins());
-        } else {
+        }
+        else {
             result.retainAll(CtrlDomini.getUAHtardes());
         }
 

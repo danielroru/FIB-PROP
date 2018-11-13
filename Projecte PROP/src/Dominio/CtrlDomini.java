@@ -14,19 +14,11 @@ public class CtrlDomini {
     private final static HashSet<UAH> UAHlaboratori = new HashSet<>();
 
     public static void generarHorari() {
-        crearSessions();
         crearUAHs();
+        crearSessions();
         Horari solucio = GeneradorHorari.generarHorari();
-        imprimirHorari(solucio);
     }
 
-    public static void imprimirHorari(Horari solucio) {
-
-        inout io = new inout();
-
-
-
-    }
 
     public static Set<Sessio> getSessionsByIdAssig(String idAssig) {
         Set<Sessio> SessionsAssig = new HashSet<>();
@@ -40,17 +32,18 @@ public class CtrlDomini {
 
         sessions = new HashSet<Sessio>();
 
-        for (Assignatura a : PlaEstudis.getCjtAssig()) {
+        for (Assignatura a : PlaEstudis.getConjuntAssignatures().getAssignatures()) {
             for(int i = 1; i <= a.getnGrupsT(); ++i) {
-                Sessio sT = new Sessio(a);
-
+                Sessio sT = new Sessio();
+                sT.setAssignatura(a);
                 sT.setIdGrup(i * 10);
                 sT.setDuracio(a.getnHoresT());
                 sT.setTipus(Enumeracio.TipusSessio.TEORIA);
                 sessions.add(sT);
 
                 for (int j = 1; j <= a.getnGrupsL(); ++j) {
-                    Sessio sL = new Sessio(a);
+                    Sessio sL = new Sessio();
+                    sL.setAssignatura(a);
                     sL.setIdGrup(i * 10 + j);
                     sL.setDuracio(a.getnHoresL());
                     sL.setTipus(Enumeracio.TipusSessio.LABORATORI);
@@ -58,7 +51,8 @@ public class CtrlDomini {
                 }
 
                 for (int j = 1; j <= a.getnGrupsP(); ++j) {
-                    Sessio sP = new Sessio(a);
+                    Sessio sP = new Sessio();
+                    sP.setAssignatura(a);
                     sP.setIdGrup(i * 10 + j);
                     sP.setDuracio(a.getnHoresP());
                     sP.setTipus(Enumeracio.TipusSessio.PROBLEMES);
@@ -72,15 +66,16 @@ public class CtrlDomini {
 
     private static void crearUAHs() {
 
-        for (Aula a : PlaEstudis.getConjuntAules()) {
+        for (Aula a : PlaEstudis.getConjuntAules().getAules()) {
             for (Enumeracio.Dia dia : Enumeracio.Dia.values()) {
-                for (int i = PlaE.getHoraInici(); i < PlaE.getHoraFi(); i++) {
+                for (int i = PlaEstudis.getHoraInici(); i < PlaEstudis.getHoraFi(); i++) {
                     UAH uah = new UAH(a);
 
                     uah.setHora(i);
                     uah.setDia(dia);
+                    uah.setAula(a);
 
-                    if (i < PlaE.getHoraCanviFranja()) UAHmatins.add(uah);
+                    if (i < PlaEstudis.getHoraCanviFranja()) UAHmatins.add(uah);
                     else UAHtardes.add(uah);
 
                     if ((a.getTipusAula()).equals(Enumeracio.TipusAula.TEORIA)) UAHteoria.add(uah);

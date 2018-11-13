@@ -4,7 +4,10 @@ import java.util.*;
 
 public class PlaEstudis {
 
-    private ConjuntAssignatures cjtAssignatures = new ConjuntAssignatures();
+    private static PlaEstudis instance = new PlaEstudis();
+
+    private static ConjuntAssignatures cjtAssignatures = new ConjuntAssignatures();
+    private static ConjuntAules cjtAules = new ConjuntAules();
 
     private static int horaInici;
     private static int horaFi;
@@ -14,6 +17,9 @@ public class PlaEstudis {
     private PlaEstudis(){
     }
 
+    public static PlaEstudis getInstance() {
+        return instance;
+    }
 
     // Consultores
     public static int getHoraInici() {
@@ -28,31 +34,34 @@ public class PlaEstudis {
 
 
     // Modificadores
-    public void setHoraInici(int hora) {
-        this.horaInici = hora;
+    public static void setHoraInici(int hora) {
+        horaInici = hora;
     }
-    public void setHoraFi(int hora) {
-        this.horaFi = hora;
+    public static void setHoraFi(int hora) {
+        horaFi = hora;
     }
-    public void setHoraCanviFranja(int hora) {
-        this.horaCanviFranja = hora;
+    public static void setHoraCanviFranja(int hora) {
+        horaCanviFranja = hora;
     }
 
 
     // Conjunt Aules
 
-    public static void afegirAssignatura(Assignatura a) {
-        this.cjtAssignatures.afegirAssignatura(a);
+    public static void afegirAula(Aula a) {
+        cjtAules.afegirAula(a);
     }
-    
+
+    public static ConjuntAules getConjuntAules() {
+        return cjtAules;
+    }
+
     // Conjunt Assignatures
-    public static Set<Assignatura> getCjtAssig() {
-        return this.cjtAssignatures.getConjuntAssignatures();
+
+    public static void afegirAssignatura(Assignatura a) {
+        cjtAssignatures.afegirAssignatura(a);
     }
 
-    public void setCjtAssignatures(ConjuntAssignatures cjtAssignatures) {
-        this.cjtAssignatures = cjtAssignatures;
+    public static ConjuntAssignatures getConjuntAssignatures() {
+        return cjtAssignatures;
     }
-
-
 }

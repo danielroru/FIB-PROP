@@ -4,13 +4,13 @@ import java.util.*;
 
 public class RestriccioBinaria {
 
-    public static HashSet<Sessio> arestesNivell(ConjuntAssignatures cjtAssig, Sessio s) {
+    public static HashSet<Sessio> arestesNivell(Sessio s) {
         HashSet<Sessio> resultat = new HashSet<>();
 
-        int NivellSessio = cjtAssig.getAssignatura(s.getAssignatura().getNom()).getNivell();
+        int NivellSessio = PlaEstudis.getConjuntAssignatures().getAssignatura(s.getAssignatura().getNom()).getNivell();
 
         // Iterem per totes les assignatures del mateix nivell que s
-        for (Assignatura a : cjtAssig.getAssigsByNivell(NivellSessio)) {
+        for (Assignatura a : PlaEstudis.getConjuntAssignatures().getAssigsByNivell(NivellSessio)) {
             // Iterem per totes les sessions de totes les assignatures del nivell de s
             for (Sessio sAssig : CtrlDomini.getSessionsByIdAssig(a.getNom())) {
                 if (s != sAssig) {

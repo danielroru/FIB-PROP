@@ -17,12 +17,12 @@ public class ConjuntAssignatures {
 
     // Consultora
 
-    public Set<Assignatura> getConjuntAssignatures() {
-        return (Set<Assignatura>) this.cjtAssignatures.values();
+    public Set<Assignatura> getAssignatures() {
+        return new HashSet<>(cjtAssignatures.values());
     }
 
     public Set<Assignatura> getConjuntNivells(int nivell) {
-        return this.cjtNivell.get(nivell);
+        return cjtNivell.get(nivell);
     }
 
     public Set<Assignatura> getAssigsByNivell(Integer nombre) {
