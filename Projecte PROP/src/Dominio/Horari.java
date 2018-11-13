@@ -15,6 +15,7 @@ public class Horari {
 
     public Horari(Horari h) {
         horari = h.getHorari();
+
     }
 
     public Map<Sessio, Set<UAH>> getHorari() {
@@ -40,13 +41,15 @@ public class Horari {
             horari.put(se,temp);
         }
 
+
     }
 
-    // TODO remove nomès una
-    public void eliminarUAH(Sessio se) {
+    // TODO remove només una
+    public void eliminarUAH(Sessio se, UAH uah) {
         if (horari.containsKey(se)) {
             horari.remove(se);
         }
+
     }
 
     public boolean valida(Sessio s, UAH uah) {

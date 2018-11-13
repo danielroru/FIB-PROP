@@ -25,7 +25,7 @@ public class GeneradorHorari {
             G.afegirVertex(s, domini);
 
             //INICIALITZACIÓ ARESTES
-            Set<Sessio> arestesSessio = new HashSet<>(Restriccions.crearArestes(pe.getCjtAssig(), s));
+            Set<Sessio> arestesSessio = new HashSet<>(RestriccioBinaria.arestesNivell(pe.getCjtAssig(), s));
             G.afegirAresta(s, arestesSessio);
 
         }
@@ -57,8 +57,8 @@ public class GeneradorHorari {
                     solucio = backtracking_cronologic(vfutures, solucio);
                     if (!solucio.esfallo()) {
                         return solucio;
-                    } else solucio.eliminarUAH(vactual);
-                } else solucio.eliminarUAH(vactual);
+                    } else solucio.eliminarUAH(vactual, uah);
+                } else solucio.eliminarUAH(vactual, uah);
             }
             return new Horari();
         }

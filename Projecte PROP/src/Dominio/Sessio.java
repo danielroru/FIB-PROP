@@ -3,10 +3,10 @@ package Dominio;
 public class Sessio extends Assignatura{
 
     // Atributs
-
+    private Enumeracio.TipusSessio tipus;
     private int idGrup;
     private int duracio;
-    private Enumeracio.TipusSessio tipus;
+
 
     // Mètodes
 

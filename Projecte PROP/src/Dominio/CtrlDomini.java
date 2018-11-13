@@ -21,14 +21,11 @@ public class CtrlDomini {
     }
 
     public static void imprimirHorari(Horari solucio) {
-/*
-        private static inout io = new inout();
 
-        for (Sessio s : solucio.getHorari().keySet()) {
-            io.writeln(s.getNom());
-            for ()
-        }
-        */
+        inout io = new inout();
+
+
+
     }
 
     public static HashSet<Sessio> getSessionsByIdAssig(String idAssig) {
