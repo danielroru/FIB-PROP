@@ -13,10 +13,10 @@ public class CtrlDomini {
     private final static HashSet<UAH> UAHteoria = new HashSet<>();
     private final static HashSet<UAH> UAHlaboratori = new HashSet<>();
 
-    public static void generarHorari(PlaEstudis pe, ConjuntAules cjtAules) {
-        crearSessions(pe, cjtAules);
+    public static Horari generarHorari(PlaEstudis pe, ConjuntAules cjtAules) {
+        crearSessions(pe);
         crearUAHs(pe,cjtAules);
-        GeneradorHorari.generarHorari(pe, cjtAules);
+        return GeneradorHorari.generarHorari(pe, cjtAules);
     }
 
     public static HashSet<Sessio> getSessionsByIdAssig(String idAssig) {
@@ -27,7 +27,12 @@ public class CtrlDomini {
         return SessionsAssig;
     }
 
-    private static void crearSessions(PlaEstudis PlaE, ConjuntAules cjtAules) {
+    //public static Assignatura getAssigByName(String name) {
+    //    return PlaEstudis.getCjtAssig().getConjuntAssignatures().get(name);
+    //}
+
+
+    private static void crearSessions(PlaEstudis PlaE) {
 
         ConjuntAssignatures cjtAssig = PlaE.getCjtAssig();
 

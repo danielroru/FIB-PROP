@@ -37,7 +37,8 @@ public class Main {
                     carregarDades();
                     break;
                 case 2:
-                    CtrlDomini.generarHorari(pe, cjtAules);
+                    Horari horari = CtrlDomini.generarHorari(pe, cjtAules);
+                    horari.escriure();
                     break;
                 case 3:
                     break;

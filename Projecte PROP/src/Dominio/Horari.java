@@ -1,9 +1,6 @@
 package Dominio;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class Horari {
 
@@ -54,5 +51,25 @@ public class Horari {
 
     public boolean esfallo() {
         return this.horari.isEmpty();
+    }
+
+    public void escriure() {
+        for (Sessio s : horari.keySet()) {
+            System.out.println(s.getNomAssig() + " " + s.getIdGrup() + " " + s.getTipus());
+            System.out.println("----" + horari.get(s).size() +  "----");
+            for (UAH uah : horari.get(s)) {
+                System.out.println(uah.getDia());
+                System.out.println(uah.getHora());
+                System.out.println(uah.getIdAula());
+            }
+
+        }
+    }
+    public boolean assignacioCompelta(Sessio s) {
+        if(horari.containsKey(s)) {
+            if (horari.get(s).size() == s.getDuracio())
+                return true;
+        }
+        return false;
     }
 }
