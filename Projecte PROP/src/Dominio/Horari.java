@@ -10,15 +10,11 @@ public class Horari {
     private Map<Sessio, Set<UAH>> assignacio;
 
     public Horari() {
-        horari = new HashMap<>();
+        horari = new HashSet<>();
         assignacio = new HashMap<>();
-
-        for (Map.Entry<Sessio, Set<UAH>> entry : assignacio.entrySet()) {
-            //entry.
-        }
     }
 
-    public Map<UAH, Sessio> getHorari() {
+    public Set<UAH> getHorari() {
         return horari;
     }
 
