@@ -44,7 +44,7 @@ public class RestriccioBinaria {
     public static boolean validaSolucio(Horari h, Sessio s, UAH uah) {
 
         // Comprovem si la UAH ja ha estat assignada previament
-        if (!h.existeixUAH(uah)) {
+        if (h.existeixUAH(uah)) {
             return false;
         }
 
@@ -66,8 +66,8 @@ public class RestriccioBinaria {
         for (Sessio sessioConflicte : GeneradorHorari.getG().getArestes().get(s)) {
 
            // Si la solució té un valor assignat per una sessió conflictiva (s)
-           if (h.existeixSessio(sessioConflicte)) {
-               for (UAH uahconflicte : h.getUAHbySessio(sessioConflicte)) {
+           for (UAH uahconflicte : h.getHorari()){
+               if (uahconflicte.getSessio().equals(sessioConflicte)) {
                    if (coincideixenUAH(uah, uahconflicte)) return false;
                }
            }

@@ -37,6 +37,7 @@ public class Horari {
     public void assignarUAH(Sessio se, UAH uah) {
         if (!uah.teSessio()) {
             uah.setSessio(se);
+            horari.add(uah);
         }
 
     }
@@ -44,6 +45,7 @@ public class Horari {
     public void eliminarUAH(Sessio se, UAH uah) {
         if (uah.teSessio()) {
             uah.eliminaSessio();
+            horari.remove(uah);
         }
     }
 
@@ -53,5 +55,9 @@ public class Horari {
 
     public boolean esfallo() {
         return this.horari.isEmpty();
+    }
+
+    public void setHorari(Set<UAH> horari) {
+        this.horari = horari;
     }
 }

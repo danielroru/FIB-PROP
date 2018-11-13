@@ -16,9 +16,6 @@ public class UAH {
     public UAH() {
     }
 
-    public UAH (Aula a) {
-    }
-
     public UAH (Sessio sessio, Aula aula, int hora, Enumeracio.Dia dia) {
         this.sessio = sessio;
         this.aula = aula;
@@ -38,7 +35,7 @@ public class UAH {
     }
 
     public boolean teSessio() {
-        return this.sessio == null;
+        return this.sessio == new Sessio();
     }
 
     public void eliminaSessio() {
@@ -70,4 +67,6 @@ public class UAH {
     public void setDia(Enumeracio.Dia dia) {
         this.dia = dia;
     }
+
+
 }
