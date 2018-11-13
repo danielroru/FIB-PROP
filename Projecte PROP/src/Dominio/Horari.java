@@ -6,28 +6,20 @@ import java.util.Map;
 import java.util.Set;
 
 public class Horari {
-    private Map<UAH, Sessio> horari;
+    private Set<UAH> horari;
     private Map<Sessio, Set<UAH>> assignacio;
 
     public Horari() {
-        horari = new HashMap<>();
+        horari = new HashSet<>();
         assignacio = new HashMap<>();
-
-        for (Map.Entry<Sessio, Set<UAH>> entry : assignacio.entrySet()) {
-            //entry.
-        }
     }
 
-    public Map<UAH, Sessio> getHorari() {
+    public Set<UAH> getHorari() {
         return horari;
     }
 
     public Map<Sessio, Set<UAH>> getAssignacio() {
         return assignacio;
-    }
-
-    public Sessio getSessiobyUAH(UAH uah) {
-        return horari.get(uah);
     }
 
     public boolean existeixSessio(Sessio s) {
@@ -39,35 +31,21 @@ public class Horari {
     }
 
     public boolean existeixUAH(UAH uah) {
-        return horari.containsKey(uah);
+        return horari.contains(uah);
     }
 
     public void assignarUAH(Sessio se, UAH uah) {
-        if (!horari.containsKey(uah)) {
-            horari.put(uah,se);
+        if (!uah.teSessio()) {
+            uah.setSessio(se);
+            horari.add(uah);
         }
 
-
-        Set<UAH> temp;
-
-        if (assignacio.containsKey(se)) {
-            temp = assignacio.get(se);
-        }
-        else {
-            temp = new HashSet<>();
-        }
-
-        temp.add(uah);
-        assignacio.put(se, temp);
     }
 
     public void eliminarUAH(Sessio se, UAH uah) {
-        if (horari.containsKey(uah)) {
+        if (uah.teSessio()) {
+            uah.eliminaSessio();
             horari.remove(uah);
-        }
-
-        if (assignacio.containsKey(se)) {
-            assignacio.remove(se);
         }
     }
 
@@ -77,5 +55,9 @@ public class Horari {
 
     public boolean esfallo() {
         return this.horari.isEmpty();
+    }
+
+    public void setHorari(Set<UAH> horari) {
+        this.horari = horari;
     }
 }

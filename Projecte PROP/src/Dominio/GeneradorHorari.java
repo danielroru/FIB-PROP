@@ -33,6 +33,7 @@ public class GeneradorHorari {
 
     private static Horari backtracking_cronologic(Queue<Sessio> sFutures, Horari solucio) {
         if (sFutures.isEmpty())
+
             return solucio;
         else {
             // Obtenim el seguent element
@@ -40,9 +41,8 @@ public class GeneradorHorari {
             sFutures.remove();
 
             for (UAH uah : G.getUAHbySessio(sActual)) {
-                solucio.assignarUAH(sActual, uah);
-
                 if (solucio.valida(sActual, uah)) {
+                    solucio.assignarUAH(sActual, uah);
                     solucio = backtracking_cronologic(sFutures, solucio);
                     if (!solucio.esfallo()) {
                         return solucio;

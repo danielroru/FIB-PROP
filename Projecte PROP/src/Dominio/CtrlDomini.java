@@ -17,7 +17,10 @@ public class CtrlDomini {
         crearUAHs();
         crearSessions();
         Horari solucio = GeneradorHorari.generarHorari();
+        imprimirHorari(solucio);
     }
+
+    public
 
 
     public static Set<Sessio> getSessionsByIdAssig(String idAssig) {
