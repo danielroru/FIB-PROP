@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.Set;
 
 public class Horari {
-    private Map<UAH, Sessio> horari;
+    private Set<UAH> horari;
     private Map<Sessio, Set<UAH>> assignacio;
 
     public Horari() {
@@ -26,10 +26,6 @@ public class Horari {
         return assignacio;
     }
 
-    public Sessio getSessiobyUAH(UAH uah) {
-        return horari.get(uah);
-    }
-
     public boolean existeixSessio(Sessio s) {
         return assignacio.containsKey(s);
     }
@@ -39,35 +35,19 @@ public class Horari {
     }
 
     public boolean existeixUAH(UAH uah) {
-        return horari.containsKey(uah);
+        return horari.contains(uah);
     }
 
     public void assignarUAH(Sessio se, UAH uah) {
-        if (!horari.containsKey(uah)) {
-            horari.put(uah,se);
+        if (!uah.teSessio()) {
+            uah.setSessio(se);
         }
 
-
-        Set<UAH> temp;
-
-        if (assignacio.containsKey(se)) {
-            temp = assignacio.get(se);
-        }
-        else {
-            temp = new HashSet<>();
-        }
-
-        temp.add(uah);
-        assignacio.put(se, temp);
     }
 
     public void eliminarUAH(Sessio se, UAH uah) {
-        if (horari.containsKey(uah)) {
-            horari.remove(uah);
-        }
-
-        if (assignacio.containsKey(se)) {
-            assignacio.remove(se);
+        if (uah.teSessio()) {
+            uah.eliminaSessio();
         }
     }
 

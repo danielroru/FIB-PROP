@@ -37,6 +37,14 @@ public class UAH {
         this.sessio = sessio;
     }
 
+    public boolean teSessio() {
+        return this.sessio == null;
+    }
+
+    public void eliminaSessio() {
+        this.sessio = null;
+    }
+
     public Aula getAula() {
         return aula;
     }
