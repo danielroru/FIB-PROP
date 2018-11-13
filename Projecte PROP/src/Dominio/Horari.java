@@ -1,33 +1,18 @@
 package Dominio;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import com.sun.deploy.util.OrderedHashSet;
+
+import java.util.*;
 
 public class Horari {
     private Set<UAH> horari;
-    private Map<Sessio, Set<UAH>> assignacio;
 
     public Horari() {
         horari = new HashSet<>();
-        assignacio = new HashMap<>();
     }
 
     public Set<UAH> getHorari() {
         return horari;
-    }
-
-    public Map<Sessio, Set<UAH>> getAssignacio() {
-        return assignacio;
-    }
-
-    public boolean existeixSessio(Sessio s) {
-        return assignacio.containsKey(s);
-    }
-
-    public Set<UAH> getUAHbySessio(Sessio s) {
-        return assignacio.get(s);
     }
 
     public boolean existeixUAH(UAH uah) {
@@ -57,7 +42,12 @@ public class Horari {
         return this.horari.isEmpty();
     }
 
-    public void setHorari(Set<UAH> horari) {
-        this.horari = horari;
+
+    public List<UAH> ordena() {
+        List<UAH> llista = new LinkedList<UAH>();
+        llista.addAll(horari);
+        Collections.<UAH>sort(llista);
+        return llista;
+
     }
 }

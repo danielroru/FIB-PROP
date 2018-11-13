@@ -13,14 +13,67 @@ public class CtrlDomini {
     private final static HashSet<UAH> UAHteoria = new HashSet<>();
     private final static HashSet<UAH> UAHlaboratori = new HashSet<>();
 
-    public static void generarHorari() {
+    public static void generarHorari() throws Exception {
         crearUAHs();
         crearSessions();
         Horari solucio = GeneradorHorari.generarHorari();
-        imprimirHorari(solucio);
+        List<UAH> sol = solucio.ordena();
+        imprimirHorari(sol);
     }
 
-    public static void imprimirHorari(Horari solucio) {
+    public static void imprimirHorari(List<UAH> solucio) throws Exception {
+        inout io = new inout();
+        for (Aula a : PlaEstudis.getConjuntAules().getAules()) {
+            io.writeln("");
+            io.writeln("");
+            io.writeln("---------------");
+            io.writeln("Aula " + a.getId());
+            io.writeln("---------------");
+            io.writeln("");
+
+            io.write("               ");
+            for (Enumeracio.Dia dia : Enumeracio.Dia.values()) {
+                io.write(dia.toString());
+                for (int i = dia.toString().length(); i < 15; i++) {
+                    io.write(" ");
+                }
+            }
+            io.writeln("");
+            for (int hora = PlaEstudis.getHoraInici(); hora < PlaEstudis.getHoraFi(); hora++) {
+                io.write(hora);
+                int xifres = hora / 10 == 0 ? 1 : 2;
+                for (int j = xifres; j < 15; j++) {
+                    io.write(" ");
+                }
+                for (Enumeracio.Dia dia : Enumeracio.Dia.values()) {
+                    for (UAH uah : solucio) {
+                        if (uah.getHora() == hora && uah.getDia().equals(dia) && uah.getAula().equals(a)) {
+                            String result = null;
+                            String sigla = null;
+                            switch (uah.getSessio().getTipus()) {
+                                case TEORIA:
+                                    sigla = "T";
+                                    break;
+                                case LABORATORI:
+                                    sigla = "L";
+                                    break;
+                                case PROBLEMES:
+                                    sigla = "P";
+                                    break;
+                            }
+                            result = "[" + uah.getSessio().getAssignatura().getNom() + "]  " + uah.getSessio().getIdGrup() + " " + sigla;
+                            io.write(result);
+                            for (int j = result.length(); j < 15; j++) {
+                                io.write(" ");
+                            }
+
+                        }
+                    }
+
+                }
+                io.writeln("");
+            }
+        }
 
     }
 
