@@ -20,8 +20,9 @@ public class CtrlDomini {
         imprimirHorari(solucio);
     }
 
-    public
+    public static void imprimirHorari(Horari solucio) {
 
+    }
 
     public static Set<Sessio> getSessionsByIdAssig(String idAssig) {
         Set<Sessio> SessionsAssig = new HashSet<>();
@@ -72,7 +73,7 @@ public class CtrlDomini {
         for (Aula a : PlaEstudis.getConjuntAules().getAules()) {
             for (Enumeracio.Dia dia : Enumeracio.Dia.values()) {
                 for (int i = PlaEstudis.getHoraInici(); i < PlaEstudis.getHoraFi(); i++) {
-                    UAH uah = new UAH(a);
+                    UAH uah = new UAH();
 
                     uah.setHora(i);
                     uah.setDia(dia);
