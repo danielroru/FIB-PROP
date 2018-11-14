@@ -4,7 +4,7 @@ import java.util.*;
 
 public class GeneradorHorari {
 
-    private static Graph G = new Graph();
+    private static Graph G;
 
     public static Graph getG() {
         return G;
@@ -15,6 +15,8 @@ public class GeneradorHorari {
     }
 
     private static void iniGraf() {
+
+        G = new Graph();
 
         for (Sessio s : CtrlDomini.getSessions()) {
 

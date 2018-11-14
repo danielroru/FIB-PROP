@@ -24,7 +24,6 @@ public class Horari {
             uah.setSessio(se);
             horari.add(uah);
         }
-
     }
 
     public void eliminarUAH(Sessio se, UAH uah) {

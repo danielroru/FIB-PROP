@@ -17,6 +17,12 @@ public class PlaEstudis {
     private PlaEstudis(){
     }
 
+    public static void reset() {
+        instance = new PlaEstudis();
+        cjtAssignatures = new ConjuntAssignatures();
+        cjtAules = new ConjuntAules();
+    }
+
     public static PlaEstudis getInstance() {
         return instance;
     }
@@ -46,10 +52,6 @@ public class PlaEstudis {
 
 
     // Conjunt Aules
-
-    public static void afegirAula(Aula a) {
-        cjtAules.afegirAula(a);
-    }
 
     public static ConjuntAules getConjuntAules() {
         return cjtAules;

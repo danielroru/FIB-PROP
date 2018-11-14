@@ -8,15 +8,26 @@ public class CtrlDomini {
 
     private static HashSet<Sessio> sessions;
 
-    private final static HashSet<UAH> UAHmatins = new HashSet<>();
-    private final static HashSet<UAH> UAHtardes = new HashSet<>();
-    private final static HashSet<UAH> UAHteoria = new HashSet<>();
-    private final static HashSet<UAH> UAHlaboratori = new HashSet<>();
+    private static HashSet<UAH> UAHmatins = new HashSet<>();
+    private static HashSet<UAH> UAHtardes = new HashSet<>();
+    private static HashSet<UAH> UAHteoria = new HashSet<>();
+    private static HashSet<UAH> UAHlaboratori = new HashSet<>();
+
+    private static Horari ultimHorari = new Horari();
+
+    public static void reset() {
+        UAHmatins = new HashSet<>();
+        UAHtardes = new HashSet<>();
+        UAHteoria = new HashSet<>();
+        UAHlaboratori = new HashSet<>();
+    }
 
     public static void generarHorari() throws Exception {
+        reset();
         crearUAHs();
         crearSessions();
         Horari solucio = GeneradorHorari.generarHorari();
+        ultimHorari = solucio;
         List<UAH> sol = solucio.ordena();
         imprimirHorari(sol);
     }
@@ -40,15 +51,16 @@ public class CtrlDomini {
             }
             io.writeln("");
             for (int hora = PlaEstudis.getHoraInici(); hora < PlaEstudis.getHoraFi(); hora++) {
-                io.write(hora);
+                io.write(hora + "h");
                 int xifres = hora / 10 == 0 ? 1 : 2;
-                for (int j = xifres; j < 15; j++) {
+                for (int j = xifres+1; j < 15; j++) {
                     io.write(" ");
                 }
                 for (Enumeracio.Dia dia : Enumeracio.Dia.values()) {
                     for (UAH uah : solucio) {
                         if (uah.getHora() == hora && uah.getDia().equals(dia) && uah.getAula().equals(a)) {
                             String result = null;
+                            String result2 = null;
                             String sigla = null;
                             switch (uah.getSessio().getTipus()) {
                                 case TEORIA:
@@ -61,13 +73,19 @@ public class CtrlDomini {
                                     sigla = "P";
                                     break;
                             }
-                            result = "[" + uah.getSessio().getAssignatura().getNom() + "]  " + uah.getSessio().getIdGrup() + " " + sigla;
+                            result = "[" + uah.getSessio().getAssignatura().getNom() + "]";
                             io.write(result);
-                            for (int j = result.length(); j < 15; j++) {
+                            int  k = 0;
+                            for (k = result.length(); k < 8; k++) {
                                 io.write(" ");
                             }
-
+                            result2 = uah.getSessio().getIdGrup() + " " + sigla;
+                            io.write(result2);
+                            for (int j = k+result2.length(); j < 15; j++) {
+                                io.write(" ");
+                            }
                         }
+
                     }
 
                 }

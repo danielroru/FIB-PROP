@@ -3,7 +3,9 @@ package Dominio;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 
+import java.io.FileWriter;
 import java.io.IOException;
+import java.security.Timestamp;
 
 import JSON.JSONArray;
 import JSON.JSONObject;
@@ -36,6 +38,10 @@ public class Main {
                     CtrlDomini.generarHorari();
                     break;
                 case 3:
+                    desarHorari();
+                    break;
+                case 4:
+                    carregarHorari();
                     break;
                 default:
                     break;
@@ -159,19 +165,35 @@ public class Main {
         folder = io.readname();
         dataPath = "./src/Dades/" + folder + "/";
 
+        PlaEstudis.reset();
+
         carregarAules(dataPath);
         carregarAssignatures(dataPath);
         carregarPlaEstudis(dataPath);
     }
 
-    private static void generarHorari () {
+    private static void desarHorari () {
+        JSONObject obj = new JSONObject();
+        obj.put("name", "mkyong.com");
+        obj.put("age", new Integer(100));
 
+
+        String dataPath = "./src/Dades/Horaris/";
+        try (FileWriter file = new FileWriter("dataPath" + System.currentTimeMillis() + ".json")) {
+
+            file.write(obj.toJSONString());
+            file.flush();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        System.out.print(obj);
     }
 
-    private static void mostrarHorari () {
+    private static void carregarHorari() {
 
     }
-
 
     private static void escriureMenuPrincipal() throws Exception {
         io.writeln("////////////////////////////");
@@ -180,7 +202,8 @@ public class Main {
         io.writeln("");
         io.writeln("1] Carregar Set De Dades");
         io.writeln("2] Generar Horari");
-        io.writeln("3] Mostrar Horari");
+        io.writeln("3] Guardar Horari");
+        io.writeln("4] Carregar Horari");
         io.writeln("0] Sortir de l'aplicació");
     }
 
