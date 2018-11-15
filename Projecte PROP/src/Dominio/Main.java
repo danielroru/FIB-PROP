@@ -6,6 +6,9 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.security.Timestamp;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 
 import JSON.JSONArray;
 import JSON.JSONObject;
@@ -120,6 +123,12 @@ public class Main {
                 a.setHoresBlocT((int) (long) jsonObject.get("horesBlocT"));
                 a.setHoresBlocL((int) (long) jsonObject.get("horesBlocL"));
                 a.setHoresBlocP((int) (long) jsonObject.get("horesBlocP"));
+
+                Set<String> core = new HashSet<>();
+
+                core.add((String) jsonObject.get("correquisits"));
+
+                a.setCorrequisits(core);
 
                 PlaEstudis.afegirAssignatura(a);
 

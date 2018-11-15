@@ -108,60 +108,66 @@ public class Assignatura {
 
     // Consultores
 
+
     public String getNom() {
-        return this.nom;
+        return nom;
     }
 
-
     public int getnHoresT() {
-        return this.nHoresT;
+        return nHoresT;
     }
 
     public int getnHoresL() {
-        return this.nHoresL;
+        return nHoresL;
     }
 
     public int getnHoresP() {
-        return this.nHoresP;
+        return nHoresP;
     }
 
-
     public int getnGrupsT() {
-        return this.nGrupsT;
+        return nGrupsT;
     }
 
     public int getnGrupsL() {
-        return this.nGrupsL;
+        return nGrupsL;
     }
 
     public int getnGrupsP() {
-        return this.nGrupsP;
+        return nGrupsP;
     }
 
-    public int getnGrupsTarda() { return this.nGrupsT-this.nGrupsMati; }
+    public int getnGrupsMati() {
+        return nGrupsMati;
+    }
 
-    public int getnGrupsMati() { return this.nGrupsMati; }
+    public int getHoresBlocT() {
+        return horesBlocT;
+    }
 
-    public int getHoresBlocT() {return  this.horesBlocT; }
+    public int getHoresBlocL() {
+        return horesBlocL;
+    }
 
-    public int getHoresBlocL() {return  this.horesBlocL; }
-
-    public int getHoresBlocP() {return  this.horesBlocP; }
+    public int getHoresBlocP() {
+        return horesBlocP;
+    }
 
     public int getnAlumnesT() {
-        return this.nAlumnesT;
+        return nAlumnesT;
     }
 
     public int getnAlumnesL() {
-        return this.nAlumnesL;
+        return nAlumnesL;
     }
 
     public int getnAlumnesP() {
-        return this.nAlumnesP;
+        return nAlumnesP;
     }
 
-    public int getNivell() {return this.nivell; }
-
+    public int getNivell() {
+        return nivell;
+    }
 
     public ConjuntAssignatures getCorrequisits() {
         ConjuntAssignatures correquisits = new ConjuntAssignatures();
@@ -174,6 +180,7 @@ public class Assignatura {
 
 
     //Modificadores
+
 
     public void setNom(String nom) {
         this.nom = nom;
@@ -219,10 +226,6 @@ public class Assignatura {
         this.horesBlocP = horesBlocP;
     }
 
-    public void setNivell(int nivell) {
-        this.nivell = nivell;
-    }
-
     public void setnAlumnesT(int nAlumnesT) {
         this.nAlumnesT = nAlumnesT;
     }
@@ -233,6 +236,10 @@ public class Assignatura {
 
     public void setnAlumnesP(int nAlumnesP) {
         this.nAlumnesP = nAlumnesP;
+    }
+
+    public void setNivell(int nivell) {
+        this.nivell = nivell;
     }
 
     public void setCorrequisits(Set<String> correquisits) {
