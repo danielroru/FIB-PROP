@@ -4,6 +4,14 @@ import java.util.*;
 
 public class RestriccioBinaria {
 
+    public static HashSet<Sessio> arestesCorrequisits(Sessio s) {
+        HashSet<Sessio> resultat = new HashSet<>();
+        for (Assignatura correq : s.getAssignatura().getCorrequisits().getAssignatures())
+            resultat.addAll(CtrlDomini.getSessionsByIdAssig(correq.getNom()));
+
+        return resultat;
+    }
+
     public static HashSet<Sessio> arestesNivell(Sessio s) {
         HashSet<Sessio> resultat = new HashSet<>();
 
@@ -41,7 +49,7 @@ public class RestriccioBinaria {
         return resultat;
     }
 
-    public static boolean validaSolucio(Horari h, Sessio s, UAH uah) {
+    public static boolean validaSolucio(Estructura h, Sessio s, UAH uah) {
 
         // Comprovem si la UAH ja ha estat assignada previament
         if (h.existeixUAH(uah)) {
@@ -63,23 +71,18 @@ public class RestriccioBinaria {
         }
 
         // Les Sessions que tenen conflicte amb s
-        for (Sessio sessioConflicte : GeneradorHorari.getG().getArestes().get(s)) {
-
-           // Si la solució té un valor assignat per una sessió conflictiva (s)
-           for (UAH uahconflicte : h.getHorari()){
-               if (uahconflicte.getSessio().equals(sessioConflicte)) {
-                   if (coincideixenUAH(uah, uahconflicte)) return false;
-               }
-           }
+        for(Sessio sessioConflicte : GeneradorHorari.getG().getArestes().get(s)) {
+            // Si la solució té un valor assignat per una sessió conflictiva (s)
+            if (h.getAssignacio().containsKey(sessioConflicte)) {
+                for (UAH uahConflicte : h.getAssignacio().get(sessioConflicte)) {
+                    if (coincideixenUAH(uah, uahConflicte)) return false;
+                }
+            }
         }
         return true;
     }
 
     public static boolean coincideixenUAH (UAH a, UAH b) {
         return ((a.getDia() == b.getDia()) && (a.getHora() == b.getHora()));
-    }
-
-    public static HashSet<Sessio> arestesCorrequisit(Sessio s) {
-        return new HashSet<>();
     }
 }

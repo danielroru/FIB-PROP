@@ -25,7 +25,7 @@ public class GeneradorHorari {
             G.afegirVertex(s, domini);
 
             //INICIALITZACIÓ ARESTES
-            Set<Sessio> arestesSessio = new HashSet<>(RestriccioBinaria.arestesNivell(s));
+            Set<Sessio> arestesSessio = new HashSet<>(Restriccions.crearArestes(s));
             G.afegirAresta(s, arestesSessio);
 
         }
@@ -33,32 +33,32 @@ public class GeneradorHorari {
 
     }
 
-    private static Horari backtracking_cronologic(Queue<Sessio> sFutures, Horari solucio) {
+    private static Estructura backtracking_cronologic(Queue<Sessio> sFutures, Estructura solucio) {
         if (sFutures.isEmpty())
 
             return solucio;
         else {
             // Obtenim el seguent element
             Sessio sActual = sFutures.element();
-            sFutures.remove();
 
             for (UAH uah : G.getUAHbySessio(sActual)) {
+                solucio.assignarUAH(sActual, uah);
                 if (solucio.valida(sActual, uah)) {
-                    solucio.assignarUAH(sActual, uah);
+                    if (solucio.assignacioCompelta(sActual)) sFutures.remove();
                     solucio = backtracking_cronologic(sFutures, solucio);
                     if (!solucio.esfallo()) {
                         return solucio;
                     } else solucio.eliminarUAH(sActual, uah);
                 } else solucio.eliminarUAH(sActual, uah);
             }
-            return new Horari();
+            return new Estructura();
         }
     }
 
-    public static Horari generarHorari() {
+    public static Estructura generarHorari() {
 
         iniGraf();
-        Horari solucio = new Horari();
+        Estructura solucio = new Estructura();
         Queue<Sessio> vfutures = new LinkedList<Sessio>(CtrlDomini.getSessions());
 
         solucio = backtracking_cronologic(vfutures, solucio);

@@ -1,5 +1,8 @@
 package Dominio;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Assignatura {
 
     // Atributs
@@ -28,7 +31,7 @@ public class Assignatura {
 
     private int nivell;
 
-    private ConjuntAssignatures correquisits;
+    private Set<String> correquisits = new HashSet<>();
 
     // Mètodes
 
@@ -101,7 +104,6 @@ public class Assignatura {
 
         this.nivell = as.getNivell();
 
-        this.correquisits = as.getCorrequisits();
     }
 
     // Consultores
@@ -159,6 +161,14 @@ public class Assignatura {
     }
 
     public int getNivell() {return this.nivell; }
+
+
+    public ConjuntAssignatures getCorrequisits() {
+        ConjuntAssignatures correquisits = new ConjuntAssignatures();
+        for (String s : this.correquisits) {
+            correquisits.afegirAssignatura(PlaEstudis.getConjuntAssignatures().getAssignatura(s));
+        }
+    }
 
 
 
@@ -224,11 +234,7 @@ public class Assignatura {
         this.nAlumnesP = nAlumnesP;
     }
 
-    public ConjuntAssignatures getCorrequisits() {
-        return correquisits;
-    }
-
-    public void setCorrequisits(ConjuntAssignatures correquisits) {
+    public void setCorrequisits(Set<String> correquisits) {
         this.correquisits = correquisits;
     }
 }

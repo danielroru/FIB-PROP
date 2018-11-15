@@ -13,7 +13,7 @@ public class CtrlDomini {
     private static HashSet<UAH> UAHteoria = new HashSet<>();
     private static HashSet<UAH> UAHlaboratori = new HashSet<>();
 
-    private static Horari ultimHorari = new Horari();
+    //private static Horari ultimHorari = new Horari();
 
     public static void reset() {
         UAHmatins = new HashSet<>();
@@ -26,73 +26,8 @@ public class CtrlDomini {
         reset();
         crearUAHs();
         crearSessions();
-        Horari solucio = GeneradorHorari.generarHorari();
-        ultimHorari = solucio;
-        List<UAH> sol = solucio.ordena();
-        imprimirHorari(sol);
-    }
-
-    public static void imprimirHorari(List<UAH> solucio) throws Exception {
-        inout io = new inout();
-        for (Aula a : PlaEstudis.getConjuntAules().getAules()) {
-            io.writeln("");
-            io.writeln("");
-            io.writeln("---------------");
-            io.writeln("Aula " + a.getId());
-            io.writeln("---------------");
-            io.writeln("");
-
-            io.write("               ");
-            for (Enumeracio.Dia dia : Enumeracio.Dia.values()) {
-                io.write(dia.toString());
-                for (int i = dia.toString().length(); i < 15; i++) {
-                    io.write(" ");
-                }
-            }
-            io.writeln("");
-            for (int hora = PlaEstudis.getHoraInici(); hora < PlaEstudis.getHoraFi(); hora++) {
-                io.write(hora + "h");
-                int xifres = hora / 10 == 0 ? 1 : 2;
-                for (int j = xifres+1; j < 15; j++) {
-                    io.write(" ");
-                }
-                for (Enumeracio.Dia dia : Enumeracio.Dia.values()) {
-                    for (UAH uah : solucio) {
-                        if (uah.getHora() == hora && uah.getDia().equals(dia) && uah.getAula().equals(a)) {
-                            String result = null;
-                            String result2 = null;
-                            String sigla = null;
-                            switch (uah.getSessio().getTipus()) {
-                                case TEORIA:
-                                    sigla = "T";
-                                    break;
-                                case LABORATORI:
-                                    sigla = "L";
-                                    break;
-                                case PROBLEMES:
-                                    sigla = "P";
-                                    break;
-                            }
-                            result = "[" + uah.getSessio().getAssignatura().getNom() + "]";
-                            io.write(result);
-                            int  k = 0;
-                            for (k = result.length(); k < 8; k++) {
-                                io.write(" ");
-                            }
-                            result2 = uah.getSessio().getIdGrup() + " " + sigla;
-                            io.write(result2);
-                            for (int j = k+result2.length(); j < 15; j++) {
-                                io.write(" ");
-                            }
-                        }
-
-                    }
-
-                }
-                io.writeln("");
-            }
-        }
-
+        Estructura solucio = GeneradorHorari.generarHorari();
+        solucio.escriure();
     }
 
     public static Set<Sessio> getSessionsByIdAssig(String idAssig) {
@@ -178,9 +113,5 @@ public class CtrlDomini {
 
     public static HashSet<Sessio> getSessions() {
         return sessions;
-    }
-
-    public static void setSessions(HashSet<Sessio> sessions) {
-        CtrlDomini.sessions = sessions;
     }
 }
