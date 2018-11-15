@@ -39,14 +39,12 @@ public class GeneradorHorari {
         else {
             // Obtenim el seguent element
             Sessio sActual = sFutures.element();
-            sFutures.remove();
 
             for (UAH uah : G.getUAHbySessio(sActual)) {
                 solucio.assignarUAH(sActual, uah);
                 if (solucio.valida(sActual, uah)) {
-                    Queue<Sessio> sFu = sFutures;
-                    if (!solucio.assignacioCompelta(sActual)) sFu.add(sActual);
-                    solucio = backtracking_cronologic(sFu, solucio);
+                    if (solucio.assignacioCompelta(sActual)) sFutures.remove();
+                    solucio = backtracking_cronologic(sFutures, solucio);
                     if (!solucio.esfallo()) {
                         return solucio;
                     } else solucio.eliminarUAH(sActual, uah);

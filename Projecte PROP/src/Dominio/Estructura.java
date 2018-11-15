@@ -71,7 +71,7 @@ public class Estructura {
             for (UAH uah : assignacio.get(s)) {
                 System.out.println(uah.getDia());
                 System.out.println(uah.getHora());
-                System.out.println(uah.getAula().getId());
+                System.out.println(uah.getAula().getId() + "\n");
             }
 
         }
