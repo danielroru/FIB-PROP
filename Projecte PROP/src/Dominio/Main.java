@@ -124,11 +124,15 @@ public class Main {
                 a.setHoresBlocL((int) (long) jsonObject.get("horesBlocL"));
                 a.setHoresBlocP((int) (long) jsonObject.get("horesBlocP"));
 
-                Set<String> core = new HashSet<>();
+                JSONArray arrayCorrequisits = (JSONArray) jsonObject.get("correquisits");
 
-                core.add((String) jsonObject.get("correquisits"));
+                Set<String> setCore = new HashSet<>();
 
-                a.setCorrequisits(core);
+                for (Object co : arrayCorrequisits) {
+                    setCore.add(co.toString());
+                }
+
+                a.setCorrequisits(setCore);
 
                 PlaEstudis.afegirAssignatura(a);
 

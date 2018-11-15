@@ -172,10 +172,14 @@ public class Assignatura {
     public ConjuntAssignatures getCorrequisits() {
         ConjuntAssignatures correquisits = new ConjuntAssignatures();
         for (String s : this.correquisits) {
+            if (!PlaEstudis.getConjuntAssignatures().existeixAssignatura(s)) {
+                throw new IllegalArgumentException("L'assignatura anomenada " + s + " ha estat assignada correquisit, però no ha estat entrada");
+            }
             correquisits.afegirAssignatura(PlaEstudis.getConjuntAssignatures().getAssignatura(s));
         }
         return correquisits;
     }
+
 
 
 

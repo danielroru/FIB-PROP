@@ -21,7 +21,7 @@
     "horesBlocL": 2,
     "horesBlocP": 1,
 
-    "correquisits":[ "Ford", "BMW", "Fiat" ]
+    "correquisits":[]
   }
 ]
 
