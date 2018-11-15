@@ -4,13 +4,13 @@ import java.util.*;
 
 public class Estructura {
 
-    private Map<Sessio, Set<UAH>> assignacio;
+    private Map<Sessio, ArrayList<UAH>> assignacio;
 
-    public Map<Sessio, Set<UAH>> getAssignacio() {
+    public Map<Sessio, ArrayList<UAH>> getAssignacio() {
         return assignacio;
     }
 
-    public void setAssignacio(Map<Sessio, Set<UAH>> assignacio) {
+    public void setAssignacio(Map<Sessio, ArrayList<UAH>> assignacio) {
         this.assignacio = assignacio;
     }
 
@@ -24,7 +24,7 @@ public class Estructura {
 
     public void assignarUAH(Sessio se, UAH uah) {
 
-        Set<UAH> temp;
+        ArrayList<UAH> temp;
 
         if (assignacio.containsKey(se)) {
             temp = assignacio.get(se);
@@ -32,7 +32,7 @@ public class Estructura {
             assignacio.put(se, temp);
         }
         else {
-            temp = new HashSet<>();
+            temp = new ArrayList<>();
             temp.add(uah);
             assignacio.put(se,temp);
         }
@@ -56,10 +56,10 @@ public class Estructura {
         return this.assignacio.isEmpty();
     }
 
-    public boolean existeixUAH(UAH uah) {
-        for (Sessio s : assignacio.keySet())
-            for (UAH uah1 : assignacio.get(s))
-                if (uah == uah1) return true;
+    public boolean existeixUAH(Sessio s, UAH uah) {
+        for (Sessio se : assignacio.keySet())
+            for (UAH uah1 : assignacio.get(se))
+                if ((uah == uah1) && (s != se)) return true;
 
         return false;
     }
@@ -71,7 +71,7 @@ public class Estructura {
             for (UAH uah : assignacio.get(s)) {
                 System.out.println(uah.getDia());
                 System.out.println(uah.getHora());
-                System.out.println(uah.getAula());
+                System.out.println(uah.getAula().getId());
             }
 
         }

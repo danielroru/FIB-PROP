@@ -168,6 +168,7 @@ public class Assignatura {
         for (String s : this.correquisits) {
             correquisits.afegirAssignatura(PlaEstudis.getConjuntAssignatures().getAssignatura(s));
         }
+        return correquisits;
     }
 
 

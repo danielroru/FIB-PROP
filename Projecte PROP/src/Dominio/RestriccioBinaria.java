@@ -51,10 +51,14 @@ public class RestriccioBinaria {
 
     public static boolean validaSolucio(Estructura h, Sessio s, UAH uah) {
 
-        // Comprovem si la UAH ja ha estat assignada previament
-        if (h.existeixUAH(uah)) {
+        // Comprovem si la UAH ja ha estat assignada previament a una altra sessio
+        if (h.existeixUAH(s, uah)) {
             return false;
         }
+        int compt = 0;
+        for (UAH uah2 : h.getAssignacio().get(s))
+            if (uah2 == uah) ++compt;
+        if (compt > 1) return false;
 
         switch (s.getTipus()) {
             case TEORIA:
