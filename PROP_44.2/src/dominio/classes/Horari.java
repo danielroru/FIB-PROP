@@ -141,7 +141,7 @@ public class Horari {
         return false;
     }
 
-    public void mapejaHorari() throws Exception {
+    public void mapejaHorari() {
         inout io = new inout();
         for (Sessio s : assignacio.keySet()) {
             //io.writeln(s.getAssignatura().getNom() + " " + s.getIdGrup() + " " + s.getTipus());
@@ -166,53 +166,59 @@ public class Horari {
         return horari;
     }
 
-    public void imprimirHorari() throws Exception {
-        inout io = new inout();
-        for (String aula : horari.keySet()) {
-            io.writeln("");
-            io.writeln("");
-            io.writeln("---------------");
-            io.writeln("Aula " + aula);
-            io.writeln("---------------");
-            io.writeln("");
-
-            io.write("               ");
-            for (Enumeracio.Dia dia : Enumeracio.Dia.values()) {
-                io.write(dia.toString());
-                for (int i = dia.toString().length(); i < 15; i++) {
-                    io.write(" ");
-                }
-            }
-            io.writeln("");
-            for (int hora = PlaEstudis.getHoraInici(); hora < PlaEstudis.getHoraFi(); hora++) {
-                io.write(hora + "h       ");
-                for (Enumeracio.Dia dia : Enumeracio.Dia.values())
-                if (horari.get(aula).getCasella(dia.ordinal(), hora) == null)
-                    io.write("    --------    ");
-                else {
-                    String nomAssig = horari.get(aula).getCasella(dia.ordinal(), hora).getNomAssig();
-                    int grup = horari.get(aula).getCasella(dia.ordinal(), hora).getNumGrup();
-                    String sigla = "?";
-                    switch (horari.get(aula).getCasella(dia.ordinal(), hora).getTipus()) {
-                        case TEORIA:
-                            sigla = "T";
-                            break;
-                        case LABORATORI:
-                            sigla = "L";
-                            break;
-                        case PROBLEMES:
-                            sigla = "P";
-                            break;
-                    }
-                    io.write("    " + nomAssig + " " + grup + " " + sigla + "    ");
-                }
-
-
-
-
+    public void imprimirHorari() {
+        try {
+            inout io = new inout();
+            for (String aula : horari.keySet()) {
                 io.writeln("");
+                io.writeln("");
+                io.writeln("---------------");
+                io.writeln("Aula " + aula);
+                io.writeln("---------------");
+                io.writeln("");
+
+                io.write("               ");
+                for (Enumeracio.Dia dia : Enumeracio.Dia.values()) {
+                    io.write(dia.toString());
+                    for (int i = dia.toString().length(); i < 15; i++) {
+                        io.write(" ");
+                    }
+                }
+                io.writeln("");
+                for (int hora = PlaEstudis.getHoraInici(); hora < PlaEstudis.getHoraFi(); hora++) {
+                    io.write(hora + "h       ");
+                    for (Enumeracio.Dia dia : Enumeracio.Dia.values())
+                        if (horari.get(aula).getCasella(dia.ordinal(), hora) == null)
+                            io.write("    --------    ");
+                        else {
+                            String nomAssig = horari.get(aula).getCasella(dia.ordinal(), hora).getNomAssig();
+                            int grup = horari.get(aula).getCasella(dia.ordinal(), hora).getNumGrup();
+                            String sigla = "?";
+                            switch (horari.get(aula).getCasella(dia.ordinal(), hora).getTipus()) {
+                                case TEORIA:
+                                    sigla = "T";
+                                    break;
+                                case LABORATORI:
+                                    sigla = "L";
+                                    break;
+                                case PROBLEMES:
+                                    sigla = "P";
+                                    break;
+                            }
+                            io.write("    " + nomAssig + " " + grup + " " + sigla + "    ");
+                        }
+
+
+
+
+                    io.writeln("");
+                }
             }
         }
+        catch (Exception e) {
+            System.out.println("No s'ha pogut imprimir l'horari");
+        }
+
 
     }
 
@@ -327,7 +333,7 @@ public class Horari {
 
 
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            System.out.println("    ERROR: No existeix el fitxer que demanes");
         } catch (IOException e) {
             e.printStackTrace();
         } catch (ParseException e) {

@@ -27,36 +27,35 @@ public class Main {
 
         while (accio != 0) {
             escriureMenuPrincipal();
-            try {
-                accio = io.readint();
-                switch (accio) {
-                    case 1:
-                        carregarDades();
-                        break;
-                    case 2:
-                        CtrlDomini.generarHorari();
-                        break;
-                    case 3:
-                        CtrlDomini.guardarHorari();
-                        break;
-                    case 4:
-                        CtrlDomini.llegirHorari();
-                        break;
-                    default:
-                        break;
-                }
-            }
-            catch (Exception e) {
                 try {
-                    io.writeln("No has entrat un número vàlid");
-                } catch (Exception e1) {
-                    e1.printStackTrace();
+                    accio = io.readint();
                 }
-                menuGenerarHorari();
-            }
-        }
+                catch (Exception e) {
+                    accio = 0;
+                    System.out.println("Error al seleccionar la opció");
+                }
+                    switch (accio) {
+                        case 1:
+                            carregarDades();
+                            break;
+                        case 2:
+                            CtrlDomini.generarHorari();
+                            break;
+                        case 3:
+                            CtrlDomini.guardarHorari();
+                            break;
+                        case 4:
+                            CtrlDomini.llegirHorari();
+                            break;
+                        default:
+                            break;
+                    }
 
+
+        }
     }
+
+
 
     private static void carregarAules(String dataPath) {
         JSONParser parser = new JSONParser();
@@ -238,21 +237,26 @@ public class Main {
         }
     }
 
-    private static void carregarDades() throws Exception {
-        String dataPath = new String();
-        io.writeln("- Selecciona el conjunt de dades que vols carregar");
-        io.writeln("");
-        String folder = new String();
-        folder = io.readname();
-        System.out.println("Working Directory = " +
-                System.getProperty("user.dir"));
-        dataPath = "src/persistencia/dades/" + folder + "/";
+    private static void carregarDades() {
+        try {
+            String dataPath = new String();
+            io.writeln("- Selecciona el conjunt de dades que vols carregar");
+            io.writeln("");
+            String folder = new String();
+            folder = io.readname();
 
-        PlaEstudis.reset();
+            dataPath = "src/persistencia/dades/" + folder + "/";
 
-        carregarAules(dataPath);
-        carregarAssignatures(dataPath);
-        carregarPlaEstudis(dataPath);
+            PlaEstudis.reset();
+
+            carregarAules(dataPath);
+            carregarAssignatures(dataPath);
+            carregarPlaEstudis(dataPath);
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
 

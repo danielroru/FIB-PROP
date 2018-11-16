@@ -1,4 +1,4 @@
-package dominio.classes;
+import java.util.*;
 
 public class PlaEstudis {
 
@@ -7,18 +7,12 @@ public class PlaEstudis {
     private static ConjuntAssignatures cjtAssignatures = new ConjuntAssignatures();
     private static ConjuntAules cjtAules = new ConjuntAules();
 
-    private static int horaInici = -1;
-    private static int horaFi = -1;
-    private static int horaCanviFranja = -1;
+    private static int horaInici;
+    private static int horaFi;
+    private static int horaCanviFranja;
 
-
-    private PlaEstudis(){
-    }
-
-    public static void reset() {
-        instance = new PlaEstudis();
-        cjtAssignatures = new ConjuntAssignatures();
-        cjtAules = new ConjuntAules();
+    // !!!
+    public PlaEstudis(){
     }
 
     public static PlaEstudis getInstance() {
@@ -37,10 +31,6 @@ public class PlaEstudis {
     }
 
 
-    public static boolean isNull() {
-        return horaInici == -1 && horaFi == -1 && horaCanviFranja == -1;
-    }
-
     // Modificadores
     public static void setHoraInici(int hora) {
         horaInici = hora;
@@ -54,6 +44,10 @@ public class PlaEstudis {
 
 
     // Conjunt Aules
+
+    public static void afegirAula(Aula a) {
+        cjtAules.afegirAula(a);
+    }
 
     public static ConjuntAules getConjuntAules() {
         return cjtAules;
