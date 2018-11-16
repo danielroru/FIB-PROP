@@ -118,13 +118,15 @@ public class Horari {
         return false;
     }
 
-    public void mapejaHorari() {
-        //for (Aula a : PlaEstudis.getConjuntAules().getAules()) HashMap
+    public void mapejaHorari() throws Exception {
+        inout io = new inout();
         for (Sessio s : assignacio.keySet()) {
+            //io.writeln(s.getAssignatura().getNom() + " " + s.getIdGrup() + " " + s.getTipus());
             for (UAH uah : assignacio.get(s)) {
                 String nomAula = uah.getAula().getId();
                 int i = uah.getDia().ordinal();
                 int j = uah.getHora();
+                //io.writeln(nomAula + " " + uah.getDia() + " " + j + "\n");
                 Casella c = new Casella(s.getAssignatura().getNom(), s.getIdGrup(), s.getTipus());
                 if (horari.containsKey(nomAula))
                     horari.get(nomAula).assignarCasella(i, j, c);
@@ -160,51 +162,44 @@ public class Horari {
             }
             io.writeln("");
             for (int hora = PlaEstudis.getHoraInici(); hora < PlaEstudis.getHoraFi(); hora++) {
-                io.write(hora + "h");
-                int xifres = hora / 10 == 0 ? 1 : 2;
-                for (int j = xifres+1; j < 15; j++) {
-                    io.write(" ");
-                }
-                for (Enumeracio.Dia dia : Enumeracio.Dia.values()) {
-
-                    Casella c = horari.get(aula).getCasella(dia.ordinal(),hora);
-
-                    if (c != null) {
-
-                        String result = null;
-                        String result2 = null;
-                        String sigla = null;
-                        switch (c.getTipus()) {
-                            case TEORIA:
-                                sigla = "T";
-                                break;
-                            case LABORATORI:
-                                sigla = "L";
-                                break;
-                            case PROBLEMES:
-                                sigla = "P";
-                                break;
-                        }
-                        result = "[" + c.getNomAssig() + "]";
-                        io.write(result);
-                        int k = 0;
-                        for (k = result.length(); k < 8; k++) {
-                            io.write(" ");
-                        }
-                        result2 = c.getNumGrup() + " " + sigla;
-                        io.write(result2);
-                        for (int j = k + result2.length(); j < 15; j++) {
-                            io.write(" ");
-                        }
+                io.write(hora + "h       ");
+                for (Enumeracio.Dia dia : Enumeracio.Dia.values())
+                if (horari.get(aula).getCasella(dia.ordinal(), hora) == null)
+                    io.write("    --------    ");
+                else {
+                    String nomAssig = horari.get(aula).getCasella(dia.ordinal(), hora).getNomAssig();
+                    int grup = horari.get(aula).getCasella(dia.ordinal(), hora).getNumGrup();
+                    String sigla = "?";
+                    switch (horari.get(aula).getCasella(dia.ordinal(), hora).getTipus()) {
+                        case TEORIA:
+                            sigla = "T";
+                            break;
+                        case LABORATORI:
+                            sigla = "L";
+                            break;
+                        case PROBLEMES:
+                            sigla = "P";
+                            break;
                     }
-
-
-
-
+                    io.write("    " + nomAssig + " " + grup + " " + sigla + "    ");
                 }
+
+
+
+
                 io.writeln("");
             }
         }
 
     }
+
+    /*public void imprimir() throws Exception {
+        inout io = new inout();
+        for (String aula : horari.keySet()) {
+            io.writeln("Aula " + aula);
+            for (Casella c : horari.get(aula).getVecCaselles()) {
+                io.writeln();
+            }
+        }
+    }*/
 }
