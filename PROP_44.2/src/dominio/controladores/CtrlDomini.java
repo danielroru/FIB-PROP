@@ -24,7 +24,11 @@ public class CtrlDomini {
         UAHlaboratori = new HashSet<>();
     }
 
-    public static void generarHorari() throws Exception {
+    public static boolean existeixUltimHorari() {
+        return ultimHorari.getHorari().size() != 0;
+    }
+
+    public static void generarHorari(){
         reset();
         crearUAHs();
         crearSessions();
@@ -33,23 +37,37 @@ public class CtrlDomini {
         ultimHorari.imprimirHorari();
     }
 
-    public static void guardarHorari() throws Exception {
-        inout io = new inout();
+    public static void guardarHorari() {
+        try {
+            if (!existeixUltimHorari()) throw new Exception ("    ERROR: Encara no has generat cap horari");
+            inout io = new inout();
 
-        io.write("Quin nom li vols posar?");
-        String path = io.readline();
+            io.write("Quin nom li vols posar?");
+            String path = io.readline();
 
-        ultimHorari.guardarHorari(path);
+            ultimHorari.guardarHorari(path);
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
     }
 
-    public static void llegirHorari() throws Exception {
-        inout io = new inout();
+    public static void llegirHorari() {
+        try {
+            if (PlaEstudis.isNull()) throw new Exception ("    ERROR: Encara no has carregat les dades de persistència");
+            inout io = new inout();
 
-        io.write("Quin fitxer vols carregar?");
-        String path = io.readline();
+            io.write("Quin fitxer vols carregar?");
+            String path = io.readline();
 
-        ultimHorari.llegirHorari(path);
-        ultimHorari.imprimirHorari();
+            ultimHorari.llegirHorari(path);
+            ultimHorari.imprimirHorari();
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
     }
 
 
