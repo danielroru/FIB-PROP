@@ -43,7 +43,7 @@ public class GeneradorHorari {
             for (UAH uah : G.getUAHbySessio(sActual)) {
                 solucio.assignarUAH(sActual, uah);
                 if (solucio.valida(sActual, uah)) {
-                    if (solucio.assignacioCompelta(sActual)) sFutures.remove();
+                   if (solucio.assignacioCompelta(sActual)) sFutures.remove();
                     solucio = backtracking_cronologic(sFutures, solucio);
                     if (!solucio.esfallo()) {
                         return solucio;

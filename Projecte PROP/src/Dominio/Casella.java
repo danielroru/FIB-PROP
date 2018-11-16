@@ -37,4 +37,6 @@ public class Casella {
     public void setTipus(Enumeracio.TipusSessio tipus) {
         this.tipus = tipus;
     }
+
+    public boolean esBuida() {return this == null; }
 }

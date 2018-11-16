@@ -23,4 +23,6 @@ public class Matriu {
     public Casella getCasella(int i, int j) {
         return matriu[i][j-PlaEstudis.getHoraInici()];
     }
+
+    //public boolean hiHaCasella(int i, int j) { return matriu[i][j-PlaEstudis.getHoraInici()].esBuida(); }
 }
