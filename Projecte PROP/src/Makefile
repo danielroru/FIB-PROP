@@ -1,17 +1,13 @@
-JFLAGS = -g
 JC = javac
-.SUFFIXES: .java .class
-.java.class:
-		$(JC) $(JFLAGS) $*.java
+RM = rm -rf
+J = java
+default: class
 
-CLASSES = \
-		Main.java \
+class:
+	$(JC) Dominio/*.java JSON/*.java
 
-default: classes
-
-classes: javac Dominio/*.java JSON/*.javac
-
-run: java Dominio/Main
+run:
+	$(J) Dominio/Main
 
 clean:
-		$(RM) *.class
+	$(RM) Dominio/*.class JSON/*.class
