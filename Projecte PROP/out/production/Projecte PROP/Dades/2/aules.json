@@ -19,44 +19,4 @@
     "capacitat" : 50,
     "tipus": "LABORATORI"
   }
-  {
-    "id": "C6S04",
-    "capacitat" : 50,
-    "tipus": "LABORATORI"
-  }
-  {
-    "id": "C6S05",
-    "capacitat" : 50,
-    "tipus": "LABORATORI"
-  }
-  {
-    "id": "C6S06",
-    "capacitat" : 50,
-    "tipus": "LABORATORI"
-  }
-  {
-    "id": "C6S07",
-    "capacitat" : 50,
-    "tipus": "LABORATORI"
-  }
-  {
-    "id": "A5203",
-    "capacitat" : 30,
-    "tipus": "TEORIA"
-  }
-  {
-    "id": "A5204",
-    "capacitat" : 30,
-    "tipus": "TEORIA"
-  }
-  {
-    "id": "A5205",
-    "capacitat" : 30,
-    "tipus": "TEORIA"
-  }
-  {
-    "id": "A5206",
-    "capacitat" : 30,
-    "tipus": "TEORIA"
-  }
 ]
