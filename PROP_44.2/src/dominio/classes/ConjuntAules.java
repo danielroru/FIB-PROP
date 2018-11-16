@@ -23,6 +23,12 @@ public class ConjuntAules {
         this.conjuntAules = cjtAules;
     }
 
+    /**
+     * Afegeix una aula a la instància
+     *
+     * @param  a Aula a afegir
+     * @return la instància amb l'Aula afegida
+     */
     public void afegirAula(Aula a) {
         this.conjuntAules.add(a);
     }

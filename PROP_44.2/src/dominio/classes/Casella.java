@@ -6,8 +6,18 @@ public class Casella {
     private int numGrup;
     private Enumeracio.TipusSessio tipus;
 
+    /**
+     * Constructora per defecte
+     */
     public Casella() {}
 
+    /**
+     * Constructora amb inicialització
+     *
+     * @param  nomAssig nom de l'Assignatura
+     * @param  numGrup número de grup
+     * @param  tipus tipus de la sessió
+     */
     public Casella(String nomAssig, int numGrup, Enumeracio.TipusSessio tipus) {
         this.nomAssig = nomAssig;
         this.numGrup = numGrup;

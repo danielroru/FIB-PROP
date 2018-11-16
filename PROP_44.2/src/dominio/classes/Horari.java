@@ -25,11 +25,20 @@ public class Horari {
         this.assignacio = assignacio;
     }
 
+    /**
+     * Constructora per defecte
+     */
     public Horari() {
         assignacio = new HashMap<>();
         horari = new HashMap<>();
     }
 
+    /**
+     * Assigna la UAH uah a la sessió se
+     * @param se sessió a la que volem assignar la UAH
+     * @param uah que volem assignar a la sessió
+     * @post la instància conté l'assignació entre se i uah
+     */
     public void assignarUAH(Sessio se, UAH uah) {
 
         ArrayList<UAH> temp;
@@ -68,7 +77,12 @@ public class Horari {
         horari.put(uah.getAula().getId(),m);
     }
 
-
+    /**
+     * Elimina la UAH uah de la sessió se
+     * @param se sessió a la que volem eliminar la UAH
+     * @param uah que volem eliminar de la sessió
+     * @post la instància s'ha modificat i ja no conté l'assignació entre se i uah
+     */
     public void eliminarUAH(Sessio se, UAH uah) {
         if (assignacio.containsKey(se)) {
             if (assignacio.get(se).contains(uah))
@@ -82,7 +96,7 @@ public class Horari {
     public boolean valida(Sessio s, UAH uah) {
         return RestriccioBinaria.validaSolucio(this, s, uah);
     }
-
+    
     public boolean esfallo() {
         return this.assignacio.isEmpty();
     }

@@ -37,14 +37,40 @@ public class Assignatura {
 
     // Constructores
 
+    /**
+     * Constructora per defecte
+     */
+
     public Assignatura() {
 
     }
-
+    /**
+     * Constructora amb inicialització
+     *
+     * @param  nom nom de l'Assignatura
+     * @param  nHoresT nombre d'hores de Teoria
+     * @param  nHoresL nombre d'hores de Laboratori
+     * @param  nHoresP nombre d'hores de Problemes
+     * @param  nGrupsT nombre de grups de Teoria
+     * @param  nGrupsL nombre de grups de Laboratori per cada grup de teoria
+     * @param  nGrupsP nombre de grups de Problemes per cada grup de teoria
+     * @param  nGrupsMati nombre de grups de mati
+     * @param  nAlumnesT nombre d'alumnes dels grups de Teoria
+     * @param  nAlumnesL nombre d'alumnes dels grups de Laboratori
+     * @param  nAlumnesP nombre d'alumnes dels grups de Problemes
+     * @param  horesBlocT nombre d'hores per bloc de teoria
+     * @param  horesBlocL nombre d'hores per bloc de laboratori
+     * @param  horesBlocP nombre d'hores per bloc de problemes
+     * @param  nivell nivell de l'assignatura
+     */
     // Constructora amb nivell
-    public Assignatura(String nom, int nHoresT, int nHoresL, int nHoresP,
-                       int nGrupsT, int nGrupsL, int nGrupsP, int nGrupsTarda,
-                       int nGrupsMati, int nAlumnesT, int nAlumnesL, int nAlumnesP, int horesBlocT, int horesBlocL, int horesBlocP, int nivell) {
+    public Assignatura(String nom,
+                       int nHoresT, int nHoresL, int nHoresP,
+                       int nGrupsT, int nGrupsL, int nGrupsP,
+                       int nGrupsMati,
+                       int nAlumnesT, int nAlumnesL, int nAlumnesP,
+                       int horesBlocT, int horesBlocL, int horesBlocP,
+                       int nivell) {
 
         this.nom = nom;
 
@@ -75,6 +101,10 @@ public class Assignatura {
         this.nivell = nivell;
     }
 
+    /**
+     * Constructora còpia
+     * @param as Assignatura a copiar
+     */
     public Assignatura(Assignatura as) {
 
         this.nom = as.getNom();

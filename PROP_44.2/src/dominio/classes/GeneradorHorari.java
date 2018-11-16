@@ -16,6 +16,10 @@ public class GeneradorHorari {
         G = g;
     }
 
+
+    /**
+     * Inicialitza el graf amb tots els vèrtexs i arestes corresponents segons les dades entrades
+     */
     private static void iniGraf() {
 
         G = new Graph();
@@ -35,6 +39,12 @@ public class GeneradorHorari {
 
     }
 
+    /**
+     * Crea l'horari amb satisfacció de restriccions
+     * @param sFutures sessions amb UAHs pendents a assignar
+     * @param solucio solució parcial
+     * @return Horari amb les assignacions correpsonents que satisfan les restriccions
+     */
     private static Horari backtracking_cronologic(Queue<Sessio> sFutures, Horari solucio) {
         if (sFutures.isEmpty())
             return solucio;
@@ -55,6 +65,12 @@ public class GeneradorHorari {
             return new Horari();
         }
     }
+
+    /**
+     * Genera l'horari
+     * @param  assig Assignatura a afegir
+     * @return l'Horari generat segons la inicialització del graf
+     */
 
     public static Horari generarHorari() {
 

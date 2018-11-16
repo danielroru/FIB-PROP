@@ -20,14 +20,28 @@ public class Aula {
     ////////////////////////////////////////////////////////////////////
 
     // Constructora per defecte
+    /**
+     * Constructora per defecte
+     */
     public Aula() {};
 
+    /**
+     * Constructora còpia
+     * @param as Assignatura a copiar
+     */
     public Aula (Aula a) {
         this.id = a.id;
         this.capacitat = a.capacitat;
         this.tipus = a.tipus;
     }
 
+    /**
+     * Constructora amb inicialització
+     *
+     * @param  id id de l'Aula
+     * @param  capcaitat capacitat de l'Aula
+     * @param  tipus tipus de l'Aula
+     */
     public Aula(String id, int capacitat, Enumeracio.TipusAula tipus) {
         this.id = id;
         this.capacitat = capacitat;
