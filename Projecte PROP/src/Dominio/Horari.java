@@ -192,42 +192,30 @@ public class Horari {
 
             // Afegim nova aula a l'array
             aula.put("nomAula", nomAula);
-            Matriu m  = horari.get(nomAula);
+            Matriu m = horari.get(nomAula);
 
-                // Array de dies
                 JSONArray dies = new JSONArray();
-
-
-                // Dies dins de l'aula
-                for (int i = 0; i < Enumeracio.Dia.values().length; i++) {
-                    // Objecte dia
-                    JSONObject dia = new JSONObject();
-
-                        JSONArray hores = new JSONArray();
-                        // Array hores
-                        JSONArray hores = new JSONArray();
-                        // Hores dins del dia
-                        for (int j = PlaEstudis.getHoraInici(); j < PlaEstudis.getHoraFi(); j++) {
-                            JSONObject hora = new JSONObject();
-                                Casella c = m.getCasella(i,j);
-                                if (c != null) {
-                                    JSONObject cas = new JSONObject();
-                                        cas.put("nomAssig", c.getNomAssig());
-                                        cas.put("numGrup", c.getNumGrup());
-                                        cas.put("tipus", c.getTipus().toString());
-                                    hora.put(j, cas);
-                                    hores.add(hora);
+                    for (int i = 0; i < Enumeracio.Dia.values().length; i++) {
+                        JSONObject dia = new JSONObject();
+                            JSONArray hores = new JSONArray();
+                                for (int j = PlaEstudis.getHoraInici(); j < PlaEstudis.getHoraFi(); j++) {
+                                    if (m.getCasella(i,j) != null) {
+                                        Casella c = m.getCasella(i,j);
+                                            JSONObject hora = new JSONObject();
+                                                hora.put("hora", j);
+                                                hora.put("nomAssig", c.getNomAssig());
+                                                hora.put("numGrup", c.getNumGrup());
+                                                hora.put("tipus", c.getTipus().toString());
+                                            hores.add(hora);
+                                    }
                                 }
-                        }
-
-                        hora.put("hores",hores);
-                dies.add(dia);
-                }
-
-                aula.put("dies", dies);
+                        dia.put(i, hores);
+                    dies.add(dia);
+                    }
+            aula.put("dies", dies);
 
             // Afegim aula a l'array general
-            aules.add(aula);
+        aules.add(aula);
         }
 
         // try-with-resources statement based on post comment below :)
@@ -236,6 +224,7 @@ public class Horari {
             FileWriter file = new FileWriter("./src/Dades/Horaris/" + nomfitxer + ".json");
             file.write(aules.toJSONString());
             System.out.println("Horari Guardat");
+            System.out.println("\nJSON Object: " + aules);
             file.close();
         }
         catch (IOException e) {
