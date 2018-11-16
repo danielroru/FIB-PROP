@@ -1,6 +1,5 @@
 package Dominio;
 
-// implements Comparable<Sessio>
 public class Sessio {
 
     // Atributs
@@ -49,10 +48,4 @@ public class Sessio {
     public void setTipus(Enumeracio.TipusSessio tipus) {
         this.tipus = tipus;
     }
-
-    /*@Override
-    public int compareTo(Sessio o) {
-        return 0;
-    }
-    */
 }
