@@ -160,7 +160,9 @@ public class Assignatura {
         return this.nAlumnesP;
     }
 
-    public int getNivell() {return this.nivell; }
+    public int getNivell() {
+        return this.nivell;
+    }
 
 
     public ConjuntAssignatures getCorrequisits() {

@@ -47,7 +47,6 @@ public class CtrlDomini {
                 Sessio sT = new Sessio();
                 sT.setAssignatura(a);
                 sT.setIdGrup(i * 10);
-                sT.setDuracio(a.getnHoresT());
                 sT.setTipus(Enumeracio.TipusSessio.TEORIA);
                 sessions.add(sT);
 
@@ -55,7 +54,6 @@ public class CtrlDomini {
                     Sessio sL = new Sessio();
                     sL.setAssignatura(a);
                     sL.setIdGrup(i * 10 + j);
-                    sL.setDuracio(a.getnHoresL());
                     sL.setTipus(Enumeracio.TipusSessio.LABORATORI);
                     sessions.add(sL);
                 }
@@ -64,7 +62,6 @@ public class CtrlDomini {
                     Sessio sP = new Sessio();
                     sP.setAssignatura(a);
                     sP.setIdGrup(i * 10 + j);
-                    sP.setDuracio(a.getnHoresP());
                     sP.setTipus(Enumeracio.TipusSessio.PROBLEMES);
                     sessions.add(sP);
                 }

@@ -78,8 +78,19 @@ public class Estructura {
     }
     public boolean assignacioCompelta(Sessio s) {
         if(assignacio.containsKey(s)) {
-            if (assignacio.get(s).size() == s.getDuracio())
-                return true;
+            int duracio = 0;
+            switch (s.getTipus()) {
+                case TEORIA:
+                    s.getAssignatura().getnHoresT();
+                    break;
+                case LABORATORI:
+                    s.getAssignatura().getnHoresL();
+                    break;
+                case PROBLEMES:
+                    s.getAssignatura().getnHoresP();
+                    break;
+            }
+            if (assignacio.get(s).size() == duracio) return true;
         }
         return false;
     }
