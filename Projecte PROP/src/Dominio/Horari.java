@@ -202,7 +202,7 @@ public class Horari {
 
     }
 
-
+    @SuppressWarnings("unchecked")
     public void guardarHorari(String nomfitxer){
         // Array general
         JSONArray aules = new JSONArray();
@@ -244,10 +244,10 @@ public class Horari {
         // try-with-resources statement based on post comment below :)
 
         try {
-            FileWriter file = new FileWriter("./src/Dades/Horaris/" + nomfitxer + ".json");
+            FileWriter file = new FileWriter("./Dades/Horaris/" + nomfitxer + ".json");
             file.write(aules.toJSONString());
             System.out.println("Horari Guardat");
-            System.out.println("\nJSON Object: " + aules);
+            //System.out.println("\nJSON Object: " + aules);
             file.close();
         }
         catch (IOException e) {
@@ -262,7 +262,7 @@ public class Horari {
         JSONParser parser = new JSONParser();
 
         try {
-            JSONArray arrayAules = (JSONArray) parser.parse(new FileReader("./src/Dades/Horaris/" + nomfitxer + ".json"));
+            JSONArray arrayAules = (JSONArray) parser.parse(new FileReader("./Dades/Horaris/" + nomfitxer + ".json"));
 
             for (int z = 0; z < arrayAules.size(); z++) {
 
