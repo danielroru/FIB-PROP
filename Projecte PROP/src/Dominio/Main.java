@@ -41,10 +41,10 @@ public class Main {
                     CtrlDomini.generarHorari();
                     break;
                 case 3:
-                    desarHorari();
+                    CtrlDomini.guardarHorari();
                     break;
                 case 4:
-                    carregarHorari();
+                    CtrlDomini.llegirHorari();
                     break;
                 default:
                     break;
