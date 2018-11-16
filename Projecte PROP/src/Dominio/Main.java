@@ -4,6 +4,10 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 
 import java.io.IOException;
+import java.security.Timestamp;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 
 import JSON.JSONArray;
 import JSON.JSONObject;
@@ -118,6 +122,16 @@ public class Main {
                 a.setHoresBlocT((int) (long) jsonObject.get("horesBlocT"));
                 a.setHoresBlocL((int) (long) jsonObject.get("horesBlocL"));
                 a.setHoresBlocP((int) (long) jsonObject.get("horesBlocP"));
+
+                JSONArray arrayCorrequisits = (JSONArray) jsonObject.get("correquisits");
+
+                Set<String> setCore = new HashSet<>();
+
+                for (Object co : arrayCorrequisits) {
+                    setCore.add(co.toString());
+                }
+
+                a.setCorrequisits(setCore);
 
                 PlaEstudis.afegirAssignatura(a);
 

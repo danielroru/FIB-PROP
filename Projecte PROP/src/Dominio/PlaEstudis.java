@@ -1,7 +1,5 @@
 package Dominio;
 
-import java.util.*;
-
 public class PlaEstudis {
 
     private static PlaEstudis instance = new PlaEstudis();

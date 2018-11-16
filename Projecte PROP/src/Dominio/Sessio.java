@@ -5,7 +5,6 @@ public class Sessio {
     // Atributs
     private Enumeracio.TipusSessio tipus;
     private int idGrup;
-    private int duracio;
     private Assignatura assignatura;
 
 
@@ -16,10 +15,9 @@ public class Sessio {
     public Sessio() {
     }
 
-    public Sessio(Assignatura assig, int idGrup, int duracio, Enumeracio.TipusSessio tipus) {
+    public Sessio(Assignatura assig, int idGrup, Enumeracio.TipusSessio tipus) {
         this.assignatura = assig;
         this.idGrup = idGrup;
-        this.duracio = duracio;
         this.tipus = tipus;
     }
 
@@ -37,10 +35,6 @@ public class Sessio {
         return this.idGrup;
     }
 
-    public int getDuracio() {
-        return this.duracio;
-    }
-
     public Enumeracio.TipusSessio getTipus() {
         return this.tipus;
     }
@@ -49,10 +43,6 @@ public class Sessio {
 
     public void setIdGrup(int idGrup) {
         this.idGrup = idGrup;
-    }
-
-    public void setDuracio(int duracio) {
-        this.duracio = duracio;
     }
 
     public void setTipus(Enumeracio.TipusSessio tipus) {

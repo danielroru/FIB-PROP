@@ -49,6 +49,10 @@ public class ConjuntAssignatures {
         }
     }
 
+    public boolean existeixAssignatura(String assig) {
+        return cjtAssignatures.containsKey(assig);
+    }
+
 
 
 }
