@@ -31,6 +31,25 @@ public class CtrlDomini {
         solucio.imprimirHorari();
     }
 
+    public static void guardarHorari() throws Exception {
+        inout io = new inout();
+
+        io.write("Quin nom li vols posar?");
+        String path = io.readline();
+
+        ultimHorari.guardarHorari(path);
+    }
+
+    public static void llegirHorari() throws Exception {
+        inout io = new inout();
+
+        io.write("Quin fitxer vols carregar?");
+        String path = io.readline();
+
+        ultimHorari.llegirHorari(path);
+        ultimHorari.imprimirHorari();
+    }
+
 
 
     public static Set<Sessio> getSessionsByIdAssig(String idAssig) {
