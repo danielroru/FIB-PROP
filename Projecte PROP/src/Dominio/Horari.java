@@ -202,15 +202,6 @@ public class Horari {
 
     }
 
-    /*public void imprimir() throws Exception {
-        inout io = new inout();
-        for (String aula : horari.keySet()) {
-            io.writeln("Aula " + aula);
-            for (Casella c : horari.get(aula).getVecCaselles()) {
-                io.writeln();
-            }
-        }
-    }*/
 
     public void guardarHorari(String nomfitxer){
         // Array general
@@ -226,19 +217,22 @@ public class Horari {
             JSONArray dies = new JSONArray();
             for (int i = 0; i < Enumeracio.Dia.values().length; i++) {
                 JSONObject dia = new JSONObject();
+                dia.put("dia", i);
                 JSONArray hores = new JSONArray();
-                for (int j = PlaEstudis.getHoraInici(); j < PlaEstudis.getHoraFi(); j++) {
-                    if (m.getCasella(i,j) != null) {
-                        Casella c = m.getCasella(i,j);
-                        JSONObject hora = new JSONObject();
-                        hora.put("hora", j);
-                        hora.put("nomAssig", c.getNomAssig());
-                        hora.put("numGrup", c.getNumGrup());
-                        hora.put("tipus", c.getTipus().toString());
-                        hores.add(hora);
+                    JSONArray caselles = new JSONArray();
+                    for (int j = PlaEstudis.getHoraInici(); j < PlaEstudis.getHoraFi(); j++) {
+                        if (m.getCasella(i,j) != null) {
+                            Casella c = m.getCasella(i,j);
+                            JSONObject hora = new JSONObject();
+                            hora.put("hora", j);
+                            hora.put("nomAssig", c.getNomAssig());
+                            hora.put("numGrup", c.getNumGrup());
+                            hora.put("tipus", c.getTipus().toString());
+                            caselles.add(hora);
+                        }
                     }
-                }
-                dia.put(i, hores);
+                hores.add(caselles);
+                dia.put("hores", caselles);
                 dies.add(dia);
             }
             aula.put("dies", dies);
@@ -282,10 +276,9 @@ public class Horari {
                     JSONObject jsonDia = (JSONObject) jsonDies.get(i);
 
                     for (int j = 0; j < jsonDia.size(); j++){
-                        JSONObject jsonHores = (JSONObject) jsonDia.get(i);
-                        if (jsonHores != null) {
-                            for (int k = 0; k < jsonHores.size(); k++) {
-                                JSONObject jsonCasella = (JSONObject) jsonHores.get(j);
+                        JSONArray jsonHores = (JSONArray) jsonDia.get(j);
+                        if (jsonDia != null) {
+                                JSONObject jsonCasella = (JSONObject) jsonDia.get("hores");
                                 int numeroGrup = (int) (long) jsonCasella.get("numGrup");
                                 String nomAssig = (String) jsonCasella.get("nomAssig");
                                 String tipus = (String) jsonCasella.get("tipus");
@@ -308,7 +301,7 @@ public class Horari {
                                 cas.setNomAssig(nomAssig);
                                 cas.setTipus(tipusS);
                                 m.assignarCasella(i,j,cas);
-                            }
+
                         }
 
                     }

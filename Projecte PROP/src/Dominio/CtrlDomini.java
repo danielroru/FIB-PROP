@@ -14,7 +14,7 @@ public class CtrlDomini {
     private static HashSet<UAH> UAHlaboratori = new HashSet<>();
 
     private static Horari ultimHorari = new Horari();
-    
+
     public static void reset() {
         UAHmatins = new HashSet<>();
         UAHtardes = new HashSet<>();
@@ -26,9 +26,9 @@ public class CtrlDomini {
         reset();
         crearUAHs();
         crearSessions();
-        Horari solucio = GeneradorHorari.generarHorari();
-        solucio.mapejaHorari();
-        solucio.imprimirHorari();
+        ultimHorari = GeneradorHorari.generarHorari();
+        ultimHorari.mapejaHorari();
+        ultimHorari.imprimirHorari();
     }
 
     public static void guardarHorari() throws Exception {
