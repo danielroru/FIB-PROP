@@ -118,6 +118,29 @@ public class Horari {
         return false;
     }
 
+    public void mapejaHorari() {
+        //for (Aula a : PlaEstudis.getConjuntAules().getAules()) HashMap
+        for (Sessio s : assignacio.keySet()) {
+            for (UAH uah : assignacio.get(s)) {
+                String nomAula = uah.getAula().getId();
+                int i = uah.getDia().ordinal();
+                int j = uah.getHora();
+                Casella c = new Casella(s.getAssignatura().getNom(), s.getIdGrup(), s.getTipus());
+                if (horari.containsKey(nomAula))
+                    horari.get(nomAula).assignarCasella(i, j, c);
+                else {
+                    Matriu m = new Matriu();
+                    m.assignarCasella(i, j, c);
+                    horari.put(nomAula, m);
+                }
+            }
+        }
+    }
+
+    public Map<String, Matriu> getHorari() {
+        return horari;
+    }
+
     public void imprimirHorari() throws Exception {
         inout io = new inout();
         for (String aula : horari.keySet()) {

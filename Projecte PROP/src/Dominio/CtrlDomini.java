@@ -27,6 +27,7 @@ public class CtrlDomini {
         crearUAHs();
         crearSessions();
         Horari solucio = GeneradorHorari.generarHorari();
+        solucio.mapejaHorari();
         solucio.imprimirHorari();
     }
 
