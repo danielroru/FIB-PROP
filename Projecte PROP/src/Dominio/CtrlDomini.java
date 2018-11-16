@@ -28,6 +28,7 @@ public class CtrlDomini {
         crearSessions();
         Horari solucio = GeneradorHorari.generarHorari();
         solucio.imprimirHorari();
+        solucio.guardarHorari();
     }
 
 

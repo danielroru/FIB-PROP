@@ -1,5 +1,10 @@
 package Dominio;
 
+import JSON.JSONArray;
+import JSON.JSONObject;
+
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.*;
 
 public class Horari {
@@ -86,18 +91,7 @@ public class Horari {
         return false;
     }
 
-    public void escriure() {
-        for (Sessio s : assignacio.keySet()) {
-            System.out.println(s.getAssignatura().getNom() + " " + s.getIdGrup() + " " + s.getTipus());
-            System.out.println("----" + assignacio.get(s).size() +  "----");
-            for (UAH uah : assignacio.get(s)) {
-                System.out.println(uah.getDia());
-                System.out.println(uah.getHora());
-                System.out.println(uah.getAula().getId() + "\n");
-            }
 
-        }
-    }
     public boolean assignacioCompelta(Sessio s) {
         if(assignacio.containsKey(s)) {
             int duracio = 0;
@@ -181,6 +175,66 @@ public class Horari {
                 }
                 io.writeln("");
             }
+        }
+
+    }
+
+    public void guardarHorari(){
+        // Array general
+        JSONArray aules = new JSONArray();
+
+        for (String nomAula : horari.keySet()) {
+            JSONObject aula = new JSONObject();
+
+            // Afegim nova aula a l'array
+            aula.put("nomAula", nomAula);
+            Matriu m  = horari.get(nomAula);
+
+                // Array de dies
+                JSONArray dies = new JSONArray();
+
+
+                // Dies dins de l'aula
+                for (int i = 0; i < Enumeracio.Dia.values().length; i++) {
+                    // Objecte dia
+                    JSONObject dia = new JSONObject();
+                        // Array hores
+                        JSONArray hores = new JSONArray();
+                        // Hores dins del dia
+                        for (int j = PlaEstudis.getHoraInici(); j < PlaEstudis.getHoraFi(); j++) {
+                            JSONObject hora = new JSONObject();
+                                Casella c = m.getCasella(i,j);
+                                if (c != null) {
+                                    JSONObject cas = new JSONObject();
+                                        cas.put("nomAssig", c.getNomAssig());
+                                        cas.put("numGrup", c.getNumGrup());
+                                        cas.put("tipus", c.getTipus().toString());
+                                    hora.put(j, cas);
+                                    hores.add(hora);
+                                }
+                        }
+                    dia.put(Enumeracio.Dia.values()[i].toString(),hores);
+                    dies.add(dia);
+                }
+
+                aula.put("dies", dies);
+
+
+            // Afegim aula a l'array general
+            aules.add(aula);
+        }
+
+        // try-with-resources statement based on post comment below :)
+
+        try {
+            FileWriter file = new FileWriter("./src/Dades/Horaris/horari.json");
+            file.write(aules.toJSONString());
+            System.out.println("Successfully Copied JSON Object to File...");
+            System.out.println("\nJSON Object: " + aules);
+            file.close();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
         }
 
     }
