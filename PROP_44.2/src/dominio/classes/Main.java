@@ -27,7 +27,13 @@ public class Main {
 
         while (accio != 0) {
             escriureMenuPrincipal();
-            accio = io.readint();
+            try {
+                accio = io.readint();
+            }
+            catch (ParseException e) {
+                e.printStackTrace();
+            }
+
 
             switch (accio) {
                 case 1:
@@ -172,7 +178,9 @@ public class Main {
         io.writeln("");
         String folder = new String();
         folder = io.readname();
-        dataPath = "persistencia/" + folder + "/";
+        System.out.println("Working Directory = " +
+                System.getProperty("user.dir"));
+        dataPath = "src/persistencia/dades/" + folder + "/";
 
         PlaEstudis.reset();
 
