@@ -19,7 +19,7 @@
 
     "horesBlocT": 2,
     "horesBlocL": 2,
-    "horesBlocP": 1
+    "horesBlocP": 1,
 
     "correquisits":[]
 
@@ -44,7 +44,7 @@
 
     "horesBlocT": 2,
     "horesBlocL": 2,
-    "horesBlocP": 1
+    "horesBlocP": 1,
 
     "correquisits":[]
 
