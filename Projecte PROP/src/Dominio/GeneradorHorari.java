@@ -33,7 +33,7 @@ public class GeneradorHorari {
 
     }
 
-    private static Estructura backtracking_cronologic(Queue<Sessio> sFutures, Estructura solucio) {
+    private static Horari backtracking_cronologic(Queue<Sessio> sFutures, Horari solucio) {
         if (sFutures.isEmpty())
             return solucio;
         else {
@@ -50,14 +50,14 @@ public class GeneradorHorari {
                     } else solucio.eliminarUAH(sActual, uah);
                 } else solucio.eliminarUAH(sActual, uah);
             }
-            return new Estructura();
+            return new Horari();
         }
     }
 
-    public static Estructura generarHorari() {
+    public static Horari generarHorari() {
 
         iniGraf();
-        Estructura solucio = new Estructura();
+        Horari solucio = new Horari();
         Queue<Sessio> vfutures = new LinkedList<Sessio>(CtrlDomini.getSessions());
 
         solucio = backtracking_cronologic(vfutures, solucio);

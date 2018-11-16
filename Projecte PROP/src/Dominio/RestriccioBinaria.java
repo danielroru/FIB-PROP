@@ -49,7 +49,7 @@ public class RestriccioBinaria {
         return resultat;
     }
 
-    public static boolean validaSolucio(Estructura h, Sessio s, UAH uah) {
+    public static boolean validaSolucio(Horari h, Sessio s, UAH uah) {
 
         // Comprovem si la UAH ja ha estat assignada previament a una altra sessio
         if (h.existeixUAH(s, uah)) {

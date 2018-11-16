@@ -26,9 +26,11 @@ public class CtrlDomini {
         reset();
         crearUAHs();
         crearSessions();
-        Estructura solucio = GeneradorHorari.generarHorari();
-        solucio.escriure();
+        Horari solucio = GeneradorHorari.generarHorari();
+        solucio.imprimirHorari();
     }
+
+
 
     public static Set<Sessio> getSessionsByIdAssig(String idAssig) {
         Set<Sessio> SessionsAssig = new HashSet<>();
