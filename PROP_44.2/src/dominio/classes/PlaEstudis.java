@@ -7,9 +7,9 @@ public class PlaEstudis {
     private static ConjuntAssignatures cjtAssignatures = new ConjuntAssignatures();
     private static ConjuntAules cjtAules = new ConjuntAules();
 
-    private static int horaInici;
-    private static int horaFi;
-    private static int horaCanviFranja;
+    private static int horaInici = -1;
+    private static int horaFi = -1;
+    private static int horaCanviFranja = -1;
 
 
     private PlaEstudis(){
@@ -36,6 +36,10 @@ public class PlaEstudis {
         return horaCanviFranja;
     }
 
+
+    public static boolean isNull() {
+        return horaInici == -1 && horaFi == -1 && horaCanviFranja == -1;
+    }
 
     // Modificadores
     public static void setHoraInici(int hora) {
