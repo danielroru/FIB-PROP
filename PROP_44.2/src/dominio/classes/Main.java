@@ -21,7 +21,7 @@ public class Main {
     /// GENERAR HORARI
     /////////////////////////////////////////////////////////////////
 
-    private static void menuGenerarHorari() {
+    private static void menuGenerarHorari(){
 
         int accio = -1;
 
@@ -47,7 +47,11 @@ public class Main {
                 }
             }
             catch (Exception e) {
-                io.writeln("No has entrat un número vàlid");
+                try {
+                    io.writeln("No has entrat un número vàlid");
+                } catch (Exception e1) {
+                    e1.printStackTrace();
+                }
                 menuGenerarHorari();
             }
         }
@@ -255,15 +259,25 @@ public class Main {
 
 
     private static void escriureMenuPrincipal() {
-        io.writeln("////////////////////////////");
-        io.writeln("// MENÚ PRINCIPAL");
-        io.writeln("////////////////////////////");
-        io.writeln("");
-        io.writeln("1] Carregar Set De persistencia");
-        io.writeln("2] Generar Horari");
-        io.writeln("3] Guardar Horari");
-        io.writeln("4] Carregar Horari");
-        io.writeln("0] Sortir de l'aplicació");
+        try {
+            io.writeln("////////////////////////////");
+            io.writeln("// MENÚ PRINCIPAL");
+            io.writeln("////////////////////////////");
+            io.writeln("");
+            io.writeln("1] Carregar Set De Persistencia");
+            io.writeln("2] Generar Horari");
+            io.writeln("3] Guardar Horari");
+            io.writeln("4] Carregar Horari");
+            io.writeln("0] Sortir de l'aplicació");
+        }
+        catch (Exception e) {
+            try {
+                io.writeln("No s'ha pogut imprimir l'horari");
+            } catch (Exception e1) {
+                e1.printStackTrace();
+            }
+        }
+
     }
 
 
