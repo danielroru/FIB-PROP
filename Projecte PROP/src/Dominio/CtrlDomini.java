@@ -5,7 +5,6 @@ import java.util.*;
 public class CtrlDomini {
 
 
-
     private static HashSet<Sessio> sessions;
 
     private static HashSet<UAH> UAHmatins = new HashSet<>();
@@ -13,7 +12,7 @@ public class CtrlDomini {
     private static HashSet<UAH> UAHteoria = new HashSet<>();
     private static HashSet<UAH> UAHlaboratori = new HashSet<>();
 
-    //private static Horari ultimHorari = new Horari();
+    private static Horari ultimHorari = new Horari();
 
     public static void reset() {
         UAHmatins = new HashSet<>();
@@ -26,9 +25,27 @@ public class CtrlDomini {
         reset();
         crearUAHs();
         crearSessions();
-        Horari solucio = GeneradorHorari.generarHorari();
-        solucio.imprimirHorari();
-        solucio.guardarHorari();
+        ultimHorari = GeneradorHorari.generarHorari();
+        ultimHorari.imprimirHorari();
+    }
+
+    public static void guardarHorari() throws Exception {
+        inout io = new inout();
+
+        io.write("Quin nom li vols posar?");
+        String path = io.readline();
+
+        ultimHorari.guardarHorari(path);
+    }
+
+    public static void llegirHorari() throws Exception {
+        inout io = new inout();
+
+        io.write("Quin fitxer vols carregar?");
+        String path = io.readline();
+
+        ultimHorari.llegirHorari(path);
+        ultimHorari.imprimirHorari();
     }
 
 

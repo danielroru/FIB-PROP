@@ -41,10 +41,10 @@ public class Main {
                     CtrlDomini.generarHorari();
                     break;
                 case 3:
-                    desarHorari();
+                    CtrlDomini.guardarHorari();
                     break;
                 case 4:
-                    carregarHorari();
+                    CtrlDomini.llegirHorari();
                     break;
                 default:
                     break;
@@ -55,7 +55,6 @@ public class Main {
 
     private static void carregarAules(String dataPath) {
         JSONParser parser = new JSONParser();
-
 
         try {
             JSONArray arrayAules = (JSONArray) parser.parse(new FileReader(dataPath + "aules.json"));
@@ -246,29 +245,6 @@ public class Main {
         carregarAules(dataPath);
         carregarAssignatures(dataPath);
         carregarPlaEstudis(dataPath);
-    }
-
-    private static void desarHorari () {
-        JSONObject obj = new JSONObject();
-        obj.put("name", "mkyong.com");
-        obj.put("age", new Integer(100));
-
-
-        String dataPath = "./src/Dades/Horaris/";
-        try (FileWriter file = new FileWriter("dataPath" + System.currentTimeMillis() + ".json")) {
-
-            file.write(obj.toJSONString());
-            file.flush();
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        System.out.print(obj);
-    }
-
-    private static void carregarHorari() {
-
     }
 
     private static void escriureMenuPrincipal() throws Exception {
