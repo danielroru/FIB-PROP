@@ -1,5 +1,14 @@
 package Dominio;
 
+import JSON.JSONArray;
+import JSON.JSONObject;
+import JSON.parser.JSONParser;
+import JSON.parser.ParseException;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.*;
 
 public class Horari {
@@ -202,4 +211,122 @@ public class Horari {
             }
         }
     }*/
+
+    public void guardarHorari(String nomfitxer){
+        // Array general
+        JSONArray aules = new JSONArray();
+
+        for (String nomAula : horari.keySet()) {
+            JSONObject aula = new JSONObject();
+
+            // Afegim nova aula a l'array
+            aula.put("nomAula", nomAula);
+            Matriu m = horari.get(nomAula);
+
+            JSONArray dies = new JSONArray();
+            for (int i = 0; i < Enumeracio.Dia.values().length; i++) {
+                JSONObject dia = new JSONObject();
+                JSONArray hores = new JSONArray();
+                for (int j = PlaEstudis.getHoraInici(); j < PlaEstudis.getHoraFi(); j++) {
+                    if (m.getCasella(i,j) != null) {
+                        Casella c = m.getCasella(i,j);
+                        JSONObject hora = new JSONObject();
+                        hora.put("hora", j);
+                        hora.put("nomAssig", c.getNomAssig());
+                        hora.put("numGrup", c.getNumGrup());
+                        hora.put("tipus", c.getTipus().toString());
+                        hores.add(hora);
+                    }
+                }
+                dia.put(i, hores);
+                dies.add(dia);
+            }
+            aula.put("dies", dies);
+
+            // Afegim aula a l'array general
+            aules.add(aula);
+        }
+
+        // try-with-resources statement based on post comment below :)
+
+        try {
+            FileWriter file = new FileWriter("./src/Dades/Horaris/" + nomfitxer + ".json");
+            file.write(aules.toJSONString());
+            System.out.println("Horari Guardat");
+            System.out.println("\nJSON Object: " + aules);
+            file.close();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void llegirHorari(String nomfitxer) {
+        horari = new HashMap<>();
+
+        JSONParser parser = new JSONParser();
+
+        try {
+            JSONArray arrayAules = (JSONArray) parser.parse(new FileReader("./src/Dades/Horaris/" + nomfitxer + ".json"));
+
+            for (int z = 0; z < arrayAules.size(); z++) {
+
+                Matriu m = new Matriu();
+
+                JSONObject jsonAula = (JSONObject) arrayAules.get(z);
+
+                JSONArray jsonDies = (JSONArray) jsonAula.get("dies");
+
+                for (int i = 0; i < jsonDies.size(); i++) {
+                    JSONObject jsonDia = (JSONObject) jsonDies.get(i);
+
+                    for (int j = 0; j < jsonDia.size(); j++){
+                        JSONObject jsonHores = (JSONObject) jsonDia.get(i);
+                        if (jsonHores != null) {
+                            for (int k = 0; k < jsonHores.size(); k++) {
+                                JSONObject jsonCasella = (JSONObject) jsonHores.get(j);
+                                int numeroGrup = (int) (long) jsonCasella.get("numGrup");
+                                String nomAssig = (String) jsonCasella.get("nomAssig");
+                                String tipus = (String) jsonCasella.get("tipus");
+
+                                Enumeracio.TipusSessio tipusS = Enumeracio.TipusSessio.TEORIA;
+
+                                switch (tipus) {
+                                    case "TEORIA" :
+                                        tipusS = Enumeracio.TipusSessio.TEORIA;
+                                        break;
+                                    case "LABORATORI" :
+                                        tipusS = Enumeracio.TipusSessio.LABORATORI;
+                                        break;
+                                    case "PROBLEMES" :
+                                        tipusS = Enumeracio.TipusSessio.PROBLEMES;
+                                        break;
+                                }
+                                Casella cas = new Casella();
+                                cas.setNumGrup(numeroGrup);
+                                cas.setNomAssig(nomAssig);
+                                cas.setTipus(tipusS);
+                                m.assignarCasella(i,j,cas);
+                            }
+                        }
+
+                    }
+                }
+                String nomAula = (String) jsonAula.get("nomAula");
+                horari.put(nomAula,m);
+            }
+
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
