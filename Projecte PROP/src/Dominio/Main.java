@@ -3,6 +3,7 @@ package Dominio;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 
+import java.io.FileWriter;
 import java.io.IOException;
 import java.security.Timestamp;
 import java.util.HashMap;
@@ -185,7 +186,22 @@ public class Main {
     }
 
     private static void desarHorari () {
+        JSONObject obj = new JSONObject();
+        obj.put("name", "mkyong.com");
+        obj.put("age", new Integer(100));
 
+
+        String dataPath = "./src/Dades/Horaris/";
+        try (FileWriter file = new FileWriter("dataPath" + System.currentTimeMillis() + ".json")) {
+
+            file.write(obj.toJSONString());
+            file.flush();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        System.out.print(obj);
     }
 
     private static void carregarHorari() {
