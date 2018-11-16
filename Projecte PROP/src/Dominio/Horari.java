@@ -274,11 +274,11 @@ public class Horari {
 
                 for (int i = 0; i < jsonDies.size(); i++) {
                     JSONObject jsonDia = (JSONObject) jsonDies.get(i);
+                    JSONArray jsonHores = (JSONArray) jsonDia.get("hores");
 
-                    for (int j = 0; j < jsonDia.size(); j++){
-                        JSONArray jsonHores = (JSONArray) jsonDia.get(j);
-                        if (jsonDia != null) {
-                                JSONObject jsonCasella = (JSONObject) jsonDia.get("hores");
+                    for (int j = 0; j < jsonHores.size(); j++){
+                        if (jsonHores != null) {
+                                JSONObject jsonCasella = (JSONObject) jsonHores.get(j);
                                 int numeroGrup = (int) (long) jsonCasella.get("numGrup");
                                 String nomAssig = (String) jsonCasella.get("nomAssig");
                                 String tipus = (String) jsonCasella.get("tipus");
@@ -300,7 +300,8 @@ public class Horari {
                                 cas.setNumGrup(numeroGrup);
                                 cas.setNomAssig(nomAssig);
                                 cas.setTipus(tipusS);
-                                m.assignarCasella(i,j,cas);
+                                int hora = (int) (long) jsonCasella.get("hora");
+                                m.assignarCasella(i,hora,cas);
 
                         }
 
