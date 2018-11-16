@@ -176,7 +176,6 @@ public class Main {
         io.writeln("");
         String folder = new String();
         folder = io.readname();
-        System.out.println("Working Directory = " + System.getProperty("user.dir"));
         dataPath = "./Dades/" + folder + "/";
 
         PlaEstudis.reset();
