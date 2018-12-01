@@ -34,24 +34,22 @@ public class Main {
                     accio = 0;
                     System.out.println("Error al seleccionar la opció");
                 }
-                    switch (accio) {
-                        case 1:
-                            carregarDades();
-                            break;
-                        case 2:
-                            CtrlDomini.generarHorari();
-                            break;
-                        case 3:
-                            CtrlDomini.guardarHorari();
-                            break;
-                        case 4:
-                            CtrlDomini.llegirHorari();
-                            break;
-                        default:
-                            break;
-                    }
-
-
+                switch (accio) {
+                    case 1:
+                        carregarDades();
+                        break;
+                    case 2:
+                        CtrlDomini.generarHorari();
+                        break;
+                    case 3:
+                        CtrlDomini.guardarHorari();
+                        break;
+                    case 4:
+                        CtrlDomini.llegirHorari();
+                        break;
+                    default:
+                        break;
+                }
         }
     }
 
