@@ -1,10 +1,13 @@
 package dominio.swing;
 
+import dominio.controladores.CtrlPresentacio;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class vistaMenuPrincipal {
+public class vistaPrincipal {
+
     private JButton sortirButton;
     private JButton generarHorariButton;
     private JButton carregarSetDeDadesButton;
@@ -12,31 +15,45 @@ public class vistaMenuPrincipal {
     private JButton carregarHorariButton;
     private JPanel menuPrincipal;
 
-    static public JFrame getVista() {
-        return vista;
-    }
-
     static JFrame vista = new JFrame();
 
-    public vistaMenuPrincipal() {
+    private CtrlPresentacio iCtrlPresentacio;
+
+    public vistaPrincipal(CtrlPresentacio pCtrPresentacio) {
+
+        iCtrlPresentacio = pCtrPresentacio;
+
+        // Inicialitzar components!
+
+        vista.setContentPane(new vistaPrincipal().menuPrincipal);
+        vista.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+    }
+
+    public vistaPrincipal() {
         sortirButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                System.exit(0);
             }
         });
         carregarSetDeDadesButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                vistaCarregarSetDades.loadCarregarSetDades();
+
             }
         });
     }
 
-    public static void main(String[] args) {
-        vista.setContentPane(new vistaMenuPrincipal().menuPrincipal);
-        vista.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    public void ferVisible() {
         vista.pack();
         vista.setVisible(true);
     }
+
+    // Activar o desactivar
+    public void canviarEstat(boolean estat) {
+        vista.setEnabled(estat);
+    }
+
+
 }

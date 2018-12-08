@@ -6,8 +6,6 @@ import java.util.*;
 
 public class CtrlDomini {
 
-
-
     private static HashSet<Sessio> sessions;
 
     private static HashSet<UAH> UAHmatins = new HashSet<>();
@@ -16,6 +14,10 @@ public class CtrlDomini {
     private static HashSet<UAH> UAHlaboratori = new HashSet<>();
 
     private static Horari ultimHorari = new Horari();
+
+    public void inicialitzar() {
+
+    }
 
     public static void reset() {
         UAHmatins = new HashSet<>();

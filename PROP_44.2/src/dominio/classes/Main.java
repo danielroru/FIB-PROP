@@ -1,20 +1,9 @@
 package dominio.classes;
 
-import dominio.JSON.JSONArray;
-import dominio.JSON.JSONObject;
-import dominio.JSON.parser.JSONParser;
-import dominio.JSON.parser.ParseException;
-import dominio.controladores.CtrlDomini;
-
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.HashSet;
-import java.util.Set;
-
+import dominio.controladores.CtrlPresentacio;
 
 public class Main {
-
+    /**
     private static inout io = new inout();
 
     /////////////////////////////////////////////////////////////////
@@ -281,10 +270,20 @@ public class Main {
         }
 
     }
-
+**/
 
     public static void main(String[] args) {
+        // Primera entrega
+        // menuGenerarHorari();
 
-        menuGenerarHorari();
+        javax.swing.SwingUtilities.invokeLater(
+                new Runnable() {
+                    @Override
+                    public void run() {
+                        CtrlPresentacio ctrlPresentacio = new CtrlPresentacio();
+                        ctrlPresentacio.iniciarPresentacio();
+                    }
+                }
+        );
     }
 }
