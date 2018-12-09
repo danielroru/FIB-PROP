@@ -43,8 +43,11 @@ public class CtrlDominiGenerarHorari {
         crearSessions();
         ultimHorari = GeneradorHorari.generarHorari();
         ultimHorari.mapejaHorari();
-        ultimHorari.imprimirHorari();
         return ultimHorari;
+    }
+
+    public static String[] escriureHorari() {
+        return ultimHorari.imprimirHorari();
     }
 
 

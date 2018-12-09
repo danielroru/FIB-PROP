@@ -51,6 +51,9 @@ public class CtrlDomini {
     public static void generarHorari() {
 
         ultimHorari = ctrlDominiGenerarHorari.generarHorari();
+        String[] horari = ctrlDominiGenerarHorari.escriureHorari();
+        ctrlPresentacio.imprimirHorari(horari);
+
     }
 
     // [ Opció 3 ] Guardar Horari
@@ -62,8 +65,12 @@ public class CtrlDomini {
     // [ Opció 4 ] Carregar Horari
 
     public static void carregarHorari() {
-        ctrlDominiCarregarHorari.carregarHorari(ultimHorari);
+        Map<String, Matriu> horari = ctrlDominiCarregarHorari.carregarHorari(ultimHorari);
+        ultimHorari.setHorari(horari);
+        String[] horariEscriure = ultimHorari.imprimirHorari();
+        ctrlPresentacio.imprimirHorari(horariEscriure);
     }
+
 
 }
 

@@ -14,6 +14,8 @@ public class CtrlPersistencia {
             CtrlPersistenciaCarregarDades.getInstance();
     private static CtrlPersistenciaGuardarHorari ctrlPersistenciaGuardarHorari =
             CtrlPersistenciaGuardarHorari.getInstance();
+    private static CtrlPersistenciaCarregarHorari ctrlPersistenciaCarregarHorari =
+            CtrlPersistenciaCarregarHorari.getInstance();
 
     private CtrlPersistencia() {}
 
@@ -42,6 +44,14 @@ public class CtrlPersistencia {
 
     public static void guardarHorari(Map<String, Matriu> ultimHorari, String nomFitxer) {
         ctrlPersistenciaGuardarHorari.guardarHorari(ultimHorari, nomFitxer);
+    }
+
+    // [ Opció 4 ] : Carregar Horari
+    ////////////////////////////////
+
+    public static Map<String, Matriu> llegirHorari(String path) {
+        Map<String, Matriu> horari = CtrlPersistenciaCarregarHorari.llegirHorari(path);
+        return horari;
     }
 
 }

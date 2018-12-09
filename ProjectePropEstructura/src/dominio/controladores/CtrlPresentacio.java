@@ -1,14 +1,13 @@
 package dominio.controladores;
 
 import dominio.vistes.*;
-import java.util.HashSet;
-import java.util.Set;
 
 public class CtrlPresentacio {
 
     private static CtrlPresentacio instance = new CtrlPresentacio();
     private static CtrlDomini cD = CtrlDomini.getInstance();
     private static VistaPrincipal vP = VistaPrincipal.getInstance();
+    private static VistaEscriureHorari vEH = VistaEscriureHorari.getInstance();
 
     private CtrlPresentacio() {
 
@@ -50,6 +49,11 @@ public class CtrlPresentacio {
 
 
         } while (accio != 0);
+    }
+
+
+    public static void imprimirHorari(String[] horari) {
+        vEH.imprimirHorari(horari);
     }
 
 }

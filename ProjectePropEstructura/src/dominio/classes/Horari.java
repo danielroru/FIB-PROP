@@ -1,13 +1,5 @@
 package dominio.classes;
-import dominio.JSON.JSONArray;
-import dominio.JSON.JSONObject;
-import dominio.JSON.parser.JSONParser;
-import dominio.JSON.parser.ParseException;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.*;
 
 public class Horari {
@@ -108,18 +100,6 @@ public class Horari {
         return false;
     }
 
-    public void escriure() {
-        for (Sessio s : assignacio.keySet()) {
-            System.out.println(s.getAssignatura().getNom() + " " + s.getIdGrup() + " " + s.getTipus());
-            System.out.println("----" + assignacio.get(s).size() +  "----");
-            for (UAH uah : assignacio.get(s)) {
-                System.out.println(uah.getDia());
-                System.out.println(uah.getHora());
-                System.out.println(uah.getAula().getId() + "\n");
-            }
-
-        }
-    }
     public boolean assignacioCompelta(Sessio s) {
         if(assignacio.containsKey(s)) {
             int duracio = 0;
@@ -165,31 +145,41 @@ public class Horari {
         return horari;
     }
 
-    public void imprimirHorari() {
+    public void setHorari(Map<String, Matriu> horari) {
+        this.horari = horari;
+    }
+
+    // Nom de la funció el podem passar a
+    // [Transformar Horari String]
+    public String[] imprimirHorari() {
+
+        String[] horariText = new String[20*horari.size()];
+
         try {
 
-            inout io = new inout();
+            int i = 0;
             for (String aula : horari.keySet()) {
-                io.writeln("");
-                io.writeln("");
-                io.writeln("---------------");
-                io.writeln("Aula " + aula);
-                io.writeln("---------------");
-                io.writeln("");
+                horariText[i] = "";
+                horariText[i + 1] = "";
+                horariText[i + 2] = "---------------";
+                horariText[i + 3] = "Aula " + aula;
+                horariText[i + 4] = "---------------";
+                horariText[i + 5] = "";
 
-                io.write("               ");
+                horariText[i + 6] = "               ";
                 for (Enumeracio.Dia dia : Enumeracio.Dia.values()) {
-                    io.write(dia.toString());
-                    for (int i = dia.toString().length(); i < 15; i++) {
-                        io.write(" ");
+                    horariText[i + 6] += dia.toString();
+                    for (int k = dia.toString().length(); k < 15; k++) {
+                        horariText[i + 6] += " ";
                     }
                 }
-                io.writeln("");
+                horariText[i + 7] = "";
+                int j = 8;
                 for (int hora = PlaEstudis.getHoraInici(); hora < PlaEstudis.getHoraFi(); hora++) {
-                    io.write(hora + "h       ");
-                    for (Enumeracio.Dia dia : Enumeracio.Dia.values())
+                    horariText[i + j] = hora + "h       ";
+                    for (Enumeracio.Dia dia : Enumeracio.Dia.values()) {
                         if (horari.get(aula).getCasella(dia.ordinal(), hora) == null)
-                            io.write("    --------    ");
+                            horariText[i + j] += "    --------    ";
                         else {
                             String nomAssig = horari.get(aula).getCasella(dia.ordinal(), hora).getNomAssig();
                             int grup = horari.get(aula).getCasella(dia.ordinal(), hora).getNumGrup();
@@ -205,22 +195,23 @@ public class Horari {
                                     sigla = "P";
                                     break;
                             }
-                            io.write("    " + nomAssig + " " + grup + " " + sigla + "    ");
+                            horariText[i + j] += "    " + nomAssig + " " + grup + " " + sigla + "    ";
                         }
-
-
-
-
-                    io.writeln("");
+                    }
+                    //horariText[i + j + 1] = "";
+                    ++j;
                 }
+                i += 20;
             }
         }
         catch (Exception e) {
-            System.out.println("No s'ha pogut imprimir l'horari");
+            horariText[0] = "No s'ha pogut imprimir l'horari";
         }
 
-
+        return horariText;
     }
+
+    /* Transpassat a CtrlPersistencia
 
     @SuppressWarnings("unchecked")
     public void guardarHorari(String nomfitxer){
@@ -275,7 +266,8 @@ public class Horari {
         }
 
     }
-
+    */
+    /*
     public void llegirHorari(String nomfitxer) {
         horari = new HashMap<>();
 
@@ -343,4 +335,5 @@ public class Horari {
             e.printStackTrace();
         }
     }
+    */
 }

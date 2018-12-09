@@ -1,8 +1,0 @@
-Messi:3:Alex:Alex:Hallowed Be The Name:Iron Maiden:Naita Na:Boikot
-El coleta:0
-Alex:3:Alex:Alex:Hallowed Be The Name:Iron Maiden:Seek 'n Destroy:Metallica
-Joan:5:Let It Be:The Beatles:Hey Jude:The Beatles:Yellow Submarine:The Beatles:Bohemian Rhapsody:Queen:We Are the Champions:Queen
-Marc:3:Let It Be:The Beatles:Hey Jude:The Beatles:Bohemian Rhapsody:Queen
-Ester:0
-Carlos:4:Yesterday:The Beatles:Yellow Submarine:The Beatles:(I Can't Get No) Satisfaction:The Rolling Stones:Just Like a Woman:Bob Dylan
-Alicia:4:Yesterday:The Beatles:(I Can't Get No) Satisfaction:The Rolling Stones:Just Like a Woman:Bob Dylan:Tangled Up in Blue:Bob Dylan
