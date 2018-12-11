@@ -1,5 +1,6 @@
 package dominio.controladores;
 
+import dominio.swing.vistaGestionarDades;
 import dominio.swing.vistaPrincipal;
 
 public class CtrlPresentacio {
@@ -7,15 +8,15 @@ public class CtrlPresentacio {
     //////////////////////////////////////// Declaracions
 
     private CtrlDomini ctrlDomini;
-    private vistaPrincipal vPrincipal = null;
+
+    private vistaPrincipal vPrincipal;
 
     //////////////////////////////////////// Constructores
 
     public CtrlPresentacio() {
         ctrlDomini = new CtrlDomini();
 
-        if (vPrincipal == null)
-            vPrincipal = new vistaPrincipal(this);
+        vPrincipal = new vistaPrincipal(this);
     }
 
     //////////////////////////////////////// Operacions
@@ -24,6 +25,16 @@ public class CtrlPresentacio {
         ctrlDomini.inicialitzar();
         vPrincipal.ferVisible();
     }
+
+    public void carregarSetDades(String path) {
+        ctrlDomini.carregarSetAssignatures(path);
+    }
+
+    public void canviarAGestionarDades() {
+        vistaGestionarDades vGestionarDades = new vistaGestionarDades(this);
+        vGestionarDades.ferVisible();
+    }
+
 
 
 }

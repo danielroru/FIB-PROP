@@ -273,7 +273,7 @@ public class Main {
 **/
 
     public static void main(String[] args) {
-        // Primera entrega
+        // Primera entrega ////////////////////////////////////////////
         // menuGenerarHorari();
 
         javax.swing.SwingUtilities.invokeLater(

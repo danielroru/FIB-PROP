@@ -11,10 +11,9 @@ import java.io.File;
 public class vistaPrincipal {
 
     private JButton sortirButton;
-    private JButton generarHorariButton;
+    private JButton gestionarDadesButton;
     private JButton carregarSetDeDadesButton;
-    private JButton guardarHorariButton;
-    private JButton carregarHorariButton;
+    private JButton gestionarHorariButton;
     private JPanel menuPrincipal;
 
     static JFrame vista = new JFrame();
@@ -25,14 +24,9 @@ public class vistaPrincipal {
 
         iCtrlPresentacio = pCtrPresentacio;
 
-        // Inicialitzar components!
-
-        vista.setContentPane(new vistaPrincipal().menuPrincipal);
+        vista.setContentPane(menuPrincipal);
         vista.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-    }
-
-    public vistaPrincipal() {
         sortirButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -42,18 +36,35 @@ public class vistaPrincipal {
         carregarSetDeDadesButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFileChooser jfc = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
-
-                int returnValue = jfc.showOpenDialog(null);
-                // int returnValue = jfc.showSaveDialog(null);
+                JFileChooser chooser = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
+                chooser.setDialogTitle("Selecciona el set d'Assignatures");
+                chooser.setCurrentDirectory(new File(System.getProperty("user.dir") + "/src/persistencia"));
+                int returnValue = chooser.showOpenDialog(null);
 
                 if (returnValue == JFileChooser.APPROVE_OPTION) {
-                    File selectedFile = jfc.getSelectedFile();
-                    System.out.println(selectedFile.getAbsolutePath());
+                    File arxiu = chooser.getSelectedFile();
+                    System.out.println("Arxiu escollit: " + arxiu.getAbsolutePath());
+                    iCtrlPresentacio.carregarSetDades(arxiu.getAbsolutePath());
                 }
+            }
+
+        });
+        gestionarDadesButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                vistaGestionarDades vista2 = new vistaGestionarDades(iCtrlPresentacio);
+                vista2.ferVisible();
+            }
+        });
+        gestionarHorariButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                vistaResultatHorari vista2 = new vistaResultatHorari(iCtrlPresentacio);
+                vista2.ferVisible();
             }
         });
     }
+
 
     public void ferVisible() {
         vista.pack();

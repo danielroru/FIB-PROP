@@ -15,8 +15,10 @@ public class CtrlDomini {
 
     private static Horari ultimHorari = new Horari();
 
-    public void inicialitzar() {
+    private static CtrPersistencia ctrPersistencia;
 
+    public void inicialitzar() {
+        ctrPersistencia = new CtrPersistencia();
     }
 
     public static void reset() {
@@ -70,6 +72,10 @@ public class CtrlDomini {
             System.out.println(e.getMessage());
         }
 
+    }
+
+    public void carregarSetAssignatures(String path) {
+        ctrPersistencia.carregarAssignatures(path);
     }
 
 
