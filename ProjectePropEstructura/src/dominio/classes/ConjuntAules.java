@@ -41,4 +41,12 @@ public class ConjuntAules {
         this.conjuntAules.add(a);
     }
 
+    public Aula getAula(String id) {
+        Aula aula = null;
+        for (Aula a : conjuntAules) {
+            if (id == a.getId()) return a;
+        }
+        return aula;
+    }
+
 }

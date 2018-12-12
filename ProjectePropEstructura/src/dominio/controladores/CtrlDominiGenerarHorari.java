@@ -2,7 +2,6 @@ package dominio.controladores;
 
 import dominio.classes.*;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 public class CtrlDominiGenerarHorari {
@@ -47,7 +46,7 @@ public class CtrlDominiGenerarHorari {
     }
 
     public static String[] escriureHorari() {
-        return ultimHorari.imprimirHorari();
+        return ultimHorari.passarString();
     }
 
 

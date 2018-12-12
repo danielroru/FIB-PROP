@@ -66,5 +66,12 @@ public class ConjuntAssignatures {
     }
 
 
+    public Assignatura getAssigatura(String nom) {
+        Assignatura assig = null;
+        for (Assignatura a : getAssignatures()) {
+            if (nom == a.getNom()) return a;
+        }
+        return assig;
+    }
 
 }

@@ -1,5 +1,7 @@
 package dominio.classes;
 
+import javafx.util.Pair;
+
 import java.util.*;
 
 public class Horari {
@@ -149,64 +151,55 @@ public class Horari {
         this.horari = horari;
     }
 
-    // Nom de la funció el podem passar a
-    // [Transformar Horari String]
-    public String[] imprimirHorari() {
+    // String[Aula][Dia][Hora][Assig]
+    public Pair<String, String[][][]>[] passarString() {
 
-        String[] horariText = new String[20*horari.size()];
+        int nAules = horari.keySet().size();
+        int nDies = 5;
+        int nHores = PlaEstudis.getHoraFi() - PlaEstudis.getHoraInici();
+        int nAssig = 3;
 
-        try {
+        // Como lo puedo declarar ¿?
+        // Problema:
+        //
+        //      · Necesito info de la Matriz por Assignatura.
+        //      · Pair<String, String[][][]> <- Como se declara ¿?
 
-            int i = 0;
-            for (String aula : horari.keySet()) {
-                horariText[i] = "";
-                horariText[i + 1] = "";
-                horariText[i + 2] = "---------------";
-                horariText[i + 3] = "Aula " + aula;
-                horariText[i + 4] = "---------------";
-                horariText[i + 5] = "";
+        String[][][] horariAula = new String[nDies][nHores][nAssig];
+        Pair<String, String[][][]>[] horariText = new Pair<String, horariAula>[horari.keySet().size()];
 
-                horariText[i + 6] = "               ";
-                for (Enumeracio.Dia dia : Enumeracio.Dia.values()) {
-                    horariText[i + 6] += dia.toString();
-                    for (int k = dia.toString().length(); k < 15; k++) {
-                        horariText[i + 6] += " ";
-                    }
-                }
-                horariText[i + 7] = "";
-                int j = 8;
-                for (int hora = PlaEstudis.getHoraInici(); hora < PlaEstudis.getHoraFi(); hora++) {
-                    horariText[i + j] = hora + "h       ";
-                    for (Enumeracio.Dia dia : Enumeracio.Dia.values()) {
-                        if (horari.get(aula).getCasella(dia.ordinal(), hora) == null)
-                            horariText[i + j] += "    --------    ";
-                        else {
-                            String nomAssig = horari.get(aula).getCasella(dia.ordinal(), hora).getNomAssig();
-                            int grup = horari.get(aula).getCasella(dia.ordinal(), hora).getNumGrup();
-                            String sigla = "?";
-                            switch (horari.get(aula).getCasella(dia.ordinal(), hora).getTipus()) {
-                                case TEORIA:
-                                    sigla = "T";
-                                    break;
-                                case LABORATORI:
-                                    sigla = "L";
-                                    break;
-                                case PROBLEMES:
-                                    sigla = "P";
-                                    break;
-                            }
-                            horariText[i + j] += "    " + nomAssig + " " + grup + " " + sigla + "    ";
+        int i = 0;
+        for (String aula : horari.keySet()) {
+
+            for (int dia = 0; dia < nDies; ++dia) {
+                for (int hora = 0; hora < nHores; ++hora) {
+
+                    if(horari.get(aula).getCasella(dia, hora) != null) {
+                        horariAula[dia][hora][0] = horari.get(aula).getCasella(dia, hora).getNomAssig();
+                        horariAula[dia][hora][1] = String.valueOf(horari.get(aula).getCasella(dia, hora).getNumGrup());
+                        horariAula[dia][hora][2] = "?";
+                        switch (horari.get(aula).getCasella(dia, hora).getTipus()) {
+                            case TEORIA:
+                                horariAula[dia][hora][2] = "T";
+                                break;
+                            case LABORATORI:
+                                horariAula[dia][hora][2] = "L";
+                                break;
+                            case PROBLEMES:
+                                horariAula[dia][hora][2] = "P";
+                                break;
                         }
                     }
-                    //horariText[i + j + 1] = "";
-                    ++j;
+
                 }
-                i += 20;
             }
+
+            Pair<String, String[][][]> elementHorari = new Pair<String, String[][][]>(aula, horariAula);
+            horariText[i] = elementHorari;
+            ++i;
+
         }
-        catch (Exception e) {
-            horariText[0] = "No s'ha pogut imprimir l'horari";
-        }
+
 
         return horariText;
     }
