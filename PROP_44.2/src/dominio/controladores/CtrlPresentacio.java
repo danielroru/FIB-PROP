@@ -1,6 +1,5 @@
 package dominio.controladores;
 
-import dominio.swing.vistaGestionarDades;
 import dominio.swing.vistaPrincipal;
 
 public class CtrlPresentacio {
@@ -29,12 +28,5 @@ public class CtrlPresentacio {
     public void carregarSetDades(String path) {
         ctrlDomini.carregarSetAssignatures(path);
     }
-
-    public void canviarAGestionarDades() {
-        vistaGestionarDades vGestionarDades = new vistaGestionarDades(this);
-        vGestionarDades.ferVisible();
-    }
-
-
 
 }
