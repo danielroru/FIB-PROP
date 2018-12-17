@@ -37,23 +37,28 @@ public class vistaGenerarHorari extends JFrame {
     private JButton endarrereButton = new JButton("Endarrere");
     private JTable horari = new JTable(data, columnNames);
     private JComboBox aules = new JComboBox(conjuntAules);
+    private JTextField tf = new JTextField(128);
 
     private ArrayList<Pair<String, String[][][]>> horariImprimir;
     private Object[][] informacioHorari = new Object[14][6];
 
     private CtrlPresentacio iCtrlPresentacio = CtrlPresentacio.getInstance();
 
-    private void imprimirAula(int i) {
-        Pair<String, String[][][]> aula = horariImprimir.get(i);
-        String[][][] valor = aula.getValue();
-        for (int hora = 0; hora < 12; ++hora) {
-            informacioHorari[hora+1][0] = 8 + hora;
-            for (int dia = 0; dia < 5; ++dia) {
+    private void imprimirAula(String info) {
+        String[][][] valor = null;
+        for (Pair<String, String[][][]> a : horariImprimir) {
+            if (a.getKey() == info)
+                valor = a.getValue();
+        }
+        if (valor != null) {
+            for (int hora = 0; hora < 12; ++hora) {
+                informacioHorari[hora + 1][0] = 8 + hora;
+                for (int dia = 0; dia < 5; ++dia) {
+                    if (valor[dia][hora][0] != null)
+                        informacioHorari[hora + 1][dia + 1] = valor[dia][hora][0] + " " + valor[dia][hora][1] + " " + valor[dia][hora][2];
+                    else informacioHorari[hora + 1][dia + 1] = "----";
 
-                if (valor[dia][hora][0] != null)
-                    informacioHorari[hora+1][dia + 1] = valor[dia][hora][0] + " " + valor[dia][hora][1] + " " + valor[dia][hora][2];
-                else informacioHorari[hora+1][dia + 1] = "----";
-
+                }
             }
         }
     }
@@ -78,7 +83,10 @@ public class vistaGenerarHorari extends JFrame {
             informacioHorari[0][4] = "Dijous";
             informacioHorari[0][5] = "Divendres";
 
-            imprimirAula(0);
+            Pair<String, String[][][]> aula = horariImprimir.get(0);
+            String info = aula.getKey();
+
+            imprimirAula(info);
 
 
             aules = new JComboBox(cjtAules);
@@ -126,8 +134,19 @@ public class vistaGenerarHorari extends JFrame {
 
         };
 
-        endarrereButton.addActionListener(vistaPrincipal);
+        ActionListener seleccioAules = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String info = aules.getSelectedItem().toString();
+                System.out.println(info);
+                imprimirAula(info);
+                horari = new JTable(informacioHorari, columnNames);
+            }
 
+        };
+
+        endarrereButton.addActionListener(vistaPrincipal);
+        aules.addActionListener(seleccioAules);
     }
 
 }
