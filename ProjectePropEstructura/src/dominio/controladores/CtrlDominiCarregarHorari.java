@@ -1,6 +1,7 @@
 package dominio.controladores;
 
 import dominio.classes.*;
+import dominio.vistes.inout;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,15 +17,11 @@ public class CtrlDominiCarregarHorari {
         return instance;
     }
 
-    public static Map<String, Matriu> carregarHorari(Horari ultimHorari) {
+    public static Map<String, Matriu> carregarHorari(Horari ultimHorari, String text) {
         Map<String, Matriu> horari = new HashMap<>();
         try {
             if (PlaEstudis.isNull()) throw new Exception ("    ERROR: Encara no has carregat les dades de persistència");
-            inout io = new inout();
-
-            io.write("Quin fitxer vols carregar?");
-            String path = io.readline();
-            horari = ctrlPersistencia.llegirHorari(path);
+            horari = ctrlPersistencia.llegirHorari(text);
         }
         catch (Exception e) {
             System.out.println(e.getMessage());

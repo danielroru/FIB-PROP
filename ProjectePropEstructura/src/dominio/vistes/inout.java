@@ -1,4 +1,4 @@
-package dominio.classes;
+package dominio.vistes;
 import java.io.*;
 
 public class inout

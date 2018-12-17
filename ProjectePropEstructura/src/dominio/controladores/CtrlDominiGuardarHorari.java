@@ -1,6 +1,7 @@
 package dominio.controladores;
 
 import dominio.classes.*;
+import dominio.vistes.inout;
 
 import java.util.Map;
 
@@ -17,15 +18,10 @@ public class CtrlDominiGuardarHorari {
         return instance;
     }
 
-    public void guardarHorari(Map<String, Matriu> ultimHorari) {
+    public void guardarHorari(Map<String, Matriu> ultimHorari, String text) {
         try {
             if (ultimHorari.size() == 0) throw new Exception ("    ERROR: Encara no has generat cap horari");
-            inout io = new inout();
-
-            io.write("Quin nom li vols posar?");
-            String nomFitxer = io.readline();
-
-            ctrlPersistencia.guardarHorari(ultimHorari, nomFitxer);
+            ctrlPersistencia.guardarHorari(ultimHorari, text);
         }
         catch (Exception e) {
             System.out.println(e.getMessage());

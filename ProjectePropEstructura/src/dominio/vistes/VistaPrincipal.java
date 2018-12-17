@@ -1,7 +1,6 @@
 package dominio.vistes;
 
 import dominio.controladores.CtrlPresentacio;
-import dominio.classes.inout;
 
 public class VistaPrincipal {
 

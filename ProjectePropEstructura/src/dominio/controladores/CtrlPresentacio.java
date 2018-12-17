@@ -1,6 +1,18 @@
 package dominio.controladores;
 
+import dominio.swing.*;
+
+import dominio.swing.A_CarregarDades.*;
+import dominio.swing.B_GenerarHorari.*;
+import dominio.swing.C_GuardarHorari.*;
+import dominio.swing.D_CarregarHorari.*;
+import dominio.swing.E_ModificarHorari.*;
+import dominio.swing.F_EditarDades.*;
+
 import dominio.vistes.*;
+import javafx.util.Pair;
+
+import java.util.ArrayList;
 
 public class CtrlPresentacio {
 
@@ -8,6 +20,8 @@ public class CtrlPresentacio {
     private static CtrlDomini cD = CtrlDomini.getInstance();
     private static VistaPrincipal vP = VistaPrincipal.getInstance();
     private static VistaEscriureHorari vEH = VistaEscriureHorari.getInstance();
+
+    private static boolean complet = false;
 
     private CtrlPresentacio() {
 
@@ -18,38 +32,12 @@ public class CtrlPresentacio {
     }
 
 
-    public static void inicialitzarPresentacio() {
-        int accio;
-        do {
-            vP.menuPrincipal();
-            try {
-                accio = vP.readint();
-            }
-            catch (Exception e) {
-                accio = 0;
-                System.out.println("Error al seleccionar la opció");
-            }
-            switch (accio) {
-                case 1:
-                    cD.carregarDades();
-                    break;
-                case 2:
-                    cD.generarHorari();
-                    break;
-                case 3:
-                    cD.guardarHorari();
-                    break;
-                case 4:
-                    cD.carregarHorari();
-                    break;
-                default:
-                    accio = 0;
-                    break;
-            }
-
-
-        } while (accio != 0);
-    }
+    /*
+    *
+    *   MIRAR ERRORS SI NO HI HA INFO CORRECTE
+    *   --------------------------------------
+    *
+    * */
 
     /* Retorna Informació de l'Aula:
     *
@@ -135,8 +123,142 @@ public class CtrlPresentacio {
     public static void borrarAula(){}
     public static void borrarAssig(){}
 
-    public static void imprimirHorari(String[] horari) {
+    public static void imprimirHorari(ArrayList<Pair<String, String[][][]>> horari) {
         vEH.imprimirHorari(horari);
     }
 
+
+    // ------------------------
+
+    // Vista Menú Principal
+
+    // Aquí cridem a la Vista Principal
+    // On hi ha el Menú en cada opció
+
+    public static void inicialitzarPresentacio() {
+
+        vistaPrincipal vPrincipal = new vistaPrincipal();
+
+    }
+    // ------------------------
+    // ------------------------
+    // Opció 1 : Carregar Dades
+
+    //   · carregarDades:
+    //          És allà on hi ha la vista.
+    public void vistaCarregarDades() {
+        //cD.carregarDades();
+        vistaCarregarDades vCD = new vistaCarregarDades();
+    }
+
+    //   · carregarInformacio:
+    //          És la crida CD per carregar fitxer.
+    public void carregarDades(String fitxer) {
+        cD.carregarDades(fitxer);
+        System.out.println("OK!");
+        complet = true;
+        inicialitzarPresentacio();
+    }
+
+
+    // ------------------------
+    // ------------------------
+    // Opció 2 : Generar Horari
+
+    //  · vistaGenerarHorari()
+    //      És allà on hi ha la vista.
+
+    public void vistaGenerarHorari() {
+        ArrayList<Pair<String, String[][][]>> horari = cD.generarHorari();
+        vistaGenerarHorari vGenerarH = new vistaGenerarHorari(horari, complet);
+        System.out.println("OK!");
+    }
+
+    //  · generarHorari()
+    //      Crea l'Horari.
+
+    public void generarHorari() {
+        cD.generarHorari();
+        System.out.println("OK!");
+    }
+
+
+    // ------------------------
+    // ------------------------
+    // Opció 3 : Guardar Horari
+
+    //  · vistaGuardarHorari()
+    //      És allà on hi ha la vista.
+
+
+    public void vistaGuardarHorari() {
+        //cD.guardarHorari();
+        vistaGuardarHorari vGuardarH = new vistaGuardarHorari();
+    }
+
+    //  · guardarHorari()
+    //      Guarda l'Horari.
+
+    public void guardarHorari(String text) {
+        cD.guardarHorari(text);
+        vistaGuardarHorari vGenerarH = new vistaGuardarHorari();
+        System.out.println("OK!");
+    }
+
+    // ------------------------
+    // ------------------------
+    // Opció 4 : Carregar Horari
+
+    //  · vistaCarregarHorari()
+    //      És allà on hi ha la vista.
+
+    public void vistaCarregarHorari() {
+        //cD.carregarHorari();
+        vistaCarregarHorari vCH = new vistaCarregarHorari();
+    }
+
+    //  · carregarHorari()
+    //      Carrega l'Horari.
+
+    public void carregarHorari(String text) {
+        //cD.guardarHorari(text);
+        vistaCarregarDades vGenerarH = new vistaCarregarDades();
+        System.out.println("OK!");
+    }
+
+    // ------------------------
+    // ------------------------
+    // Opció 5 : Modificar Horari
+
+    //  · vistaModificarHorari()
+    //      És allà on hi ha la vista.
+
+    public void vistaModificarHorari() {
+        //cD.modificarHorari();
+        vistaModificarHorari vMH = new vistaModificarHorari();
+    }
+
+    //  · modificarHorari()
+    //      Es Modifica l'Horari
+
+
+    // ------------------------
+    // ------------------------
+    // Opció 6 : Editar Dades
+
+
+    //  · vistaEditarDades()
+    //      És allà on hi ha la vista.
+
+    public void vistaEditarDades() {
+        //cD.editarDades();
+        vistaEditarDades vED = new vistaEditarDades();
+    }
+
+    //  · editarDades()
+    //      S'Editen les Dades
+
+
+    // ------------------------
+    // ------------------------
 }

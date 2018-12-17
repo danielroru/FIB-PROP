@@ -1,6 +1,9 @@
 package dominio.controladores;
 
 import dominio.classes.*;
+import javafx.util.Pair;
+
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -45,7 +48,7 @@ public class CtrlDominiGenerarHorari {
         return ultimHorari;
     }
 
-    public static String[] escriureHorari() {
+    public static ArrayList<Pair<String, String[][][]>> escriureHorari() {
         return ultimHorari.passarString();
     }
 

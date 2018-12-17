@@ -25,11 +25,11 @@ public class CtrlDominiCarregarDades {
     // Funcionalitat Principal
     //////////////////////////
 
-    public void carregarDades() {
+    public void carregarDades(String fitxer) {
 
-        String[][] aules = ctrlPersistencia.carregarAules();
-        String[][] assignatures = ctrlPersistencia.carregarAssignatures();
-        String[] plaEstudis = ctrlPersistencia.carregarPlaEstudis();
+        String[][] aules = ctrlPersistencia.carregarAules(fitxer);
+        String[][] assignatures = ctrlPersistencia.carregarAssignatures(fitxer);
+        String[] plaEstudis = ctrlPersistencia.carregarPlaEstudis(fitxer);
 
         // Inicialitzem tots els valors de Pla d'Estudi
         pE.reset();

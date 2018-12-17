@@ -3,6 +3,7 @@ package dominio.controladores;
 import java.util.*;
 
 import dominio.classes.*;
+import javafx.util.Pair;
 
 /*
         1] Carregar Set De Persistencia
@@ -45,33 +46,35 @@ public class CtrlDomini {
 
     // [ Opció 1 ] Carreguem Dades
 
-    public static void carregarDades() {
-        ctrlDominiCarregarDades.carregarDades();
+    public static void carregarDades(String fitxer) {
+        ctrlDominiCarregarDades.carregarDades(fitxer);
     }
 
     // [ Opció 2 ] Generar Horari
 
-    public static void generarHorari() {
+    public static ArrayList<Pair<String, String[][][]>> generarHorari() {
 
         ultimHorari = ctrlDominiGenerarHorari.generarHorari();
-        String[] horari = ctrlDominiGenerarHorari.escriureHorari();
-        ctrlPresentacio.imprimirHorari(horari);
+        ArrayList<Pair<String, String[][][]>> horari = ctrlDominiGenerarHorari.escriureHorari();
+        return horari;
 
     }
 
+
     // [ Opció 3 ] Guardar Horari
 
-    public static void guardarHorari() {
-        ctrlDominiGuardarHorari.guardarHorari(ultimHorari.getHorari());
+    public static void guardarHorari(String text) {
+
+        ctrlDominiGuardarHorari.guardarHorari(ultimHorari.getHorari(), text);
     }
 
     // [ Opció 4 ] Carregar Horari
 
-    public static void carregarHorari() {
-        Map<String, Matriu> horari = ctrlDominiCarregarHorari.carregarHorari(ultimHorari);
+    public static ArrayList<Pair<String, String[][][]>> carregarHorari(String text) {
+        Map<String, Matriu> horari = ctrlDominiCarregarHorari.carregarHorari(ultimHorari, text);
         ultimHorari.setHorari(horari);
-        String[] horariEscriure = ultimHorari.passarString();
-        ctrlPresentacio.imprimirHorari(horariEscriure);
+        ArrayList<Pair<String, String[][][]>> horariEscriure = ultimHorari.passarString();
+        return horariEscriure;
     }
 
 

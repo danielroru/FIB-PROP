@@ -24,10 +24,10 @@ public class CtrlPersistenciaCarregarDades {
     // aules[x][1] = capacitat
     // aules[x][2] = tipus
 
-    public static String[][] carregarAules(){
+    public static String[][] carregarAules(String fitxer){
         String[][] aules = null;
         // Aquí posem 1 per defecte - 'hi ha d'anar folder'
-        String dataPath = "src/persistencia/dades/" + 1 + "/";
+        String dataPath = "src/persistencia/dades/" + fitxer + "/";
         JSONParser parser = new JSONParser();
 
         try {
@@ -83,12 +83,12 @@ public class CtrlPersistenciaCarregarDades {
     // assignatures[x][13] = horesBlocL
     // assignatures[x][14] = horesBlocP
 
-    public static String[][] carregarAssignatures() {
+    public static String[][] carregarAssignatures(String fitxer) {
 
         String[][] assignatures = null;
 
         // Aquí posem 1 per defecte - 'hi ha d'anar folder'
-        String dataPath = "src/persistencia/dades/" + 1 + "/";
+        String dataPath = "src/persistencia/dades/" + fitxer + "/";
         JSONParser parser = new JSONParser();
 
         try {
@@ -149,12 +149,12 @@ public class CtrlPersistenciaCarregarDades {
     // plaEstudis[1] = horaFi
     // plaEstudis[2] = horaCanviFranja
 
-    public static String[] carregarPlaEstudis(){
+    public static String[] carregarPlaEstudis(String fitxer){
 
         String[] plaEstudis = new String[3];
 
         // Aquí posem 1 per defecte - 'hi ha d'anar folder'
-        String dataPath = "src/persistencia/dades/" + 1 + "/";
+        String dataPath = "src/persistencia/dades/" + fitxer + "/";
 
         JSONParser parser = new JSONParser();
         try {
