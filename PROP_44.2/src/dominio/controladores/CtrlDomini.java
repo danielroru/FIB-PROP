@@ -6,9 +6,7 @@ import java.util.*;
 
 public class CtrlDomini {
 
-
-
-    private static HashSet<Sessio> sessions;
+    private static Queue<Sessio> sessions;
 
     private static HashSet<UAH> UAHmatins = new HashSet<>();
     private static HashSet<UAH> UAHtardes = new HashSet<>();
@@ -82,7 +80,7 @@ public class CtrlDomini {
 
     private static void crearSessions() {
 
-        sessions = new HashSet<Sessio>();
+        sessions = new LinkedList<>();
 
         for (Assignatura a : PlaEstudis.getConjuntAssignatures().getAssignatures()) {
             for(int i = 1; i <= a.getnGrupsT(); ++i) {
@@ -90,14 +88,16 @@ public class CtrlDomini {
                 sT.setAssignatura(a);
                 sT.setIdGrup(i * 10);
                 sT.setTipus(Enumeracio.TipusSessio.TEORIA);
-                sessions.add(sT);
+                for (int j = 0; j < a.getnHoresT(); ++j)
+                    sessions.add(sT);
 
                 for (int j = 1; j <= a.getnGrupsL(); ++j) {
                     Sessio sL = new Sessio();
                     sL.setAssignatura(a);
                     sL.setIdGrup(i * 10 + j);
                     sL.setTipus(Enumeracio.TipusSessio.LABORATORI);
-                    sessions.add(sL);
+                    for (int t = 0; t < a.getnHoresL(); ++t)
+                        sessions.add(sL);
                 }
 
                 for (int j = 1; j <= a.getnGrupsP(); ++j) {
@@ -105,11 +105,20 @@ public class CtrlDomini {
                     sP.setAssignatura(a);
                     sP.setIdGrup(i * 10 + j);
                     sP.setTipus(Enumeracio.TipusSessio.PROBLEMES);
-                    sessions.add(sP);
+                    for (int t = 0; t < a.getnHoresP(); ++t)
+                        sessions.add(sP);
                 }
             }
         }
 
+    }
+
+    public static void comptaSessions() {
+        int compt = 0;
+        for (Assignatura ass : PlaEstudis.getConjuntAssignatures().getAssignatures()) {
+            compt += ass.getnHoresT()*ass.getnGrupsT() + ass.getnGrupsT()*ass.getnGrupsL()*ass.getnHoresL() + ass.getnGrupsT()*ass.getnGrupsP()*ass.getnHoresP();
+        }
+        System.out.println(compt + " sessions");
     }
 
 
@@ -123,6 +132,7 @@ public class CtrlDomini {
                     uah.setHora(i);
                     uah.setDia(dia);
                     uah.setAula(a);
+                    uah.eliminaSessio();
 
                     if (i < PlaEstudis.getHoraCanviFranja()) UAHmatins.add(uah);
                     else UAHtardes.add(uah);
@@ -150,7 +160,7 @@ public class CtrlDomini {
         return UAHlaboratori;
     }
 
-    public static HashSet<Sessio> getSessions() {
+    public static Queue<Sessio> getSessions() {
         return sessions;
     }
 }

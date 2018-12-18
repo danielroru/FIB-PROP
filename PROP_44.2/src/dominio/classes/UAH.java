@@ -6,8 +6,8 @@ public class UAH implements Comparable<UAH> {
 
     private int hora;
     private Enumeracio.Dia dia;
-    private Sessio sessio;
-    private Aula aula;
+    private Sessio sessio = new Sessio();
+    private Aula aula = new Aula();
 
     // Mètodes
 
@@ -23,6 +23,13 @@ public class UAH implements Comparable<UAH> {
         this.dia = dia;
     }
 
+    public UAH (UAH uah) {
+        this.sessio = uah.getSessio();
+        this.aula = uah.getAula();
+        this.hora = uah.getHora();
+        this.dia = uah.getDia();
+    }
+
     // Consultores
 
 
@@ -35,11 +42,11 @@ public class UAH implements Comparable<UAH> {
     }
 
     public boolean teSessio() {
-        return this.sessio == new Sessio();
+        return this.sessio.getTipus() != null;
     }
 
     public void eliminaSessio() {
-        this.sessio = null;
+        this.sessio = new Sessio();
     }
 
     public Aula getAula() {

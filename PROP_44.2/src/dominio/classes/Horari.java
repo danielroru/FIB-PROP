@@ -4,6 +4,7 @@ import dominio.JSON.JSONArray;
 import dominio.JSON.JSONObject;
 import dominio.JSON.parser.JSONParser;
 import dominio.JSON.parser.ParseException;
+import dominio.controladores.CtrlDomini;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -12,6 +13,8 @@ import java.io.IOException;
 import java.util.*;
 
 public class Horari {
+
+    private Sessio fallo = null;
 
     private Map<Sessio, ArrayList<UAH>> assignacio;
 
@@ -32,6 +35,20 @@ public class Horari {
         assignacio = new HashMap<>();
         horari = new HashMap<>();
     }
+
+    public boolean esFallo() {
+        return this.fallo != null;
+    }
+
+    public void setFallada(Sessio s) {
+        this.fallo = s;
+    }
+
+    public void noEsFallo() {
+        this.fallo = null;
+    }
+
+    public Sessio getFallo() { return this.fallo; }
 
     /**
      * Assigna la UAH uah a la sessió se
@@ -93,6 +110,14 @@ public class Horari {
         }
     }
 
+    public int comptaAssignacions() {
+        int compt = 0;
+        for (Sessio s : assignacio.keySet()) {
+            compt += assignacio.get(s).size();
+        }
+        return compt;
+    }
+
     public boolean valida(Sessio s, UAH uah) {
         return RestriccioBinaria.validaSolucio(this, s, uah);
     }
@@ -121,7 +146,7 @@ public class Horari {
 
         }
     }
-    public boolean assignacioCompelta(Sessio s) {
+    public boolean assignacioCompleta(Sessio s) {
         if(assignacio.containsKey(s)) {
             int duracio = 0;
             switch (s.getTipus()) {
@@ -137,6 +162,16 @@ public class Horari {
             }
             if (assignacio.get(s).size() == duracio)
                 return true;
+        }
+        return false;
+    }
+
+    public boolean conflicteSessio(Sessio s, UAH uah) {
+        if (assignacio.containsKey(s)) {
+            for (UAH uah2 : assignacio.get(s)) {
+                if (RestriccioBinaria.coincideixenUAH(uah, uah2))
+                    return true;
+            }
         }
         return false;
     }
@@ -168,6 +203,7 @@ public class Horari {
 
     public void imprimirHorari() {
         try {
+            int nSess = 0;
             inout io = new inout();
             for (String aula : horari.keySet()) {
                 io.writeln("");
@@ -191,6 +227,7 @@ public class Horari {
                         if (horari.get(aula).getCasella(dia.ordinal(), hora) == null)
                             io.write("    --------    ");
                         else {
+                            ++nSess;
                             String nomAssig = horari.get(aula).getCasella(dia.ordinal(), hora).getNomAssig();
                             int grup = horari.get(aula).getCasella(dia.ordinal(), hora).getNumGrup();
                             String sigla = "?";
@@ -214,6 +251,9 @@ public class Horari {
                     io.writeln("");
                 }
             }
+            io.writeln("");
+            CtrlDomini.comptaSessions();
+            io.writeln(nSess + " sessions imprimides");
         }
         catch (Exception e) {
             System.out.println("No s'ha pogut imprimir l'horari");

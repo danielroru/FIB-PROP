@@ -50,6 +50,7 @@ public class RestriccioBinaria {
         }
         return resultat;
     }
+    //public static boolean valida()
 
     public static boolean validaSolucio(Horari h, Sessio s, UAH uah) {
 
