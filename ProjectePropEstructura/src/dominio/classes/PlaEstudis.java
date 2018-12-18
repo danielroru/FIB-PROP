@@ -5,7 +5,7 @@ public class PlaEstudis {
     private static PlaEstudis instance = new PlaEstudis();
 
     private static ConjuntAssignatures cjtAssignatures = new ConjuntAssignatures();
-    private static ConjuntAules cjtAules = ConjuntAules.getInstance();
+    private static ConjuntAules cjtAules = new ConjuntAules();
 
     private static int horaInici = -1;
     private static int horaFi = -1;
@@ -18,7 +18,7 @@ public class PlaEstudis {
     public static void reset() {
         instance = new PlaEstudis();
         cjtAssignatures = new ConjuntAssignatures();
-        ConjuntAules.reset();
+        cjtAules.reset();
     }
 
     public static PlaEstudis getInstance() {

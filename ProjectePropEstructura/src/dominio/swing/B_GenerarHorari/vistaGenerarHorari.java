@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class vistaGenerarHorari extends JFrame {
 
-    Object[][] data = {
+    static Object[][] data = {
             {"Hora", "Dilluns", "Dimarts", "Dimecres", "Dijous", "Divendres"},
             {"8", "----", "----","----", "----", "----"},
             {"9", "----", "----","----", "----", "----"},
@@ -27,7 +27,7 @@ public class vistaGenerarHorari extends JFrame {
 
     };
 
-    String[] columnNames = {"Hora","Dilluns", "Dimarts", "Dimecres", "Dijous", "Divendres"};
+    static String[] columnNames = {"Hora","Dilluns", "Dimarts", "Dimecres", "Dijous", "Divendres"};
 
     String[] conjuntAules = {"No hi ha dades carregades"};
 
@@ -49,6 +49,7 @@ public class vistaGenerarHorari extends JFrame {
         for (Pair<String, String[][][]> a : horariImprimir) {
             if (a.getKey() == info)
                 valor = a.getValue();
+
         }
         if (valor != null) {
             for (int hora = 0; hora < 12; ++hora) {
@@ -63,11 +64,11 @@ public class vistaGenerarHorari extends JFrame {
         }
     }
 
-    public vistaGenerarHorari(ArrayList<Pair<String, String[][][]>> horariImprimir, boolean complet) {
+    public vistaGenerarHorari(ArrayList<Pair<String, String[][][]>> horariImprimir, String seleccionar, boolean complet) {
 
 
         if (complet == true) {
-
+            String info = seleccionar;
             this.horariImprimir = horariImprimir;
 
             String[] cjtAules = new String[horariImprimir.size()];
@@ -83,9 +84,10 @@ public class vistaGenerarHorari extends JFrame {
             informacioHorari[0][4] = "Dijous";
             informacioHorari[0][5] = "Divendres";
 
-            Pair<String, String[][][]> aula = horariImprimir.get(0);
-            String info = aula.getKey();
-
+            if (seleccionar == null) {
+                Pair<String, String[][][]> aula = horariImprimir.get(0);
+                info = aula.getKey();
+            }
             imprimirAula(info);
 
 
@@ -137,10 +139,12 @@ public class vistaGenerarHorari extends JFrame {
         ActionListener seleccioAules = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
+                repaint();
                 String info = aules.getSelectedItem().toString();
-                System.out.println(info);
                 imprimirAula(info);
                 horari = new JTable(informacioHorari, columnNames);
+
             }
 
         };

@@ -155,7 +155,6 @@ public class CtrlPresentacio {
     //          És la crida CD per carregar fitxer.
     public void carregarDades(String fitxer) {
         cD.carregarDades(fitxer);
-        System.out.println("OK!");
         complet = true;
         inicialitzarPresentacio();
     }
@@ -169,18 +168,12 @@ public class CtrlPresentacio {
     //      És allà on hi ha la vista.
 
     public void vistaGenerarHorari() {
+        String seleccionar = null;
         ArrayList<Pair<String, String[][][]>> horari = cD.generarHorari();
-        vistaGenerarHorari vGenerarH = new vistaGenerarHorari(horari, complet);
-        System.out.println("OK!");
+        vistaGenerarHorari vGenerarH = new vistaGenerarHorari(horari, seleccionar, complet);
     }
 
-    //  · generarHorari()
-    //      Crea l'Horari.
 
-    public void generarHorari() {
-        cD.generarHorari();
-        System.out.println("OK!");
-    }
 
 
     // ------------------------
@@ -202,7 +195,6 @@ public class CtrlPresentacio {
     public void guardarHorari(String text) {
         cD.guardarHorari(text);
         vistaGuardarHorari vGenerarH = new vistaGuardarHorari();
-        System.out.println("OK!");
     }
 
     // ------------------------
@@ -223,7 +215,6 @@ public class CtrlPresentacio {
     public void carregarHorari(String text) {
         //cD.guardarHorari(text);
         vistaCarregarDades vGenerarH = new vistaCarregarDades();
-        System.out.println("OK!");
     }
 
     // ------------------------

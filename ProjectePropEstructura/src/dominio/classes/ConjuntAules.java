@@ -13,17 +13,14 @@ public class ConjuntAules {
     /* --------------------------------------------------------------------------
         MÈTODES
     -------------------------------------------------------------------------- */
-    private ConjuntAules() {}
+    public ConjuntAules() {}
 
     public Set<Aula> getAules() {
         return this.conjuntAules;
     }
 
-    public static ConjuntAules getInstance() {
-        return instance;
-    }
 
-    public static void reset() {
+    public void reset() {
         instance = new ConjuntAules();
     }
 
