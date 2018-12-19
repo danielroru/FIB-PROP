@@ -2,81 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c56956a0-ea30-4d3a-a964-fb7f39382e8f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ProjectePropEstructura/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ProjectePropEstructura/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ProjectePropEstructura/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/ProjectePropEstructura.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../ProjectePropEstructura/PROP_44.2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/JSON/ItemList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/JSON/JSONArray.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/JSON/JSONAware.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/JSON/JSONObject.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/JSON/JSONStreamAware.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/JSON/JSONValue.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/JSON/parser/ContainerFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/JSON/parser/ContentHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/JSON/parser/JSONParser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/JSON/parser/ParseException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/JSON/parser/Yylex.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/JSON/parser/Yytoken.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/classes/Assignatura.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/classes/Aula.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/classes/Casella.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/classes/ConjuntAssignatures.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/classes/ConjuntAules.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/classes/Enumeracio$Dia.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/classes/Enumeracio$TipusAula.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/classes/Enumeracio$TipusSessio.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/classes/Enumeracio.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/classes/GeneradorHorari.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/classes/Graph.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/classes/Horari$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/classes/Horari.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/classes/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/classes/Matriu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/classes/PlaEstudis.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/classes/RestriccioBinaria$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/classes/RestriccioBinaria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/classes/RestriccioUnaria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/classes/Restriccions.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/classes/Sessio.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/classes/UAH.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/controladores/CtrlDomini.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/controladores/CtrlDominiCarregarDades.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/controladores/CtrlDominiCarregarHorari.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/controladores/CtrlDominiGenerarHorari.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/controladores/CtrlDominiGuardarHorari.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/controladores/CtrlPersistencia.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/controladores/CtrlPersistenciaCarregarDades.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/controladores/CtrlPersistenciaCarregarHorari.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/controladores/CtrlPersistenciaGuardarHorari.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/controladores/CtrlPresentacio.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/swing/A_CarregarDades/vistaCarregarDades$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/swing/A_CarregarDades/vistaCarregarDades$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/swing/A_CarregarDades/vistaCarregarDades.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/swing/B_GenerarHorari/vistaGenerarHorari$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/swing/B_GenerarHorari/vistaGenerarHorari$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/swing/B_GenerarHorari/vistaGenerarHorari.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/swing/C_GuardarHorari/vistaGuardarHorari$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/swing/C_GuardarHorari/vistaGuardarHorari$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/swing/C_GuardarHorari/vistaGuardarHorari.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/swing/D_CarregarHorari/vistaCarregarHorari$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/swing/D_CarregarHorari/vistaCarregarHorari$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/swing/D_CarregarHorari/vistaCarregarHorari.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/swing/E_ModificarHorari/vistaModificarHorari$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/swing/E_ModificarHorari/vistaModificarHorari.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/swing/F_EditarDades/vistaEditarDades$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/swing/F_EditarDades/vistaEditarDades.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/swing/vistaPrincipal$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/swing/vistaPrincipal$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/swing/vistaPrincipal$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/swing/vistaPrincipal$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/swing/vistaPrincipal$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/swing/vistaPrincipal$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/swing/vistaPrincipal$7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/swing/vistaPrincipal.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/vistes/VistaEscriureHorari.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/vistes/VistaPrincipal.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectePropEstructura/out/production/ProjectePropEstructura/dominio/vistes/inout.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/swing/A_CarregarDades/vistaCarregarDades$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/swing/A_CarregarDades/vistaCarregarDades$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/swing/A_CarregarDades/vistaCarregarDades.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/swing/B_GenerarHorari/vistaGenerarHorari$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/swing/B_GenerarHorari/vistaGenerarHorari$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/swing/B_GenerarHorari/vistaGenerarHorari.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/swing/C_GuardarHorari/vistaGuardarHorari$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/swing/C_GuardarHorari/vistaGuardarHorari$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/swing/C_GuardarHorari/vistaGuardarHorari.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/swing/D_CarregarHorari/vistaCarregarHorari$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/swing/D_CarregarHorari/vistaCarregarHorari$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/swing/D_CarregarHorari/vistaCarregarHorari.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/swing/E_ModificarHorari/vistaModificarHorari$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/swing/E_ModificarHorari/vistaModificarHorari.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/swing/F_EditarDades/vistaEditarDades$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/swing/F_EditarDades/vistaEditarDades.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -136,6 +77,7 @@
     <session id="2037439039">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
@@ -143,30 +85,18 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="3" />
+          <entry key="JAVA" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="11" />
+          <entry key="JAVA" value="12" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dominio/controladores/CtrlDomini.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="58" column="22" selection-start-line="58" selection-start-column="22" selection-end-line="58" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dominio/swing/vistaPrincipal.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -191,20 +121,33 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/dominio/classes/Assignatura.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
+            <state relative-caret-position="-498">
               <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dominio/classes/ConjuntAssignatures.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="72" column="9" lean-forward="true" selection-start-line="72" selection-start-column="9" selection-end-line="72" selection-end-column="9" />
+            <state relative-caret-position="192">
+              <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="22" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dominio/classes/ConjuntAules.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="302">
+              <caret line="43" column="26" lean-forward="true" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
+              <folding>
+                <element signature="e#654#655#0" expanded="true" />
+                <element signature="e#685#686#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -319,7 +262,6 @@
         <option value="$PROJECT_DIR$/src/dominio/controladores/CtrlPersistenciaGuardarHorari.java" />
         <option value="$PROJECT_DIR$/src/dominio/vistes/VistaGenerarHorari.java" />
         <option value="$PROJECT_DIR$/src/dominio/controladores/CtrlPersistenciaCarregarHorari.java" />
-        <option value="$PROJECT_DIR$/src/dominio/classes/ConjuntAules.java" />
         <option value="$PROJECT_DIR$/src/dominio/classes/ConjuntAssignatures.java" />
         <option value="$PROJECT_DIR$/src/dominio/controladores/CtrlDominiGenerarHorari.java" />
         <option value="$PROJECT_DIR$/src/dominio/classes/Matriu.java" />
@@ -352,6 +294,7 @@
         <option value="$PROJECT_DIR$/src/dominio/controladores/CtrlPresentacio.java" />
         <option value="$PROJECT_DIR$/src/dominio/swing/B_GenerarHorari/vistaGenerarHorari.java" />
         <option value="$PROJECT_DIR$/src/dominio/controladores/CtrlDominiCarregarDades.java" />
+        <option value="$PROJECT_DIR$/src/dominio/classes/ConjuntAules.java" />
       </list>
     </option>
   </component>
@@ -481,7 +424,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
@@ -489,7 +432,7 @@
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.3662375" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.27263045" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
@@ -497,7 +440,7 @@
       <window_info anchor="bottom" id="Version Control" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" weight="0.3138614" />
-      <window_info anchor="bottom" id="Run" order="6" visible="true" weight="0.3325301" />
+      <window_info anchor="bottom" id="Run" order="6" weight="0.27326733" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -521,13 +464,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="645">
           <caret line="43" column="62" selection-start-line="43" selection-start-column="42" selection-end-line="43" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dominio/classes/ConjuntAules.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="43" column="4" selection-start-line="43" selection-start-column="4" selection-end-line="49" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -744,17 +680,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dominio/classes/Assignatura.java">
+    <entry file="file://$PROJECT_DIR$/src/dominio/classes/ConjuntAules.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        <state relative-caret-position="302">
+          <caret line="43" column="26" lean-forward="true" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
+          <folding>
+            <element signature="e#654#655#0" expanded="true" />
+            <element signature="e#685#686#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dominio/classes/ConjuntAssignatures.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="72" column="9" lean-forward="true" selection-start-line="72" selection-start-column="9" selection-end-line="72" selection-end-column="9" />
+        <state relative-caret-position="192">
+          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="22" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dominio/classes/Assignatura.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-498">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
