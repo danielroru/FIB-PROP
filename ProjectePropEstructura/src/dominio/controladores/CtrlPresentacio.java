@@ -234,12 +234,18 @@ public class CtrlPresentacio {
         vistaEditarDades vED = new vistaEditarDades();
     }
 
-    public void vistaEditarPlaEstudis() {
-        vistaEditarPlaEstudis vEPE = new vistaEditarPlaEstudis();
+    public void vistaEditarAula() {
+        vistaEditarAula vEA = new vistaEditarAula();
     }
 
     public void vistaEditarAssignatures() {
         vistaEditarAssignatures vEA = new vistaEditarAssignatures();
     }
+
+    public void vistaEditarPlaEstudis() {
+        vistaEditarPlaEstudis vEPE = new vistaEditarPlaEstudis();
+    }
+
+
 
 }

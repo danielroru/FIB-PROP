@@ -79,7 +79,7 @@ public class vistaEditarDades extends JFrame {
         ActionListener vistaAula = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                iCtrlPresentacio.vistaEditarAssignatures();
+                iCtrlPresentacio.vistaEditarAula();
                 setVisible(false);
             }
         };
@@ -87,8 +87,8 @@ public class vistaEditarDades extends JFrame {
         ActionListener vistaAssignatura = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //iCtrlPresentacio.vistaAssignatura();
-                //setVisible(false);
+                iCtrlPresentacio.vistaEditarAssignatures();
+                setVisible(false);
             }
         };
 
@@ -112,7 +112,7 @@ public class vistaEditarDades extends JFrame {
 
         botoPlaEstudis.addActionListener(vistaEditarPlaEstudis);
         aules.addActionListener(vistaAula);
-        //assignatures.addActionListener(vistaAssignatura);
+        assignatures.addActionListener(vistaAssignatura);
         endarrereButton.addActionListener(vistaPrincipal);
 
     }
