@@ -69,10 +69,4 @@ public class ConjuntAssignatures {
     public boolean existeixAssignatura(String assig) {
         return cjtAssignatures.containsKey(assig);
     }
-
-
-    public Assignatura getAssigatura(String nom) {
-        return cjtAssignatures.get(nom);
-    }
-
 }

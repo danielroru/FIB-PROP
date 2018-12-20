@@ -49,7 +49,7 @@ public class CtrlPersistenciaCarregarDades {
         catch (Exception e) {
             e.printStackTrace();
         }
-
+        //TODO
         return aules;
 
     }
@@ -133,7 +133,7 @@ public class CtrlPersistenciaCarregarDades {
             e.printStackTrace();
         }
 
-
+        //TODO
         return assignatures;
 
     }
@@ -162,7 +162,7 @@ public class CtrlPersistenciaCarregarDades {
         catch (Exception e) {
             e.printStackTrace();
         }
-
+        //TODO
         return plaEstudis;
 
     }

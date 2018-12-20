@@ -26,9 +26,9 @@ public class CtrlDominiCarregarDades {
     //////////////////////////
 
     public static void carregarDadesByFolder(String path) {
-        String[][] aules = ctrlPersistencia.carregarAules(path + "/aules.json");
-        String[][] assignatures = ctrlPersistencia.carregarAssignatures(path + "/assignatures.json");
-        String[] plaEstudis = ctrlPersistencia.carregarPlaEstudis(path + "/plaEstudis.json");
+        String[][] aules = CtrlPersistencia.getInstance().carregarAules(path + "/aules.json");
+        String[][] assignatures = CtrlPersistencia.getInstance().carregarAssignatures(path + "/assignatures.json");
+        String[] plaEstudis = CtrlPersistencia.getInstance().carregarPlaEstudis(path + "/plaEstudis.json");
 
         pE.reset();
 

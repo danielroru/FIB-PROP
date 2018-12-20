@@ -5,14 +5,6 @@ import java.util.*;
 import dominio.classes.*;
 import javafx.util.Pair;
 
-/*
-        1] Carregar Set De Persistencia
-        2] Generar Horari
-        3] Guardar Horari
-        4] Carregar Horari
-        0] Sortir de l'aplicació
-*/
-
 public class CtrlDomini {
 
     private static CtrlDomini instance = new CtrlDomini();
@@ -36,7 +28,6 @@ public class CtrlDomini {
     public static CtrlDomini getInstance() {
         return instance;
     }
-
 
     /*
     *   ------------
