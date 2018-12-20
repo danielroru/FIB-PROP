@@ -5,6 +5,7 @@ import dominio.swing.*;
 import dominio.swing.CarregarDades.*;
 import dominio.swing.EditarDades.*;
 import dominio.swing.GestionarHoraris.*;
+import dominio.swing.GestionarHoraris.AltresVistesGestionarHoraris.vistaGenerarHorari;
 import dominio.swing.EditarDades.AltresVistesEditarDades.*;
 
 import dominio.swing.GestionarHoraris.AltresVistesGestionarHoraris.vistaGenerarHorari;
@@ -147,6 +148,13 @@ public class CtrlPresentacio {
         vistaCarregarDades vCD = new vistaCarregarDades();
     }
 
+    //   · Carregar Directori
+
+    public static void carregarDirectori(String fitxer) {
+        cD.carregarDirectori(fitxer);
+        complet = true;
+    }
+
 
     //   · carregarInformacio:
     //          És la crida CD per carregar fitxer.
@@ -195,6 +203,7 @@ public class CtrlPresentacio {
     public void vistaHorari(ArrayList<Pair<String, String[][][]>> horari, String seleccionar, boolean complet) {
         vistaGenerarHorari vGenerarH = new vistaGenerarHorari(horari, seleccionar, complet);
     }
+
 
     // ------------------------
     // ------------------------

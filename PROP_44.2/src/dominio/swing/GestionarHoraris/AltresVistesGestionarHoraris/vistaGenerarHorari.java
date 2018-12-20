@@ -44,13 +44,18 @@ public class vistaGenerarHorari extends JFrame {
 
     private CtrlPresentacio iCtrlPresentacio = CtrlPresentacio.getInstance();
 
+    private String[] cjtAules;
+
     private void imprimirAula(String info) {
+        System.out.println(info);
+        informacioHorari = new Object[14][6];
         String[][][] valor = null;
+
         for (Pair<String, String[][][]> a : horariImprimir) {
             if (a.getKey() == info)
                 valor = a.getValue();
-
         }
+
         if (valor != null) {
             for (int hora = 0; hora < 12; ++hora) {
                 informacioHorari[hora + 1][0] = 8 + hora;
@@ -71,7 +76,7 @@ public class vistaGenerarHorari extends JFrame {
             String info = seleccionar;
             this.horariImprimir = horariImprimir;
 
-            String[] cjtAules = new String[horariImprimir.size()];
+            cjtAules = new String[horariImprimir.size()];
             int i = 0;
             for (Pair<String, String[][][]> aula : horariImprimir) {
                 cjtAules[i] = aula.getKey();
@@ -88,8 +93,8 @@ public class vistaGenerarHorari extends JFrame {
                 Pair<String, String[][][]> aula = horariImprimir.get(0);
                 info = aula.getKey();
             }
-            imprimirAula(info);
 
+            imprimirAula(info);
 
             aules = new JComboBox(cjtAules);
             horari = new JTable(informacioHorari, columnNames);
@@ -132,11 +137,12 @@ public class vistaGenerarHorari extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                repaint();
                 String info = aules.getSelectedItem().toString();
                 if (complet) imprimirAula(info);
                 horari = new JTable(informacioHorari, columnNames);
 
+                iCtrlPresentacio.vistaHorari(horariImprimir, info, true);
+                setVisible(false);
             }
         };
 
