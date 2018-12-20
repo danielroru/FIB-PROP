@@ -14,6 +14,8 @@ public class UAH {
     // Constructores
 
     public UAH() {
+        sessio = new Sessio();
+        aula = new Aula();
     }
 
     public UAH (Sessio sessio, Aula aula, int hora, Enumeracio.Dia dia) {
@@ -21,6 +23,13 @@ public class UAH {
         this.aula = aula;
         this.hora = hora;
         this.dia = dia;
+    }
+
+    public UAH (UAH uah) {
+        this.sessio = uah.getSessio();
+        this.aula = uah.getAula();
+        this.hora = uah.getHora();
+        this.dia = uah.getDia();
     }
 
     // Consultores
@@ -35,11 +44,11 @@ public class UAH {
     }
 
     public boolean teSessio() {
-        return this.sessio == new Sessio();
+        return this.sessio.getTipus() != null;
     }
 
     public void eliminaSessio() {
-        this.sessio = null;
+        this.sessio = new Sessio();
     }
 
     public Aula getAula() {
@@ -68,8 +77,6 @@ public class UAH {
         this.dia = dia;
     }
 
-    /*
-    public class UAH implements Comparable<UAH> { }
     public int compareTo(UAH uah1) {
 
         int compareAula = (this.aula.getId()).compareTo(uah1.getAula().getId());
@@ -83,6 +90,6 @@ public class UAH {
         else {
             return compareAula;
         }
-    }*/
+    }
 
 }

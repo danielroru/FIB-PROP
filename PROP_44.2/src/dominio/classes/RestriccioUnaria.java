@@ -1,12 +1,12 @@
 package dominio.classes;
 
+import dominio.controladores.CtrlDomini;
+
 import java.util.HashSet;
 import java.util.Set;
 import dominio.controladores.CtrlDominiGenerarHorari;
 
 public class RestriccioUnaria {
-
-    private static CtrlDominiGenerarHorari CtrlDomini = CtrlDominiGenerarHorari.getInstance();
 
     public static Set<UAH> crearDomini(Sessio s) {
         Set<UAH> result;

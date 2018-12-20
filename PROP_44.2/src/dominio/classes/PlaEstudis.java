@@ -18,6 +18,9 @@ public class PlaEstudis {
         instance = new PlaEstudis();
         cjtAssignatures = new ConjuntAssignatures();
         cjtAules = new ConjuntAules();
+        horaInici = -1;
+        horaFi = -1;
+        horaCanviFranja = -1;
     }
 
     public static PlaEstudis getInstance() {

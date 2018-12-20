@@ -1,5 +1,6 @@
 package dominio.classes;
 
+
 public class Aula {
 
     /* --------------------------------------------------------------------------
@@ -34,7 +35,7 @@ public class Aula {
 
     /**
      * Constructora còpia
-     * @param a Assignatura a copiar
+     * @param as Assignatura a copiar
      */
     public Aula (Aula a) {
         this.id = a.id;
