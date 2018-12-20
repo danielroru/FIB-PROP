@@ -5,18 +5,18 @@
     "tipus": "TEORIA"
   },
   {
-    "id": "A5S02",
+    "id": "A5S03",
     "capacitat" : 20,
     "tipus": "LABORATORI"
   },
   {
-    "id": "A6101",
-    "capacitat" : 60,
+    "id": "A5S04",
+    "capacitat" : 20,
     "tipus": "TEORIA"
   },
   {
-    "id": "C6S03",
-    "capacitat" : 50,
+    "id": "A5S06",
+    "capacitat" : 20,
     "tipus": "LABORATORI"
   }
 ]

@@ -12,10 +12,10 @@ public class RestriccioUnaria {
         Set<UAH> result;
 
         if (s.getTipus().equals(Enumeracio.TipusSessio.LABORATORI)) {
-            result = new HashSet<>(CtrlDomini.getUAHlaboratori());
+            result = new HashSet<>(CtrlDominiGenerarHorari.getUAHlaboratori());
         }
         else {
-            result = new HashSet<>(CtrlDomini.getUAHteoria());
+            result = new HashSet<>(CtrlDominiGenerarHorari.getUAHteoria());
         }
 
         String nom = s.getAssignatura().getNom();
@@ -23,10 +23,10 @@ public class RestriccioUnaria {
         Assignatura as = PlaEstudis.getConjuntAssignatures().getAssignatura(nom);
 
         if ((s.getIdGrup() < (as.getnGrupsMati() + 1) * 10)) {
-            result.retainAll(CtrlDomini.getUAHmatins());
+            result.retainAll(CtrlDominiGenerarHorari.getUAHmatins());
         }
         else {
-            result.retainAll(CtrlDomini.getUAHtardes());
+            result.retainAll(CtrlDominiGenerarHorari.getUAHtardes());
         }
 
         return result;

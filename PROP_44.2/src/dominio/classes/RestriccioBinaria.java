@@ -1,18 +1,25 @@
 package dominio.classes;
 
-import java.util.*;
-
+import dominio.controladores.CtrlDomini;
 import dominio.controladores.CtrlDominiGenerarHorari;
 
-public class RestriccioBinaria {
+import java.util.*;
 
-    private static CtrlDominiGenerarHorari CtrlDomini = CtrlDominiGenerarHorari.getInstance();
+public class RestriccioBinaria {
 
     public static HashSet<Sessio> arestesCorrequisits(Sessio s) {
         HashSet<Sessio> resultat = new HashSet<>();
         for (Assignatura correq : s.getAssignatura().getCorrequisits().getAssignatures())
-            resultat.addAll(CtrlDomini.getSessionsByIdAssig(correq.getNom()));
+            resultat.addAll(CtrlDominiGenerarHorari.getSessionsByIdAssig(correq.getNom()));
 
+        return resultat;
+    }
+
+    public static HashSet<Sessio> arestesSessio(Sessio s) {
+        HashSet<Sessio> resultat = new HashSet<>();
+        for (Sessio sessio : CtrlDominiGenerarHorari.getSessionsByIdAssig(s.getAssignatura().getNom()))
+            if ((s.getTipus() == sessio.getTipus()) && (s.getIdGrup() == sessio.getIdGrup()))
+                resultat.add(sessio);
         return resultat;
     }
 
@@ -24,7 +31,7 @@ public class RestriccioBinaria {
         // Iterem per totes les assignatures del mateix nivell que s
         for (Assignatura a : PlaEstudis.getConjuntAssignatures().getAssigsByNivell(NivellSessio)) {
             // Iterem per totes les sessions de totes les assignatures del nivell de s
-            for (Sessio sAssig : CtrlDomini.getSessionsByIdAssig(a.getNom())) {
+            for (Sessio sAssig : CtrlDominiGenerarHorari.getSessionsByIdAssig(a.getNom())) {
                 if (s != sAssig) {
                     // Si la sessió s és de teoria
                     if (s.getTipus().equals(Enumeracio.TipusSessio.TEORIA)) {
@@ -52,6 +59,7 @@ public class RestriccioBinaria {
         }
         return resultat;
     }
+    //public static boolean valida()
 
     public static boolean validaSolucio(Horari h, Sessio s, UAH uah) {
 
