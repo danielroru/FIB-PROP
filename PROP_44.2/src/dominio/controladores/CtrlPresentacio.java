@@ -9,7 +9,6 @@ import dominio.swing.D_CarregarHorari.*;
 import dominio.swing.E_ModificarHorari.*;
 import dominio.swing.F_EditarDades.*;
 
-import dominio.vistes.*;
 import javafx.util.Pair;
 
 import java.util.ArrayList;
@@ -18,8 +17,7 @@ public class CtrlPresentacio {
 
     private static CtrlPresentacio instance = new CtrlPresentacio();
     private static CtrlDomini cD = CtrlDomini.getInstance();
-    private static VistaPrincipal vP = VistaPrincipal.getInstance();
-    private static VistaEscriureHorari vEH = VistaEscriureHorari.getInstance();
+
 
     private static boolean complet = false;
 
@@ -122,10 +120,7 @@ public class CtrlPresentacio {
 
     public static void borrarAula(){}
     public static void borrarAssig(){}
-
-    public static void imprimirHorari(ArrayList<Pair<String, String[][][]>> horari) {
-        vEH.imprimirHorari(horari);
-    }
+    
 
 
     // ------------------------
