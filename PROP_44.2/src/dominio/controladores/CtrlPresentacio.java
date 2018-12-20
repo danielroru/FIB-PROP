@@ -2,6 +2,12 @@ package dominio.controladores;
 
 import dominio.swing.*;
 
+import dominio.swing.CarregarDades.*;
+import dominio.swing.EditarDades.*;
+import dominio.swing.GestionarHoraris.*;
+import dominio.swing.EditarDades.AltresVistesEditarDades.*;
+
+import dominio.swing.GestionarHoraris.AltresVistesGestionarHoraris.vistaGenerarHorari;
 import javafx.util.Pair;
 
 import java.util.ArrayList;
@@ -9,9 +15,11 @@ import java.util.ArrayList;
 public class CtrlPresentacio {
 
     private static CtrlPresentacio instance = new CtrlPresentacio();
-    private static CtrlDomini ctrlDomini = CtrlDomini.getInstance();
+    private static CtrlDomini cD = CtrlDomini.getInstance();
 
-
+    private static int dadesAssig = 0;
+    private static int dadesAules = 0;
+    private static int dadesPlaEstudis = 0;
     private static boolean complet = false;
 
     private CtrlPresentacio() {
@@ -23,30 +31,21 @@ public class CtrlPresentacio {
     }
 
 
-    public static void carregarSetByCarpeta(String path) {
-        CtrlDominiCarregarDades.carregarDadesByFolder(path);
-    }
-
-
-
-
-
-
     /*
-    *
-    *   MIRAR ERRORS SI NO HI HA INFO CORRECTE
-    *   --------------------------------------
-    *
-    * */
+     *
+     *   MIRAR ERRORS SI NO HI HA INFO CORRECTE
+     *   --------------------------------------
+     *
+     * */
 
     /* Retorna Informació de l'Aula:
-    *
-    *       · [0] ID
-    *       · [1] Capacitat
-    *       · [2] Tipus
-    * */
+     *
+     *       · [0] ID
+     *       · [1] Capacitat
+     *       · [2] Tipus
+     * */
     public static String[] getAula(String id) {
-        String[] info = ctrlDomini.getAula(id);
+        String[] info = cD.getAula(id);
         return info;
     }
 
@@ -79,7 +78,7 @@ public class CtrlPresentacio {
      *
      * */
     public static String[] getAssig(String nom) {
-        String[] info = ctrlDomini.getAssig(nom);
+        String[] info = cD.getAssig(nom);
         return info;
     }
 
@@ -92,7 +91,7 @@ public class CtrlPresentacio {
      * */
 
     public static String[] getHores() {
-        String[] info = ctrlDomini.getHores();
+        String[] info = cD.getHores();
         return info;
     }
 
@@ -100,14 +99,14 @@ public class CtrlPresentacio {
     // Retornem tots els ID de les Aules
 
     public static String[] llistarAules() {
-        String[] llista = ctrlDomini.llistarAules();
+        String[] llista = cD.llistarAules();
         return llista;
     }
 
     // Retornem tots els noms de les Assignatures
 
     public static String[] llistarAssigs() {
-        String[] llista = ctrlDomini.llistarAssigs();
+        String[] llista = cD.llistarAssigs();
         return llista;
     }
 
@@ -122,7 +121,7 @@ public class CtrlPresentacio {
 
     public static void borrarAula(){}
     public static void borrarAssig(){}
-    
+
 
 
     // ------------------------
@@ -143,18 +142,39 @@ public class CtrlPresentacio {
 
     //   · carregarDades:
     //          És allà on hi ha la vista.
+
     public void vistaCarregarDades() {
-        //ctrlDomini.carregarDades();
         vistaCarregarDades vCD = new vistaCarregarDades();
     }
 
-   /*
-    public void carregarDades(String fitxer) {
-        ctrlDomini.carregarDades(fitxer);
-        complet = true;
-        inicialitzarPresentacio();
+
+    //   · carregarInformacio:
+    //          És la crida CD per carregar fitxer.
+    public void carregarDadesAules(String fitxer) {
+        cD.carregarDadesAules(fitxer);
+        dadesAules = 1;
+        if ((dadesAssig + dadesAules + dadesPlaEstudis) == 3) complet = true;
     }
-*/
+
+    public void carregarDadesAssignatures(String fitxer) {
+        cD.carregarDadesAssignatures(fitxer);
+        dadesAssig = 1;
+        if ((dadesAssig + dadesAules + dadesPlaEstudis) == 3) complet = true;
+    }
+
+    public void carregarDadesPlaEstudis(String fitxer) {
+        cD.carregarDadesPlaEstudis(fitxer);
+        dadesPlaEstudis = 1;
+        if ((dadesAssig + dadesAules + dadesPlaEstudis) == 3) complet = true;
+    }
+
+    // ------------------------
+    // ------------------------
+    // Opció 2 : Gestionar Horaris
+
+    public void vistaGestionarHoraris() {
+        vistaGestionarHoraris vGH = new vistaGestionarHoraris();
+    }
 
     // ------------------------
     // ------------------------
@@ -163,54 +183,34 @@ public class CtrlPresentacio {
     //  · vistaGenerarHorari()
     //      És allà on hi ha la vista.
 
-    public void vistaGenerarHorari() {
+    public void generarHorari() {
         String seleccionar = null;
-        ArrayList<Pair<String, String[][][]>> horari = ctrlDomini.generarHorari();
+        ArrayList<Pair<String, String[][][]>> horari = cD.generarHorari();
+        vistaHorari(horari, seleccionar, complet);
+    }
+
+
+    // Vista Horari
+
+    public void vistaHorari(ArrayList<Pair<String, String[][][]>> horari, String seleccionar, boolean complet) {
         vistaGenerarHorari vGenerarH = new vistaGenerarHorari(horari, seleccionar, complet);
     }
 
-
-
-
     // ------------------------
     // ------------------------
-    // Opció 3 : Guardar Horari
-
-    //  · vistaGuardarHorari()
-    //      És allà on hi ha la vista.
-
-
-    public void vistaGuardarHorari() {
-        //ctrlDomini.guardarHorari();
-        vistaGuardarHorari vGuardarH = new vistaGuardarHorari();
-    }
-
-    //  · guardarHorari()
-    //      Guarda l'Horari.
+    // Opció 3: Guardar Horari
 
     public void guardarHorari(String text) {
-        ctrlDomini.guardarHorari(text);
-        vistaGuardarHorari vGenerarH = new vistaGuardarHorari();
+        cD.guardarHorari(text);
     }
 
     // ------------------------
     // ------------------------
     // Opció 4 : Carregar Horari
 
-    //  · vistaCarregarHorari()
-    //      És allà on hi ha la vista.
-
-    public void vistaCarregarHorari() {
-        //ctrlDomini.carregarHorari();
-        vistaCarregarHorari vCH = new vistaCarregarHorari();
-    }
-
-    //  · carregarHorari()
-    //      Carrega l'Horari.
-
     public void carregarHorari(String text) {
-        //ctrlDomini.guardarHorari(text);
-        vistaCarregarDades vGenerarH = new vistaCarregarDades();
+        ArrayList<Pair<String, String[][][]>> horari = cD.carregarHorari(text);
+        vistaHorari(horari, null, complet);
     }
 
     // ------------------------
@@ -219,14 +219,6 @@ public class CtrlPresentacio {
 
     //  · vistaModificarHorari()
     //      És allà on hi ha la vista.
-
-    public void vistaModificarHorari() {
-        //ctrlDomini.modificarHorari();
-        vistaModificarHorari vMH = new vistaModificarHorari();
-    }
-
-    //  · modificarHorari()
-    //      Es Modifica l'Horari
 
 
     // ------------------------
@@ -238,14 +230,22 @@ public class CtrlPresentacio {
     //      És allà on hi ha la vista.
 
     public void vistaEditarDades() {
-        //ctrlDomini.editarDades();
+        //cD.editarDades();
         vistaEditarDades vED = new vistaEditarDades();
     }
 
-    //  · editarDades()
-    //      S'Editen les Dades
+    public void vistaEditarAula() {
+        vistaEditarAula vEA = new vistaEditarAula();
+    }
+
+    public void vistaEditarAssignatures() {
+        vistaEditarAssignatures vEA = new vistaEditarAssignatures();
+    }
+
+    public void vistaEditarPlaEstudis() {
+        vistaEditarPlaEstudis vEPE = new vistaEditarPlaEstudis();
+    }
 
 
-    // ------------------------
-    // ------------------------
+
 }

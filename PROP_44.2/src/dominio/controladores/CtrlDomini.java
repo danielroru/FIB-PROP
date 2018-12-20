@@ -25,6 +25,18 @@ public class CtrlDomini {
 
     }
 
+    public static void carregarDadesAules(String fitxer) {
+        ctrlDominiCarregarDades.carregarAules(fitxer);
+    }
+
+    public static void carregarDadesAssignatures(String fitxer) {
+        ctrlDominiCarregarDades.carregarAssignatures(fitxer);
+    }
+
+    public static void carregarDadesPlaEstudis(String fitxer) {
+        ctrlDominiCarregarDades.carregarPlaEstudis(fitxer);
+    }
+
     public static CtrlDomini getInstance() {
         return instance;
     }

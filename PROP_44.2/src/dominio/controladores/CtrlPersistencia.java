@@ -27,16 +27,16 @@ public class CtrlPersistencia {
     // [ Opció 1 ] : Carregar Dades
     ////////////////////////////////
 
-    public static String[][] carregarAules(String fitxer) {
-        return ctrlPersistenciaCarregarDades.carregarAules(fitxer);
+    public static String[][] carregarAules(String path) {
+        return ctrlPersistenciaCarregarDades.carregarAules(path);
     }
 
-    public static String[][] carregarAssignatures(String fitxer) {
-        return ctrlPersistenciaCarregarDades.carregarAssignatures(fitxer);
+    public static String[][] carregarAssignatures(String path) {
+        return ctrlPersistenciaCarregarDades.carregarAssignatures(path);
     }
 
-    public static String[] carregarPlaEstudis(String fitxer) {
-        return ctrlPersistenciaCarregarDades.carregarPlaEstudis(fitxer);
+    public static String[] carregarPlaEstudis(String path) {
+        return ctrlPersistenciaCarregarDades.carregarPlaEstudis(path);
     }
 
     // [ Opció 3 ] : Guardar Horari
