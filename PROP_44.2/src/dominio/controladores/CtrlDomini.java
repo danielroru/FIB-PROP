@@ -25,6 +25,10 @@ public class CtrlDomini {
 
     }
 
+    public static void carregarDirectori(String directori) {
+        ctrlDominiCarregarDades.carregarDadesByFolder(directori);
+    }
+
     public static void carregarDadesAules(String fitxer) {
         ctrlDominiCarregarDades.carregarAules(fitxer);
     }

@@ -27,7 +27,7 @@ public class vistaGestionarHoraris extends JFrame {
 
         /* Títol Vista */
 
-        titolVista.setBounds(100,70,200,30);
+        titolVista.setBounds(100,50,200,30);
         add(titolVista);
 
         /* Botó Generar Horari */
@@ -69,7 +69,7 @@ public class vistaGestionarHoraris extends JFrame {
 
                 JFileChooser chooserGuardarHorari = new JFileChooser();;
                 chooserGuardarHorari.setDialogTitle("Guardar Horari");
-                chooserGuardarHorari.setCurrentDirectory(new File(System.getProperty("user.dir") + "/src/persistencia"));
+                chooserGuardarHorari.setCurrentDirectory(new File(System.getProperty("user.dir") + "/src/persistencia/Horaris"));
                 int returnValue = chooserGuardarHorari.showSaveDialog(null);
                 if (returnValue == JFileChooser.APPROVE_OPTION) {
                     File arxiu = chooserGuardarHorari.getSelectedFile();
@@ -85,7 +85,7 @@ public class vistaGestionarHoraris extends JFrame {
 
                 JFileChooser chooserCarregarHorari = new JFileChooser();;
                 chooserCarregarHorari.setDialogTitle("Carregar Horari");
-                chooserCarregarHorari.setCurrentDirectory(new File(System.getProperty("user.dir") + "/src/persistencia"));
+                chooserCarregarHorari.setCurrentDirectory(new File(System.getProperty("user.dir") + "/src/persistencia/Horaris"));
                 int returnValue = chooserCarregarHorari.showOpenDialog(null);
                 if (returnValue == JFileChooser.APPROVE_OPTION) {
                     File arxiu = chooserCarregarHorari.getSelectedFile();

@@ -28,17 +28,16 @@ public class CtrlDominiCarregarDades {
 
     public static void carregarDadesByFolder(String path) {
         //TODO
-        /*
-        String[][] aules = CtrlPersistencia.getInstance().carregarAules(path + "/aules.json");
-        String[][] assignatures = CtrlPersistencia.getInstance().carregarAssignatures(path + "/assignatures.json");
-        String[] plaEstudis = CtrlPersistencia.getInstance().carregarPlaEstudis(path + "/plaEstudis.json");
 
-        pE.reset();
+        String aules = path + "/aules.json";
+        String assignatures = path + "/assignatures.json";
+        String plaEstudis = path + "/plaEstudis.json";
+
 
         carregarAules(aules);
         carregarAssignatures(assignatures);
         carregarPlaEstudis(plaEstudis);
-*/
+
     }
 
     // Aules
@@ -185,7 +184,6 @@ public class CtrlDominiCarregarDades {
     public static void carregarPlaEstudis(String path) {
 
         String[] plaEstudis = ctrlPersistencia.carregarPlaEstudis(path);
-
         try {
 
             if (Integer.parseInt(plaEstudis[0]) < 0) throw new Exception("L'hora d'inici no pot ser inferior a 0");
