@@ -24,10 +24,6 @@ public class ConjuntAules {
         instance = new ConjuntAules();
     }
 
-    public void setConjuntAules(Set<Aula> cjtAules) {
-        this.conjuntAules = cjtAules;
-    }
-
     /**
      * Afegeix una aula a la instància
      *
@@ -37,12 +33,15 @@ public class ConjuntAules {
         this.conjuntAules.add(a);
     }
 
-    public Aula getAula(String id) {
-        Aula aula = null;
-        for (Aula a : conjuntAules) {
-            if (id == a.getId()) return a;
-        }
-        return aula;
-    }
 
 }
+
+    /**
+     * Afegeix una aula a la instància
+     *
+     * @param  a Aula a afegir
+     * @return la instància amb l'Aula afegida
+     */
+    public void afegirAula(Aula a) {
+        this.conjuntAules.add(a);
+    }

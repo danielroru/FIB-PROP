@@ -1,0 +1,76 @@
+[
+  {
+    "nom": "F",
+    "nivell" : 1,
+
+    "nHoresT": 2,
+    "nHoresL": 2,
+    "nHoresP": 1,
+
+    "nGrupsT": 2,
+    "nGrupsL": 4,
+    "nGrupsP": 4,
+
+    "nGrupsMati": 1,
+
+    "nAlumnesT": 60,
+    "nAlumnesL": 15,
+    "nAlumnesP": 15,
+
+    "horesBlocT": 2,
+    "horesBlocL": 2,
+    "horesBlocP": 1
+
+    "correquisits":["PRO1"]
+
+  },
+  {
+    "nom": "EC",
+    "nivell" : 2,
+
+    "nHoresT": 4,
+    "nHoresL": 1,
+    "nHoresP": 0,
+
+    "nGrupsT": 1,
+    "nGrupsL": 3,
+    "nGrupsP": 0,
+
+    "nGrupsMati": 1,
+
+    "nAlumnesT": 60,
+    "nAlumnesL": 20,
+    "nAlumnesP": 0,
+
+    "horesBlocT": 2,
+    "horesBlocL": 1,
+    "horesBlocP": 0,
+
+    "correquisits":["F"]
+  },
+  {
+    "nom": "PRO1",
+    "nivell" : 2,
+
+    "nHoresT": 4,
+    "nHoresL": 1,
+    "nHoresP": 0,
+
+    "nGrupsT": 1,
+    "nGrupsL": 3,
+    "nGrupsP": 0,
+
+    "nGrupsMati": 1,
+
+    "nAlumnesT": 60,
+    "nAlumnesL": 20,
+    "nAlumnesP": 0,
+
+    "horesBlocT": 2,
+    "horesBlocL": 1,
+    "horesBlocP": 0,
+
+    "correquisits":["EC"]
+  }
+]
+

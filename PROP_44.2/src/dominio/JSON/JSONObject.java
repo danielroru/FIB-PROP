@@ -61,7 +61,7 @@ public class JSONObject extends HashMap implements Map, JSONAware, JSONStreamAwa
                 first = false;
             else
                 out.write(',');
-			Entry entry=(Entry)iter.next();
+			Map.Entry entry=(Map.Entry)iter.next();
             out.write('\"');
             out.write(escape(String.valueOf(entry.getKey())));
             out.write('\"');

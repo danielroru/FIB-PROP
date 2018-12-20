@@ -3,3 +3,5 @@
 /.idea
 /compile
 /.metadata
+/out
+.class
