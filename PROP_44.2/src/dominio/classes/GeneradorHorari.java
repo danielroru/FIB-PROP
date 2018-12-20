@@ -1,6 +1,5 @@
 package dominio.classes;
 
-import dominio.controladores.CtrlDomini;
 import dominio.controladores.CtrlDominiGenerarHorari;
 
 import java.util.*;
@@ -110,7 +109,7 @@ public class GeneradorHorari {
      * @param solucio solució parcial
      * @return Horari amb les assignacions correpsonents que satisfan les restriccions
      */
-    private static Horari backtracking_cronologic(Queue<Sessio> sFutures, Horari solucio, int compt) {
+    private static Horari forward_checking(Queue<Sessio> sFutures, Horari solucio, int compt) {
         ++compt;
         System.out.println("iteracio: " + compt);
         //System.out.println(sFutures.size() + " sFutures");
@@ -145,8 +144,8 @@ public class GeneradorHorari {
                         //    System.out.println("sFutures " + compt);
                         //    imprimeixSessions(sFutures);
                         //}
-                        //Horari sol2 = backtracking_cronologic(sFutures, solucio, compt);
-                        solucio = backtracking_cronologic(sFutures, solucio, compt);
+                        //Horari sol2 = forward_checking(sFutures, solucio, compt);
+                        solucio = forward_checking(sFutures, solucio, compt);
                         System.out.println("it: " + compt + " assignacions postbacktracking: " + solucio.comptaAssignacions());
                         System.out.println(solucio.comptaAssignacions() + " assignacions solucio");
                         if (!solucio.esFallo()) {
@@ -195,7 +194,7 @@ public class GeneradorHorari {
         //Map<Sessio, Set<UAH>> vals = G.copyVertexs();
         int compt = 0;
         //int compt2 = 0;
-        solucio = backtracking_cronologic(vfutures, solucio, compt);
+        solucio = forward_checking(vfutures, solucio, compt);
         return solucio;
     }
 
