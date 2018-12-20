@@ -1,6 +1,5 @@
 package dominio.classes;
 
-import dominio.vistes.inout;
 import javafx.util.Pair;
 
 import java.util.*;
@@ -29,9 +28,9 @@ public class Horari {
 
     /**
      * Assigna la UAH uah a la sessió se
+     *
      * @param se sessió a la que volem assignar la UAH
      * @param uah que volem assignar a la sessió
-     * @post la instància conté l'assignació entre se i uah
      */
     public void assignarUAH(Sessio se, UAH uah) {
 
@@ -75,7 +74,6 @@ public class Horari {
      * Elimina la UAH uah de la sessió se
      * @param se sessió a la que volem eliminar la UAH
      * @param uah que volem eliminar de la sessió
-     * @post la instància s'ha modificat i ja no conté l'assignació entre se i uah
      */
     public void eliminarUAH(Sessio se, UAH uah) {
         if (assignacio.containsKey(se)) {
@@ -160,7 +158,6 @@ public class Horari {
         int nHores = PlaEstudis.getHoraFi() - PlaEstudis.getHoraInici();
         int nAssig = 3;
 
-        inout io = new inout();
 
         // Como lo puedo declarar ¿?
         // Problema:

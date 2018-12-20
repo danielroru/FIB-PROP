@@ -44,11 +44,6 @@ public class CtrlDomini {
     *   ------------
     * */
 
-    // [ Opció 1 ] Carreguem Dades
-
-    public static void carregarDades(String fitxer) {
-        ctrlDominiCarregarDades.carregarDades(fitxer);
-    }
 
     // [ Opció 2 ] Generar Horari
 

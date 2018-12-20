@@ -69,7 +69,6 @@ public class GeneradorHorari {
 
     /**
      * Genera l'horari
-     * @param  assig Assignatura a afegir
      * @return l'Horari generat segons la inicialització del graf
      */
 

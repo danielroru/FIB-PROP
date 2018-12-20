@@ -24,14 +24,13 @@ public class CtrlPersistenciaCarregarDades {
     // aules[x][1] = capacitat
     // aules[x][2] = tipus
 
-    public static String[][] carregarAules(String fitxer){
+    public static String[][] carregarAules(String dataPath){
         String[][] aules = null;
-        // Aquí posem 1 per defecte - 'hi ha d'anar folder'
-        String dataPath = "src/persistencia/dades/" + fitxer + "/";
+
         JSONParser parser = new JSONParser();
 
         try {
-            JSONArray arrayAules = (JSONArray) parser.parse(new FileReader(dataPath + "aules.json"));
+            JSONArray arrayAules = (JSONArray) parser.parse(new FileReader(dataPath));
             aules = new String[arrayAules.size()][3];
             for (int i = 0; i < arrayAules.size(); i++) {
 
@@ -62,11 +61,6 @@ public class CtrlPersistenciaCarregarDades {
 
     // Conjunt d'Assignatures [ Matriu de String ]
 
-    // [+] Tenc 2 Pregunts:
-    // [·] Correquisits
-    // [·] En Borja va dir que hi havia molts atributs dins sa classe,
-    // feim una altra classe?
-
     // assignatures[x][0] = nom
     // assignatures[x][1] = nivell
     // assignatures[x][2] = nHoresT
@@ -83,16 +77,14 @@ public class CtrlPersistenciaCarregarDades {
     // assignatures[x][13] = horesBlocL
     // assignatures[x][14] = horesBlocP
 
-    public static String[][] carregarAssignatures(String fitxer) {
+    public static String[][] carregarAssignatures(String dataPath) {
 
         String[][] assignatures = null;
 
-        // Aquí posem 1 per defecte - 'hi ha d'anar folder'
-        String dataPath = "src/persistencia/dades/" + fitxer + "/";
         JSONParser parser = new JSONParser();
 
         try {
-            JSONArray arrayAssignatures = (JSONArray) parser.parse(new FileReader(dataPath + "assignatures.json"));
+            JSONArray arrayAssignatures = (JSONArray) parser.parse(new FileReader(dataPath));
             assignatures = new String[arrayAssignatures.size()][15];
 
             for (int i = 0; i < arrayAssignatures.size(); i++) {
@@ -121,6 +113,8 @@ public class CtrlPersistenciaCarregarDades {
                 assignatures[i][13] = String.valueOf((int) (long) jsonObject.get("horesBlocL"));
                 assignatures[i][14] = String.valueOf((int) (long) jsonObject.get("horesBlocP"));
 
+
+                // TODO
                 /*
                 Com fer lu dels correquisits ¿?
 
@@ -149,16 +143,13 @@ public class CtrlPersistenciaCarregarDades {
     // plaEstudis[1] = horaFi
     // plaEstudis[2] = horaCanviFranja
 
-    public static String[] carregarPlaEstudis(String fitxer){
+    public static String[] carregarPlaEstudis(String dataPath){
 
         String[] plaEstudis = new String[3];
 
-        // Aquí posem 1 per defecte - 'hi ha d'anar folder'
-        String dataPath = "src/persistencia/dades/" + fitxer + "/";
-
         JSONParser parser = new JSONParser();
         try {
-            JSONObject plaEstudisOjbect = (JSONObject) parser.parse(new FileReader(dataPath + "plaEstudis.json"));
+            JSONObject plaEstudisOjbect = (JSONObject) parser.parse(new FileReader(dataPath));
 
             plaEstudis[0] = String.valueOf((int) (long) plaEstudisOjbect.get("horaInici"));
             plaEstudis[1] = String.valueOf((int) (long) plaEstudisOjbect.get("horaFi"));

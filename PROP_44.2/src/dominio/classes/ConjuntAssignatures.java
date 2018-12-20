@@ -3,8 +3,14 @@ import java.util.*;
 
 public class ConjuntAssignatures {
 
+    /**
+     * Map ordenat per nom d'assignatura
+     */
     private Map<String, Assignatura> cjtAssignatures;
-    private HashMap<Integer, Set<Assignatura>> cjtNivell;
+    /**
+     * Map ordenat per nivell de les assignatures
+     */
+    private Map<Integer, Set<Assignatura>> cjtNivell;
 
     // Conjunt Assignatures
 
@@ -40,7 +46,6 @@ public class ConjuntAssignatures {
      * Afegeix una assignatura a la instància
      *
      * @param  assig Assignatura a afegir
-     * @return la instància amb l'Assignatura afegida
      */
     public void afegirAssignatura(Assignatura assig) {
         this.cjtAssignatures.put(assig.getNom(), assig);
@@ -67,11 +72,7 @@ public class ConjuntAssignatures {
 
 
     public Assignatura getAssigatura(String nom) {
-        Assignatura assig = null;
-        for (Assignatura a : getAssignatures()) {
-            if (nom == a.getNom()) return a;
-        }
-        return assig;
+        return cjtAssignatures.get(nom);
     }
 
 }

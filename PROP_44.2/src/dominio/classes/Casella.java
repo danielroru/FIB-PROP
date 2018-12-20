@@ -48,5 +48,7 @@ public class Casella {
         this.tipus = tipus;
     }
 
-    public boolean esBuida() {return this == null; }
+    public boolean esBuida() {
+        return this == null;
+    }
 }

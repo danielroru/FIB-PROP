@@ -1,7 +1,6 @@
 package dominio.controladores;
 
 import dominio.classes.*;
-import dominio.vistes.inout;
 
 import java.util.HashMap;
 import java.util.Map;

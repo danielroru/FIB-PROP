@@ -63,6 +63,7 @@ public class CtrlPersistenciaGuardarHorari {
         // try-with-resources statement based on post comment below :)
 
         try {
+            //TODO
             FileWriter file = new FileWriter("src/persistencia/Horaris/" + nomFitxer + ".json");
             file.write(aules.toJSONString());
             System.out.println("Horari Guardat");

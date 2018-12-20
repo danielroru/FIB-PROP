@@ -5,9 +5,17 @@ public class Aula {
     /* --------------------------------------------------------------------------
         ATRIBUTS
     -------------------------------------------------------------------------- */
-
+    /**
+     * Nom de l'aula
+     */
     private String id;
+    /**
+     * Capacitat de l'aula
+     */
     private int capacitat;
+    /**
+     * Tipus d'aula (laboratori o teoria)
+     */
     private Enumeracio.TipusAula tipus;
 
     /* --------------------------------------------------------------------------
@@ -26,7 +34,7 @@ public class Aula {
 
     /**
      * Constructora còpia
-     * @param as Assignatura a copiar
+     * @param a Assignatura a copiar
      */
     public Aula (Aula a) {
         this.id = a.id;
@@ -38,7 +46,7 @@ public class Aula {
      * Constructora amb inicialització
      *
      * @param  id id de l'Aula
-     * @param  capcaitat capacitat de l'Aula
+     * @param  capacitat capacitat de l'Aula
      * @param  tipus tipus de l'Aula
      */
     public Aula(String id, int capacitat, Enumeracio.TipusAula tipus) {

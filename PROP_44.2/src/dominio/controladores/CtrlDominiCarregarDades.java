@@ -25,13 +25,11 @@ public class CtrlDominiCarregarDades {
     // Funcionalitat Principal
     //////////////////////////
 
-    public void carregarDades(String fitxer) {
+    public static void carregarDadesByFolder(String path) {
+        String[][] aules = ctrlPersistencia.carregarAules(path + "/aules.json");
+        String[][] assignatures = ctrlPersistencia.carregarAssignatures(path + "/assignatures.json");
+        String[] plaEstudis = ctrlPersistencia.carregarPlaEstudis(path + "/plaEstudis.json");
 
-        String[][] aules = ctrlPersistencia.carregarAules(fitxer);
-        String[][] assignatures = ctrlPersistencia.carregarAssignatures(fitxer);
-        String[] plaEstudis = ctrlPersistencia.carregarPlaEstudis(fitxer);
-
-        // Inicialitzem tots els valors de Pla d'Estudi
         pE.reset();
 
         carregarAules(aules);
@@ -47,7 +45,7 @@ public class CtrlDominiCarregarDades {
     // aules[x][1] = capacitat
     // aules[x][2] = tipus
 
-    private void carregarAules(String[][] aules) {
+    private static void carregarAules(String[][] aules) {
 
         ConjuntAules cjtAules = new ConjuntAules();
 
@@ -70,7 +68,7 @@ public class CtrlDominiCarregarDades {
 
                 // Afagir en el Conjunt d'Aules
 
-                cjtAules.afegirAula(aula);
+                PlaEstudis.getConjuntAules().afegirAula(aula);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -103,7 +101,7 @@ public class CtrlDominiCarregarDades {
     // assignatures[x][13] = horesBlocL
     // assignatures[x][14] = horesBlocP
 
-    private void carregarAssignatures(String[][] assignatures) {
+    private static void carregarAssignatures(String[][] assignatures) {
 
         try {
             for (String[] a : assignatures) {
@@ -177,7 +175,7 @@ public class CtrlDominiCarregarDades {
     // plaEstudis[1] = horaFi
     // plaEstudis[2] = horaCanviFranja
 
-    private void carregarPlaEstudis(String[] plaEstudis) {
+    private static void carregarPlaEstudis(String[] plaEstudis) {
 
         try {
 

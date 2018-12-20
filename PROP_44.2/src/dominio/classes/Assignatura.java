@@ -6,31 +6,78 @@ import java.util.Set;
 public class Assignatura {
 
     // Atributs
+    /**
+     * Nom de l'assignatura
+     */
     private String nom;
-
+    /**
+     * Numero d'hores de teoria
+     */
     private int nHoresT;
+    /**
+     * Numero d'hores de laboratori
+     */
     private int nHoresL;
+    /**
+     * Numero d'hores de problemes
+     */
     private int nHoresP;
 
     // Número de grups
+    /**
+     * Numero de grups de teoria
+     */
     private int nGrupsT;
+    /**
+     * Numero de grups de laboratori
+     */
     private int nGrupsL;
+    /**
+     * Numero de grups de problemes
+     */
     private int nGrupsP;
 
     // Grups de matí/tarda
+    /**
+     * Numero de grups que són de matí
+     */
     private int nGrupsMati;
 
     // Agrupació de blocs
+    /**
+     * Numero d'hores seguides de teoria
+     */
     private int horesBlocT;
+    /**
+     * Numero d'hores seguides de laboratori
+     */
     private int horesBlocL;
+    /**
+     * Numero d'hores seguides de problemes
+     */
     private int horesBlocP;
 
+    /**
+     * Numero maxim d'alumnes a hores de teoria
+     */
     private int nAlumnesT;
+    /**
+     * Numero maxim d'alumnes a hores de laboratori
+     */
     private int nAlumnesL;
+    /**
+     * Numero maxim d'alumnes a hores de problemes
+     */
     private int nAlumnesP;
 
+    /**
+     * Quatrimestre de l'assignatura (nivell)
+     */
     private int nivell;
 
+    /**
+     * Vector de correquisits de l'assignatura
+     */
     private Set<String> correquisits = new HashSet<>();
 
     // Mètodes
@@ -45,7 +92,7 @@ public class Assignatura {
 
     }
     /**
-     * Constructora amb inicialització
+     * Constructora amb inicialitzacio
      *
      * @param  nom nom de l'Assignatura
      * @param  nHoresT nombre d'hores de Teoria
@@ -102,7 +149,7 @@ public class Assignatura {
     }
 
     /**
-     * Constructora còpia
+     * Constructora copia
      * @param as Assignatura a copiar
      */
     public Assignatura(Assignatura as) {

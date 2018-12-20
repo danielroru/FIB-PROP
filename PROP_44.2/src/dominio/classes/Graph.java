@@ -29,7 +29,6 @@ public class Graph {
      * Afegeix arestes de s1 cap a s2
      * @param s1 sessió a la que s'afageixen l'aresta
      * @param s2 sessió cap on va dirigida l'aresta
-     * @return la instància amb l'aresta afegida
      */
     public void afegirArestes(Sessio s1, Sessio s2) {
         Set<Sessio> newSet = arestes.get(s1);
@@ -39,7 +38,7 @@ public class Graph {
 
     /**
      * Retorna totes les UAH de la sessió s
-     * @param sessió de la que se n'obtenen les UAH
+     * @param s de la que se n'obtenen les UAH
      * @return Set d'UAH corresponent a les UAH de la sessió en el graf
      */
     public Set<UAH> getUAHbySessio(Sessio s) {
