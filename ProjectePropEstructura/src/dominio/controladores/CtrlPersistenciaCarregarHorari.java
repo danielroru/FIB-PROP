@@ -23,13 +23,13 @@ public class CtrlPersistenciaCarregarHorari {
         return instance;
     }
 
-    public static Map<String, Matriu> llegirHorari(String nomfitxer) {
+    public static Map<String, Matriu> llegirHorari(String nomFitxer) {
         Map<String, Matriu> horari = new HashMap<>();
 
         JSONParser parser = new JSONParser();
 
         try {
-            JSONArray arrayAules = (JSONArray) parser.parse(new FileReader("src/persistencia/Horaris/" + nomfitxer + ".json"));
+            JSONArray arrayAules = (JSONArray) parser.parse(new FileReader(nomFitxer));
 
             for (int z = 0; z < arrayAules.size(); z++) {
 

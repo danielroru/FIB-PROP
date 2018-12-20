@@ -27,11 +27,10 @@ public class CtrlPersistenciaCarregarDades {
     public static String[][] carregarAules(String fitxer){
         String[][] aules = null;
         // Aquí posem 1 per defecte - 'hi ha d'anar folder'
-        String dataPath = "src/persistencia/dades/" + fitxer + "/";
         JSONParser parser = new JSONParser();
 
         try {
-            JSONArray arrayAules = (JSONArray) parser.parse(new FileReader(dataPath + "aules.json"));
+            JSONArray arrayAules = (JSONArray) parser.parse(new FileReader(fitxer));
             aules = new String[arrayAules.size()][3];
             for (int i = 0; i < arrayAules.size(); i++) {
 
@@ -88,11 +87,10 @@ public class CtrlPersistenciaCarregarDades {
         String[][] assignatures = null;
 
         // Aquí posem 1 per defecte - 'hi ha d'anar folder'
-        String dataPath = "src/persistencia/dades/" + fitxer + "/";
         JSONParser parser = new JSONParser();
 
         try {
-            JSONArray arrayAssignatures = (JSONArray) parser.parse(new FileReader(dataPath + "assignatures.json"));
+            JSONArray arrayAssignatures = (JSONArray) parser.parse(new FileReader(fitxer));
             assignatures = new String[arrayAssignatures.size()][15];
 
             for (int i = 0; i < arrayAssignatures.size(); i++) {
@@ -154,11 +152,10 @@ public class CtrlPersistenciaCarregarDades {
         String[] plaEstudis = new String[3];
 
         // Aquí posem 1 per defecte - 'hi ha d'anar folder'
-        String dataPath = "src/persistencia/dades/" + fitxer + "/";
 
         JSONParser parser = new JSONParser();
         try {
-            JSONObject plaEstudisOjbect = (JSONObject) parser.parse(new FileReader(dataPath + "plaEstudis.json"));
+            JSONObject plaEstudisOjbect = (JSONObject) parser.parse(new FileReader(fitxer));
 
             plaEstudis[0] = String.valueOf((int) (long) plaEstudisOjbect.get("horaInici"));
             plaEstudis[1] = String.valueOf((int) (long) plaEstudisOjbect.get("horaFi"));

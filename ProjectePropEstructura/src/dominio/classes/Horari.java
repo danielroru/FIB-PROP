@@ -1,6 +1,5 @@
 package dominio.classes;
 
-import dominio.vistes.inout;
 import javafx.util.Pair;
 
 import java.util.*;
@@ -160,7 +159,6 @@ public class Horari {
         int nHores = PlaEstudis.getHoraFi() - PlaEstudis.getHoraInici();
         int nAssig = 3;
 
-        inout io = new inout();
 
         // Como lo puedo declarar ¿?
         // Problema:

@@ -14,12 +14,12 @@ public class PlaEstudis {
 
     private PlaEstudis(){
     }
-
+    /*
     public static void reset() {
         instance = new PlaEstudis();
         cjtAssignatures = new ConjuntAssignatures();
         cjtAules.reset();
-    }
+    }*/
 
     public static PlaEstudis getInstance() {
         return instance;
@@ -67,5 +67,25 @@ public class PlaEstudis {
 
     public static ConjuntAssignatures getConjuntAssignatures() {
         return cjtAssignatures;
+    }
+
+    // Set
+
+    public static void setConjuntAules(ConjuntAules conjuntAules) {
+        cjtAules = conjuntAules;
+    }
+
+    public static void setConjuntAssignatures(ConjuntAssignatures conjuntAssignatures) {
+        cjtAssignatures = conjuntAssignatures;
+    }
+
+    // Reset
+
+    public static void resetConjuntAassignatures() {
+        cjtAssignatures = new ConjuntAssignatures();
+    }
+
+    public static void resetConjuntAules() {
+        cjtAules = new ConjuntAules();
     }
 }

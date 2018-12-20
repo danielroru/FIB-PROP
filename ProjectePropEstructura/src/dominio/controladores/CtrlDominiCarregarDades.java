@@ -24,7 +24,7 @@ public class CtrlDominiCarregarDades {
 
     // Funcionalitat Principal
     //////////////////////////
-
+    /*
     public void carregarDades(String fitxer) {
 
         String[][] aules = ctrlPersistencia.carregarAules(fitxer);
@@ -38,7 +38,7 @@ public class CtrlDominiCarregarDades {
         carregarAssignatures(assignatures);
         carregarPlaEstudis(plaEstudis);
 
-    }
+    }*/
 
     // Aules
     //////////////////////
@@ -47,8 +47,9 @@ public class CtrlDominiCarregarDades {
     // aules[x][1] = capacitat
     // aules[x][2] = tipus
 
-    private void carregarAules(String[][] aules) {
+    public void carregarDadesAules(String fitxer) {
 
+        String[][] aules = ctrlPersistencia.carregarAules(fitxer);
         ConjuntAules cjtAules = new ConjuntAules();
 
         // Comprovació Errors Aules
@@ -79,6 +80,8 @@ public class CtrlDominiCarregarDades {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        pE.resetConjuntAules();
+        pE.setConjuntAules(cjtAules);
     }
 
 
@@ -103,7 +106,10 @@ public class CtrlDominiCarregarDades {
     // assignatures[x][13] = horesBlocL
     // assignatures[x][14] = horesBlocP
 
-    private void carregarAssignatures(String[][] assignatures) {
+    public void carregarDadesAssignatures(String fitxer) {
+
+        String[][] assignatures = ctrlPersistencia.carregarAssignatures(fitxer);
+        ConjuntAssignatures cjtAssignatures = new ConjuntAssignatures();
 
         try {
             for (String[] a : assignatures) {
@@ -157,7 +163,7 @@ public class CtrlDominiCarregarDades {
 
                 // Afagir en el Conjunt d'Aules
 
-                pE.afegirAssignatura(assig);
+                cjtAssignatures.afegirAssignatura(assig);
 
             }
         } catch (IOException e) {
@@ -167,6 +173,9 @@ public class CtrlDominiCarregarDades {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        pE.resetConjuntAassignatures();
+        pE.setConjuntAssignatures(cjtAssignatures);
     }
 
 
@@ -177,7 +186,9 @@ public class CtrlDominiCarregarDades {
     // plaEstudis[1] = horaFi
     // plaEstudis[2] = horaCanviFranja
 
-    private void carregarPlaEstudis(String[] plaEstudis) {
+    public void carregarDadesPlaEstudis(String fitxer) {
+
+        String[] plaEstudis = ctrlPersistencia.carregarPlaEstudis(fitxer);
 
         try {
 

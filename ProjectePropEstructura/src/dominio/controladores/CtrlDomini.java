@@ -46,8 +46,22 @@ public class CtrlDomini {
 
     // [ Opció 1 ] Carreguem Dades
 
+    /*
     public static void carregarDades(String fitxer) {
         ctrlDominiCarregarDades.carregarDades(fitxer);
+    }
+    */
+
+    public static void carregarDadesAules(String fitxer) {
+        ctrlDominiCarregarDades.carregarDadesAules(fitxer);
+    }
+
+    public static void carregarDadesAssignatures(String fitxer) {
+        ctrlDominiCarregarDades.carregarDadesAssignatures(fitxer);
+    }
+
+    public static void carregarDadesPlaEstudis(String fitxer) {
+        ctrlDominiCarregarDades.carregarDadesPlaEstudis(fitxer);
     }
 
     // [ Opció 2 ] Generar Horari

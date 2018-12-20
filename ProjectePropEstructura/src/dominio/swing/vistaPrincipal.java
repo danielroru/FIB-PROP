@@ -3,36 +3,61 @@ package dominio.swing;
 import dominio.controladores.CtrlPresentacio;
 
 import javax.swing.*;
+import javax.swing.filechooser.FileSystemView;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class vistaPrincipal extends JFrame{
+public class vistaPrincipal extends JFrame {
 
-    private JButton carregarDadesButton;
-    private JButton generarHorariButton;
-    private JButton guardarHorariButton;
-    private JButton carregarHorariButton;
-    private JButton modificarHorariButton;
-    private JButton editarDadesButton;
-    private JButton sortirButton;
+    private JLabel titolVista = new JLabel("Generador Horaris");
 
-    private JPanel panelContinguts;
+    private JButton carregarDadesButton = new JButton("Carregar Dades");
+    private JButton generarHorariButton = new JButton("Gestionar Horaris");
+    private JButton editarDadesButton = new JButton("Editar Dades");
+    private JButton sortirButton = new JButton("Sortir");
 
-    private CtrlPresentacio pCtrPresentacio = CtrlPresentacio.getInstance();
 
-    boolean valor = false;
+    private CtrlPresentacio iCtrlPresentacio = CtrlPresentacio.getInstance();
 
-    //private int iPanelActivo = 0;
 
-    //static JFrame frameVista = new JFrame("Generador d'horaris");
 
 
     public vistaPrincipal() {
 
-        setSize(400, 600);
+        setSize(300, 400);
         setLocationRelativeTo(null);
-        setContentPane(panelContinguts);
+        setLayout(null);
+
+        /* Títol Vista */
+
+        titolVista.setBounds(100,70,120,30);
+        add(titolVista);
+
+
+        /* Botó Carregar Dades */
+
+        carregarDadesButton.setBounds(50,150,200,30);
+        add(carregarDadesButton);
+
+        /* Botó Gestio Horaris */
+
+        generarHorariButton.setBounds(50,190,200,30);
+        add(generarHorariButton);
+
+        /* Botó Editar Dades */
+
+        editarDadesButton.setBounds(50,230,200,30);
+        add(editarDadesButton);
+
+
+        /* Botó Sortir */
+
+        sortirButton.setBounds(50,270,200,30);
+        add(sortirButton);
+
+
+
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -40,43 +65,16 @@ public class vistaPrincipal extends JFrame{
         ActionListener carregarDades = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                pCtrPresentacio.vistaCarregarDades();
+                iCtrlPresentacio.vistaCarregarDades();
                 setVisible(false);
             }
-
         };
 
-        ActionListener generarHorari = new ActionListener() {
+
+        ActionListener gestionarHoraris = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                pCtrPresentacio.vistaGenerarHorari();
-                setVisible(false);
-            }
-
-        };
-
-        ActionListener guardarHorari = new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                pCtrPresentacio.vistaGuardarHorari();
-                setVisible(false);
-            }
-
-        };
-
-        ActionListener carregarHorari = new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                pCtrPresentacio.vistaCarregarHorari();
-                setVisible(false);
-            }
-
-        };
-
-        ActionListener modificarHorari = new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                pCtrPresentacio.vistaModificarHorari();
+                iCtrlPresentacio.vistaGestionarHoraris();
                 setVisible(false);
             }
 
@@ -85,7 +83,7 @@ public class vistaPrincipal extends JFrame{
         ActionListener editarDades = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                pCtrPresentacio.vistaEditarDades();
+                iCtrlPresentacio.vistaEditarDades();
                 setVisible(false);
             }
 
@@ -100,10 +98,7 @@ public class vistaPrincipal extends JFrame{
         };
 
         carregarDadesButton.addActionListener(carregarDades);
-        generarHorariButton.addActionListener(generarHorari);
-        guardarHorariButton.addActionListener(guardarHorari);
-        carregarHorariButton.addActionListener(carregarHorari);
-        modificarHorariButton.addActionListener(modificarHorari);
+        generarHorariButton.addActionListener(gestionarHoraris);
         editarDadesButton.addActionListener(editarDades);
         sortirButton.addActionListener(sortir);
     }
