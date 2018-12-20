@@ -119,12 +119,13 @@ public class GeneradorHorari {
         } else {
             // Obtenim el següent element
             Sessio sActual = sFutures.element();
+            sFutures.remove(sActual);
             int compt2 = 0;
             Set<UAH> valors = copyValPoss(sActual);
             for (UAH uah : valors) {
                 ++compt2;
                 if (!uah.teSessio()) {
-                    sFutures.remove(sActual);
+
                     solucio.assignarUAH(sActual, uah);
                     uah.setSessio(sActual);
                     sActual.setUah(uah);
