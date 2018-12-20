@@ -3,7 +3,6 @@ package dominio.swing;
 import dominio.controladores.CtrlPresentacio;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -21,22 +20,10 @@ public class vistaPrincipal extends JFrame{
 
     private CtrlPresentacio pCtrPresentacio = CtrlPresentacio.getInstance();
 
-    boolean valor = false;
-
-    //private int iPanelActivo = 0;
-
     //static JFrame frameVista = new JFrame("Generador d'horaris");
 
 
     public vistaPrincipal() {
-        carregarDadesButton = new JButton();
-        generarHorariButton  = new JButton();
-        guardarHorariButton  = new JButton();
-        carregarDadesButton  = new JButton();
-        carregarDadesButton = new JButton();
-        modificarHorariButton  = new JButton();
-        editarDadesButton = new JButton();
-        sortirButton = new JButton();
 
         panelContinguts = new JPanel();
         setSize(400, 600);
@@ -45,6 +32,14 @@ public class vistaPrincipal extends JFrame{
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        carregarDadesButton = new JButton();
+        generarHorariButton  = new JButton();
+        guardarHorariButton  = new JButton();
+        carregarDadesButton  = new JButton();
+        carregarHorariButton = new JButton();
+        modificarHorariButton  = new JButton();
+        editarDadesButton = new JButton();
+        sortirButton = new JButton();
 
         ActionListener carregarDades = new ActionListener() {
             @Override
