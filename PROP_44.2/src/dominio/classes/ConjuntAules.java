@@ -7,7 +7,7 @@ public class ConjuntAules {
         ATRIBUTS
     -------------------------------------------------------------------------- */
 
-    private static Set<Aula> conjuntAules = new HashSet<Aula>();
+    private static HashMap<String, Aula> conjuntAules = new HashMap<String, Aula>();
     private static ConjuntAules instance = new ConjuntAules();
 
     /* --------------------------------------------------------------------------
@@ -15,8 +15,8 @@ public class ConjuntAules {
     -------------------------------------------------------------------------- */
     public ConjuntAules() {}
 
-    public Set<Aula> getAules() {
-        return this.conjuntAules;
+    public HashSet<Aula> getAules() {
+        return new HashSet<>(this.conjuntAules.values());
     }
 
 
@@ -30,18 +30,29 @@ public class ConjuntAules {
      * @param  a Aula a afegir
      */
     public void afegirAula(Aula a) {
-        this.conjuntAules.add(a);
+        this.conjuntAules.put(a.getId(), a);
+    }
+
+    /**
+     * Retorna una aula a partir de l'id
+     *
+     * @param id Nom de l'aula a buscar
+     * @return aula buscada
+     */
+    public Aula getAula(String id) {
+        return this.conjuntAules.get(id);
+    }
+
+    /**
+     * Comprova si una aula existeix
+     *
+     * @param id Nom de l'aula a buscar
+     * @return true si l'aula existeix
+     */
+    public Boolean existeixAula(String id) {
+        return this.conjuntAules.containsKey(id);
     }
 
 
 }
 
-    /**
-     * Afegeix una aula a la instància
-     *
-     * @param  a Aula a afegir
-     * @return la instància amb l'Aula afegida
-     */
-    public void afegirAula(Aula a) {
-        this.conjuntAules.add(a);
-    }
