@@ -116,7 +116,8 @@ public class GeneradorHorari {
         if (sFutures.isEmpty()) {
             //System.out.println("sFutures empty: " + compt);
             return solucio;
-        } else {
+        }
+        else {
             // Obtenim el següent element
             Sessio sActual = sFutures.element();
             sFutures.remove(sActual);
@@ -135,7 +136,7 @@ public class GeneradorHorari {
                     System.out.println("mida sFutures: " + sFutures.size());
                     System.out.println("mida solucio: " + solucio.comptaAssignacions());
                     System.out.println("Iteració: " + compt + " VALOR " + compt2 + " maxim " + valPoss.get(sActual).size());
-                    System.out.println("AFAGEIX " + sActual.getAssignatura().getNom() + ' ' + sActual.getIdGrup() + ' ' + sActual.getTipus());
+                    System.out.println("Afegeix " + sActual.getAssignatura().getNom() + ' ' + sActual.getIdGrup() + ' ' + sActual.getTipus());
                     System.out.println("UAH: " + uah.getDia() + ' ' + uah.getHora() + ' ' + uah.getAula().getId());
                     if (solucio.assignacioCompleta(sActual))
                     propagar_restriccions(sFutures, sActual, uah);
