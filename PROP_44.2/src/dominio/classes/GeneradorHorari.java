@@ -1,5 +1,6 @@
 package dominio.classes;
 
+import dominio.controladores.CtrlDomini;
 import dominio.controladores.CtrlDominiGenerarHorari;
 
 import java.util.*;
@@ -109,73 +110,39 @@ public class GeneradorHorari {
      * @param solucio solució parcial
      * @return Horari amb les assignacions correpsonents que satisfan les restriccions
      */
-    private static Horari forward_checking(Queue<Sessio> sFutures, Horari solucio, int compt) {
-        ++compt;
-        System.out.println("iteracio: " + compt);
-        //System.out.println(sFutures.size() + " sFutures");
+    private static Horari forward_checking(Queue<Sessio> sFutures, Horari solucio) {
         if (sFutures.isEmpty()) {
-            //System.out.println("sFutures empty: " + compt);
+            CtrlDominiGenerarHorari.comptaSessions();
+            System.out.println(solucio.comptaAssignacions());
             return solucio;
         } else {
             // Obtenim el següent element
             Sessio sActual = sFutures.element();
-            int compt2 = 0;
+            sFutures.remove(sActual);
             Set<UAH> valors = copyValPoss(sActual);
             for (UAH uah : valors) {
-                ++compt2;
                 if (!uah.teSessio()) {
-                    sFutures.remove(sActual);
                     solucio.assignarUAH(sActual, uah);
                     uah.setSessio(sActual);
                     sActual.setUah(uah);
-                    int cont = solucio.comptaAssignacions();
-                    //if (compt == 1)
-                    //imprimeixSessions(sFutures);
-                    System.out.println("mida sFutures: " + sFutures.size());
-                    System.out.println("mida solucio: " + solucio.comptaAssignacions());
-                    System.out.println("Iteració: " + compt + " VALOR " + compt2 + " maxim " + valPoss.get(sActual).size());
-                    System.out.println("AFAGEIX " + sActual.getAssignatura().getNom() + ' ' + sActual.getIdGrup() + ' ' + sActual.getTipus());
-                    System.out.println("UAH: " + uah.getDia() + ' ' + uah.getHora() + ' ' + uah.getAula().getId());
                     if (solucio.assignacioCompleta(sActual))
                     propagar_restriccions(sFutures, sActual, uah);
                     if (!algun_dominio_vacio(sFutures)) {
-                        //if ((compt == 115 && compt2 == 8) || (compt == 114 && compt2 == 3)) imprimeixSessions(sFutures);
-                        //if (compt == 125) {
-                        //    System.out.println("sFutures " + compt);
-                        //    imprimeixSessions(sFutures);
-                        //}
-                        //Horari sol2 = forward_checking(sFutures, solucio, compt);
-                        solucio = forward_checking(sFutures, solucio, compt);
-                        System.out.println("it: " + compt + " assignacions postbacktracking: " + solucio.comptaAssignacions());
-                        System.out.println(solucio.comptaAssignacions() + " assignacions solucio");
+                        solucio = forward_checking(sFutures, solucio);
                         if (!solucio.esFallo()) {
-                            //solucio = solucio;
-                            if ((solucio.comptaAssignacions() + sFutures.size()) < 131) System.out.println("______ FALLO _____");
                             return solucio;
                         } else {
                             sFutures.add(solucio.getFallo());
                             uah.eliminaSessio();
                             solucio.eliminarUAH(sActual, uah);
                             solucio.noEsFallo();
-                            //if ((solucio.comptaAssignacions() + sFutures.size()) < 131) System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>FALLO _____" + sFutures.size() + " " + solucio.comptaAssignacions());
-                            //System.out.println("Iteració: " + compt + " VALOR " + compt2 + " maxim " + valPoss.get(sActual).size());
-                            //System.out.println("ELIMINA else1 " + sActual.getAssignatura().getNom() + ' ' + sActual.getIdGrup() + ' ' + sActual.getTipus());
-                            //System.out.println("UAH: " + uah.getDia() + ' ' + uah.getHora() + ' ' + uah.getAula().getId());
-                            //System.out.println("sFutures postelse: " + sFutures.size());
-                            //System.out.println(solucio.comptaAssignacions() + " assignacions solucio postelse");
                         }
                     } else {
-                        //System.out.println(compt + " " + "ELIMINA else 2 " + sActual.getAssignatura().getNom() + ' ' + sActual.getIdGrup() + ' ' + sActual.getTipus());
-                        //System.out.println("UAH: " + uah.getDia() + ' ' + uah.getHora() + ' ' + uah.getAula().getId());
                         solucio.eliminarUAH(sActual, uah);
                         uah.eliminaSessio();
-                        //sFutures.add(sActual);
                     }
-                    //sFutures.add(sActual);
                 }
             }
-            //System.out.println("---------------------------NOU HORARI " + compt + "---------------------------------------" + sFutures.size() + " " + solucio.comptaAssignacions());
-            //imprimeixSessions(sFutures);
             solucio.setFallada(sActual);
             return solucio;
         }
@@ -194,15 +161,7 @@ public class GeneradorHorari {
         //Map<Sessio, Set<UAH>> vals = G.copyVertexs();
         int compt = 0;
         //int compt2 = 0;
-        solucio = forward_checking(vfutures, solucio, compt);
+        solucio = forward_checking(vfutures, solucio);
         return solucio;
-    }
-
-    private static void imprimeixAssignacions(Horari solucio) {
-        for (Sessio s : solucio.getAssignacio().keySet()) {
-            System.out.println(s.getAssignatura().getNom() + " " + s.getIdGrup() + " " + s.getTipus());
-            for (UAH uah : solucio.getAssignacio().get(s))
-                System.out.println(" ----" + uah.getDia() + " " + uah.getHora() + " " + uah.getAula().getId());
-        }
     }
 }
