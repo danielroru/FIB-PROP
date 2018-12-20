@@ -4,6 +4,7 @@ import dominio.JSON.JSONArray;
 import dominio.JSON.JSONObject;
 import dominio.JSON.parser.JSONParser;
 import dominio.JSON.parser.ParseException;
+import javafx.util.Pair;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -164,6 +165,10 @@ public class Horari {
 
     public Map<String, Matriu> getHorari() {
         return horari;
+    }
+
+    public void setHorari(Map<String, Matriu> horari) {
+        this.horari = horari;
     }
 
     public void imprimirHorari() {
@@ -342,5 +347,64 @@ public class Horari {
         catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    // String[Aula][Dia][Hora][Assig]
+    public ArrayList<Pair<String, String[][][]>> passarString() {
+
+        int nAules = horari.keySet().size();
+        int nDies = 5;
+        int nHores = PlaEstudis.getHoraFi() - PlaEstudis.getHoraInici();
+        int nAssig = 3;
+
+        inout io = new inout();
+
+        // Como lo puedo declarar ¿?
+        // Problema:
+        //
+        //      · Necesito info de la Matriz por Assignatura.
+        //      · Pair<String, String[][][]> <- Como se declara ¿?
+
+        String[][][] horariAula = new String[nDies][nHores][nAssig];
+        ArrayList<Pair<String, String[][][]>> horariText = new ArrayList<Pair<String, String[][][]>>();
+
+        int i = 0;
+        for (String aula : horari.keySet()) {
+
+            for (int hora = PlaEstudis.getHoraInici(); hora < PlaEstudis.getHoraFi(); ++hora) {
+                for (int dia = 0; dia < nDies; ++dia) {
+
+                    if(horari.get(aula).getCasella(dia, hora) != null) {
+                        horariAula[dia][hora-PlaEstudis.getHoraInici()][0] = horari.get(aula).getCasella(dia, hora).getNomAssig();
+                        horariAula[dia][hora-PlaEstudis.getHoraInici()][1] = String.valueOf(horari.get(aula).getCasella(dia, hora).getNumGrup());
+                        horariAula[dia][hora-PlaEstudis.getHoraInici()][2] = "?";
+                        switch (horari.get(aula).getCasella(dia, hora).getTipus()) {
+                            case TEORIA:
+                                horariAula[dia][hora-PlaEstudis.getHoraInici()][2] = "T";
+                                break;
+                            case LABORATORI:
+                                horariAula[dia][hora-PlaEstudis.getHoraInici()][2] = "L";
+                                break;
+                            case PROBLEMES:
+                                horariAula[dia][hora-PlaEstudis.getHoraInici()][2] = "P";
+                                break;
+                        }
+                    }
+                    else {
+                        horariAula[dia][hora-PlaEstudis.getHoraInici()][0] = null;
+                        horariAula[dia][hora-PlaEstudis.getHoraInici()][1] = null;
+                        horariAula[dia][hora-PlaEstudis.getHoraInici()][2] = null;
+                    }
+                }
+            }
+
+            Pair<String, String[][][]> elementHorari = new Pair<String, String[][][]>(aula, horariAula);
+            horariText.add(elementHorari);
+            ++i;
+
+        }
+
+
+        return horariText;
     }
 }

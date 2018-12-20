@@ -49,7 +49,7 @@ public class CtrlDominiCarregarDades {
 
     private void carregarAules(String[][] aules) {
 
-        ConjuntAules cjtAules = ConjuntAules.getInstance();
+        ConjuntAules cjtAules = PlaEstudis.getConjuntAules();
 
         // Comprovació Errors Aules
         try {

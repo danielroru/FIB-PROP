@@ -1,164 +1,167 @@
 package dominio.controladores;
 
-import dominio.classes.*;
-
 import java.util.*;
+
+import dominio.classes.*;
+import javafx.util.Pair;
+
+/*
+        1] Carregar Set De Persistencia
+        2] Generar Horari
+        3] Guardar Horari
+        4] Carregar Horari
+        0] Sortir de l'aplicació
+*/
+
+
 
 public class CtrlDomini {
 
-    private static HashSet<Sessio> sessions;
+    private static CtrlDomini instance = new CtrlDomini();
 
-    private static HashSet<UAH> UAHmatins = new HashSet<>();
-    private static HashSet<UAH> UAHtardes = new HashSet<>();
-    private static HashSet<UAH> UAHteoria = new HashSet<>();
-    private static HashSet<UAH> UAHlaboratori = new HashSet<>();
+    private static CtrlPresentacio ctrlPresentacio = CtrlPresentacio.getInstance();
 
-    private static Horari ultimHorari = new Horari();
+    private static CtrlDominiCarregarDades ctrlDominiCarregarDades = CtrlDominiCarregarDades.getInstance();
+    private static CtrlDominiGenerarHorari ctrlDominiGenerarHorari = CtrlDominiGenerarHorari.getInstance();
+    private static CtrlDominiGuardarHorari ctrlDominiGuardarHorari = CtrlDominiGuardarHorari.getInstance();
+    private static CtrlDominiCarregarHorari ctrlDominiCarregarHorari = CtrlDominiCarregarHorari.getInstance();
 
-    private static CtrPersistencia ctrPersistencia;
+    private static CtrlPersistencia ctrlPersistencia = CtrlPersistencia.getInstance();
 
-    public void inicialitzar() {
-        ctrPersistencia = new CtrPersistencia();
+    private static Horari ultimHorari;
+    private static PlaEstudis plaEstudis = PlaEstudis.getInstance();
+
+    private CtrlDomini() {
+
     }
 
-    public static void reset() {
-        UAHmatins = new HashSet<>();
-        UAHtardes = new HashSet<>();
-        UAHteoria = new HashSet<>();
-        UAHlaboratori = new HashSet<>();
+    public static CtrlDomini getInstance() {
+        return instance;
     }
 
-    public static boolean existeixUltimHorari() {
-        return ultimHorari.getHorari().size() != 0;
+
+    /*
+    *   ------------
+    *   Opcions Menú
+    *   ------------
+    * */
+
+    // [ Opció 1 ] Carreguem Dades
+
+    public static void carregarDades(String fitxer) {
+        ctrlDominiCarregarDades.carregarDades(fitxer);
     }
 
-    public static void generarHorari(){
-        reset();
-        crearUAHs();
-        crearSessions();
-        ultimHorari = GeneradorHorari.generarHorari();
-        ultimHorari.mapejaHorari();
-        ultimHorari.imprimirHorari();
+    // [ Opció 2 ] Generar Horari
+
+    public static ArrayList<Pair<String, String[][][]>> generarHorari() {
+
+        ultimHorari = ctrlDominiGenerarHorari.generarHorari();
+        ArrayList<Pair<String, String[][][]>> horari = ctrlDominiGenerarHorari.escriureHorari();
+        return horari;
+
     }
 
-    public static void guardarHorari() {
-        try {
-            if (!existeixUltimHorari()) throw new Exception ("    ERROR: Encara no has generat cap horari");
-            inout io = new inout();
 
-            io.write("Quin nom li vols posar?");
-            String path = io.readline();
+    // [ Opció 3 ] Guardar Horari
 
-            ultimHorari.guardarHorari(path);
+    public static void guardarHorari(String text) {
+
+        ctrlDominiGuardarHorari.guardarHorari(ultimHorari.getHorari(), text);
+    }
+
+    // [ Opció 4 ] Carregar Horari
+
+    public static ArrayList<Pair<String, String[][][]>> carregarHorari(String text) {
+        Map<String, Matriu> horari = ctrlDominiCarregarHorari.carregarHorari(ultimHorari, text);
+        ultimHorari.setHorari(horari);
+        ArrayList<Pair<String, String[][][]>> horariEscriure = ultimHorari.passarString();
+        return horariEscriure;
+    }
+
+
+    /*
+     *   ----------------
+     *   Informació Vista
+     *   ----------------
+     * */
+
+
+    // Retorna informació de l'Aula
+
+    //
+
+    public static String[] getAula(String id) {
+        String[] info = new String[3];
+        ConjuntAules cjtAules = plaEstudis.getConjuntAules();
+        Aula aula = cjtAules.getAula(id);
+        info[0] = aula.getId();
+        info[1] = String.valueOf(aula.getCapacitat());
+        info[2] = String.valueOf(aula.getTipusAula());
+        return info;
+    }
+
+
+    // assignatures[x][0] = nom
+    // assignatures[x][1] = nivell
+    // assignatures[x][2] = nHoresT
+    // assignatures[x][3] = nHoresL
+    // assignatures[x][4] = nHoresP
+    // assignatures[x][5] = nGrupsT
+    // assignatures[x][6] = nGrupsL
+    // assignatures[x][7] = nGrupsP
+    // assignatures[x][8] = nGrupsMati
+    // assignatures[x][9] = nAlumnesT
+    // assignatures[x][10] = nAlumnesL
+    // assignatures[x][11] = nAlumnesP
+    // assignatures[x][12] = horesBlocT
+    // assignatures[x][13] = horesBlocL
+    // assignatures[x][14] = horesBlocP
+
+    public static String[] getAssig(String nom) {
+        String[] info = new String[19];
+        ConjuntAssignatures cjtAssig = plaEstudis.getConjuntAssignatures();
+        Assignatura assig = cjtAssig.getAssignatura(nom);
+        info[0] = assig.getNom();
+        info[1] = String.valueOf(assig.getNivell());
+        info[2] = String.valueOf(assig.getnHoresT());
+        info[3] = String.valueOf(assig.getnHoresL());
+        info[4] = String.valueOf(assig.getnHoresP());
+        info[5] = String.valueOf(assig.getnGrupsT());
+        info[6] = String.valueOf(assig.getnGrupsL());
+        info[7] = String.valueOf(assig.getnGrupsP());
+        info[8] = String.valueOf(assig.getnGrupsMati());
+        info[9] = String.valueOf(assig.getnAlumnesT());
+        info[10] = String.valueOf(assig.getnAlumnesL());
+        info[11] = String.valueOf(assig.getnAlumnesP());
+        info[12] = String.valueOf(assig.getHoresBlocT());
+        info[13] = String.valueOf(assig.getHoresBlocL());
+        info[14] = String.valueOf(assig.getHoresBlocP());
+        return info;
+    }
+
+    public static String[] getHores() {
+        String[] horariPE = new String[3];
+        horariPE[0] = String.valueOf(plaEstudis.getHoraInici());
+        horariPE[1] = String.valueOf(plaEstudis.getHoraFi());
+        horariPE[2] = String.valueOf(plaEstudis.getHoraCanviFranja());
+        return horariPE;
+    }
+
+    public static Set<String> llistarAules() {
+
+        return PlaEstudis.getConjuntAules().getNomsAules();
+    }
+
+    public static String[] llistarAssigs() {
+        ConjuntAssignatures cjtAssig = plaEstudis.getConjuntAssignatures();
+        String[] llistaAssig = new String[cjtAssig.getAssignatures().size()];
+        int i = 0;
+        for(Assignatura assig : cjtAssig.getAssignatures()) {
+            llistaAssig[i] = assig.getNom();
         }
-        catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-
+        return llistaAssig;
     }
 
-    public static void llegirHorari() {
-        try {
-            if (PlaEstudis.isNull()) throw new Exception ("    ERROR: Encara no has carregat les dades de persistència");
-            inout io = new inout();
-
-            io.write("Quin fitxer vols carregar?");
-            String path = io.readline();
-
-            ultimHorari.llegirHorari(path);
-            ultimHorari.imprimirHorari();
-        }
-        catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-
-    }
-
-    public void carregarSetAssignatures(String path) {
-        ctrPersistencia.carregarAssignatures(path);
-    }
-
-
-
-    public static Set<Sessio> getSessionsByIdAssig(String idAssig) {
-        Set<Sessio> SessionsAssig = new HashSet<>();
-        for (Sessio s : sessions) {
-            if (s.getAssignatura().getNom() == idAssig) SessionsAssig.add(s);
-        }
-        return SessionsAssig;
-    }
-
-    private static void crearSessions() {
-
-        sessions = new HashSet<Sessio>();
-
-        for (Assignatura a : PlaEstudis.getConjuntAssignatures().getAssignatures()) {
-            for(int i = 1; i <= a.getnGrupsT(); ++i) {
-                Sessio sT = new Sessio();
-                sT.setAssignatura(a);
-                sT.setIdGrup(i * 10);
-                sT.setTipus(Enumeracio.TipusSessio.TEORIA);
-                sessions.add(sT);
-
-                for (int j = 1; j <= a.getnGrupsL(); ++j) {
-                    Sessio sL = new Sessio();
-                    sL.setAssignatura(a);
-                    sL.setIdGrup(i * 10 + j);
-                    sL.setTipus(Enumeracio.TipusSessio.LABORATORI);
-                    sessions.add(sL);
-                }
-
-                for (int j = 1; j <= a.getnGrupsP(); ++j) {
-                    Sessio sP = new Sessio();
-                    sP.setAssignatura(a);
-                    sP.setIdGrup(i * 10 + j);
-                    sP.setTipus(Enumeracio.TipusSessio.PROBLEMES);
-                    sessions.add(sP);
-                }
-            }
-        }
-
-    }
-
-
-    private static void crearUAHs() {
-
-        for (Aula a : PlaEstudis.getConjuntAules().getAules()) {
-            for (Enumeracio.Dia dia : Enumeracio.Dia.values()) {
-                for (int i = PlaEstudis.getHoraInici(); i < PlaEstudis.getHoraFi(); i++) {
-                    UAH uah = new UAH();
-
-                    uah.setHora(i);
-                    uah.setDia(dia);
-                    uah.setAula(a);
-
-                    if (i < PlaEstudis.getHoraCanviFranja()) UAHmatins.add(uah);
-                    else UAHtardes.add(uah);
-
-                    if ((a.getTipusAula()).equals(Enumeracio.TipusAula.TEORIA)) UAHteoria.add(uah);
-                    else UAHlaboratori.add(uah);
-                }
-            }
-        }
-    }
-
-    public static HashSet<UAH> getUAHmatins() {
-        return UAHmatins;
-    }
-
-    public static HashSet<UAH> getUAHtardes() {
-        return UAHtardes;
-    }
-
-    public static HashSet<UAH> getUAHteoria() {
-        return UAHteoria;
-    }
-
-    public static HashSet<UAH> getUAHlaboratori() {
-        return UAHlaboratori;
-    }
-
-    public static HashSet<Sessio> getSessions() {
-        return sessions;
-    }
 }
+

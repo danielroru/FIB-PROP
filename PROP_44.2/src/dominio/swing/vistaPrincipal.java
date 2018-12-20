@@ -4,110 +4,115 @@ import dominio.controladores.CtrlPresentacio;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class vistaPrincipal {
+public class vistaPrincipal extends JFrame{
 
-    private JButton gestionarDadesButton = new JButton("Gestionar Dades");
-    private JButton carregarSetDeDadesButton = new JButton("Carregar Dades");
-    private JButton gestionarHorariButton = new JButton("Gestionar Horari");
+    private JButton carregarDadesButton;
+    private JButton generarHorariButton;
+    private JButton guardarHorariButton;
+    private JButton carregarHorariButton;
+    private JButton modificarHorariButton;
+    private JButton editarDadesButton;
+    private JButton sortirButton;
 
-    private JPanel panelContinguts = new JPanel();
-    private JPanel panelBotons = new JPanel();
-    private JPanel panelInformacio = new JPanel();
-    private JPanel panelInformacioA = new JPanel();
-    private JPanel panelInformacio1 = new JPanel();
+    private JPanel panelContinguts;
 
-    private int iPanelActivo = 0;
+    private CtrlPresentacio pCtrPresentacio = CtrlPresentacio.getInstance();
 
-    static JFrame frameVista = new JFrame("Generador d'horaris");
+    boolean valor = false;
 
-    private CtrlPresentacio iCtrlPresentacio;
+    //private int iPanelActivo = 0;
 
-    public vistaPrincipal(CtrlPresentacio pCtrPresentacio) {
+    //static JFrame frameVista = new JFrame("Generador d'horaris");
 
-        iCtrlPresentacio = pCtrPresentacio;
 
-        //frameVista.setContentPane(panelContinguts);
-        inicialitzarComponents();
-        frameVista.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    public vistaPrincipal() {
+        carregarDadesButton = new JButton();
+        generarHorariButton  = new JButton();
+        guardarHorariButton  = new JButton();
+        carregarDadesButton  = new JButton();
+        carregarDadesButton = new JButton();
+        modificarHorariButton  = new JButton();
+        editarDadesButton = new JButton();
+        sortirButton = new JButton();
 
-        /**carregarSetDeDadesButton.addActionListener(new ActionListener() {
+        panelContinguts = new JPanel();
+        setSize(400, 600);
+        setLocationRelativeTo(null);
+        setContentPane(panelContinguts);
+        setVisible(true);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+
+        ActionListener carregarDades = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFileChooser chooser = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
-                chooser.setDialogTitle("Selecciona el set d'Assignatures");
-                chooser.setCurrentDirectory(new File(System.getProperty("user.dir") + "/src/persistencia"));
-                int returnValue = chooser.showOpenDialog(null);
-
-                if (returnValue == JFileChooser.APPROVE_OPTION) {
-                    File arxiu = chooser.getSelectedFile();
-                    System.out.println("Arxiu escollit: " + arxiu.getAbsolutePath());
-                    iCtrlPresentacio.carregarSetDades(arxiu.getAbsolutePath());
-                }
+                pCtrPresentacio.vistaCarregarDades();
+                setVisible(false);
             }
 
-        });
-        gestionarDadesButton.addActionListener(new ActionListener() {
+        };
+
+        ActionListener generarHorari = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                vistaGestionarDades vista2 = new vistaGestionarDades(iCtrlPresentacio);
-                vista2.ferVisible();
+                pCtrPresentacio.vistaGenerarHorari();
+                setVisible(false);
             }
-        });
-        gestionarHorariButton.addActionListener(new ActionListener() {
+
+        };
+
+        ActionListener guardarHorari = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                vistaResultatHorari vista2 = new vistaResultatHorari(iCtrlPresentacio);
-                vista2.ferVisible();
+                pCtrPresentacio.vistaGuardarHorari();
+                setVisible(false);
             }
-        });**/
+
+        };
+
+        ActionListener carregarHorari = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                pCtrPresentacio.vistaCarregarHorari();
+                setVisible(false);
+            }
+
+        };
+
+        ActionListener modificarHorari = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                pCtrPresentacio.vistaModificarHorari();
+                setVisible(false);
+            }
+
+        };
+
+        ActionListener editarDades = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                pCtrPresentacio.vistaEditarDades();
+                setVisible(false);
+            }
+
+        };
+
+        ActionListener sortir = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+
+        };
+        carregarDadesButton.addActionListener(carregarDades);
+        generarHorariButton.addActionListener(generarHorari);
+        guardarHorariButton.addActionListener(guardarHorari);
+        carregarHorariButton.addActionListener(carregarHorari);
+        modificarHorariButton.addActionListener(modificarHorari);
+        editarDadesButton.addActionListener(editarDades);
+        sortirButton.addActionListener(sortir);
     }
-
-
-    public void ferVisible() {
-        frameVista.pack();
-        frameVista.setVisible(true);
-    }
-
-    private void inicialitzarComponents() {
-        inicialitzarFrame();
-        inicialitzarPanelContinguts();
-        inicialitzarPanelInformacio();
-        inicialitzarPanelInformacio1();
-    }
-
-    private void inicialitzarFrame() {
-        frameVista.setMinimumSize(new Dimension(700,400));
-        frameVista.setPreferredSize(frameVista.getMinimumSize());
-        frameVista.setResizable(false);
-        // Posicion y operaciones por defecto
-        frameVista.setLocationRelativeTo(null);
-        frameVista.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        // Se agrega panelContenidos al contentPane (el panelContenidos se
-        // podria ahorrar y trabajar directamente sobre el contentPane)
-        JPanel contentPane = (JPanel) frameVista.getContentPane();
-        contentPane.add(panelContinguts);
-    }
-
-    private void inicialitzarPanelContinguts() {
-        panelContinguts.setLayout(new BorderLayout());
-
-        panelContinguts.add(panelInformacio1,BorderLayout.NORTH);
-        //panelContinguts.add(panelInformacion,BorderLayout.CENTER);
-    }
-
-    private void inicialitzarPanelInformacio() {
-        panelInformacioA = panelInformacio1;
-        iPanelActivo = 1;
-        panelInformacio.add(panelInformacioA);
-    }
-
-    private void inicialitzarPanelInformacio1() {
-        panelInformacio1.setLayout(new FlowLayout());
-        // Componentes
-        panelInformacio1.add(gestionarDadesButton);
-
-    }
-
-
 }

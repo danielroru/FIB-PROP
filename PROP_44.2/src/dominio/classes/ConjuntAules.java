@@ -8,20 +8,11 @@ public class ConjuntAules {
         ATRIBUTS
     -------------------------------------------------------------------------- */
 
-    private Set<Aula> conjuntAules = new HashSet<Aula>();
+    private Map<String, Aula> conjuntAules = new HashMap<>();
 
     /* --------------------------------------------------------------------------
         MÈTODES
     -------------------------------------------------------------------------- */
-
-
-    public Set<Aula> getAules() {
-        return this.conjuntAules;
-    }
-
-    public void setConjuntAules(Set<Aula> cjtAules) {
-        this.conjuntAules = cjtAules;
-    }
 
     /**
      * Afegeix una aula a la instància
@@ -30,7 +21,20 @@ public class ConjuntAules {
      * @return la instància amb l'Aula afegida
      */
     public void afegirAula(Aula a) {
-        this.conjuntAules.add(a);
+        this.conjuntAules.put(a.getId(), a);
+    }
+
+    public Aula getAula(String id) {
+        return this.conjuntAules.get(id);
+    }
+
+    public Set<String> getNomsAules() {
+
+        return conjuntAules.keySet();
+    }
+
+    public Set<Aula> getAules() {
+        return new HashSet<>(conjuntAules.values());
     }
 
 }

@@ -1,6 +1,7 @@
 package dominio.classes;
 
 import dominio.controladores.CtrlDomini;
+import dominio.controladores.CtrlDominiGenerarHorari;
 
 import java.util.*;
 
@@ -24,7 +25,7 @@ public class GeneradorHorari {
 
         G = new Graph();
 
-        for (Sessio s : CtrlDomini.getSessions()) {
+        for (Sessio s : CtrlDominiGenerarHorari.getSessions()) {
 
             //INICIALITZACIÓ VÈRTEXS
             Set<UAH> domini = new HashSet<UAH>(RestriccioUnaria.crearDomini(s));
@@ -76,7 +77,7 @@ public class GeneradorHorari {
 
         iniGraf();
         Horari solucio = new Horari();
-        Queue<Sessio> vfutures = new LinkedList<Sessio>(CtrlDomini.getSessions());
+        Queue<Sessio> vfutures = new LinkedList<Sessio>(CtrlDominiGenerarHorari.getSessions());
 
         solucio = backtracking_cronologic(vfutures, solucio);
         return solucio;

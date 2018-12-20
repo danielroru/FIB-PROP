@@ -1,6 +1,7 @@
 package dominio.classes;
 
 import dominio.controladores.CtrlDomini;
+import dominio.controladores.CtrlDominiGenerarHorari;
 
 import java.util.*;
 
@@ -9,7 +10,7 @@ public class RestriccioBinaria {
     public static HashSet<Sessio> arestesCorrequisits(Sessio s) {
         HashSet<Sessio> resultat = new HashSet<>();
         for (Assignatura correq : s.getAssignatura().getCorrequisits().getAssignatures())
-            resultat.addAll(CtrlDomini.getSessionsByIdAssig(correq.getNom()));
+            resultat.addAll(CtrlDominiGenerarHorari.getSessionsByIdAssig(correq.getNom()));
 
         return resultat;
     }
@@ -22,7 +23,7 @@ public class RestriccioBinaria {
         // Iterem per totes les assignatures del mateix nivell que s
         for (Assignatura a : PlaEstudis.getConjuntAssignatures().getAssigsByNivell(NivellSessio)) {
             // Iterem per totes les sessions de totes les assignatures del nivell de s
-            for (Sessio sAssig : CtrlDomini.getSessionsByIdAssig(a.getNom())) {
+            for (Sessio sAssig : CtrlDominiGenerarHorari.getSessionsByIdAssig(a.getNom())) {
                 if (s != sAssig) {
                     // Si la sessió s és de teoria
                     if (s.getTipus().equals(Enumeracio.TipusSessio.TEORIA)) {
