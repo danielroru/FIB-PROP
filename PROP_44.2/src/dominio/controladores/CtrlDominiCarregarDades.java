@@ -155,7 +155,7 @@ public class CtrlDominiCarregarDades {
 
                 // Afagir en el Conjunt d'Aules
 
-                pE.afegirAssignatura(assig);
+                pE.getConjuntAssignatures().afegirAssignatura(assig);
 
             }
         } catch (IOException e) {

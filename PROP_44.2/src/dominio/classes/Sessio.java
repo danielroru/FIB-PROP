@@ -27,10 +27,6 @@ public class Sessio {
         return this.assignatura;
     }
 
-    public void setAssignatura(Assignatura assig) {
-        this.assignatura = assig;
-    }
-
     public int getIdGrup() {
         return this.idGrup;
     }
@@ -40,6 +36,9 @@ public class Sessio {
     }
 
     // Modificadores
+    public void setAssignatura(Assignatura assig) {
+        this.assignatura = assig;
+    }
 
     public void setIdGrup(int idGrup) {
         this.idGrup = idGrup;
@@ -49,9 +48,4 @@ public class Sessio {
         this.tipus = tipus;
     }
 
-    /*@Override
-    public int compareTo(Sessio o) {
-        return 0;
-    }
-    */
 }

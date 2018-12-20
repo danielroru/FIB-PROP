@@ -4,6 +4,9 @@ public class PlaEstudis {
 
     private static PlaEstudis instance = new PlaEstudis();
 
+    private PlaEstudis(){
+    }
+
     private static ConjuntAssignatures cjtAssignatures = new ConjuntAssignatures();
     private static ConjuntAules cjtAules = new ConjuntAules();
 
@@ -11,14 +14,10 @@ public class PlaEstudis {
     private static int horaFi = -1;
     private static int horaCanviFranja = -1;
 
-
-    private PlaEstudis(){
-    }
-
     public static void reset() {
         instance = new PlaEstudis();
         cjtAssignatures = new ConjuntAssignatures();
-        cjtAules.reset();
+        cjtAules = new ConjuntAules();
     }
 
     public static PlaEstudis getInstance() {
@@ -60,10 +59,6 @@ public class PlaEstudis {
     }
 
     // Conjunt Assignatures
-
-    public static void afegirAssignatura(Assignatura a) {
-        cjtAssignatures.afegirAssignatura(a);
-    }
 
     public static ConjuntAssignatures getConjuntAssignatures() {
         return cjtAssignatures;

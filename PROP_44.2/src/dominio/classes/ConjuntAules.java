@@ -7,8 +7,7 @@ public class ConjuntAules {
         ATRIBUTS
     -------------------------------------------------------------------------- */
 
-    private static HashMap<String, Aula> conjuntAules = new HashMap<String, Aula>();
-    private static ConjuntAules instance = new ConjuntAules();
+    private HashMap<String, Aula> conjuntAules = new HashMap<String, Aula>();
 
     /* --------------------------------------------------------------------------
         MÈTODES
@@ -19,10 +18,6 @@ public class ConjuntAules {
         return new HashSet<>(this.conjuntAules.values());
     }
 
-
-    public void reset() {
-        instance = new ConjuntAules();
-    }
 
     /**
      * Afegeix una aula a la instància

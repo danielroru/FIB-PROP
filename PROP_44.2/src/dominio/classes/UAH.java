@@ -1,6 +1,6 @@
 package dominio.classes;
 
-public class UAH implements Comparable<UAH> {
+public class UAH {
 
     // Atributs
 
@@ -68,6 +68,8 @@ public class UAH implements Comparable<UAH> {
         this.dia = dia;
     }
 
+    /*
+    public class UAH implements Comparable<UAH> { }
     public int compareTo(UAH uah1) {
 
         int compareAula = (this.aula.getId()).compareTo(uah1.getAula().getId());
@@ -81,6 +83,6 @@ public class UAH implements Comparable<UAH> {
         else {
             return compareAula;
         }
-    }
+    }*/
 
 }
