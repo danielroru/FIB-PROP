@@ -87,7 +87,7 @@ public class CtrlDomini {
 
     public static ArrayList<Pair<String, String[][][]>> modificarDades(String oldDia, String oldHora, String oldAula,
                                       String newDia, String newHora, String newAula) {
-        ultimHorari = ctrlDominiGenerarHorari.modificarDades(oldDia, oldHora, oldAula, newDia, newHora, newAula, ultimHorari);
+        ultimHorari = CtrlDominiGenerarHorari.modificarDades(oldDia, oldHora, oldAula, newDia, newHora, newAula, ultimHorari);
         ArrayList<Pair<String, String[][][]>> horariEscriure = ultimHorari.passarString();
         return horariEscriure;
     }
@@ -161,24 +161,12 @@ public class CtrlDomini {
         return horariPE;
     }
 
-    public static String[] llistarAules() {
-        ConjuntAules cjtAules = plaEstudis.getConjuntAules();
-        String[] llistaAules = new String[cjtAules.getAules().size()];
-        int i = 0;
-        for(Aula aula : cjtAules.getAules()) {
-            llistaAules[i] = aula.getId();
-        }
-        return llistaAules;
+    public static HashSet<String> llistarAules() {
+       return PlaEstudis.llistarAules();
     }
 
-    public static String[] llistarAssigs() {
-        ConjuntAssignatures cjtAssig = plaEstudis.getConjuntAssignatures();
-        String[] llistaAssig = new String[cjtAssig.getAssignatures().size()];
-        int i = 0;
-        for(Assignatura assig : cjtAssig.getAssignatures()) {
-            llistaAssig[i] = assig.getNom();
-        }
-        return llistaAssig;
+    public static HashSet<String> llistarAssigs() {
+        return PlaEstudis.llistarAssignatures();
     }
 
     public static Horari getUltimHorari() {
@@ -188,4 +176,5 @@ public class CtrlDomini {
     public static void setUltimHorari(Horari ultimHorari) {
         CtrlDomini.ultimHorari = ultimHorari;
     }
+
 }

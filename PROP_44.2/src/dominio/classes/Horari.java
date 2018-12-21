@@ -1,9 +1,5 @@
 package dominio.classes;
 
-import dominio.JSON.JSONArray;
-import dominio.JSON.JSONObject;
-import dominio.JSON.parser.JSONParser;
-import dominio.JSON.parser.ParseException;
 import dominio.controladores.CtrlDomini;
 import dominio.controladores.CtrlDominiGenerarHorari;
 import javafx.util.Pair;

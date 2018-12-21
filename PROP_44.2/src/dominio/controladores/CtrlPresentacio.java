@@ -10,6 +10,8 @@ import presentacio.GestionarHoraris.vistaVeureHorari;
 import javafx.util.Pair;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 public class CtrlPresentacio {
 
@@ -47,13 +49,13 @@ public class CtrlPresentacio {
 
     // Retornem tots els ID de les Aules
 
-    public static String[] llistarAules() {
+    public static HashSet<String> llistarAules() {
         return cD.llistarAules();
     }
 
     // Retornem tots els noms de les Assignatures
 
-    public static String[] llistarAssigs() {
+    public static HashSet<String> llistarAssigs() {
         return cD.llistarAssigs();
     }
 

@@ -1,10 +1,13 @@
 package presentacio.EditarDades;
 
+import dominio.controladores.CtrlDomini;
 import dominio.controladores.CtrlPresentacio;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.HashSet;
+import java.util.Set;
 
 public class vistaEditarDades extends JFrame {
 
@@ -26,6 +29,15 @@ public class vistaEditarDades extends JFrame {
         setLocationRelativeTo(null);
         setLayout(null);
 
+        if (CtrlPresentacio.llistarAssigs() != new HashSet<String>()) {
+            String[] result = (CtrlPresentacio.llistarAssigs()).toArray(new String[CtrlPresentacio.llistarAssigs().size()]);
+            assignatures = new JComboBox<String>(result);
+        }
+
+        if (CtrlPresentacio.llistarAules() != new HashSet<String>()) {
+            String[] result = (CtrlPresentacio.llistarAules()).toArray(new String[CtrlPresentacio.llistarAules().size()]);
+            aules = new JComboBox<String>(result);
+        }
 
         /* Títol Vista */
 

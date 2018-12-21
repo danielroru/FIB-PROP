@@ -22,6 +22,7 @@ public class vistaEditarAula extends JFrame {
 
     private JTextField textID = new JTextField(ID);
     private JTextField textCapacitat = new JTextField(Capacitat);
+    ButtonGroup group = new ButtonGroup();
     private JRadioButton teoriaRadioButton = new JRadioButton();
     private JRadioButton laboratoriRadioButton = new JRadioButton();
 
@@ -31,6 +32,8 @@ public class vistaEditarAula extends JFrame {
     private CtrlPresentacio iCtrlPresentacio = CtrlPresentacio.getInstance();
 
     public vistaEditarAula() {
+        group.add(teoriaRadioButton);
+        group.add(laboratoriRadioButton);
 
         setSize(400, 600);
         setLocationRelativeTo(null);

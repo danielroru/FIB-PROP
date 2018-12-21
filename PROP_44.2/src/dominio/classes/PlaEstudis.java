@@ -1,5 +1,8 @@
 package dominio.classes;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class PlaEstudis {
 
 
@@ -82,5 +85,13 @@ public class PlaEstudis {
 
     public static void setCjtAules(ConjuntAules cjt) {
         cjtAules = cjt;
+    }
+
+    public static HashSet<String> llistarAules() {
+        return cjtAules.llistarAules();
+    }
+
+    public static HashSet<String> llistarAssignatures() {
+        return cjtAssignatures.llistarAssignatures();
     }
 }

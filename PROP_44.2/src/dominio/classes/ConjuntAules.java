@@ -48,6 +48,10 @@ public class ConjuntAules {
         return this.conjuntAules.containsKey(id);
     }
 
+    public HashSet<String> llistarAules() {
+        return new HashSet<>(conjuntAules.keySet());
+    }
+
 
 }
 
