@@ -85,7 +85,7 @@ public class vistaGestionarHoraris extends JFrame {
 
                 JFileChooser chooserCarregarHorari = new JFileChooser();;
                 chooserCarregarHorari.setDialogTitle("Carregar Horari");
-                chooserCarregarHorari.setCurrentDirectory(new File(System.getProperty("user.dir") + "/src/presentacio/Horaris"));
+                chooserCarregarHorari.setCurrentDirectory(new File(System.getProperty("user.dir") + "/data/Horaris"));
                 int returnValue = chooserCarregarHorari.showOpenDialog(null);
                 if (returnValue == JFileChooser.APPROVE_OPTION) {
                     File arxiu = chooserCarregarHorari.getSelectedFile();

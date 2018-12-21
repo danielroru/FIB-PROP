@@ -18,6 +18,7 @@ public class CtrlDomini {
 
     private static CtrlPersistencia ctrlPersistencia = CtrlPersistencia.getInstance();
 
+
     private static Horari ultimHorari;
     private static PlaEstudis plaEstudis = PlaEstudis.getInstance();
 
@@ -67,7 +68,7 @@ public class CtrlDomini {
 
     public static void guardarHorari(String text) {
 
-        ctrlDominiGuardarHorari.guardarHorari(ultimHorari, text);
+        ctrlDominiGuardarHorari.guardarHorari(plaEstudis, text);
     }
 
     // [ Opció 4 ] Carregar Horari
@@ -171,4 +172,11 @@ public class CtrlDomini {
         return llistaAssig;
     }
 
+    public static Horari getUltimHorari() {
+        return ultimHorari;
+    }
+
+    public static void setUltimHorari(Horari ultimHorari) {
+        CtrlDomini.ultimHorari = ultimHorari;
+    }
 }

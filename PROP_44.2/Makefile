@@ -14,8 +14,14 @@ class:
 test:
 	javac -Xlint:unchecked -cp src/persistencia/gson-2.6.2.jar -d bin $(CLASSES)/*.java $(CONTROLADORES)/*.java $(VISTES)/*.java $(VISTES2)/*.java $(VISTES3)/*.java $(VISTES4)/*.java
 
+jar:
+	jar cfm GeneradorHorari.jar manifest.txt -C bin dominio
+
+runjar:
+	java -jar GeneradorHorari.jar
+
 run:
-	java -cp bin ../src/persistencia/gson-2.6.2.jar dominio.classes.Main
+	java -cp bin ../src/persistencia/gson-2.6.2.jar bin.dominio.classes.Main
 
 clean:
 	rm -rf bin/dominio

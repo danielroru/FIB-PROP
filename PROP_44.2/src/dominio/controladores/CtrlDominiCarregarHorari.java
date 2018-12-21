@@ -17,12 +17,32 @@ public class CtrlDominiCarregarHorari {
         return instance;
     }
 
+    private class Pestudis {
+        public int horaInici;
+        public int horaFi;
+        public int horaCanviFranja;
+        public ConjuntAules cjtAules;
+        public ConjuntAssignatures cjtAssignatures;
+        public Horari horari;
+    }
+
+
     public static Horari carregarHorari(String path) {
 
         Gson gson = new Gson();
         String json = ctrlPersistencia.llegirfitxer(path);
 
-        return gson.fromJson(json, Horari.class);
+        Pestudis pe = gson.fromJson(json, Pestudis.class);
+
+        PlaEstudis.setCjtAssignatures(pe.cjtAssignatures);
+        PlaEstudis.setCjtAules(pe.cjtAules);
+        PlaEstudis.setHoraInici(pe.horaInici);
+        PlaEstudis.setHoraFi(pe.horaFi);
+        PlaEstudis.setHoraCanviFranja(pe.horaCanviFranja);
+        CtrlDomini.setUltimHorari(pe.horari);
+
+        return pe.horari;
+
     }
 
 }

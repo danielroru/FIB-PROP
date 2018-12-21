@@ -5,12 +5,10 @@ public class PlaEstudis {
 
     private PlaEstudis() {}
 
-    private static class Instance {
-        private static final PlaEstudis instance = new PlaEstudis();
-    }
+    private static PlaEstudis instance = new PlaEstudis();
 
     public static PlaEstudis getInstance() {
-        return Instance.instance;
+        return instance;
     }
 
 
