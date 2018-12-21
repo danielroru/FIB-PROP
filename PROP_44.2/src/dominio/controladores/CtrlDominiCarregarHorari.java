@@ -1,5 +1,6 @@
 package dominio.controladores;
 
+import com.google.gson.Gson;
 import dominio.classes.*;
 
 import java.util.HashMap;
@@ -16,16 +17,12 @@ public class CtrlDominiCarregarHorari {
         return instance;
     }
 
-    public static Map<String, Matriu> carregarHorari(Horari ultimHorari, String text) {
-        Map<String, Matriu> horari = new HashMap<>();
-        try {
-            if (PlaEstudis.isNull()) throw new Exception ("    ERROR: Encara no has carregat les dades de persistència");
-            horari = ctrlPersistencia.llegirHorari(text);
-        }
-        catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-        return horari;
+    public static Horari carregarHorari(String path) {
+
+        Gson gson = new Gson();
+        String json = ctrlPersistencia.llegirfitxer(path);
+
+        return gson.fromJson(json, Horari.class);
     }
 
 }

@@ -74,4 +74,12 @@ public class PlaEstudis {
     public static ConjuntAssignatures getConjuntAssignatures() {
         return cjtAssignatures;
     }
+
+    public static void setCjtAssignatures(ConjuntAssignatures cjtAssignatures) {
+        PlaEstudis.cjtAssignatures = cjtAssignatures;
+    }
+
+    public static void setCjtAules(ConjuntAules cjtAules) {
+        PlaEstudis.cjtAules = cjtAules;
+    }
 }
