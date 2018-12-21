@@ -20,6 +20,8 @@ public class CtrlPresentacio {
     private static int dadesPlaEstudis = 0;
     private static boolean complet = false;
 
+    private static CtrlDomini ctrlDomini;
+
 
     public CtrlPresentacio() {
     }
@@ -63,7 +65,7 @@ public class CtrlPresentacio {
 
 
     public static void inicialitzarPresentacio() {
-
+        ctrlDomini = new CtrlDomini();
         vistaPrincipal vPrincipal = new vistaPrincipal();
 
     }

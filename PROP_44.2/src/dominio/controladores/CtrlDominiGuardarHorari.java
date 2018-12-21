@@ -16,7 +16,7 @@ public class CtrlDominiGuardarHorari {
     }
 
 
-    public void guardarHorari(PlaEstudis plaEstudis, String path) {
+    public static void guardarHorari(PlaEstudis plaEstudis, String path) {
         try {
             //TODO
             // if (ultimHorari.getHorari().size() == 0) throw new Exception ("    ERROR: Encara no has generat cap horari");

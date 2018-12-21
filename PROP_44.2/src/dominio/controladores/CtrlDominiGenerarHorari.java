@@ -55,7 +55,7 @@ public class CtrlDominiGenerarHorari {
         reset();
         crearUAHs();
         crearSessions();
-        ultimHorari = GeneradorHorari.generarHorari(plaEstudis);
+        ultimHorari = GeneradorHorari.generarHorari();
         ultimHorari.mapejaHorari();
         return ultimHorari;
     }

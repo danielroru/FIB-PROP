@@ -24,7 +24,6 @@ public class PlaEstudis {
         horaCanviFranja = -1;
 
         ultimHorari = new Horari();
-
     }
 
     // Consultores

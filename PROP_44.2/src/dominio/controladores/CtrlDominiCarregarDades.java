@@ -43,7 +43,7 @@ public class CtrlDominiCarregarDades {
 
         ConjuntAssignatures cjtAssignatures = gson.fromJson(json, ConjuntAssignatures.class);
 
-        plaEstudis.setCjtAssignatures(cjtAssignatures);
+        CtrlDomini.getPlaEstudis().setCjtAssignatures(cjtAssignatures);
     }
 
     private class hores {
@@ -59,9 +59,9 @@ public class CtrlDominiCarregarDades {
 
         hores h = gson.fromJson(json, hores.class);
 
-        plaEstudis.setHoraInici(h.horaInici);
-        plaEstudis.setHoraFi(h.horaFi);
-        plaEstudis.setHoraCanviFranja(h.horaCanviFranja);
+        CtrlDomini.getPlaEstudis().setHoraInici(h.horaInici);
+        CtrlDomini.getPlaEstudis().setHoraFi(h.horaFi);
+        CtrlDomini.getPlaEstudis().setHoraCanviFranja(h.horaCanviFranja);
 
     }
 

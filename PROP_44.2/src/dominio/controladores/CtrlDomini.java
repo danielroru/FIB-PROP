@@ -7,26 +7,10 @@ import javafx.util.Pair;
 
 public class CtrlDomini {
 
-    private static CtrlDominiGenerarHorari ctrlDominiGenerarHorari;
-    private static CtrlDominiGuardarHorari ctrlDominiGuardarHorari;
-    private static CtrlDominiCarregarHorari ctrlDominiCarregarHorari;
-    private static CtrlDominiCarregarDades ctrlDominiCarregarDades;
-
-
-    public static PlaEstudis getPlaEstudis() {
-        return plaEstudis;
-    }
-
     private static PlaEstudis plaEstudis;
 
     public CtrlDomini() {
         plaEstudis = new PlaEstudis();
-
-
-        ctrlDominiGenerarHorari = new CtrlDominiGenerarHorari(plaEstudis);
-        ctrlDominiGuardarHorari = new CtrlDominiGuardarHorari(plaEstudis);
-        ctrlDominiCarregarHorari = new CtrlDominiCarregarHorari(plaEstudis);
-        ctrlDominiCarregarDades = new CtrlDominiCarregarDades(plaEstudis);
     }
 
     public static void carregarDirectori(String path) {
@@ -56,8 +40,8 @@ public class CtrlDomini {
 
     public static ArrayList<Pair<String, String[][][]>> generarHorari() {
 
-        CtrlDomini.getPlaEstudis().setUltimHorari(ctrlDominiGenerarHorari.generarHorari());
-        ArrayList<Pair<String, String[][][]>> horari = ctrlDominiGenerarHorari.escriureHorari();
+        CtrlDomini.getPlaEstudis().setUltimHorari(CtrlDominiGenerarHorari.generarHorari());
+        ArrayList<Pair<String, String[][][]>> horari = CtrlDominiGenerarHorari.escriureHorari();
         return horari;
 
     }
@@ -67,13 +51,13 @@ public class CtrlDomini {
 
     public static void guardarHorari(String text) {
 
-        ctrlDominiGuardarHorari.guardarHorari(plaEstudis, text);
+        CtrlDominiGuardarHorari.guardarHorari(plaEstudis, text);
     }
 
     // [ Opció 4 ] Carregar Horari
 
     public static ArrayList<Pair<String, String[][][]>> carregarHorari(String path) {
-        CtrlDomini.getPlaEstudis().setUltimHorari(ctrlDominiCarregarHorari.carregarHorari(path));
+        CtrlDomini.getPlaEstudis().setUltimHorari(CtrlDominiCarregarHorari.carregarHorari(path));
 
 
         ArrayList<Pair<String, String[][][]>> horariEscriure = CtrlDomini.getPlaEstudis().getUltimHorari().passarString();
@@ -163,6 +147,10 @@ public class CtrlDomini {
 
 
 
+    }
+
+    public static PlaEstudis getPlaEstudis() {
+        return plaEstudis;
     }
 
 
