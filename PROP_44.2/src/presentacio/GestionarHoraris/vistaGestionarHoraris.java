@@ -68,7 +68,8 @@ public class vistaGestionarHoraris extends JFrame {
             public void actionPerformed(ActionEvent e) {
 
                 JFileChooser chooserGuardarHorari = new JFileChooser();;
-                chooserGuardarHorari.setDialogTitle("Guardar Horari (Cal afegir l'extensió .jsont)");
+                chooserGuardarHorari.setDialogTitle("Guardar Horari (Nom de la carpeta on vols que es guardi)");
+                chooserGuardarHorari.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
                 chooserGuardarHorari.setCurrentDirectory(new File(System.getProperty("user.dir") + "/data/Horaris"));
                 int returnValue = chooserGuardarHorari.showSaveDialog(null);
                 if (returnValue == JFileChooser.APPROVE_OPTION) {
@@ -86,6 +87,7 @@ public class vistaGestionarHoraris extends JFrame {
                 JFileChooser chooserCarregarHorari = new JFileChooser();;
                 chooserCarregarHorari.setDialogTitle("Carregar Horari");
                 chooserCarregarHorari.setCurrentDirectory(new File(System.getProperty("user.dir") + "/data/Horaris"));
+                chooserCarregarHorari.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
                 int returnValue = chooserCarregarHorari.showOpenDialog(null);
                 if (returnValue == JFileChooser.APPROVE_OPTION) {
                     File arxiu = chooserCarregarHorari.getSelectedFile();

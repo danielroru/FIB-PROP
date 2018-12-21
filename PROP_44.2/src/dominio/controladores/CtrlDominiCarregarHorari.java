@@ -3,6 +3,10 @@ package dominio.controladores;
 import com.google.gson.Gson;
 import dominio.classes.*;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -24,21 +28,31 @@ public class CtrlDominiCarregarHorari {
     }
 
 
-    public static Horari carregarHorari(String path) {
+    public static void carregarHorari(String path) {
 
         Gson gson = new Gson();
-        String json = CtrlPersistencia.llegirfitxer(path);
 
-        Pestudis pe = gson.fromJson(json, Pestudis.class);
+        Path folder = Paths.get(path);
+        if(!Files.exists(folder)) {
+            try {
+                Files.createDirectories(folder);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 
-        plaEstudis.setCjtAssignatures(pe.cjtAssignatures);
-        plaEstudis.setCjtAules(pe.cjtAules);
-        plaEstudis.setHoraInici(pe.horaInici);
-        plaEstudis.setHoraFi(pe.horaFi);
-        plaEstudis.setHoraCanviFranja(pe.horaCanviFranja);
-        CtrlDomini.getPlaEstudis().setUltimHorari(pe.horari);
+        String json = CtrlPersistencia.llegirfitxer(path + "/assignatures.json");
+        CtrlDomini.getPlaEstudis().setCjtAssignatures(gson.fromJson(json, ConjuntAssignatures.class));
+        System.out.println("Assig carregades");
 
-        return pe.horari;
+        json = CtrlPersistencia.llegirfitxer(path + "/aules.json");
+        CtrlDomini.getPlaEstudis().setCjtAules(gson.fromJson(json, ConjuntAules.class));
+        System.out.println("Aules carregades");
+
+        Map<String, Matriu> instance = new HashMap<>();
+        json = CtrlPersistencia.llegirfitxer(path + "/horari.json");
+        CtrlDomini.getPlaEstudis().getUltimHorari().setHorari(gson.fromJson(json, instance.getClass()));
+        System.out.println("Aules carregades");
 
     }
 

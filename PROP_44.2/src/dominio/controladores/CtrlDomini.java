@@ -56,7 +56,8 @@ public class CtrlDomini {
     // [ Opció 4 ] Carregar Horari
 
     public static ArrayList<Pair<String, String[][][]>> carregarHorari(String path) {
-        CtrlDomini.getPlaEstudis().setUltimHorari(CtrlDominiCarregarHorari.carregarHorari(path));
+        CtrlDominiCarregarHorari.carregarHorari(path);
+        //CtrlDomini.getPlaEstudis().setUltimHorari();
 
 
         ArrayList<Pair<String, String[][][]>> horariEscriure = CtrlDomini.getPlaEstudis().getUltimHorari().passarString();
