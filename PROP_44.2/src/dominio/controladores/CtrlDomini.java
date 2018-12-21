@@ -79,6 +79,13 @@ public class CtrlDomini {
         return horariEscriure;
     }
 
+    // [ Opció 5 ] Modificar Horari
+
+    public static void modificarDades(String oldDia, String oldHora, String oldAula,
+                                      String newDia, String newHora, String newAula) {
+        ctrlDominiGenerarHorari.modificarDades(oldDia, oldHora, oldAula, newDia, newHora, newAula);
+    }
+
 
     /*
      *   ----------------

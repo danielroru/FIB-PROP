@@ -136,4 +136,9 @@ public class CtrlDominiGenerarHorari {
         return sessions;
     }
 
+
+    public static void modificarDades(String oldDia, String oldHora, String oldAula,
+                                      String newDia, String newHora, String newAula) {
+        
+    }
 }

@@ -165,12 +165,11 @@ public class Horari {
         //      · Necesito info de la Matriz por Assignatura.
         //      · Pair<String, String[][][]> <- Como se declara ¿?
 
-        String[][][] horariAula = new String[nDies][nHores][nAssig];
         ArrayList<Pair<String, String[][][]>> horariText = new ArrayList<Pair<String, String[][][]>>();
 
-        int i = 0;
-        for (String aula : horari.keySet()) {
 
+        for (String aula : horari.keySet()) {
+            String[][][] horariAula = new String[nDies][nHores][nAssig];
             for (int hora = PlaEstudis.getHoraInici(); hora < PlaEstudis.getHoraFi(); ++hora) {
                 for (int dia = 0; dia < nDies; ++dia) {
 
@@ -197,12 +196,11 @@ public class Horari {
                     }
                 }
             }
-
             Pair<String, String[][][]> elementHorari = new Pair<String, String[][][]>(aula, horariAula);
             horariText.add(elementHorari);
-            ++i;
 
         }
+
 
 
         return horariText;
