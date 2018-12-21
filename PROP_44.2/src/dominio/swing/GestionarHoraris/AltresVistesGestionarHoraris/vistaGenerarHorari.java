@@ -55,7 +55,6 @@ public class vistaGenerarHorari extends JFrame {
     private JButton endarrereButton = new JButton("Endarrere");
     private JTable horari = new JTable(data, columnNames);
     private JComboBox aules = new JComboBox(conjuntAules);
-    private JTextField tf = new JTextField(128);
 
     private ArrayList<Pair<String, String[][][]>> horariImprimir;
     private Object[][] informacioHorari = new Object[14][6];
