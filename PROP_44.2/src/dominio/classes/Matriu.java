@@ -23,4 +23,10 @@ public class Matriu {
     public Casella getCasella(int i, int j) {
         return matriu[i][j-PlaEstudis.getHoraInici()];
     }
+
+    public void swap(int i1, int j1, int i2, int j2) {
+        Casella aux = matriu[i1][j1];
+        matriu[i1][j1] = matriu[i2][j2];
+        matriu[i2][j2] = aux;
+    }
 }

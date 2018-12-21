@@ -31,7 +31,7 @@ public class vistaPrincipal extends JFrame {
 
         /* Títol Vista */
 
-        titolVista.setBounds(100,70,120,30);
+        titolVista.setBounds(100,50,120,30);
         add(titolVista);
 
 

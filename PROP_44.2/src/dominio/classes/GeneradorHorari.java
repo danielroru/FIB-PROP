@@ -131,9 +131,6 @@ public class GeneradorHorari {
         valPoss = G.copyVertexs();
         Horari solucio = new Horari();
         Queue<Sessio> vfutures = new LinkedList<Sessio>(CtrlDominiGenerarHorari.getSessions());
-        //Map<Sessio, Set<UAH>> vals = G.copyVertexs();
-        int compt = 0;
-        //int compt2 = 0;
         solucio = forward_checking(vfutures, solucio);
         return solucio;
     }

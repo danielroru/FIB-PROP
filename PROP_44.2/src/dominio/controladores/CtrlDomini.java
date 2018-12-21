@@ -25,6 +25,10 @@ public class CtrlDomini {
 
     }
 
+    public static void carregarDirectori(String directori) {
+        ctrlDominiCarregarDades.carregarDadesByFolder(directori);
+    }
+
     public static void carregarDadesAules(String fitxer) {
         ctrlDominiCarregarDades.carregarAules(fitxer);
     }
@@ -71,6 +75,15 @@ public class CtrlDomini {
     public static ArrayList<Pair<String, String[][][]>> carregarHorari(String text) {
         Map<String, Matriu> horari = ctrlDominiCarregarHorari.carregarHorari(ultimHorari, text);
         ultimHorari.setHorari(horari);
+        ArrayList<Pair<String, String[][][]>> horariEscriure = ultimHorari.passarString();
+        return horariEscriure;
+    }
+
+    // [ Opció 5 ] Modificar Horari
+
+    public static ArrayList<Pair<String, String[][][]>> modificarDades(String oldDia, String oldHora, String oldAula,
+                                      String newDia, String newHora, String newAula) {
+        ultimHorari = ctrlDominiGenerarHorari.modificarDades(oldDia, oldHora, oldAula, newDia, newHora, newAula, ultimHorari);
         ArrayList<Pair<String, String[][][]>> horariEscriure = ultimHorari.passarString();
         return horariEscriure;
     }

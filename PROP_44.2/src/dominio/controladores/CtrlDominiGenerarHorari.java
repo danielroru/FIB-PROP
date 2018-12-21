@@ -64,17 +64,25 @@ public class CtrlDominiGenerarHorari {
         return ultimHorari;
     }
 
-    public static void modificarHorari(Enumeracio.Dia dia1, int hora1, String aula1, Enumeracio.Dia dia2, int hora2, String aula2) {
+    public static Horari modificarDades(String oldDia, String oldHora, String oldAula,
+                                        String newDia, String newHora, String newAula, Horari ultimHorari) {
+
+        Enumeracio.Dia dia1 = Enumeracio.Dia.valueOf(oldDia.toUpperCase());
+        int hora1 = Integer.parseInt(oldHora);
+        Enumeracio.Dia dia2 = Enumeracio.Dia.valueOf(newDia.toUpperCase());
+        int hora2 = Integer.parseInt(newHora);
+
         UAH uah1 = new UAH();
         UAH uah2 = new UAH();
         for (UAH uah : UAHs) {
-            if ((uah.getDia() == dia1) && (uah.getHora() == hora1) && (uah.getAula().getId() == aula1))
+            if ((uah.getDia() == dia1) && (uah.getHora() == hora1) && (uah.getAula().getId() == oldAula))
                 uah1 = uah;
-            else if ((uah.getDia() == dia2) && (uah.getHora() == hora2) && (uah.getAula().getId() == aula2))
+            else if ((uah.getDia() == dia2) && (uah.getHora() == hora2) && (uah.getAula().getId() == newAula))
                 uah2 = uah;
         }
-        if (uah1 != null || uah2 != null)
-            ModificadorHorari.modificaHorari(uah1, uah2);
+        if (uah1 == new UAH() || uah2 == new UAH()) System.out.println("MAL");
+        ModificadorHorari.modificaHorari(uah1, uah2, ultimHorari);
+        return ultimHorari;
     }
 
     public static ArrayList<Pair<String, String[][][]>> escriureHorari() {
@@ -187,5 +195,4 @@ public class CtrlDominiGenerarHorari {
     public static Queue<Sessio> getSessions() {
         return sessions;
     }
-
 }

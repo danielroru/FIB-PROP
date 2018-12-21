@@ -5,6 +5,7 @@ import dominio.swing.*;
 import dominio.swing.CarregarDades.*;
 import dominio.swing.EditarDades.*;
 import dominio.swing.GestionarHoraris.*;
+import dominio.swing.GestionarHoraris.AltresVistesGestionarHoraris.vistaGenerarHorari;
 import dominio.swing.EditarDades.AltresVistesEditarDades.*;
 
 import dominio.swing.GestionarHoraris.AltresVistesGestionarHoraris.vistaGenerarHorari;
@@ -147,6 +148,13 @@ public class CtrlPresentacio {
         vistaCarregarDades vCD = new vistaCarregarDades();
     }
 
+    //   · Carregar Directori
+
+    public static void carregarDirectori(String fitxer) {
+        cD.carregarDirectori(fitxer);
+        complet = true;
+    }
+
 
     //   · carregarInformacio:
     //          És la crida CD per carregar fitxer.
@@ -170,7 +178,7 @@ public class CtrlPresentacio {
 
     // ------------------------
     // ------------------------
-    // Opció 2 : Gestionar Horaris
+    // Gestionar Horaris
 
     public void vistaGestionarHoraris() {
         vistaGestionarHoraris vGH = new vistaGestionarHoraris();
@@ -178,7 +186,7 @@ public class CtrlPresentacio {
 
     // ------------------------
     // ------------------------
-    // Opció 2 : Generar Horari
+    // Generar Horari
 
     //  · vistaGenerarHorari()
     //      És allà on hi ha la vista.
@@ -196,9 +204,22 @@ public class CtrlPresentacio {
         vistaGenerarHorari vGenerarH = new vistaGenerarHorari(horari, seleccionar, complet);
     }
 
+
     // ------------------------
     // ------------------------
-    // Opció 3: Guardar Horari
+    // Modificar Horari
+
+
+    public void modificarDades(String oldDia, String oldHora, String oldAula,
+                               String newDia, String newHora, String newAula) {
+
+        ArrayList<Pair<String, String[][][]>> horari = cD.modificarDades(oldDia, oldHora, oldAula, newDia, newHora, newAula);
+        vistaHorari(horari, null, complet);
+    }
+
+    // ------------------------
+    // ------------------------
+    // Guardar Horari
 
     public void guardarHorari(String text) {
         cD.guardarHorari(text);
@@ -206,24 +227,18 @@ public class CtrlPresentacio {
 
     // ------------------------
     // ------------------------
-    // Opció 4 : Carregar Horari
+    // Carregar Horari
 
     public void carregarHorari(String text) {
         ArrayList<Pair<String, String[][][]>> horari = cD.carregarHorari(text);
         vistaHorari(horari, null, complet);
     }
 
-    // ------------------------
-    // ------------------------
-    // Opció 5 : Modificar Horari
-
-    //  · vistaModificarHorari()
-    //      És allà on hi ha la vista.
 
 
     // ------------------------
     // ------------------------
-    // Opció 6 : Editar Dades
+    // Editar Dades
 
 
     //  · vistaEditarDades()

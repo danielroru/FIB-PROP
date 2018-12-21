@@ -411,8 +411,6 @@ public class Horari {
 
         for (String aula : horari.keySet()) {
             String[][][] horariAula = new String[nDies][nHores][nAssig];
-            System.out.println("Aula " + aula + " horari " + horari.get(aula));
-
             for (int hora = PlaEstudis.getHoraInici(); hora < PlaEstudis.getHoraFi(); ++hora) {
                 for (int dia = 0; dia < nDies; ++dia) {
 
@@ -439,10 +437,10 @@ public class Horari {
                     }
                 }
             }
-
             Pair<String, String[][][]> elementHorari = new Pair<String, String[][][]>(aula, horariAula);
             horariText.add(elementHorari);
         }
+
 
 
         return horariText;
