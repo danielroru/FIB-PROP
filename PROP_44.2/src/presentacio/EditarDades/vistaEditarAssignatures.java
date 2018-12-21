@@ -1,4 +1,4 @@
-package presentacio.EditarDades.AltresVistesEditarDades;
+package presentacio.EditarDades;
 
 import dominio.controladores.CtrlPresentacio;
 

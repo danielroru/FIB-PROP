@@ -15,8 +15,8 @@ public class vistaEditarDades extends JFrame {
     private JLabel titolAula = new JLabel("Conjunt Aules:");
     private JLabel titolAssignatures = new JLabel("Conjunt Assignatures:");
     private JButton botoPlaEstudis = new JButton("Editar Pla Estudis");
-    private JComboBox aules = new JComboBox(conjuntAules);
-    private JComboBox assignatures = new JComboBox(conjuntAssignatures);
+    private JComboBox<String> aules = new JComboBox<String>(conjuntAules);
+    private JComboBox<String> assignatures = new JComboBox<String>(conjuntAssignatures);
     private JButton endarrereButton = new JButton("Endarrere");
 
     private CtrlPresentacio iCtrlPresentacio = CtrlPresentacio.getInstance();
@@ -25,6 +25,7 @@ public class vistaEditarDades extends JFrame {
         setSize(400, 600);
         setLocationRelativeTo(null);
         setLayout(null);
+
 
         /* Títol Vista */
 

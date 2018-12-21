@@ -2,10 +2,17 @@ package dominio.classes;
 
 public class PlaEstudis {
 
-    private static PlaEstudis instance = new PlaEstudis();
 
-    private PlaEstudis(){
+    private PlaEstudis() {}
+
+    private static class Instance {
+        private static final PlaEstudis instance = new PlaEstudis();
     }
+
+    public static PlaEstudis getInstance() {
+        return Instance.instance;
+    }
+
 
     private static ConjuntAssignatures cjtAssignatures = new ConjuntAssignatures();
     private static ConjuntAules cjtAules = new ConjuntAules();
@@ -18,7 +25,6 @@ public class PlaEstudis {
      * Restablim els atributs per poder carregar un altre set de dades
      */
     public static void reset() {
-        instance = new PlaEstudis();
         cjtAssignatures = new ConjuntAssignatures();
         cjtAules = new ConjuntAules();
 
@@ -27,9 +33,6 @@ public class PlaEstudis {
         horaCanviFranja = -1;
     }
 
-    public static PlaEstudis getInstance() {
-        return instance;
-    }
 
     // Consultores
     public static int getHoraInici() {
@@ -75,11 +78,11 @@ public class PlaEstudis {
         return cjtAssignatures;
     }
 
-    public static void setCjtAssignatures(ConjuntAssignatures cjtAssignatures) {
-        PlaEstudis.cjtAssignatures = cjtAssignatures;
+    public static void setCjtAssignatures(ConjuntAssignatures cjt) {
+        cjtAssignatures = cjt;
     }
 
-    public static void setCjtAules(ConjuntAules cjtAules) {
-        PlaEstudis.cjtAules = cjtAules;
+    public static void setCjtAules(ConjuntAules cjt) {
+        cjtAules = cjt;
     }
 }

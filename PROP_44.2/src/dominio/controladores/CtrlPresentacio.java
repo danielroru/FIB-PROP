@@ -5,8 +5,7 @@ import presentacio.*;
 import presentacio.CarregarDades.*;
 import presentacio.EditarDades.*;
 import presentacio.GestionarHoraris.*;
-import presentacio.GestionarHoraris.AltresVistesGestionarHoraris.vistaVeureHorari;
-import presentacio.EditarDades.AltresVistesEditarDades.*;
+import presentacio.GestionarHoraris.vistaVeureHorari;
 
 import javafx.util.Pair;
 

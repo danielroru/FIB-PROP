@@ -1,4 +1,4 @@
-package presentacio.GestionarHoraris.AltresVistesGestionarHoraris;
+package presentacio.GestionarHoraris;
 
 import dominio.controladores.CtrlPresentacio;
 import javafx.util.Pair;
@@ -36,7 +36,7 @@ public class vistaVeureHorari extends JFrame {
     private JLabel seleccioAules = new JLabel("Seleccionar Aula:");
     private JButton endarrereButton = new JButton("Endarrere");
     private JTable horari = new JTable(data, columnNames);
-    private JComboBox aules = new JComboBox(conjuntAules);
+    private JComboBox<String> aules = new JComboBox<String>(conjuntAules);
     private JTextField tf = new JTextField(128);
 
     private ArrayList<Pair<String, String[][][]>> horariImprimir;
@@ -96,7 +96,7 @@ public class vistaVeureHorari extends JFrame {
 
             imprimirAula(info);
 
-            aules = new JComboBox(cjtAules);
+            aules = new JComboBox<String>(cjtAules);
             horari = new JTable(informacioHorari, columnNames);
         }
 

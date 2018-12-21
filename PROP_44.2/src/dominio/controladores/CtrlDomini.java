@@ -25,20 +25,20 @@ public class CtrlDomini {
 
     }
 
-    public static void carregarDirectori(String directori) {
-        ctrlDominiCarregarDades.carregarDadesByFolder(directori);
+    public static void carregarDirectori(String path) {
+        ctrlDominiCarregarDades.carregarDadesByFolder(path);
     }
 
-    public static void carregarDadesAules(String fitxer) {
-        ctrlDominiCarregarDades.carregarAules(fitxer);
+    public static void carregarDadesAules(String path) {
+        ctrlDominiCarregarDades.carregarAules(path);
     }
 
-    public static void carregarDadesAssignatures(String fitxer) {
-        ctrlDominiCarregarDades.carregarAssignatures(fitxer);
+    public static void carregarDadesAssignatures(String path) {
+        ctrlDominiCarregarDades.carregarAssignatures(path);
     }
 
-    public static void carregarDadesPlaEstudis(String fitxer) {
-        ctrlDominiCarregarDades.carregarPlaEstudis(fitxer);
+    public static void carregarDadesPlaEstudis(String path) {
+        ctrlDominiCarregarDades.carregarPlaEstudis(path);
     }
 
     public static CtrlDomini getInstance() {

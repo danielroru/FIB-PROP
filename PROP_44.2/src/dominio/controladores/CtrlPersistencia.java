@@ -26,7 +26,6 @@ public class CtrlPersistencia {
 
     // [ Opció 3 ] : Guardar Horari
     ////////////////////////////////
-    //TODO
     public static void guardarFitxer(String json, String path) {
         System.out.println(path);
         try (BufferedWriter br = new BufferedWriter(new FileWriter(path))) {

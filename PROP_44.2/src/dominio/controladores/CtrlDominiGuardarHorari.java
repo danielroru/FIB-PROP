@@ -22,8 +22,8 @@ public class CtrlDominiGuardarHorari {
         try {
             if (ultimHorari.getHorari().size() == 0) throw new Exception ("    ERROR: Encara no has generat cap horari");
             Gson gson = new Gson();
-            String a = gson.toJson(ultimHorari);
-            ctrlPersistencia.guardarFitxer(a, path);
+
+            ctrlPersistencia.guardarFitxer(gson.toJson(PlaEstudis.getInstance()), path);
         }
         catch (Exception e) {
             System.out.println(e.getMessage());
