@@ -77,8 +77,6 @@ public class UAH {
         this.dia = dia;
     }
 
-    //TODO ELIMINAR
-    /*
     public int compareTo(UAH uah1) {
 
         int compareAula = (this.aula.getId()).compareTo(uah1.getAula().getId());
@@ -93,6 +91,5 @@ public class UAH {
             return compareAula;
         }
     }
-    */
 
 }

@@ -8,7 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-public class vistaGenerarHorari extends JFrame {
+public class vistaVeureHorari extends JFrame {
 
     static Object[][] data = {
             {"Hora", "Dilluns", "Dimarts", "Dimecres", "Dijous", "Divendres"},
@@ -69,7 +69,7 @@ public class vistaGenerarHorari extends JFrame {
         }
     }
 
-    public vistaGenerarHorari(ArrayList<Pair<String, String[][][]>> horariImprimir, String seleccionar, boolean complet) {
+    public vistaVeureHorari(ArrayList<Pair<String, String[][][]>> horariImprimir, String seleccionar, boolean complet) {
 
 
         if (complet == true) {
@@ -89,7 +89,7 @@ public class vistaGenerarHorari extends JFrame {
             informacioHorari[0][4] = "Dijous";
             informacioHorari[0][5] = "Divendres";
 
-            if (seleccionar == null) {
+            if (seleccionar == null && horariImprimir.size() != 0) {
                 Pair<String, String[][][]> aula = horariImprimir.get(0);
                 info = aula.getKey();
             }
@@ -99,6 +99,7 @@ public class vistaGenerarHorari extends JFrame {
             aules = new JComboBox(cjtAules);
             horari = new JTable(informacioHorari, columnNames);
         }
+
         setSize(700, 600);
         setLocationRelativeTo(null);
         setLayout(null);

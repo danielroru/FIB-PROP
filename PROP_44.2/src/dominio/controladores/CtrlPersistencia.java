@@ -3,9 +3,7 @@ package dominio.controladores;
 // Repàs
 import dominio.classes.*;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -15,10 +13,8 @@ public class CtrlPersistencia {
 
     private static CtrlDomini ctrlDomini = CtrlDomini.getInstance();
 
-    private static CtrlPersistenciaGuardarHorari ctrlPersistenciaGuardarHorari =
-            CtrlPersistenciaGuardarHorari.getInstance();
-    private static CtrlPersistenciaCarregarHorari ctrlPersistenciaCarregarHorari =
-            CtrlPersistenciaCarregarHorari.getInstance();
+
+
 
     private CtrlPersistencia() {}
 
@@ -31,7 +27,14 @@ public class CtrlPersistencia {
     // [ Opció 3 ] : Guardar Horari
     ////////////////////////////////
     //TODO
-    public static void guardarFitxer(Map<String, Matriu> ultimHorari, String nomFitxer) {
+    public static void guardarFitxer(String json, String path) {
+        System.out.println(path);
+        try (BufferedWriter br = new BufferedWriter(new FileWriter(path))) {
+            br.write(json);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public static String llegirfitxer(String path) {

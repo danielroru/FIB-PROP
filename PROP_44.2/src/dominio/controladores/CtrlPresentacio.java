@@ -5,7 +5,7 @@ import presentacio.*;
 import presentacio.CarregarDades.*;
 import presentacio.EditarDades.*;
 import presentacio.GestionarHoraris.*;
-import presentacio.GestionarHoraris.AltresVistesGestionarHoraris.vistaGenerarHorari;
+import presentacio.GestionarHoraris.AltresVistesGestionarHoraris.vistaVeureHorari;
 import presentacio.EditarDades.AltresVistesEditarDades.*;
 
 import javafx.util.Pair;
@@ -137,7 +137,7 @@ public class CtrlPresentacio {
     // Vista Horari
 
     public void vistaHorari(ArrayList<Pair<String, String[][][]>> horari, String seleccionar, boolean complet) {
-        vistaGenerarHorari vGenerarH = new vistaGenerarHorari(horari, seleccionar, complet);
+        vistaVeureHorari vGenerarH = new vistaVeureHorari(horari, seleccionar, complet);
     }
 
 

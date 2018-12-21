@@ -2,14 +2,7 @@ package dominio.controladores;
 
 
 import com.google.gson.Gson;
-import persistencia.parser.ParseException;
 import dominio.classes.*;
-
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.Writer;
-import java.util.ArrayList;
-import java.util.HashSet;
 
 public class CtrlDominiCarregarDades {
 
@@ -77,6 +70,10 @@ public class CtrlDominiCarregarDades {
         PlaEstudis.setHoraInici(h.horaInici);
         PlaEstudis.setHoraFi(h.horaFi);
         PlaEstudis.setHoraCanviFranja(h.horaCanviFranja);
+
+        System.out.println(PlaEstudis.getHoraInici());
+        System.out.println(PlaEstudis.getHoraFi());
+        System.out.println(PlaEstudis.getHoraCanviFranja());
 
 
 

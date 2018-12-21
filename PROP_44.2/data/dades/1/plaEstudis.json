@@ -1,1 +1,1 @@
-{"conjuntAules":{"A5S06":{"id":"A5S06","capacitat":20,"tipus":"LABORATORI"},"A5202":{"id":"A5202","capacitat":30,"tipus":"TEORIA"},"A5S04":{"id":"A5S04","capacitat":20,"tipus":"TEORIA"},"A5S03":{"id":"A5S03","capacitat":20,"tipus":"LABORATORI"}}}
+{ "horaInici": 8,  "horaFi" : 20,  "horaCanviFranja": 14}

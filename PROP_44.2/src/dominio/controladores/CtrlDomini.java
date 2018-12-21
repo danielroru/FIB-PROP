@@ -12,7 +12,7 @@ public class CtrlDomini {
     private static CtrlPresentacio ctrlPresentacio = CtrlPresentacio.getInstance();
 
     private static CtrlDominiCarregarDades ctrlDominiCarregarDades = CtrlDominiCarregarDades.getInstance();
-    private static CtrlDominiGenerarHorari ctrlDominiGenerarHorari = CtrlDominiGenerarHorari.getInstance();
+    private static CtrlDominiGenerarHorari ctrlDominiVeureHorari = CtrlDominiGenerarHorari.getInstance();
     private static CtrlDominiGuardarHorari ctrlDominiGuardarHorari = CtrlDominiGuardarHorari.getInstance();
     private static CtrlDominiCarregarHorari ctrlDominiCarregarHorari = CtrlDominiCarregarHorari.getInstance();
 
@@ -56,8 +56,8 @@ public class CtrlDomini {
 
     public static ArrayList<Pair<String, String[][][]>> generarHorari() {
 
-        ultimHorari = ctrlDominiGenerarHorari.generarHorari();
-        ArrayList<Pair<String, String[][][]>> horari = ctrlDominiGenerarHorari.escriureHorari();
+        ultimHorari = ctrlDominiVeureHorari.generarHorari();
+        ArrayList<Pair<String, String[][][]>> horari = ctrlDominiVeureHorari.escriureHorari();
         return horari;
 
     }
@@ -67,16 +67,19 @@ public class CtrlDomini {
 
     public static void guardarHorari(String text) {
 
-        ctrlDominiGuardarHorari.guardarHorari(ultimHorari.getHorari(), text);
+        ctrlDominiGuardarHorari.guardarHorari(ultimHorari, text);
     }
 
     // [ Opció 4 ] Carregar Horari
 
-    public static ArrayList<Pair<String, String[][][]>> carregarHorari(String text) {
-        Map<String, Matriu> horari = ctrlDominiCarregarHorari.carregarHorari(ultimHorari, text);
-        ultimHorari.setHorari(horari);
+    public static ArrayList<Pair<String, String[][][]>> carregarHorari(String path) {
+        ultimHorari = ctrlDominiCarregarHorari.carregarHorari(path);
+
+
         ArrayList<Pair<String, String[][][]>> horariEscriure = ultimHorari.passarString();
+
         return horariEscriure;
+
     }
 
 

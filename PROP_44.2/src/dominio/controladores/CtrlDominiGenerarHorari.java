@@ -3,20 +3,19 @@ package dominio.controladores;
 import dominio.classes.*;
 import javafx.util.Pair;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class CtrlDominiGenerarHorari {
 
     private static CtrlDominiGenerarHorari instance = new CtrlDominiGenerarHorari();
 
-    private static HashSet<Sessio> sessions;
+    private static Queue<Sessio> sessions;
 
     private static HashSet<UAH> UAHmatins = new HashSet<>();
     private static HashSet<UAH> UAHtardes = new HashSet<>();
     private static HashSet<UAH> UAHteoria = new HashSet<>();
     private static HashSet<UAH> UAHlaboratori = new HashSet<>();
+    private static HashSet<UAH> UAHs = new HashSet<>();
 
     private static Horari ultimHorari = new Horari();
 
@@ -29,14 +28,12 @@ public class CtrlDominiGenerarHorari {
     }
 
     public static void reset() {
+        sessions = new LinkedList<>();
         UAHmatins = new HashSet<>();
         UAHtardes = new HashSet<>();
         UAHteoria = new HashSet<>();
         UAHlaboratori = new HashSet<>();
-    }
-
-    public static boolean existeixUltimHorari() {
-        return ultimHorari.getHorari().size() != 0;
+        UAHs = new HashSet<>();
     }
 
     public static Horari generarHorari(){
@@ -63,22 +60,28 @@ public class CtrlDominiGenerarHorari {
 
     private static void crearSessions() {
 
-        sessions = new HashSet<Sessio>();
+        sessions = new LinkedList<>();
 
-        for (Assignatura a : plaEstudis.getConjuntAssignatures().getAssignatures()) {
+        for (Assignatura a : PlaEstudis.getConjuntAssignatures().getAssignatures()) {
             for(int i = 1; i <= a.getnGrupsT(); ++i) {
                 Sessio sT = new Sessio();
                 sT.setAssignatura(a);
                 sT.setIdGrup(i * 10);
                 sT.setTipus(Enumeracio.TipusSessio.TEORIA);
-                sessions.add(sT);
+                for (int j = 0; j < a.getnHoresT(); ++j) {
+                    sT.setId(j);
+                    sessions.add(sT);
+                }
 
                 for (int j = 1; j <= a.getnGrupsL(); ++j) {
                     Sessio sL = new Sessio();
                     sL.setAssignatura(a);
                     sL.setIdGrup(i * 10 + j);
                     sL.setTipus(Enumeracio.TipusSessio.LABORATORI);
-                    sessions.add(sL);
+                    for (int t = 0; t < a.getnHoresL(); ++t) {
+                        sL.setId(t);
+                        sessions.add(sL);
+                    }
                 }
 
                 for (int j = 1; j <= a.getnGrupsP(); ++j) {
@@ -86,11 +89,22 @@ public class CtrlDominiGenerarHorari {
                     sP.setAssignatura(a);
                     sP.setIdGrup(i * 10 + j);
                     sP.setTipus(Enumeracio.TipusSessio.PROBLEMES);
-                    sessions.add(sP);
+                    for (int t = 0; t < a.getnHoresP(); ++t) {
+                        sP.setId(t);
+                        sessions.add(sP);
+                    }
                 }
             }
         }
 
+    }
+
+    public static void comptaSessions() {
+        int compt = 0;
+        for (Assignatura ass : PlaEstudis.getConjuntAssignatures().getAssignatures()) {
+            compt += ass.getnHoresT()*ass.getnGrupsT() + ass.getnGrupsT()*ass.getnGrupsL()*ass.getnHoresL() + ass.getnGrupsT()*ass.getnGrupsP()*ass.getnHoresP();
+        }
+        System.out.println(compt + " sessions");
     }
 
 
@@ -98,7 +112,7 @@ public class CtrlDominiGenerarHorari {
 
         for (Aula a : plaEstudis.getConjuntAules().getAules()) {
             for (Enumeracio.Dia dia : Enumeracio.Dia.values()) {
-                for (int i = plaEstudis.getHoraInici(); i < plaEstudis.getHoraFi(); i++) {
+                for (int i = PlaEstudis.getHoraInici(); i < PlaEstudis.getHoraFi(); i++) {
 
                     UAH uah = new UAH();
 
@@ -111,6 +125,8 @@ public class CtrlDominiGenerarHorari {
 
                     if ((a.getTipusAula()).equals(Enumeracio.TipusAula.TEORIA)) UAHteoria.add(uah);
                     else UAHlaboratori.add(uah);
+
+                    UAHs.add(uah);
                 }
             }
         }
@@ -132,7 +148,7 @@ public class CtrlDominiGenerarHorari {
         return UAHlaboratori;
     }
 
-    public static HashSet<Sessio> getSessions() {
+    public static Queue<Sessio> getSessions() {
         return sessions;
     }
 

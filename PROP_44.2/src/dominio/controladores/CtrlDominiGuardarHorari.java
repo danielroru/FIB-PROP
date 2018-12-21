@@ -1,5 +1,6 @@
 package dominio.controladores;
 
+import com.google.gson.Gson;
 import dominio.classes.*;
 
 import java.util.Map;
@@ -17,14 +18,15 @@ public class CtrlDominiGuardarHorari {
         return instance;
     }
 
-    public void guardarHorari(Map<String, Matriu> ultimHorari, String text) {
+    public void guardarHorari(Horari ultimHorari, String path) {
         try {
-            if (ultimHorari.size() == 0) throw new Exception ("    ERROR: Encara no has generat cap horari");
-            ctrlPersistencia.guardarHorari(ultimHorari, text);
+            if (ultimHorari.getHorari().size() == 0) throw new Exception ("    ERROR: Encara no has generat cap horari");
+            Gson gson = new Gson();
+            String a = gson.toJson(ultimHorari);
+            ctrlPersistencia.guardarFitxer(a, path);
         }
         catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
-
 }
