@@ -42,14 +42,14 @@ public class vistaVeureHorari extends JFrame {
     private JLabel seleccioAules = new JLabel("Seleccionar Aula:");
 
     private JLabel titolOld = new JLabel("Informació Antiga:");
-    private JComboBox OLDd = new JComboBox(dies);
-    private JComboBox OLDh = new JComboBox(hores);
-    private JComboBox OLDa = new JComboBox(conjuntAules);
+    private JComboBox<String> OLDd = new JComboBox<String>(dies);
+    private JComboBox<String> OLDh = new JComboBox<String>(hores);
+    private JComboBox<String> OLDa = new JComboBox<String>(conjuntAules);
 
     private JLabel titolNew = new JLabel("Informació Nova:");
-    private JComboBox NEWd = new JComboBox(dies);
-    private JComboBox NEWh = new JComboBox(hores);
-    private JComboBox NEWa = new JComboBox(conjuntAules);
+    private JComboBox<String> NEWd = new JComboBox<String>(dies);
+    private JComboBox<String> NEWh = new JComboBox<String>(hores);
+    private JComboBox<String> NEWa = new JComboBox<String>(conjuntAules);
 
     private JButton modificarButton = new JButton("Modificar");
     private JButton endarrereButton = new JButton("Endarrere");
@@ -123,9 +123,9 @@ public class vistaVeureHorari extends JFrame {
 
             imprimirAula(info);
 
-            aules = new JComboBox(cjtAules);
-            OLDa = new JComboBox(cjtAules);
-            NEWa = new JComboBox(cjtAules);
+            aules = new JComboBox<String>(cjtAules);
+            OLDa = new JComboBox<String>(cjtAules);
+            NEWa = new JComboBox<String>(cjtAules);
             aules.setSelectedItem(info);
             horari = new JTable(informacioHorari, columnNames);
         }

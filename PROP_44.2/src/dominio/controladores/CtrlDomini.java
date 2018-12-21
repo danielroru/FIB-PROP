@@ -93,26 +93,6 @@ public class CtrlDomini {
     }
 
 
-    /*
-     *   ----------------
-     *   Informació Vista
-     *   ----------------
-     * */
-
-
-    // Retorna informació de l'Aula
-
-    //
-
-    public static String[] getAula(String id) {
-        String[] info = new String[3];
-        ConjuntAules cjtAules = plaEstudis.getConjuntAules();
-        Aula aula = cjtAules.getAula(id);
-        info[0] = aula.getId();
-        info[1] = String.valueOf(aula.getCapacitat());
-        info[2] = String.valueOf(aula.getTipusAula());
-        return info;
-    }
 
 
     // assignatures[x][0] = nom
@@ -176,5 +156,22 @@ public class CtrlDomini {
     public static void setUltimHorari(Horari ultimHorari) {
         CtrlDomini.ultimHorari = ultimHorari;
     }
+
+    public static String[] getAula(String id) {
+
+        String[] result = new String[3];
+
+        Aula a = PlaEstudis.getConjuntAules().getAula(id);
+
+        result[0] = a.getId();
+        result[1] = Integer.toString(a.getCapacitat());
+        result[2] = a.getTipusAula().toString();
+
+        return result;
+
+
+
+    }
+
 
 }

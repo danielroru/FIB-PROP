@@ -9,8 +9,6 @@ import java.awt.event.ActionListener;
 
 public class vistaEditarAula extends JFrame {
 
-    String ID = "10";
-    String Capacitat = "14";
 
     private JLabel titolVista = new JLabel("Editar Aula");
 
@@ -20,8 +18,8 @@ public class vistaEditarAula extends JFrame {
     private JLabel titolTeoria = new JLabel("Teoria");
     private JLabel titolLaboratori = new JLabel("Laboratori");
 
-    private JTextField textID = new JTextField(ID);
-    private JTextField textCapacitat = new JTextField(Capacitat);
+    private JTextField textID = new JTextField();
+    private JTextField textCapacitat = new JTextField();
     ButtonGroup group = new ButtonGroup();
     private JRadioButton teoriaRadioButton = new JRadioButton();
     private JRadioButton laboratoriRadioButton = new JRadioButton();
@@ -31,9 +29,22 @@ public class vistaEditarAula extends JFrame {
 
     private CtrlPresentacio iCtrlPresentacio = CtrlPresentacio.getInstance();
 
-    public vistaEditarAula() {
+    public vistaEditarAula(String id) {
         group.add(teoriaRadioButton);
         group.add(laboratoriRadioButton);
+
+        String[] aula = CtrlPresentacio.getAula(id);
+
+        textID = new JTextField(aula[0]);
+        textCapacitat = new JTextField(aula[1]);
+
+        if (aula[2].equals("TEORIA")){
+            teoriaRadioButton.setSelected(true);
+        }
+        else laboratoriRadioButton.setSelected(true);
+
+
+        teoriaRadioButton.setSelected(true);
 
         setSize(400, 600);
         setLocationRelativeTo(null);

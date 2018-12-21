@@ -92,7 +92,7 @@ public class vistaEditarDades extends JFrame {
         ActionListener vistaAula = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                iCtrlPresentacio.anarVistaEditarAula();
+                iCtrlPresentacio.anarVistaEditarAula(aules.getSelectedItem().toString());
                 setVisible(false);
             }
         };

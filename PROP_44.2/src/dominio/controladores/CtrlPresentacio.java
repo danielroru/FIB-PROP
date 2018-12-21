@@ -32,9 +32,6 @@ public class CtrlPresentacio {
     }
 
 
-    public static String[] getAula(String id) {
-        return cD.getAula(id);
-    }
 
 
     public static String[] getAssig(String nom) {
@@ -181,8 +178,8 @@ public class CtrlPresentacio {
         vistaEditarDades vED = new vistaEditarDades();
     }
 
-    public void anarVistaEditarAula() {
-        vistaEditarAula vEA = new vistaEditarAula();
+    public void anarVistaEditarAula(String id) {
+        vistaEditarAula vEA = new vistaEditarAula(id);
     }
 
     public void anarVistaEditarAssignatures() {
@@ -191,6 +188,10 @@ public class CtrlPresentacio {
 
     public void anarVistaEditarPlaEstudis() {
         vistaEditarPlaEstudis vEPE = new vistaEditarPlaEstudis();
+    }
+
+    public static String[] getAula(String id) {
+        return CtrlDomini.getAula(id);
     }
 
 

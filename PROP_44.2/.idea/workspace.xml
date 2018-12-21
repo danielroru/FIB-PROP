@@ -5,34 +5,45 @@
     <option name="SCOPE_TYPE" value="8" />
     <option name="CUSTOM_SCOPE_NAME" value="JavaDoc" />
   </component>
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="GeneradorHorari:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="c56956a0-ea30-4d3a-a964-fb7f39382e8f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/classes/ConjuntAssignatures.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/classes/ConjuntAssignatures.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/classes/ConjuntAules.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/classes/ConjuntAules.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/classes/Horari$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/classes/Horari$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/classes/Horari.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/classes/Horari.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/classes/PlaEstudis.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/classes/PlaEstudis.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/presentacio/EditarDades/vistaEditarAula$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/presentacio/EditarDades/vistaEditarAula$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/presentacio/EditarDades/vistaEditarAula$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/presentacio/EditarDades/vistaEditarAula$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/presentacio/EditarDades/vistaEditarAula.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/presentacio/EditarDades/vistaEditarAula.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/presentacio/EditarDades/vistaEditarDades$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/presentacio/EditarDades/vistaEditarDades$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/presentacio/EditarDades/vistaEditarDades$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/presentacio/EditarDades/vistaEditarDades$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/presentacio/EditarDades/vistaEditarDades$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/presentacio/EditarDades/vistaEditarDades$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/presentacio/EditarDades/vistaEditarDades$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/presentacio/EditarDades/vistaEditarDades$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/presentacio/EditarDades/vistaEditarDades.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/presentacio/EditarDades/vistaEditarDades.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/presentacio/GestionarHoraris/vistaGestionarHoraris$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/presentacio/GestionarHoraris/vistaGestionarHoraris$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/presentacio/GestionarHoraris/vistaVeureHorari$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/presentacio/GestionarHoraris/vistaVeureHorari$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/presentacio/GestionarHoraris/vistaVeureHorari$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/presentacio/GestionarHoraris/vistaVeureHorari$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/presentacio/GestionarHoraris/vistaVeureHorari.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/presentacio/GestionarHoraris/vistaVeureHorari.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/DocumentacioPROP.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/doc/DocumentacioPROP.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/controladores/CtrlDomini.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/controladores/CtrlDomini.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/controladores/CtrlDominiGenerarHorari.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/controladores/CtrlDominiGenerarHorari.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/controladores/CtrlPresentacio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/controladores/CtrlPresentacio.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/CarregarDades/vistaCarregarDades$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/CarregarDades/vistaCarregarDades$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/EditarDades/vistaEditarAula$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/EditarDades/vistaEditarAula$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/EditarDades/vistaEditarAula$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/EditarDades/vistaEditarAula$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/EditarDades/vistaEditarAula.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/EditarDades/vistaEditarAula.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/EditarDades/vistaEditarDades$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/EditarDades/vistaEditarDades$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/EditarDades/vistaEditarDades$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/EditarDades/vistaEditarDades$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/EditarDades/vistaEditarDades$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/EditarDades/vistaEditarDades$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/EditarDades/vistaEditarDades$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/EditarDades/vistaEditarDades$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/EditarDades/vistaEditarDades.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/EditarDades/vistaEditarDades.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/GestionarHoraris/vistaVeureHorari$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/GestionarHoraris/vistaVeureHorari$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/GestionarHoraris/vistaVeureHorari$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/GestionarHoraris/vistaVeureHorari$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/GestionarHoraris/vistaVeureHorari.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/GestionarHoraris/vistaVeureHorari.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dominio/classes/ConjuntAssignatures.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dominio/classes/ConjuntAssignatures.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dominio/classes/ConjuntAules.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dominio/classes/ConjuntAules.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dominio/classes/Horari.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dominio/classes/Horari.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dominio/classes/PlaEstudis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dominio/classes/PlaEstudis.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dominio/controladores/CtrlDomini.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dominio/controladores/CtrlDomini.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dominio/controladores/CtrlPresentacio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dominio/controladores/CtrlPresentacio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/presentacio/EditarDades/vistaEditarAula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentacio/EditarDades/vistaEditarAula.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/presentacio/EditarDades/vistaEditarDades.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentacio/EditarDades/vistaEditarDades.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentacio/GestionarHoraris/vistaVeureHorari.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentacio/GestionarHoraris/vistaVeureHorari.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentacio/logo.png" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -97,14 +108,14 @@
           <entry key="GUI_DESIGNER_FORM" value="6" />
           <entry key="HTML" value="1" />
           <entry key="Image" value="1" />
-          <entry key="JAVA" value="232" />
-          <entry key="JSON" value="19" />
-          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="JAVA" value="235" />
+          <entry key="JSON" value="20" />
+          <entry key="PLAIN_TEXT" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="6576" />
+          <entry key="JAVA" value="7068" />
           <entry key="JSON" value="62" />
           <entry key="PLAIN_TEXT" value="188" />
         </counts>
@@ -116,8 +127,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dominio/controladores/CtrlDomini.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="397">
-              <caret line="168" column="37" selection-start-line="168" selection-start-column="37" selection-end-line="168" selection-end-column="37" />
+            <state relative-caret-position="382">
+              <caret line="166" column="53" selection-start-line="166" selection-start-column="53" selection-end-line="166" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#5367#5368#0" expanded="true" />
@@ -132,34 +143,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dominio/classes/ConjuntAules.java">
+        <entry file="file://$PROJECT_DIR$/src/dominio/controladores/CtrlPersistencia.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="477">
-              <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
-              <folding>
-                <element signature="e#582#583#0" expanded="true" />
-                <element signature="e#646#647#0" expanded="true" />
-                <element signature="e#1333#1334#0" expanded="true" />
-                <element signature="e#1371#1372#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dominio/classes/PlaEstudis.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="502">
-              <caret line="94" column="44" selection-start-line="94" selection-start-column="44" selection-end-line="94" selection-end-column="44" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#186#187#0" expanded="true" />
-                <element signature="e#217#218#0" expanded="true" />
-                <element signature="e#2054#2055#0" expanded="true" />
-                <element signature="e#2084#2085#0" expanded="true" />
-                <element signature="e#2159#2160#0" expanded="true" />
-                <element signature="e#2196#2197#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="514">
+              <caret line="55" column="5" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -187,20 +174,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/presentacio/EditarDades/vistaEditarAula.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="403">
-              <caret line="35" column="39" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
+            <state relative-caret-position="236">
+              <caret line="35" column="45" selection-start-line="35" selection-start-column="45" selection-end-line="35" selection-end-column="45" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/presentacio/EditarDades/vistaEditarAssignatures.java">
+        <entry file="file://$PROJECT_DIR$/src/dominio/classes/Enumeracio.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            <state relative-caret-position="30">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -208,8 +195,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/presentacio/EditarDades/vistaEditarDades.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="38" column="48" selection-start-line="38" selection-start-column="48" selection-end-line="38" selection-end-column="48" />
+            <state relative-caret-position="195">
+              <caret line="20" column="59" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="59" />
               <folding>
                 <element signature="e#691#699#0" expanded="true" />
               </folding>
@@ -218,59 +205,36 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dominio/controladores/CtrlDominiGenerarHorari.java">
+        <entry file="file://$PROJECT_DIR$/src/presentacio/GestionarHoraris/vistaVeureHorari.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1041">
-              <caret line="152" selection-start-line="152" selection-end-line="152" />
+            <state relative-caret-position="242">
+              <caret line="127" column="40" selection-start-line="127" selection-start-column="40" selection-end-line="127" selection-end-column="40" />
               <folding>
-                <element signature="e#803#804#0" expanded="true" />
-                <element signature="e#834#835#0" expanded="true" />
-                <element signature="e#2983#2984#0" expanded="true" />
-                <element signature="e#3032#3033#0" expanded="true" />
-                <element signature="e#5992#5993#0" expanded="true" />
-                <element signature="e#6024#6025#0" expanded="true" />
-                <element signature="e#6073#6074#0" expanded="true" />
-                <element signature="e#6105#6106#0" expanded="true" />
-                <element signature="e#6154#6155#0" expanded="true" />
-                <element signature="e#6186#6187#0" expanded="true" />
-                <element signature="e#6239#6240#0" expanded="true" />
-                <element signature="e#6275#6276#0" expanded="true" />
-                <element signature="e#6319#6320#0" expanded="true" />
-                <element signature="e#6346#6347#0" expanded="true" />
-                <element signature="e#6395#6396#0" expanded="true" />
-                <element signature="e#6426#6427#0" expanded="true" />
+                <element signature="e#1747#1755#0" expanded="true" />
+                <element signature="e#1813#1821#0" expanded="true" />
+                <element signature="e#1880#1888#0" expanded="true" />
+                <element signature="e#2017#2025#0" expanded="true" />
+                <element signature="e#2083#2091#0" expanded="true" />
+                <element signature="e#2150#2158#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dominio/classes/Horari.java">
+        <entry file="file://$PROJECT_DIR$/data/dades/1/assignatures.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="40" lean-forward="true" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
-              <folding>
-                <element signature="e#640#641#0" expanded="true" />
-                <element signature="e#673#674#0" expanded="true" />
-                <element signature="e#746#747#0" expanded="true" />
-                <element signature="e#790#791#0" expanded="true" />
-                <element signature="e#971#972#0" expanded="true" />
-                <element signature="e#1012#1013#0" expanded="true" />
-                <element signature="e#1052#1053#0" expanded="true" />
-                <element signature="e#1082#1083#0" expanded="true" />
-                <element signature="e#1113#1114#0" expanded="true" />
-                <element signature="e#1146#1147#0" expanded="true" />
-                <element signature="e#1256#1257#0" expanded="true" />
-                <element signature="e#1292#1293#0" expanded="true" />
-                <element signature="e#3158#3159#0" expanded="true" />
-                <element signature="e#3226#3227#0" expanded="true" />
-                <element signature="e#3258#3259#0" expanded="true" />
-                <element signature="e#3306#3307#0" expanded="true" />
-                <element signature="e#5947#5948#0" expanded="true" />
-                <element signature="e#5976#5977#0" expanded="true" />
-                <element signature="e#9037#9065#0" expanded="true" />
-                <element signature="e#10817#10839#0" expanded="true" />
-              </folding>
+            <state>
+              <caret column="62" selection-end-column="4109" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/manifest.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="35" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -278,8 +242,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dominio/controladores/CtrlPresentacio.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="52" column="24" lean-forward="true" selection-start-line="52" selection-start-column="24" selection-end-line="52" selection-end-column="24" />
+            <state relative-caret-position="404">
+              <caret line="192" column="17" selection-start-line="192" selection-start-column="17" selection-end-line="192" selection-end-column="17" />
               <folding>
                 <element signature="e#1092#1093#0" expanded="true" />
                 <element signature="e#1132#1133#0" expanded="true" />
@@ -291,12 +255,14 @@
                 <element signature="e#4018#4019#0" expanded="true" />
                 <element signature="e#4412#4413#0" expanded="true" />
                 <element signature="e#4473#4474#0" expanded="true" />
-                <element signature="e#4514#4515#0" expanded="true" />
-                <element signature="e#4573#4574#0" expanded="true" />
+                <element signature="e#4576#4577#0" expanded="true" />
+                <element signature="e#4635#4636#0" expanded="true" />
                 <element signature="e#4622#4623#0" expanded="true" />
                 <element signature="e#4697#4698#0" expanded="true" />
                 <element signature="e#4744#4745#0" expanded="true" />
                 <element signature="e#4816#4817#0" expanded="true" />
+                <element signature="e#4929#4930#0" expanded="true" />
+                <element signature="e#4959#4960#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -313,7 +279,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>llegir</find>
       <find>ultim</find>
       <find>escriureHorari</find>
       <find>toString</find>
@@ -343,6 +308,7 @@
       <find>plaest</find>
       <find>pe</find>
       <find>llistar</find>
+      <find>getAula</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -391,7 +357,6 @@
         <option value="$PROJECT_DIR$/src/dominio/controladores/CtrlPersistenciaCarregarHorari.java" />
         <option value="$PROJECT_DIR$/src/dominio/controladores/CtrlPersistenciaGuardarHorari.java" />
         <option value="$PROJECT_DIR$/src/dominio/controladores/CtrlDominiCarregarDades.java" />
-        <option value="$PROJECT_DIR$/src/presentacio/GestionarHoraris/vistaVeureHorari.java" />
         <option value="$PROJECT_DIR$/src/dominio/controladores/CtrlPersistencia.java" />
         <option value="$PROJECT_DIR$/manifest.txc" />
         <option value="$PROJECT_DIR$/manifest.txt" />
@@ -400,13 +365,14 @@
         <option value="$PROJECT_DIR$/src/dominio/controladores/CtrlDominiCarregarHorari.java" />
         <option value="$PROJECT_DIR$/src/dominio/controladores/CtrlDominiGuardarHorari.java" />
         <option value="$PROJECT_DIR$/src/dominio/classes/Horari.java" />
-        <option value="$PROJECT_DIR$/src/dominio/controladores/CtrlPresentacio.java" />
-        <option value="$PROJECT_DIR$/src/presentacio/EditarDades/vistaEditarDades.java" />
         <option value="$PROJECT_DIR$/src/dominio/classes/PlaEstudis.java" />
         <option value="$PROJECT_DIR$/src/dominio/classes/ConjuntAules.java" />
-        <option value="$PROJECT_DIR$/src/dominio/controladores/CtrlDomini.java" />
         <option value="$PROJECT_DIR$/src/dominio/classes/ConjuntAssignatures.java" />
+        <option value="$PROJECT_DIR$/src/presentacio/EditarDades/vistaEditarDades.java" />
         <option value="$PROJECT_DIR$/src/presentacio/EditarDades/vistaEditarAula.java" />
+        <option value="$PROJECT_DIR$/src/dominio/controladores/CtrlDomini.java" />
+        <option value="$PROJECT_DIR$/src/dominio/controladores/CtrlPresentacio.java" />
+        <option value="$PROJECT_DIR$/src/presentacio/GestionarHoraris/vistaVeureHorari.java" />
       </list>
     </option>
   </component>
@@ -461,7 +427,33 @@
             <path>
               <item name="PROP_44.2" type="b2602c69:ProjectViewProjectNode" />
               <item name="PROP_44.2" type="462c0819:PsiDirectoryNode" />
+              <item name="bin" type="462c0819:PsiDirectoryNode" />
+              <item name="dominio" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PROP_44.2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PROP_44.2" type="462c0819:PsiDirectoryNode" />
+              <item name="bin" type="462c0819:PsiDirectoryNode" />
+              <item name="dominio" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PROP_44.2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PROP_44.2" type="462c0819:PsiDirectoryNode" />
               <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PROP_44.2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PROP_44.2" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="dades" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PROP_44.2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PROP_44.2" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="dades" type="462c0819:PsiDirectoryNode" />
+              <item name="1" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PROP_44.2" type="b2602c69:ProjectViewProjectNode" />
@@ -539,7 +531,7 @@
     <property name="TODO_SCOPE" value="All Places" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545150965448" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -604,7 +596,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="UI Designer" order="1" />
@@ -674,13 +665,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data/dades/proves/Output.json" />
-    <entry file="file://$PROJECT_DIR$/src/dominio/classes/Enumeracio.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/jre/lib/rt.jar!/com/apple/laf/AquaButtonUI.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="169">
@@ -812,30 +796,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/presentacio/GestionarHoraris/vistaVeureHorari.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="98" column="41" selection-start-line="98" selection-start-column="41" selection-end-line="98" selection-end-column="41" />
-          <folding>
-            <element signature="e#1578#1586#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/dades/1/assignatures.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="10" selection-end-column="4109" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manifest.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/src.zip!/java/util/HashMap.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
@@ -877,13 +837,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-383">
           <caret line="28" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dominio/controladores/CtrlPersistencia.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-23">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
         </state>
       </provider>
     </entry>
@@ -1006,66 +959,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dominio/controladores/CtrlPresentacio.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="52" column="24" lean-forward="true" selection-start-line="52" selection-start-column="24" selection-end-line="52" selection-end-column="24" />
-          <folding>
-            <element signature="e#1092#1093#0" expanded="true" />
-            <element signature="e#1132#1133#0" expanded="true" />
-            <element signature="e#1204#1205#0" expanded="true" />
-            <element signature="e#1245#1246#0" expanded="true" />
-            <element signature="e#2758#2759#0" expanded="true" />
-            <element signature="e#2829#2830#0" expanded="true" />
-            <element signature="e#3980#3981#0" expanded="true" />
-            <element signature="e#4018#4019#0" expanded="true" />
-            <element signature="e#4412#4413#0" expanded="true" />
-            <element signature="e#4473#4474#0" expanded="true" />
-            <element signature="e#4514#4515#0" expanded="true" />
-            <element signature="e#4573#4574#0" expanded="true" />
-            <element signature="e#4622#4623#0" expanded="true" />
-            <element signature="e#4697#4698#0" expanded="true" />
-            <element signature="e#4744#4745#0" expanded="true" />
-            <element signature="e#4816#4817#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/presentacio/EditarDades/vistaEditarDades.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="38" column="48" selection-start-line="38" selection-start-column="48" selection-end-line="38" selection-end-column="48" />
-          <folding>
-            <element signature="e#691#699#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dominio/classes/ConjuntAules.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="477">
-          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
           <folding>
             <element signature="e#582#583#0" expanded="true" />
             <element signature="e#646#647#0" expanded="true" />
             <element signature="e#1333#1334#0" expanded="true" />
             <element signature="e#1371#1372#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dominio/controladores/CtrlDomini.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="168" column="37" selection-start-line="168" selection-start-column="37" selection-end-line="168" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#5367#5368#0" expanded="true" />
-            <element signature="e#5413#5414#0" expanded="true" />
-            <element signature="e#5463#5464#0" expanded="true" />
-            <element signature="e#5497#5498#0" expanded="true" />
-            <element signature="e#5662#5663#0" expanded="true" />
-            <element signature="e#5714#5715#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1107,10 +1009,106 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/dominio/controladores/CtrlPersistencia.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="514">
+          <caret line="55" column="5" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dominio/classes/Enumeracio.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dominio/controladores/CtrlDomini.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="166" column="53" selection-start-line="166" selection-start-column="53" selection-end-line="166" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5367#5368#0" expanded="true" />
+            <element signature="e#5413#5414#0" expanded="true" />
+            <element signature="e#5463#5464#0" expanded="true" />
+            <element signature="e#5497#5498#0" expanded="true" />
+            <element signature="e#5662#5663#0" expanded="true" />
+            <element signature="e#5714#5715#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dominio/controladores/CtrlPresentacio.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="192" column="17" selection-start-line="192" selection-start-column="17" selection-end-line="192" selection-end-column="17" />
+          <folding>
+            <element signature="e#1092#1093#0" expanded="true" />
+            <element signature="e#1132#1133#0" expanded="true" />
+            <element signature="e#1204#1205#0" expanded="true" />
+            <element signature="e#1245#1246#0" expanded="true" />
+            <element signature="e#2758#2759#0" expanded="true" />
+            <element signature="e#2829#2830#0" expanded="true" />
+            <element signature="e#3980#3981#0" expanded="true" />
+            <element signature="e#4018#4019#0" expanded="true" />
+            <element signature="e#4412#4413#0" expanded="true" />
+            <element signature="e#4473#4474#0" expanded="true" />
+            <element signature="e#4576#4577#0" expanded="true" />
+            <element signature="e#4635#4636#0" expanded="true" />
+            <element signature="e#4622#4623#0" expanded="true" />
+            <element signature="e#4697#4698#0" expanded="true" />
+            <element signature="e#4744#4745#0" expanded="true" />
+            <element signature="e#4816#4817#0" expanded="true" />
+            <element signature="e#4929#4930#0" expanded="true" />
+            <element signature="e#4959#4960#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/presentacio/EditarDades/vistaEditarAula.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="35" column="39" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
+        <state relative-caret-position="236">
+          <caret line="35" column="45" selection-start-line="35" selection-start-column="45" selection-end-line="35" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/presentacio/EditarDades/vistaEditarDades.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="20" column="59" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="59" />
+          <folding>
+            <element signature="e#691#699#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/presentacio/GestionarHoraris/vistaVeureHorari.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="127" column="40" selection-start-line="127" selection-start-column="40" selection-end-line="127" selection-end-column="40" />
+          <folding>
+            <element signature="e#1747#1755#0" expanded="true" />
+            <element signature="e#1813#1821#0" expanded="true" />
+            <element signature="e#1880#1888#0" expanded="true" />
+            <element signature="e#2017#2025#0" expanded="true" />
+            <element signature="e#2083#2091#0" expanded="true" />
+            <element signature="e#2150#2158#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/dades/1/assignatures.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="62" selection-end-column="4109" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manifest.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="35" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -1120,10 +1118,12 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
+          <last-edited>GeneradorHorari:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>

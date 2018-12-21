@@ -9,19 +9,16 @@ VISTES4 = src/presentacio/GestionarHoraris
 default: class
 
 class:
-	javac -cp src -classpath src/persistencia/gson-2.6.3.jar -d bin $(CLASSES)/*.java $(CONTROLADORES)/*.java $(VISTES)/*.java $(VISTES2)/*.java $(VISTES3)/*.java $(VISTES4)/*.java
-
-test:
-	javac -Xlint:unchecked -cp src/persistencia/gson-2.6.2.jar -d bin $(CLASSES)/*.java $(CONTROLADORES)/*.java $(VISTES)/*.java $(VISTES2)/*.java $(VISTES3)/*.java $(VISTES4)/*.java
+	javac -cp src/persistencia/gson-2.6.2.jar -d bin $(CLASSES)/*.java $(CONTROLADORES)/*.java $(VISTES)/*.java $(VISTES2)/*.java $(VISTES3)/*.java $(VISTES4)/*.java
 
 jar:
-	jar cfm GeneradorHorari.jar manifest.txt -C bin dominio
+	jar cvf GeneradorHorari2.jar -C bin/dominio/classes .
 
 runjar:
 	java -jar GeneradorHorari.jar
 
 run:
-	java -cp bin ../src/persistencia/gson-2.6.2.jar bin.dominio.classes.Main
+	java -cp src/persistencia/gson-2.6.2.jar:bin  dominio.classes.Main
 
 clean:
 	rm -rf bin/dominio
