@@ -152,7 +152,7 @@ public class GeneradorHorari {
      * @return l'Horari generat segons la inicialització del graf
      */
 
-    public static Horari generarHorari() {
+    public static Horari generarHorari(PlaEstudis plaEstudis) {
 
         iniGraf();
         Horari solucio = new Horari();

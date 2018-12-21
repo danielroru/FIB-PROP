@@ -26,10 +26,10 @@ public class RestriccioBinaria {
     public static HashSet<Sessio> arestesNivell(Sessio s) {
         HashSet<Sessio> resultat = new HashSet<>();
 
-        int NivellSessio = PlaEstudis.getConjuntAssignatures().getAssignatura(s.getAssignatura().getNom()).getNivell();
+        int NivellSessio = CtrlDomini.getPlaEstudis().getConjuntAssignatures().getAssignatura(s.getAssignatura().getNom()).getNivell();
 
         // Iterem per totes les assignatures del mateix nivell que s
-        for (Assignatura a : PlaEstudis.getConjuntAssignatures().getAssigsByNivell(NivellSessio)) {
+        for (Assignatura a : CtrlDomini.getPlaEstudis().getConjuntAssignatures().getAssigsByNivell(NivellSessio)) {
             // Iterem per totes les sessions de totes les assignatures del nivell de s
             for (Sessio sAssig : CtrlDominiGenerarHorari.getSessionsByIdAssig(a.getNom())) {
                 if (s != sAssig) {

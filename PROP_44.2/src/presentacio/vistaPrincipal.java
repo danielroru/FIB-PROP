@@ -16,12 +16,11 @@ public class vistaPrincipal extends JFrame {
     private JButton sortirButton = new JButton("Sortir");
 
 
-    private CtrlPresentacio iCtrlPresentacio = CtrlPresentacio.getInstance();
-
-
 
 
     public vistaPrincipal() {
+
+
 
         setSize(300, 400);
         setLocationRelativeTo(null);
@@ -64,7 +63,7 @@ public class vistaPrincipal extends JFrame {
         ActionListener carregarDades = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                iCtrlPresentacio.vistaCarregarDades();
+                CtrlPresentacio.vistaCarregarDades();
                 setVisible(false);
             }
         };
@@ -73,7 +72,7 @@ public class vistaPrincipal extends JFrame {
         ActionListener gestionarHoraris = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                iCtrlPresentacio.vistaGestionarHoraris();
+                CtrlPresentacio.vistaGestionarHoraris();
                 setVisible(false);
             }
 
@@ -82,7 +81,7 @@ public class vistaPrincipal extends JFrame {
         ActionListener editarDades = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                iCtrlPresentacio.anarVistaEditarDades();
+                CtrlPresentacio.anarVistaEditarDades();
                 setVisible(false);
             }
 

@@ -5,60 +5,52 @@ import java.util.Set;
 
 public class PlaEstudis {
 
+    private int horaInici = -1;
+    private int horaFi = -1;
+    private int horaCanviFranja = -1;
 
-    private PlaEstudis() {}
+    private ConjuntAssignatures cjtAssignatures ;
+    private ConjuntAules cjtAules;
 
-    private static PlaEstudis instance = new PlaEstudis();
-
-    public static PlaEstudis getInstance() {
-        return instance;
-    }
+    private Horari ultimHorari;
 
 
-    private static ConjuntAssignatures cjtAssignatures = new ConjuntAssignatures();
-    private static ConjuntAules cjtAules = new ConjuntAules();
-
-    private static int horaInici = -1;
-    private static int horaFi = -1;
-    private static int horaCanviFranja = -1;
-
-    /**
-     * Restablim els atributs per poder carregar un altre set de dades
-     */
-    public static void reset() {
+    public PlaEstudis() {
         cjtAssignatures = new ConjuntAssignatures();
         cjtAules = new ConjuntAules();
 
         horaInici = -1;
         horaFi = -1;
         horaCanviFranja = -1;
-    }
 
+        ultimHorari = new Horari();
+
+    }
 
     // Consultores
-    public static int getHoraInici() {
+    public int getHoraInici() {
         return horaInici;
     }
-    public static int getHoraFi() {
+    public int getHoraFi() {
         return horaFi;
     }
-    public static int getHoraCanviFranja() {
+    public int getHoraCanviFranja() {
         return horaCanviFranja;
     }
 
 
-    public static boolean isNull() {
+    public boolean isNull() {
         return horaInici == -1 && horaFi == -1 && horaCanviFranja == -1;
     }
 
     // Modificadores
-    public static void setHoraInici(int hora) {
+    public void setHoraInici(int hora) {
         horaInici = hora;
     }
-    public static void setHoraFi(int hora) {
+    public void setHoraFi(int hora) {
         horaFi = hora;
     }
-    public static void setHoraCanviFranja(int hora) {
+    public void setHoraCanviFranja(int hora) {
         horaCanviFranja = hora;
     }
 
@@ -67,7 +59,7 @@ public class PlaEstudis {
      * Obtenim un conjunt d'aules
      * @post retornem un ConjuntAules
      */
-    public static ConjuntAules getConjuntAules() {
+    public ConjuntAules getConjuntAules() {
         return cjtAules;
     }
 
@@ -75,23 +67,31 @@ public class PlaEstudis {
      * Obtenim un conjunt d'assignatures
      * @post retornem un ConjuntAssignatures
      */
-    public static ConjuntAssignatures getConjuntAssignatures() {
+    public ConjuntAssignatures getConjuntAssignatures() {
         return cjtAssignatures;
     }
 
-    public static void setCjtAssignatures(ConjuntAssignatures cjt) {
+    public void setCjtAssignatures(ConjuntAssignatures cjt) {
         cjtAssignatures = cjt;
     }
 
-    public static void setCjtAules(ConjuntAules cjt) {
+    public void setCjtAules(ConjuntAules cjt) {
         cjtAules = cjt;
     }
 
-    public static HashSet<String> llistarAules() {
+    public HashSet<String> llistarAules() {
         return cjtAules.llistarAules();
     }
 
-    public static HashSet<String> llistarAssignatures() {
+    public HashSet<String> llistarAssignatures() {
         return cjtAssignatures.llistarAssignatures();
+    }
+
+    public Horari getUltimHorari() {
+        return ultimHorari;
+    }
+
+    public void setUltimHorari(Horari ultimHorari) {
+        this.ultimHorari = ultimHorari;
     }
 }

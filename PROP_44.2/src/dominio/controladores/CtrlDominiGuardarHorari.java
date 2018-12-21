@@ -8,24 +8,13 @@ import java.util.Map;
 
 public class CtrlDominiGuardarHorari {
 
-    private static CtrlDominiGuardarHorari instance = new CtrlDominiGuardarHorari();
-    private static CtrlPersistencia ctrlPersistencia = CtrlPersistencia.getInstance();
 
+    private static PlaEstudis plaEstudis;
 
-    private CtrlDominiGuardarHorari() {}
-
-    public static CtrlDominiGuardarHorari getInstance() {
-        return instance;
+    public CtrlDominiGuardarHorari(PlaEstudis pe) {
+        plaEstudis = pe;
     }
 
-    private class Pestudis {
-        public int horaInici;
-        public int horaFi;
-        public int horaCanviFranja;
-        public ConjuntAules cjtAules;
-        public ConjuntAssignatures cjtAssignatures;
-        public Horari horari;
-    }
 
     public void guardarHorari(PlaEstudis plaEstudis, String path) {
         try {
@@ -33,19 +22,12 @@ public class CtrlDominiGuardarHorari {
             // if (ultimHorari.getHorari().size() == 0) throw new Exception ("    ERROR: Encara no has generat cap horari");
             Gson gson = new Gson();
 
-            Pestudis pe = new Pestudis();
-            pe.horaInici = PlaEstudis.getHoraInici();
-            pe.horaFi = PlaEstudis.getHoraFi();
-            pe.horaCanviFranja = PlaEstudis.getHoraCanviFranja();
-            pe.cjtAules = PlaEstudis.getConjuntAules();
-            pe.cjtAssignatures = PlaEstudis.getConjuntAssignatures();
-            pe.horari = CtrlDomini.getUltimHorari();
 
-            String json = gson.toJson(pe);
+            String json = gson.toJson(plaEstudis);
 
             System.out.println("hola");
 
-            ctrlPersistencia.guardarFitxer(json, path);
+            CtrlPersistencia.guardarFitxer(json, path);
         }
         catch (Exception e) {
             System.out.println(e.getMessage());

@@ -18,7 +18,6 @@ public class vistaGestionarHoraris extends JFrame {
 
     private JButton endarrereButton = new JButton("Endarrere");
 
-    private CtrlPresentacio iCtrlPresentacio = CtrlPresentacio.getInstance();
 
     public vistaGestionarHoraris() {
         setSize(300, 400);
@@ -57,7 +56,7 @@ public class vistaGestionarHoraris extends JFrame {
         ActionListener generarHorari = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                iCtrlPresentacio.generarHorari();
+                CtrlPresentacio.generarHorari();
                 setVisible(false);
             }
 
@@ -73,7 +72,7 @@ public class vistaGestionarHoraris extends JFrame {
                 int returnValue = chooserGuardarHorari.showSaveDialog(null);
                 if (returnValue == JFileChooser.APPROVE_OPTION) {
                     File arxiu = chooserGuardarHorari.getSelectedFile();
-                    iCtrlPresentacio.guardarHorari(arxiu.getAbsolutePath());
+                    CtrlPresentacio.guardarHorari(arxiu.getAbsolutePath());
                 }
             }
 
@@ -89,7 +88,7 @@ public class vistaGestionarHoraris extends JFrame {
                 int returnValue = chooserCarregarHorari.showOpenDialog(null);
                 if (returnValue == JFileChooser.APPROVE_OPTION) {
                     File arxiu = chooserCarregarHorari.getSelectedFile();
-                    iCtrlPresentacio.carregarHorari(arxiu.getAbsolutePath());
+                    CtrlPresentacio.carregarHorari(arxiu.getAbsolutePath());
                 }
             }
 
@@ -98,7 +97,7 @@ public class vistaGestionarHoraris extends JFrame {
         ActionListener vistaPrincipal = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                iCtrlPresentacio.inicialitzarPresentacio();
+                CtrlPresentacio.inicialitzarPresentacio();
                 setVisible(false);
             }
 

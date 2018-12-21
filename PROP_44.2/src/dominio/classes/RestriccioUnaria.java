@@ -55,7 +55,7 @@ public class RestriccioUnaria {
 
         String nom = s.getAssignatura().getNom();
 
-        Assignatura as = PlaEstudis.getConjuntAssignatures().getAssignatura(nom);
+        Assignatura as = CtrlDomini.getPlaEstudis().getConjuntAssignatures().getAssignatura(nom);
 
         if ((s.getIdGrup() < (as.getnGrupsMati() + 1) * 10)) {
             result.retainAll(CtrlDominiGenerarHorari.getUAHmatins());

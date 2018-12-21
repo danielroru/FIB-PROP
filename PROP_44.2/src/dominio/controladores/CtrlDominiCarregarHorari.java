@@ -8,13 +8,10 @@ import java.util.Map;
 
 public class CtrlDominiCarregarHorari {
 
-    private static CtrlDominiCarregarHorari instance = new CtrlDominiCarregarHorari();
-    private static CtrlPersistencia ctrlPersistencia = CtrlPersistencia.getInstance();
+    private static PlaEstudis plaEstudis;
 
-    private CtrlDominiCarregarHorari() {}
-
-    public static CtrlDominiCarregarHorari getInstance() {
-        return instance;
+    public CtrlDominiCarregarHorari(PlaEstudis pe) {
+        plaEstudis = pe;
     }
 
     private class Pestudis {
@@ -30,16 +27,16 @@ public class CtrlDominiCarregarHorari {
     public static Horari carregarHorari(String path) {
 
         Gson gson = new Gson();
-        String json = ctrlPersistencia.llegirfitxer(path);
+        String json = CtrlPersistencia.llegirfitxer(path);
 
         Pestudis pe = gson.fromJson(json, Pestudis.class);
 
-        PlaEstudis.setCjtAssignatures(pe.cjtAssignatures);
-        PlaEstudis.setCjtAules(pe.cjtAules);
-        PlaEstudis.setHoraInici(pe.horaInici);
-        PlaEstudis.setHoraFi(pe.horaFi);
-        PlaEstudis.setHoraCanviFranja(pe.horaCanviFranja);
-        CtrlDomini.setUltimHorari(pe.horari);
+        plaEstudis.setCjtAssignatures(pe.cjtAssignatures);
+        plaEstudis.setCjtAules(pe.cjtAules);
+        plaEstudis.setHoraInici(pe.horaInici);
+        plaEstudis.setHoraFi(pe.horaFi);
+        plaEstudis.setHoraCanviFranja(pe.horaCanviFranja);
+        CtrlDomini.getPlaEstudis().setUltimHorari(pe.horari);
 
         return pe.horari;
 

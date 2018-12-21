@@ -19,7 +19,6 @@ public class vistaCarregarDades extends JFrame{
 
     private JButton endarrereButton = new JButton("Endarrere");
 
-    private CtrlPresentacio iCtrlPresentacio = CtrlPresentacio.getInstance();
 
     public vistaCarregarDades() {
 
@@ -88,7 +87,7 @@ public class vistaCarregarDades extends JFrame{
                 int returnValue = chooserAssig.showOpenDialog(null);
                 if (returnValue == JFileChooser.APPROVE_OPTION) {
                     File arxiu = chooserAssig.getSelectedFile();
-                    iCtrlPresentacio.carregarDadesAssignatures(arxiu.getAbsolutePath());
+                    CtrlPresentacio.carregarDadesAssignatures(arxiu.getAbsolutePath());
                 }
             }
         };
@@ -103,7 +102,7 @@ public class vistaCarregarDades extends JFrame{
                 int returnValue = chooserAules.showOpenDialog(null);
                 if (returnValue == JFileChooser.APPROVE_OPTION) {
                     File arxiu = chooserAules.getSelectedFile();
-                    iCtrlPresentacio.carregarDadesAules(arxiu.getAbsolutePath());
+                    CtrlPresentacio.carregarDadesAules(arxiu.getAbsolutePath());
                 }
             }
         };
@@ -119,7 +118,7 @@ public class vistaCarregarDades extends JFrame{
                 int returnValue = chooserPlaEstudis.showOpenDialog(null);
                 if (returnValue == JFileChooser.APPROVE_OPTION) {
                     File arxiu = chooserPlaEstudis.getSelectedFile();
-                    iCtrlPresentacio.carregarDadesPlaEstudis(arxiu.getAbsolutePath());
+                    CtrlPresentacio.carregarDadesPlaEstudis(arxiu.getAbsolutePath());
                 }
             }
         };
@@ -127,7 +126,7 @@ public class vistaCarregarDades extends JFrame{
         ActionListener vistaPrincipal = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                iCtrlPresentacio.inicialitzarPresentacio();
+                CtrlPresentacio.inicialitzarPresentacio();
                 setVisible(false);
             }
 

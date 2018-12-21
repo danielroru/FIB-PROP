@@ -9,20 +9,6 @@ import java.util.Map;
 
 public class CtrlPersistencia {
 
-    private static CtrlPersistencia instance = new CtrlPersistencia();
-
-    private static CtrlDomini ctrlDomini = CtrlDomini.getInstance();
-
-
-
-
-    private CtrlPersistencia() {}
-
-    public static CtrlPersistencia getInstance() {
-        return instance;
-    }
-
-
 
     // [ Opció 3 ] : Guardar Horari
     ////////////////////////////////

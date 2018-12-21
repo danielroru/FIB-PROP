@@ -47,7 +47,6 @@ public class vistaEditarAssignatures extends JFrame{
     private JButton editarButton = new JButton("Editar");
     private JButton endarrereButton = new JButton("Endarrere");
 
-    private CtrlPresentacio iCtrlPresentacio = CtrlPresentacio.getInstance();
 
     public vistaEditarAssignatures() {
 
@@ -213,7 +212,7 @@ public class vistaEditarAssignatures extends JFrame{
         ActionListener editarInformacio = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                iCtrlPresentacio.anarVistaEditarDades();
+                CtrlPresentacio.anarVistaEditarDades();
                 setVisible(false);
             }
 
@@ -222,7 +221,7 @@ public class vistaEditarAssignatures extends JFrame{
         ActionListener vistaPrincipal = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                iCtrlPresentacio.anarVistaEditarDades();
+                CtrlPresentacio.anarVistaEditarDades();
                 setVisible(false);
             }
 

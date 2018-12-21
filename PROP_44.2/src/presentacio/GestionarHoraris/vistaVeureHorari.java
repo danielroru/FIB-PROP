@@ -60,7 +60,6 @@ public class vistaVeureHorari extends JFrame {
     private ArrayList<Pair<String, String[][][]>> horariImprimir;
     private Object[][] informacioHorari = new Object[14][6];
 
-    private CtrlPresentacio iCtrlPresentacio = CtrlPresentacio.getInstance();
 
     private String[] cjtAules;
     private String info;
@@ -212,7 +211,7 @@ public class vistaVeureHorari extends JFrame {
                 String newHora = NEWh.getSelectedItem().toString();
                 String newAula = NEWa.getSelectedItem().toString();
 
-                iCtrlPresentacio.modificarDades(oldDia, oldHora, oldAula, newDia, newHora, newAula);
+                CtrlPresentacio.modificarDades(oldDia, oldHora, oldAula, newDia, newHora, newAula);
                 setVisible(false);
 
             }
@@ -222,7 +221,7 @@ public class vistaVeureHorari extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String info = aules.getSelectedItem().toString();
-                iCtrlPresentacio.vistaHorari(horariImprimir, info, true);
+                CtrlPresentacio.vistaHorari(horariImprimir, info, true);
                 setVisible(false);
             }
         };
@@ -230,7 +229,7 @@ public class vistaVeureHorari extends JFrame {
         ActionListener vistaPrincipal = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                iCtrlPresentacio.vistaGestionarHoraris();
+                CtrlPresentacio.vistaGestionarHoraris();
                 setVisible(false);
             }
 

@@ -15,45 +15,36 @@ import java.util.Set;
 
 public class CtrlPresentacio {
 
-    private static CtrlPresentacio instance = new CtrlPresentacio();
-    private static CtrlDomini cD = CtrlDomini.getInstance();
-
     private static int dadesAssig = 0;
     private static int dadesAules = 0;
     private static int dadesPlaEstudis = 0;
     private static boolean complet = false;
 
-    private CtrlPresentacio() {
 
+    public CtrlPresentacio() {
     }
-
-    public static CtrlPresentacio getInstance() {
-        return instance;
-    }
-
-
 
 
     public static String[] getAssig(String nom) {
-        return cD.getAssig(nom);
+        return CtrlDomini.getAssig(nom);
     }
 
 
     public static String[] getHores() {
-        return cD.getHores();
+        return CtrlDomini.getHores();
     }
 
 
     // Retornem tots els ID de les Aules
 
     public static HashSet<String> llistarAules() {
-        return cD.llistarAules();
+        return CtrlDomini.llistarAules();
     }
 
     // Retornem tots els noms de les Assignatures
 
     public static HashSet<String> llistarAssigs() {
-        return cD.llistarAssigs();
+        return CtrlDomini.llistarAssigs();
     }
 
 
@@ -80,32 +71,32 @@ public class CtrlPresentacio {
     // ------------------------
     // Opció 1 : Carregar Dades
 
-    public void vistaCarregarDades() {
+    public static void vistaCarregarDades() {
         vistaCarregarDades vCD = new vistaCarregarDades();
     }
 
     //   · Carregar Directori
 
     public static void carregarDirectori(String fitxer) {
-        cD.carregarDirectori(fitxer);
+        CtrlDomini.carregarDirectori(fitxer);
         complet = true;
     }
 
 
-    public void carregarDadesAules(String fitxer) {
-        cD.carregarDadesAules(fitxer);
+    public static void carregarDadesAules(String fitxer) {
+        CtrlDomini.carregarDadesAules(fitxer);
         dadesAules = 1;
         if ((dadesAssig + dadesAules + dadesPlaEstudis) == 3) complet = true;
     }
 
-    public void carregarDadesAssignatures(String fitxer) {
-        cD.carregarDadesAssignatures(fitxer);
+    public static void carregarDadesAssignatures(String fitxer) {
+        CtrlDomini.carregarDadesAssignatures(fitxer);
         dadesAssig = 1;
         if ((dadesAssig + dadesAules + dadesPlaEstudis) == 3) complet = true;
     }
 
-    public void carregarDadesPlaEstudis(String fitxer) {
-        cD.carregarDadesPlaEstudis(fitxer);
+    public static void carregarDadesPlaEstudis(String fitxer) {
+        CtrlDomini.carregarDadesPlaEstudis(fitxer);
         dadesPlaEstudis = 1;
         if ((dadesAssig + dadesAules + dadesPlaEstudis) == 3) complet = true;
     }
@@ -114,7 +105,7 @@ public class CtrlPresentacio {
     // ------------------------
     // Gestionar Horaris
 
-    public void vistaGestionarHoraris() {
+    public static void vistaGestionarHoraris() {
         vistaGestionarHoraris vGH = new vistaGestionarHoraris();
     }
 
@@ -125,16 +116,16 @@ public class CtrlPresentacio {
     //  · vistaGenerarHorari()
     //      És allà on hi ha la vista.
 
-    public void generarHorari() {
+    public static void generarHorari() {
         String seleccionar = null;
-        ArrayList<Pair<String, String[][][]>> horari = cD.generarHorari();
+        ArrayList<Pair<String, String[][][]>> horari = CtrlDomini.generarHorari();
         vistaHorari(horari, seleccionar, complet);
     }
 
 
     // Vista Horari
 
-    public void vistaHorari(ArrayList<Pair<String, String[][][]>> horari, String seleccionar, boolean complet) {
+    public static void vistaHorari(ArrayList<Pair<String, String[][][]>> horari, String seleccionar, boolean complet) {
         vistaVeureHorari vGenerarH = new vistaVeureHorari(horari, seleccionar, complet);
     }
 
@@ -144,10 +135,10 @@ public class CtrlPresentacio {
     // Modificar Horari
 
 
-    public void modificarDades(String oldDia, String oldHora, String oldAula,
+    public static void modificarDades(String oldDia, String oldHora, String oldAula,
                                String newDia, String newHora, String newAula) {
 
-        ArrayList<Pair<String, String[][][]>> horari = cD.modificarDades(oldDia, oldHora, oldAula, newDia, newHora, newAula);
+        ArrayList<Pair<String, String[][][]>> horari = CtrlDomini.modificarDades(oldDia, oldHora, oldAula, newDia, newHora, newAula);
         vistaHorari(horari, null, complet);
     }
 
@@ -155,16 +146,16 @@ public class CtrlPresentacio {
     // ------------------------
     // Guardar Horari
 
-    public void guardarHorari(String text) {
-        cD.guardarHorari(text);
+    public static void guardarHorari(String text) {
+        CtrlDomini.guardarHorari(text);
     }
 
     // ------------------------
     // ------------------------
     // Carregar Horari
 
-    public void carregarHorari(String text) {
-        ArrayList<Pair<String, String[][][]>> horari = cD.carregarHorari(text);
+    public static void carregarHorari(String text) {
+        ArrayList<Pair<String, String[][][]>> horari = CtrlDomini.carregarHorari(text);
         vistaHorari(horari, null, complet);
     }
 
@@ -174,19 +165,19 @@ public class CtrlPresentacio {
     // Editar Dades
 
 
-    public void anarVistaEditarDades() {
+    public static void anarVistaEditarDades() {
         vistaEditarDades vED = new vistaEditarDades();
     }
 
-    public void anarVistaEditarAula(String id) {
+    public static void anarVistaEditarAula(String id) {
         vistaEditarAula vEA = new vistaEditarAula(id);
     }
 
-    public void anarVistaEditarAssignatures() {
+    public static void anarVistaEditarAssignatures() {
         vistaEditarAssignatures vEA = new vistaEditarAssignatures();
     }
 
-    public void anarVistaEditarPlaEstudis() {
+    public static void anarVistaEditarPlaEstudis() {
         vistaEditarPlaEstudis vEPE = new vistaEditarPlaEstudis();
     }
 

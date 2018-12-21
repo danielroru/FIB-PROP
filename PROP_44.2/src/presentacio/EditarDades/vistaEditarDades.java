@@ -22,8 +22,6 @@ public class vistaEditarDades extends JFrame {
     private JComboBox<String> assignatures = new JComboBox<String>(conjuntAssignatures);
     private JButton endarrereButton = new JButton("Endarrere");
 
-    private CtrlPresentacio iCtrlPresentacio = CtrlPresentacio.getInstance();
-
     public vistaEditarDades() {
         setSize(400, 600);
         setLocationRelativeTo(null);
@@ -92,7 +90,7 @@ public class vistaEditarDades extends JFrame {
         ActionListener vistaAula = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                iCtrlPresentacio.anarVistaEditarAula(aules.getSelectedItem().toString());
+                CtrlPresentacio.anarVistaEditarAula(aules.getSelectedItem().toString());
                 setVisible(false);
             }
         };
@@ -100,7 +98,7 @@ public class vistaEditarDades extends JFrame {
         ActionListener vistaAssignatura = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                iCtrlPresentacio.anarVistaEditarAssignatures();
+                CtrlPresentacio.anarVistaEditarAssignatures();
                 setVisible(false);
             }
         };
@@ -108,7 +106,7 @@ public class vistaEditarDades extends JFrame {
         ActionListener vistaEditarPlaEstudis = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                iCtrlPresentacio.anarVistaEditarPlaEstudis();
+                CtrlPresentacio.anarVistaEditarPlaEstudis();
                 setVisible(false);
             }
 
@@ -117,7 +115,7 @@ public class vistaEditarDades extends JFrame {
         ActionListener vistaPrincipal = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                iCtrlPresentacio.inicialitzarPresentacio();
+                CtrlPresentacio.inicialitzarPresentacio();
                 setVisible(false);
             }
 

@@ -1,8 +1,10 @@
 package dominio.classes;
 
+import dominio.controladores.CtrlDomini;
+
 public class Matriu {
 
-    private int interval = PlaEstudis.getHoraFi()-PlaEstudis.getHoraInici();
+    private int interval = CtrlDomini.getPlaEstudis().getHoraFi()-CtrlDomini.getPlaEstudis().getHoraInici();
 
     private int diesS = Enumeracio.Dia.values().length;
 
@@ -13,15 +15,15 @@ public class Matriu {
     }
 
     public void assignarCasella(int i, int j, Casella c) {
-        matriu[i][j-PlaEstudis.getHoraInici()] = c;
+        matriu[i][j- CtrlDomini.getPlaEstudis().getHoraInici()] = c;
     }
 
     public void eliminarCasellas(int i, int j) {
-        matriu[i][j-PlaEstudis.getHoraInici()] = new Casella();
+        matriu[i][j-CtrlDomini.getPlaEstudis().getHoraInici()] = new Casella();
     }
 
     public Casella getCasella(int i, int j) {
-        return matriu[i][j-PlaEstudis.getHoraInici()];
+        return matriu[i][j-CtrlDomini.getPlaEstudis().getHoraInici()];
     }
 
     public void swap(int i1, int j1, int i2, int j2) {

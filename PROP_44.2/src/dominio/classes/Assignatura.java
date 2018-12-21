@@ -1,5 +1,7 @@
 package dominio.classes;
 
+import dominio.controladores.CtrlDomini;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -250,10 +252,10 @@ public class Assignatura {
     public ConjuntAssignatures getCorrequisits() {
         ConjuntAssignatures correquisits = new ConjuntAssignatures();
         for (String s : this.correquisits) {
-            if (!PlaEstudis.getConjuntAssignatures().existeixAssignatura(s)) {
+            if (!CtrlDomini.getPlaEstudis().getConjuntAssignatures().existeixAssignatura(s)) {
                 throw new IllegalArgumentException("L'assignatura anomenada " + s + " ha estat assignada correquisit, però no ha estat entrada");
             }
-            correquisits.afegirAssignatura(PlaEstudis.getConjuntAssignatures().getAssignatura(s));
+            correquisits.afegirAssignatura(CtrlDomini.getPlaEstudis().getConjuntAssignatures().getAssignatura(s));
         }
         return correquisits;
     }

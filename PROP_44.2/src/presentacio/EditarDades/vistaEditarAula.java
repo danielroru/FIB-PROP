@@ -27,7 +27,6 @@ public class vistaEditarAula extends JFrame {
     private JButton editarButton = new JButton("Editar");
     private JButton endarrereButton = new JButton("Endarrere");
 
-    private CtrlPresentacio iCtrlPresentacio = CtrlPresentacio.getInstance();
 
     public vistaEditarAula(String id) {
         group.add(teoriaRadioButton);
@@ -112,7 +111,7 @@ public class vistaEditarAula extends JFrame {
         ActionListener editarInformacio = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                iCtrlPresentacio.anarVistaEditarDades();
+                CtrlPresentacio.anarVistaEditarDades();
                 setVisible(false);
             }
 
@@ -121,7 +120,7 @@ public class vistaEditarAula extends JFrame {
         ActionListener vistaPrincipal = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                iCtrlPresentacio.anarVistaEditarDades();
+                CtrlPresentacio.anarVistaEditarDades();
                 setVisible(false);
             }
 

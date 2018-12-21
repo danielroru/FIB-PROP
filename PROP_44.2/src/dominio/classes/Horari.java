@@ -27,6 +27,7 @@ public class Horari {
         this.assignacio = assignacio;
     }
 
+
     /**
      * Constructora per defecte
      */
@@ -34,6 +35,7 @@ public class Horari {
         assignacio = new HashMap<>();
         horari = new HashMap<>();
     }
+
 
     public boolean esFallo() {
         return this.fallo != null;
@@ -228,7 +230,7 @@ public class Horari {
                     }
                 }
                 io.writeln("");
-                for (int hora = PlaEstudis.getHoraInici(); hora < PlaEstudis.getHoraFi(); hora++) {
+                for (int hora = CtrlDomini.getPlaEstudis().getHoraInici(); hora < CtrlDomini.getPlaEstudis().getHoraFi(); hora++) {
                     io.write(hora + "h       ");
                     for (Enumeracio.Dia dia : Enumeracio.Dia.values())
                         if (horari.get(aula).getCasella(dia.ordinal(), hora) == null)
@@ -276,8 +278,8 @@ public class Horari {
 
         int nAules = horari.keySet().size();
         int nDies = 5;
-        int nHores = PlaEstudis.getHoraFi() - PlaEstudis.getHoraInici();
-        int nAssig = PlaEstudis.getConjuntAssignatures().getAssignatures().size();
+        int nHores = CtrlDomini.getPlaEstudis().getHoraFi() - CtrlDomini.getPlaEstudis().getHoraInici();
+        int nAssig = CtrlDomini.getPlaEstudis().getConjuntAssignatures().getAssignatures().size();
 
 
         // Como lo puedo declarar ¿?
@@ -290,29 +292,29 @@ public class Horari {
 
         for (String aula : horari.keySet()) {
             String[][][] horariAula = new String[nDies][nHores][nAssig];
-            for (int hora = PlaEstudis.getHoraInici(); hora < PlaEstudis.getHoraFi(); ++hora) {
+            for (int hora = CtrlDomini.getPlaEstudis().getHoraInici(); hora < CtrlDomini.getPlaEstudis().getHoraFi(); ++hora) {
                 for (int dia = 0; dia < nDies; ++dia) {
 
                     if(horari.get(aula).getCasella(dia, hora) != null) {
-                        horariAula[dia][hora-PlaEstudis.getHoraInici()][0] = horari.get(aula).getCasella(dia, hora).getNomAssig();
-                        horariAula[dia][hora-PlaEstudis.getHoraInici()][1] = String.valueOf(horari.get(aula).getCasella(dia, hora).getNumGrup());
-                        horariAula[dia][hora-PlaEstudis.getHoraInici()][2] = "?";
+                        horariAula[dia][hora-CtrlDomini.getPlaEstudis().getHoraInici()][0] = horari.get(aula).getCasella(dia, hora).getNomAssig();
+                        horariAula[dia][hora-CtrlDomini.getPlaEstudis().getHoraInici()][1] = String.valueOf(horari.get(aula).getCasella(dia, hora).getNumGrup());
+                        horariAula[dia][hora-CtrlDomini.getPlaEstudis().getHoraInici()][2] = "?";
                         switch (horari.get(aula).getCasella(dia, hora).getTipus()) {
                             case TEORIA:
-                                horariAula[dia][hora-PlaEstudis.getHoraInici()][2] = "T";
+                                horariAula[dia][hora-CtrlDomini.getPlaEstudis().getHoraInici()][2] = "T";
                                 break;
                             case LABORATORI:
-                                horariAula[dia][hora-PlaEstudis.getHoraInici()][2] = "L";
+                                horariAula[dia][hora-CtrlDomini.getPlaEstudis().getHoraInici()][2] = "L";
                                 break;
                             case PROBLEMES:
-                                horariAula[dia][hora-PlaEstudis.getHoraInici()][2] = "P";
+                                horariAula[dia][hora-CtrlDomini.getPlaEstudis().getHoraInici()][2] = "P";
                                 break;
                         }
                     }
                     else {
-                        horariAula[dia][hora-PlaEstudis.getHoraInici()][0] = null;
-                        horariAula[dia][hora-PlaEstudis.getHoraInici()][1] = null;
-                        horariAula[dia][hora-PlaEstudis.getHoraInici()][2] = null;
+                        horariAula[dia][hora-CtrlDomini.getPlaEstudis().getHoraInici()][0] = null;
+                        horariAula[dia][hora-CtrlDomini.getPlaEstudis().getHoraInici()][1] = null;
+                        horariAula[dia][hora-CtrlDomini.getPlaEstudis().getHoraInici()][2] = null;
                     }
                 }
             }

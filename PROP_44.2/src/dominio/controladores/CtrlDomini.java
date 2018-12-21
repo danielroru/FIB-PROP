@@ -7,43 +7,42 @@ import javafx.util.Pair;
 
 public class CtrlDomini {
 
-    private static CtrlDomini instance = new CtrlDomini();
-
-    private static CtrlPresentacio ctrlPresentacio = CtrlPresentacio.getInstance();
-
-    private static CtrlDominiCarregarDades ctrlDominiCarregarDades = CtrlDominiCarregarDades.getInstance();
-    private static CtrlDominiGenerarHorari ctrlDominiVeureHorari = CtrlDominiGenerarHorari.getInstance();
-    private static CtrlDominiGuardarHorari ctrlDominiGuardarHorari = CtrlDominiGuardarHorari.getInstance();
-    private static CtrlDominiCarregarHorari ctrlDominiCarregarHorari = CtrlDominiCarregarHorari.getInstance();
-
-    private static CtrlPersistencia ctrlPersistencia = CtrlPersistencia.getInstance();
+    private static CtrlDominiGenerarHorari ctrlDominiGenerarHorari;
+    private static CtrlDominiGuardarHorari ctrlDominiGuardarHorari;
+    private static CtrlDominiCarregarHorari ctrlDominiCarregarHorari;
+    private static CtrlDominiCarregarDades ctrlDominiCarregarDades;
 
 
-    private static Horari ultimHorari;
-    private static PlaEstudis plaEstudis = PlaEstudis.getInstance();
+    public static PlaEstudis getPlaEstudis() {
+        return plaEstudis;
+    }
 
-    private CtrlDomini() {
+    private static PlaEstudis plaEstudis;
 
+    public CtrlDomini() {
+        plaEstudis = new PlaEstudis();
+
+
+        ctrlDominiGenerarHorari = new CtrlDominiGenerarHorari(plaEstudis);
+        ctrlDominiGuardarHorari = new CtrlDominiGuardarHorari(plaEstudis);
+        ctrlDominiCarregarHorari = new CtrlDominiCarregarHorari(plaEstudis);
+        ctrlDominiCarregarDades = new CtrlDominiCarregarDades(plaEstudis);
     }
 
     public static void carregarDirectori(String path) {
-        ctrlDominiCarregarDades.carregarDadesByFolder(path);
+        CtrlDominiCarregarDades.carregarDadesByFolder(path);
     }
 
     public static void carregarDadesAules(String path) {
-        ctrlDominiCarregarDades.carregarAules(path);
+        CtrlDominiCarregarDades.carregarAules(path);
     }
 
     public static void carregarDadesAssignatures(String path) {
-        ctrlDominiCarregarDades.carregarAssignatures(path);
+        CtrlDominiCarregarDades.carregarAssignatures(path);
     }
 
     public static void carregarDadesPlaEstudis(String path) {
-        ctrlDominiCarregarDades.carregarPlaEstudis(path);
-    }
-
-    public static CtrlDomini getInstance() {
-        return instance;
+        CtrlDominiCarregarDades.carregarPlaEstudis(path);
     }
 
     /*
@@ -57,8 +56,8 @@ public class CtrlDomini {
 
     public static ArrayList<Pair<String, String[][][]>> generarHorari() {
 
-        ultimHorari = ctrlDominiVeureHorari.generarHorari();
-        ArrayList<Pair<String, String[][][]>> horari = ctrlDominiVeureHorari.escriureHorari();
+        CtrlDomini.getPlaEstudis().setUltimHorari(ctrlDominiGenerarHorari.generarHorari());
+        ArrayList<Pair<String, String[][][]>> horari = ctrlDominiGenerarHorari.escriureHorari();
         return horari;
 
     }
@@ -74,10 +73,10 @@ public class CtrlDomini {
     // [ Opció 4 ] Carregar Horari
 
     public static ArrayList<Pair<String, String[][][]>> carregarHorari(String path) {
-        ultimHorari = ctrlDominiCarregarHorari.carregarHorari(path);
+        CtrlDomini.getPlaEstudis().setUltimHorari(ctrlDominiCarregarHorari.carregarHorari(path));
 
 
-        ArrayList<Pair<String, String[][][]>> horariEscriure = ultimHorari.passarString();
+        ArrayList<Pair<String, String[][][]>> horariEscriure = CtrlDomini.getPlaEstudis().getUltimHorari().passarString();
 
         return horariEscriure;
 
@@ -87,8 +86,8 @@ public class CtrlDomini {
 
     public static ArrayList<Pair<String, String[][][]>> modificarDades(String oldDia, String oldHora, String oldAula,
                                       String newDia, String newHora, String newAula) {
-        ultimHorari = CtrlDominiGenerarHorari.modificarDades(oldDia, oldHora, oldAula, newDia, newHora, newAula, ultimHorari);
-        ArrayList<Pair<String, String[][][]>> horariEscriure = ultimHorari.passarString();
+        plaEstudis.setUltimHorari(CtrlDominiGenerarHorari.modificarDades(oldDia, oldHora, oldAula, newDia, newHora, newAula,plaEstudis.getUltimHorari()));
+        ArrayList<Pair<String, String[][][]>> horariEscriure = plaEstudis.getUltimHorari().passarString();
         return horariEscriure;
     }
 
@@ -142,26 +141,19 @@ public class CtrlDomini {
     }
 
     public static HashSet<String> llistarAules() {
-       return PlaEstudis.llistarAules();
+       return plaEstudis.llistarAules();
     }
 
     public static HashSet<String> llistarAssigs() {
-        return PlaEstudis.llistarAssignatures();
+        return plaEstudis.llistarAssignatures();
     }
 
-    public static Horari getUltimHorari() {
-        return ultimHorari;
-    }
-
-    public static void setUltimHorari(Horari ultimHorari) {
-        CtrlDomini.ultimHorari = ultimHorari;
-    }
 
     public static String[] getAula(String id) {
 
         String[] result = new String[3];
 
-        Aula a = PlaEstudis.getConjuntAules().getAula(id);
+        Aula a = plaEstudis.getConjuntAules().getAula(id);
 
         result[0] = a.getId();
         result[1] = Integer.toString(a.getCapacitat());
