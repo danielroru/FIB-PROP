@@ -23,7 +23,9 @@ public class CtrlDominiGuardarHorari {
             Gson gson = new Gson();
 
 
-            String json = gson.toJson(CtrlDomini.getPlaEstudis());
+            ConjuntAssignatures e = CtrlDomini.getPlaEstudis().getConjuntAssignatures();
+
+            String json = gson.toJson(e);
 
             System.out.println("hola");
 
