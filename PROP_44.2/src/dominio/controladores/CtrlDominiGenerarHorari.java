@@ -36,12 +36,52 @@ public class CtrlDominiGenerarHorari {
         UAHs = new HashSet<>();
     }
 
+    /**
+     * Inicialitza el graf amb tots els vèrtexs i arestes corresponents segons les dades entrades
+     */
+    public static Graph iniGraf() {
+        Graph G = new Graph();
+        for (Sessio s : sessions) {
+
+            //INICIALITZACIÓ VÈRTEXS
+            Set<UAH> domini = new HashSet<UAH>(RestriccioUnaria.crearDomini(s));
+            G.afegirVertex(s, domini);
+
+            //INICIALITZACIÓ ARESTES
+            Set<Sessio> arestesSessio = new HashSet<>(Restriccions.crearArestes(s));
+            G.afegirAresta(s, arestesSessio);
+
+        }
+        return G;
+    }
+
     public static Horari generarHorari(){
         reset();
         crearUAHs();
         crearSessions();
         ultimHorari = GeneradorHorari.generarHorari();
         ultimHorari.mapejaHorari();
+        return ultimHorari;
+    }
+
+    public static Horari modificarDades(String oldDia, String oldHora, String oldAula,
+                                        String newDia, String newHora, String newAula, Horari ultimHorari) {
+
+        Enumeracio.Dia dia1 = Enumeracio.Dia.valueOf(oldDia.toUpperCase());
+        int hora1 = Integer.parseInt(oldHora);
+        Enumeracio.Dia dia2 = Enumeracio.Dia.valueOf(newDia.toUpperCase());
+        int hora2 = Integer.parseInt(newHora);
+
+        UAH uah1 = new UAH();
+        UAH uah2 = new UAH();
+        for (UAH uah : UAHs) {
+            if ((uah.getDia() == dia1) && (uah.getHora() == hora1) && (uah.getAula().getId() == oldAula))
+                uah1 = uah;
+            else if ((uah.getDia() == dia2) && (uah.getHora() == hora2) && (uah.getAula().getId() == newAula))
+                uah2 = uah;
+        }
+        if (uah1 == new UAH() || uah2 == new UAH()) System.out.println("MAL");
+        ModificadorHorari.modificaHorari(uah1, uah2, ultimHorari);
         return ultimHorari;
     }
 
@@ -148,10 +188,11 @@ public class CtrlDominiGenerarHorari {
         return UAHlaboratori;
     }
 
+    public static HashSet<UAH> getUAHs() {
+        return UAHs;
+    }
+
     public static Queue<Sessio> getSessions() {
         return sessions;
     }
-
-
-
 }

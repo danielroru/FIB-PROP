@@ -83,6 +83,15 @@ public class CtrlDomini {
 
     }
 
+    // [ Opció 5 ] Modificar Horari
+
+    public static ArrayList<Pair<String, String[][][]>> modificarDades(String oldDia, String oldHora, String oldAula,
+                                      String newDia, String newHora, String newAula) {
+        ultimHorari = ctrlDominiGenerarHorari.modificarDades(oldDia, oldHora, oldAula, newDia, newHora, newAula, ultimHorari);
+        ArrayList<Pair<String, String[][][]>> horariEscriure = ultimHorari.passarString();
+        return horariEscriure;
+    }
+
 
     /*
      *   ----------------

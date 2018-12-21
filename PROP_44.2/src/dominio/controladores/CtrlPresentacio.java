@@ -113,7 +113,7 @@ public class CtrlPresentacio {
 
     // ------------------------
     // ------------------------
-    // Opció 2 : Gestionar Horaris
+    // Gestionar Horaris
 
     public void vistaGestionarHoraris() {
         vistaGestionarHoraris vGH = new vistaGestionarHoraris();
@@ -121,7 +121,7 @@ public class CtrlPresentacio {
 
     // ------------------------
     // ------------------------
-    // Opció 2 : Generar Horari
+    // Generar Horari
 
     //  · vistaGenerarHorari()
     //      És allà on hi ha la vista.
@@ -142,7 +142,19 @@ public class CtrlPresentacio {
 
     // ------------------------
     // ------------------------
-    // Opció 3: Guardar Horari
+    // Modificar Horari
+
+
+    public void modificarDades(String oldDia, String oldHora, String oldAula,
+                               String newDia, String newHora, String newAula) {
+
+        ArrayList<Pair<String, String[][][]>> horari = cD.modificarDades(oldDia, oldHora, oldAula, newDia, newHora, newAula);
+        vistaHorari(horari, null, complet);
+    }
+
+    // ------------------------
+    // ------------------------
+    // Guardar Horari
 
     public void guardarHorari(String text) {
         cD.guardarHorari(text);
@@ -150,7 +162,7 @@ public class CtrlPresentacio {
 
     // ------------------------
     // ------------------------
-    // Opció 4 : Carregar Horari
+    // Carregar Horari
 
     public void carregarHorari(String text) {
         ArrayList<Pair<String, String[][][]>> horari = cD.carregarHorari(text);
@@ -160,7 +172,7 @@ public class CtrlPresentacio {
 
     // ------------------------
     // ------------------------
-    // Opció 6 : Editar Dades
+    // Editar Dades
 
 
     public void anarVistaEditarDades() {

@@ -8,6 +8,41 @@ import dominio.controladores.CtrlDominiGenerarHorari;
 
 public class RestriccioUnaria {
 
+    /**
+     * Creadora de restricció unària manual d'hora
+     *
+     * @param  inici true si la restricció es refereix a la hora d'inici de classes, false si és de hora de fi
+     * @param  hora hora llindar
+     * @return UAHs que NO compleixen la restricció
+     */
+    public static Set<UAH> restriccioHora(boolean inici, int hora) {
+        Set<UAH> uahsNoPossibles = new HashSet<>();
+        if (inici) {
+            for (UAH uah : CtrlDominiGenerarHorari.getUAHs())
+                if (uah.getHora() < hora) uahsNoPossibles.add(uah);
+        } else {
+            for (UAH uah : CtrlDominiGenerarHorari.getUAHs())
+                if (uah.getHora() > hora) uahsNoPossibles.add(uah);
+        }
+        return uahsNoPossibles;
+    }
+
+
+    /**
+     * Creadora de restricció unària manual de dia
+     *
+     * @param  dies dies de la setmana que es vol buit
+     *
+     * @return UAHs que NO compleixen la restricció
+     */
+    public static Set<UAH> restriccioDia(Set<Enumeracio.Dia> dies) {
+        Set<UAH> uahsNoPossibles = new HashSet<>();
+        for (Enumeracio.Dia dia : dies) {
+            
+        }
+        return uahsNoPossibles;
+    }
+
     public static Set<UAH> crearDomini(Sessio s) {
         Set<UAH> result;
 
@@ -30,7 +65,6 @@ public class RestriccioUnaria {
         }
 
         return result;
-
 
     }
 

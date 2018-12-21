@@ -1,6 +1,11 @@
 package dominio.classes;
 
-
+import dominio.JSON.JSONArray;
+import dominio.JSON.JSONObject;
+import dominio.JSON.parser.JSONParser;
+import dominio.JSON.parser.ParseException;
+import dominio.controladores.CtrlDomini;
+import dominio.controladores.CtrlDominiGenerarHorari;
 import javafx.util.Pair;
 
 import java.io.FileNotFoundException;
@@ -8,6 +13,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
+
 
 public class Horari {
 
@@ -205,7 +211,7 @@ public class Horari {
     }
 
     //TODO DELETE
-    /*
+
     public void imprimirHorari() {
         try {
             int nSess = 0;
@@ -257,7 +263,7 @@ public class Horari {
                 }
             }
             io.writeln("");
-            CtrlDomini.comptaSessions();
+            CtrlDominiGenerarHorari.comptaSessions();
             io.writeln(nSess + " sessions imprimides");
         }
         catch (Exception e) {
@@ -265,7 +271,7 @@ public class Horari {
         }
 
 
-    }*/
+    }
 
 
 
@@ -275,7 +281,7 @@ public class Horari {
         int nAules = horari.keySet().size();
         int nDies = 5;
         int nHores = PlaEstudis.getHoraFi() - PlaEstudis.getHoraInici();
-        int nAssig = 3;
+        int nAssig = PlaEstudis.getConjuntAssignatures().getAssignatures().size();
 
 
         // Como lo puedo declarar ¿?
@@ -284,12 +290,10 @@ public class Horari {
         //      · Necesito info de la Matriz por Assignatura.
         //      · Pair<String, String[][][]> <- Como se declara ¿?
 
-        String[][][] horariAula = new String[nDies][nHores][nAssig];
         ArrayList<Pair<String, String[][][]>> horariText = new ArrayList<Pair<String, String[][][]>>();
 
-        int i = 0;
         for (String aula : horari.keySet()) {
-
+            String[][][] horariAula = new String[nDies][nHores][nAssig];
             for (int hora = PlaEstudis.getHoraInici(); hora < PlaEstudis.getHoraFi(); ++hora) {
                 for (int dia = 0; dia < nDies; ++dia) {
 
@@ -316,12 +320,10 @@ public class Horari {
                     }
                 }
             }
-
             Pair<String, String[][][]> elementHorari = new Pair<String, String[][][]>(aula, horariAula);
             horariText.add(elementHorari);
-            ++i;
-
         }
+
 
 
         return horariText;
