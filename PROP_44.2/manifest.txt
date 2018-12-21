@@ -1,0 +1,5 @@
+Main-Class: dominio.classes.Main
+
+Class-Path: src/dominio/persistencia/gson-2.6.3.jar
+
+
