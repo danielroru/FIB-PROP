@@ -9,9 +9,7 @@ import java.awt.event.ActionListener;
 
 public class vistaEditarPlaEstudis extends JFrame {
 
-    String horaInici = "8";
-    String horaCanviFranja = "14";
-    String horaFi = "20";
+
 
     private JLabel titolVista = new JLabel("Editar Pla Estudis");
 
@@ -19,20 +17,27 @@ public class vistaEditarPlaEstudis extends JFrame {
     private JLabel titolHoraCanviFranja = new JLabel("Hora Canvi Franja:");
     private JLabel titolHoraFi = new JLabel("Hora Fi:");
 
-    private JTextField textHoraInici = new JTextField(horaInici);
-    private JTextField textHoraCanviFranja = new JTextField(horaCanviFranja);
-    private JTextField textHoraFi = new JTextField(horaFi);
+    private JTextField textHoraInici = new JTextField();
+    private JTextField textHoraCanviFranja = new JTextField();
+    private JTextField textHoraFi = new JTextField();
 
     private JButton editarButton = new JButton("Editar");
     private JButton endarrereButton = new JButton("Endarrere");
 
     private CtrlPresentacio iCtrlPresentacio = CtrlPresentacio.getInstance();
 
-    public vistaEditarPlaEstudis() {
+    public vistaEditarPlaEstudis(boolean complet) {
 
         setSize(400, 600);
         setLocationRelativeTo(null);
         setLayout(null);
+
+        if (complet) {
+            String[] horas = iCtrlPresentacio.cercaInfoPE();
+            textHoraInici = new JTextField(horas[0]);
+            textHoraCanviFranja = new JTextField(horas[1]);
+            textHoraFi = new JTextField(horas[2]);
+        }
 
         /* Títol Vista */
 
@@ -93,6 +98,11 @@ public class vistaEditarPlaEstudis extends JFrame {
         ActionListener editarInformacio = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                String[] info = new String[3];
+                info[0] = textHoraInici.getText();
+                info[1] = textHoraCanviFranja.getText();
+                info[2] = textHoraFi.getText();
+                iCtrlPresentacio.editarInformacio(info);
                 iCtrlPresentacio.anarVistaEditarDades();
                 setVisible(false);
             }

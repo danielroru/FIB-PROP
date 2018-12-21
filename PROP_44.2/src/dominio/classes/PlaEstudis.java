@@ -94,4 +94,12 @@ public class PlaEstudis {
     public static HashSet<String> llistarAssignatures() {
         return cjtAssignatures.llistarAssignatures();
     }
+
+    public static void editarAssignatura(Assignatura a) {
+        cjtAssignatures.afegirAssignatura(a);
+    }
+
+    public static void editarAula(Aula a) {
+        cjtAules.afegirAula(a);
+    }
 }

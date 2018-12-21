@@ -1,5 +1,6 @@
 package dominio.controladores;
 
+import dominio.classes.Assignatura;
 import presentacio.*;
 
 import presentacio.CarregarDades.*;
@@ -178,21 +179,50 @@ public class CtrlPresentacio {
 
 
     public void anarVistaEditarDades() {
-        vistaEditarDades vED = new vistaEditarDades();
+        vistaEditarDades vED = new vistaEditarDades(complet);
     }
 
-    public void anarVistaEditarAula() {
-        vistaEditarAula vEA = new vistaEditarAula();
+
+    public void anarVistaEditarAssignatures(String[] assigatura) {
+
+        vistaEditarAssignatures vEA = new vistaEditarAssignatures(assigatura, complet);
     }
 
-    public void anarVistaEditarAssignatures() {
-        vistaEditarAssignatures vEA = new vistaEditarAssignatures();
+    public void anarVistaEditarAula(String[] assigatura) {
+
+        vistaEditarAula vEA = new vistaEditarAula(assigatura, complet);
     }
 
     public void anarVistaEditarPlaEstudis() {
-        vistaEditarPlaEstudis vEPE = new vistaEditarPlaEstudis();
+        vistaEditarPlaEstudis vEPE = new vistaEditarPlaEstudis(complet);
     }
 
 
+    public String[] informacioAssignatura (String assignatura) {
+       String[] assig = cD.getAssig(assignatura);
+       return assig;
+    }
+
+    public String[] informacioAula (String aula) {
+        String[] resultat = cD.getAula(aula);
+        return resultat;
+    }
+
+    public void guardarAssignatura(String[] info) {
+        cD.guardarAssignatura(info);
+    }
+
+    public void guardarAula(String[] info) {
+        cD.guardarAula(info);
+    }
+
+    public String[] cercaInfoPE() {
+        String[] info = cD.cercarInfoPE();
+        return info;
+    }
+
+    public void editarInformacio(String[] info) {
+        cD.editarInformacio(info);
+    }
 
 }

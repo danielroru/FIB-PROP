@@ -24,17 +24,17 @@ public class vistaEditarDades extends JFrame {
 
     private CtrlPresentacio iCtrlPresentacio = CtrlPresentacio.getInstance();
 
-    public vistaEditarDades() {
+    public vistaEditarDades(boolean complet) {
         setSize(400, 600);
         setLocationRelativeTo(null);
         setLayout(null);
 
-        if (CtrlPresentacio.llistarAssigs() != new HashSet<String>()) {
+        if (complet) {
             String[] result = (CtrlPresentacio.llistarAssigs()).toArray(new String[CtrlPresentacio.llistarAssigs().size()]);
             assignatures = new JComboBox<String>(result);
         }
 
-        if (CtrlPresentacio.llistarAules() != new HashSet<String>()) {
+        if (complet) {
             String[] result = (CtrlPresentacio.llistarAules()).toArray(new String[CtrlPresentacio.llistarAules().size()]);
             aules = new JComboBox<String>(result);
         }
@@ -51,11 +51,6 @@ public class vistaEditarDades extends JFrame {
 
         /* Selecció Aules */
 
-        /*
-        if (valid) {
-            String[] idAules = Cerca CjtAules
-            aules = new JComboBox(idAules);
-        } */
 
         aules.setBounds(50,220,300,30);
         add(aules);
@@ -67,11 +62,6 @@ public class vistaEditarDades extends JFrame {
 
         /* Selecció Assignatures */
 
-        /*
-        if (valid) {
-            String[] nomAssig = Cerca CjtAssig;
-            aules = new JComboBox(idAssig);
-        }  */
 
         assignatures.setBounds(50,300,300,30);
         add(assignatures);
@@ -92,7 +82,9 @@ public class vistaEditarDades extends JFrame {
         ActionListener vistaAula = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                iCtrlPresentacio.anarVistaEditarAula();
+                String aula = aules.getSelectedItem().toString();
+                String[] resultat = iCtrlPresentacio.informacioAula(aula);
+                iCtrlPresentacio.anarVistaEditarAula(resultat);
                 setVisible(false);
             }
         };
@@ -100,7 +92,9 @@ public class vistaEditarDades extends JFrame {
         ActionListener vistaAssignatura = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                iCtrlPresentacio.anarVistaEditarAssignatures();
+                String assignatura = assignatures.getSelectedItem().toString();
+                String[] assig = iCtrlPresentacio.informacioAssignatura(assignatura);
+                iCtrlPresentacio.anarVistaEditarAssignatures(assig);
                 setVisible(false);
             }
         };
