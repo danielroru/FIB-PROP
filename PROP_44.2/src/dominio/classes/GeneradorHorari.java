@@ -7,40 +7,12 @@ import java.util.*;
 
 public class GeneradorHorari {
 
-    private static Graph G = new Graph();
+    private static Graph G;
 
-    private static Map<Sessio, Set<UAH>> valPoss = new HashMap<>();
+    private static Map<Sessio, Set<UAH>> valPoss;
 
     public static Graph getG() {
         return G;
-    }
-
-
-    /**
-     * Inicialitza el graf amb tots els vèrtexs i arestes corresponents segons les dades entrades
-     */
-    private static void iniGraf() {
-
-        for (Sessio s : CtrlDominiGenerarHorari.getSessions()) {
-
-            //INICIALITZACIÓ VÈRTEXS
-            Set<UAH> domini = new HashSet<UAH>(RestriccioUnaria.crearDomini(s));
-            G.afegirVertex(s, domini);
-
-            //INICIALITZACIÓ ARESTES
-            Set<Sessio> arestesSessio = new HashSet<>(Restriccions.crearArestes(s));
-            G.afegirAresta(s, arestesSessio);
-
-        }
-        valPoss  = G.copyVertexs();
-    }
-
-    private static boolean compatible(UAH uah, Sessio s) {
-        for (UAH uahConflicte : G.getVertexs().get(s)) {
-            if (RestriccioBinaria.coincideixenUAH(uahConflicte, uah))
-                return false;
-        }
-        return true;
     }
 
     /**
@@ -154,8 +126,9 @@ public class GeneradorHorari {
      */
 
     public static Horari generarHorari() {
-
-        iniGraf();
+        //iniGraf(restriccioHora, restriccioDia);
+        G = CtrlDominiGenerarHorari.iniGraf();
+        valPoss = G.copyVertexs();
         Horari solucio = new Horari();
         Queue<Sessio> vfutures = new LinkedList<Sessio>(CtrlDominiGenerarHorari.getSessions());
         //Map<Sessio, Set<UAH>> vals = G.copyVertexs();

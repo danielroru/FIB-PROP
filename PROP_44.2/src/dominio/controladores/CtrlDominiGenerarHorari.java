@@ -36,6 +36,25 @@ public class CtrlDominiGenerarHorari {
         UAHs = new HashSet<>();
     }
 
+    /**
+     * Inicialitza el graf amb tots els vèrtexs i arestes corresponents segons les dades entrades
+     */
+    public static Graph iniGraf() {
+        Graph G = new Graph();
+        for (Sessio s : sessions) {
+
+            //INICIALITZACIÓ VÈRTEXS
+            Set<UAH> domini = new HashSet<UAH>(RestriccioUnaria.crearDomini(s));
+            G.afegirVertex(s, domini);
+
+            //INICIALITZACIÓ ARESTES
+            Set<Sessio> arestesSessio = new HashSet<>(Restriccions.crearArestes(s));
+            G.afegirAresta(s, arestesSessio);
+
+        }
+        return G;
+    }
+
     public static Horari generarHorari(){
         reset();
         crearUAHs();
@@ -43,6 +62,19 @@ public class CtrlDominiGenerarHorari {
         ultimHorari = GeneradorHorari.generarHorari();
         ultimHorari.mapejaHorari();
         return ultimHorari;
+    }
+
+    public static void modificarHorari(Enumeracio.Dia dia1, int hora1, String aula1, Enumeracio.Dia dia2, int hora2, String aula2) {
+        UAH uah1 = new UAH();
+        UAH uah2 = new UAH();
+        for (UAH uah : UAHs) {
+            if ((uah.getDia() == dia1) && (uah.getHora() == hora1) && (uah.getAula().getId() == aula1))
+                uah1 = uah;
+            else if ((uah.getDia() == dia2) && (uah.getHora() == hora2) && (uah.getAula().getId() == aula2))
+                uah2 = uah;
+        }
+        if (uah1 != null || uah2 != null)
+            ModificadorHorari.modificaHorari(uah1, uah2);
     }
 
     public static ArrayList<Pair<String, String[][][]>> escriureHorari() {
@@ -155,7 +187,5 @@ public class CtrlDominiGenerarHorari {
     public static Queue<Sessio> getSessions() {
         return sessions;
     }
-
-
 
 }
