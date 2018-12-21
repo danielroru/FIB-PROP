@@ -7,10 +7,9 @@ import javafx.util.Pair;
 
 public class CtrlDomini {
 
-    private static PlaEstudis plaEstudis;
+    private static PlaEstudis plaEstudis = new PlaEstudis();
 
     public CtrlDomini() {
-        plaEstudis = new PlaEstudis();
     }
 
     public static void carregarDirectori(String path) {
@@ -51,7 +50,7 @@ public class CtrlDomini {
 
     public static void guardarHorari(String text) {
 
-        CtrlDominiGuardarHorari.guardarHorari(plaEstudis, text);
+        CtrlDominiGuardarHorari.guardarHorari(text);
     }
 
     // [ Opció 4 ] Carregar Horari

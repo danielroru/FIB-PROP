@@ -15,12 +15,8 @@ public class CtrlDominiGenerarHorari {
     private static HashSet<UAH> UAHlaboratori = new HashSet<>();
     private static HashSet<UAH> UAHs = new HashSet<>();
 
-    private static Horari ultimHorari;
-    private static PlaEstudis plaEstudis;
+    public CtrlDominiGenerarHorari() {
 
-    public CtrlDominiGenerarHorari(PlaEstudis pe) {
-        plaEstudis = pe;
-        ultimHorari = new Horari();
     }
 
     public static void reset() {
@@ -55,9 +51,10 @@ public class CtrlDominiGenerarHorari {
         reset();
         crearUAHs();
         crearSessions();
-        ultimHorari = GeneradorHorari.generarHorari();
-        ultimHorari.mapejaHorari();
-        return ultimHorari;
+        Horari h = GeneradorHorari.generarHorari();
+        CtrlDomini.getPlaEstudis().setUltimHorari(h);
+        h.mapejaHorari();
+        return h;
     }
 
     public static Horari modificarDades(String oldDia, String oldHora, String oldAula,
@@ -77,12 +74,12 @@ public class CtrlDominiGenerarHorari {
                 uah2 = uah;
         }
         if (uah1 == new UAH() || uah2 == new UAH()) System.out.println("MAL");
-        ModificadorHorari.modificaHorari(plaEstudis, uah1, uah2, ultimHorari);
+        ModificadorHorari.modificaHorari(uah1, uah2, ultimHorari);
         return ultimHorari;
     }
 
     public static ArrayList<Pair<String, String[][][]>> escriureHorari() {
-        return ultimHorari.passarString();
+        return CtrlDomini.getPlaEstudis().getUltimHorari().passarString();
     }
 
 
@@ -98,7 +95,7 @@ public class CtrlDominiGenerarHorari {
 
         sessions = new LinkedList<>();
 
-        for (Assignatura a : plaEstudis.getConjuntAssignatures().getAssignatures()) {
+        for (Assignatura a : CtrlDomini.getPlaEstudis().getConjuntAssignatures().getAssignatures()) {
             for(int i = 1; i <= a.getnGrupsT(); ++i) {
                 Sessio sT = new Sessio();
                 sT.setAssignatura(a);
@@ -137,7 +134,7 @@ public class CtrlDominiGenerarHorari {
 
     public static void comptaSessions() {
         int compt = 0;
-        for (Assignatura ass : plaEstudis.getConjuntAssignatures().getAssignatures()) {
+        for (Assignatura ass : CtrlDomini.getPlaEstudis().getConjuntAssignatures().getAssignatures()) {
             compt += ass.getnHoresT()*ass.getnGrupsT() + ass.getnGrupsT()*ass.getnGrupsL()*ass.getnHoresL() + ass.getnGrupsT()*ass.getnGrupsP()*ass.getnHoresP();
         }
         System.out.println(compt + " sessions");
@@ -146,9 +143,9 @@ public class CtrlDominiGenerarHorari {
 
     private static void crearUAHs() {
 
-        for (Aula a : plaEstudis.getConjuntAules().getAules()) {
+        for (Aula a : CtrlDomini.getPlaEstudis().getConjuntAules().getAules()) {
             for (Enumeracio.Dia dia : Enumeracio.Dia.values()) {
-                for (int i = plaEstudis.getHoraInici(); i < plaEstudis.getHoraFi(); i++) {
+                for (int i = CtrlDomini.getPlaEstudis().getHoraInici(); i < CtrlDomini.getPlaEstudis().getHoraFi(); i++) {
 
                     UAH uah = new UAH();
 
@@ -156,7 +153,7 @@ public class CtrlDominiGenerarHorari {
                     uah.setDia(dia);
                     uah.setAula(a);
 
-                    if (i < plaEstudis.getHoraCanviFranja()) UAHmatins.add(uah);
+                    if (i < CtrlDomini.getPlaEstudis().getHoraCanviFranja()) UAHmatins.add(uah);
                     else UAHtardes.add(uah);
 
                     if ((a.getTipusAula()).equals(Enumeracio.TipusAula.TEORIA)) UAHteoria.add(uah);

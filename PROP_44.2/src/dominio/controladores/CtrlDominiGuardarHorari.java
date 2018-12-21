@@ -11,19 +11,19 @@ public class CtrlDominiGuardarHorari {
 
     private static PlaEstudis plaEstudis;
 
-    public CtrlDominiGuardarHorari(PlaEstudis pe) {
-        plaEstudis = pe;
+    public CtrlDominiGuardarHorari() {
+
     }
 
 
-    public static void guardarHorari(PlaEstudis plaEstudis, String path) {
+    public static void guardarHorari(String path) {
         try {
             //TODO
             // if (ultimHorari.getHorari().size() == 0) throw new Exception ("    ERROR: Encara no has generat cap horari");
             Gson gson = new Gson();
 
 
-            String json = gson.toJson(plaEstudis);
+            String json = gson.toJson(CtrlDomini.getPlaEstudis());
 
             System.out.println("hola");
 

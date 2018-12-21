@@ -21,6 +21,11 @@ public class CtrlDominiCarregarDades {
         carregarAules(path + "/aules.json");
         carregarAssignatures(path + "/assignatures.json");
         carregarPlaEstudis(path + "/plaEstudis.json");
+
+
+        System.out.println("Dades carregades");
+
+
     }
 
 

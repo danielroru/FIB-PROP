@@ -26,7 +26,7 @@ public class ModificadorHorari {
         return true;
     }
 
-    public static void modificaHorari(PlaEstudis plaEstudis, UAH uah1, UAH uah2, Horari ultimHorari) {
+    public static void modificaHorari(UAH uah1, UAH uah2, Horari ultimHorari) {
         if (uah1.getAula().getTipusAula() == uah2.getAula().getTipusAula()) {
             swap(uah1.getSessio(), uah2.getSessio());
             if (!compleixRestriccions()) {
@@ -34,9 +34,9 @@ public class ModificadorHorari {
                 swap(uah1.getSessio(), uah2.getSessio());
             } else {
                 int i1 = uah1.getDia().ordinal();
-                int j1 = uah1.getHora() - plaEstudis.getHoraInici();
+                int j1 = uah1.getHora() - CtrlDomini.getPlaEstudis().getHoraInici();
                 int i2 = uah2.getDia().ordinal();
-                int j2 = uah2.getHora() - plaEstudis.getHoraInici();
+                int j2 = uah2.getHora() - CtrlDomini.getPlaEstudis().getHoraInici();
                 ultimHorari.getHorari().get(uah1.getAula().getId()).swap(i1, j1, i2, j2);
             }
         } else {

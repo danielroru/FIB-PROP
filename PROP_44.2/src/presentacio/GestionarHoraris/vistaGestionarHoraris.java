@@ -3,6 +3,7 @@ package presentacio.GestionarHoraris;
 import dominio.controladores.CtrlPresentacio;
 
 import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -67,7 +68,7 @@ public class vistaGestionarHoraris extends JFrame {
             public void actionPerformed(ActionEvent e) {
 
                 JFileChooser chooserGuardarHorari = new JFileChooser();;
-                chooserGuardarHorari.setDialogTitle("Guardar Horari");
+                chooserGuardarHorari.setDialogTitle("Guardar Horari (Cal afegir l'extensió .jsont)");
                 chooserGuardarHorari.setCurrentDirectory(new File(System.getProperty("user.dir") + "/data/Horaris"));
                 int returnValue = chooserGuardarHorari.showSaveDialog(null);
                 if (returnValue == JFileChooser.APPROVE_OPTION) {

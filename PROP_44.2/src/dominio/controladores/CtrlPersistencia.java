@@ -30,7 +30,6 @@ public class CtrlPersistencia {
             String sCurrentLine;
 
             while ((sCurrentLine = br.readLine()) != null) {
-                System.out.println(sCurrentLine);
                 line = sCurrentLine;
             }
 
