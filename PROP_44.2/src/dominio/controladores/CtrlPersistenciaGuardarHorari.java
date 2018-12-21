@@ -1,7 +1,7 @@
 package dominio.controladores;
 
-import dominio.JSON.JSONArray;
-import dominio.JSON.JSONObject;
+import persistencia.JSONArray;
+import persistencia.JSONObject;
 import dominio.classes.*;
 
 import java.io.FileWriter;

@@ -3,6 +3,7 @@ package dominio.controladores;
 // Repàs
 import dominio.classes.*;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 public class CtrlPersistencia {
@@ -31,7 +32,7 @@ public class CtrlPersistencia {
         return ctrlPersistenciaCarregarDades.carregarAules(path);
     }
 
-    public static String[][] carregarAssignatures(String path) {
+    public static ArrayList<ArrayList<String>> carregarAssignatures(String path) {
         return ctrlPersistenciaCarregarDades.carregarAssignatures(path);
     }
 

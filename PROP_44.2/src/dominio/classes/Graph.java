@@ -144,6 +144,7 @@ public class Graph {
     public void eliminarUAH(Sessio s, UAH uah) {
         this.vertexs.get(s).remove(uah);
     }
+
     /*public void teRestriccio(Sessio principal, Sessio y) {
     }*/
 }

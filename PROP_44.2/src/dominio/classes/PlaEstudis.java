@@ -14,10 +14,14 @@ public class PlaEstudis {
     private static int horaFi = -1;
     private static int horaCanviFranja = -1;
 
+    /**
+     * Restablim els atributs per poder carregar un altre set de dades
+     */
     public static void reset() {
         instance = new PlaEstudis();
         cjtAssignatures = new ConjuntAssignatures();
         cjtAules = new ConjuntAules();
+
         horaInici = -1;
         horaFi = -1;
         horaCanviFranja = -1;
@@ -55,14 +59,18 @@ public class PlaEstudis {
     }
 
 
-    // Conjunt Aules
-
+    /**
+     * Obtenim un conjunt d'aules
+     * @post retornem un ConjuntAules
+     */
     public static ConjuntAules getConjuntAules() {
         return cjtAules;
     }
 
-    // Conjunt Assignatures
-
+    /**
+     * Obtenim un conjunt d'assignatures
+     * @post retornem un ConjuntAssignatures
+     */
     public static ConjuntAssignatures getConjuntAssignatures() {
         return cjtAssignatures;
     }

@@ -1,11 +1,12 @@
 package dominio.controladores;
 
-import dominio.JSON.JSONArray;
-import dominio.JSON.JSONObject;
-import dominio.JSON.parser.JSONParser;
+import persistencia.JSONArray;
+import persistencia.JSONObject;
+import persistencia.parser.JSONParser;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.util.ArrayList;
 
 public class CtrlPersistenciaCarregarDades {
 
@@ -49,7 +50,7 @@ public class CtrlPersistenciaCarregarDades {
         catch (Exception e) {
             e.printStackTrace();
         }
-        //TODO
+
         return aules;
 
     }
@@ -77,52 +78,53 @@ public class CtrlPersistenciaCarregarDades {
     // assignatures[x][13] = horesBlocL
     // assignatures[x][14] = horesBlocP
 
-    public static String[][] carregarAssignatures(String dataPath) {
+    public static ArrayList<ArrayList<String>> carregarAssignatures(String dataPath) {
 
-        String[][] assignatures = null;
+        ArrayList<ArrayList<String>> assignatures = new ArrayList<ArrayList<String>>();
 
         JSONParser parser = new JSONParser();
 
         try {
+
+            ArrayList<String> assignatura = new ArrayList<>();
             JSONArray arrayAssignatures = (JSONArray) parser.parse(new FileReader(dataPath));
-            assignatures = new String[arrayAssignatures.size()][15];
 
             for (int i = 0; i < arrayAssignatures.size(); i++) {
 
 
                 JSONObject jsonObject = (JSONObject) arrayAssignatures.get(i);
 
-                assignatures[i][0] = (String) jsonObject.get("nom");
-                assignatures[i][1] = String.valueOf((int) (long) jsonObject.get("nivell"));
+                assignatura.add((String) jsonObject.get("nom"));
 
-                assignatures[i][2] = String.valueOf((int) (long) jsonObject.get("nHoresT"));
-                assignatures[i][3] = String.valueOf((int) (long) jsonObject.get("nHoresL"));
-                assignatures[i][4] = String.valueOf((int) (long) jsonObject.get("nHoresP"));
+                assignatura.add(String.valueOf((int) (long) jsonObject.get("nivell")));
 
-                assignatures[i][5] = String.valueOf((int) (long) jsonObject.get("nGrupsT"));
-                assignatures[i][6] = String.valueOf((int) (long) jsonObject.get("nGrupsL"));
-                assignatures[i][7] = String.valueOf((int) (long) jsonObject.get("nGrupsP"));
+                assignatura.add(String.valueOf((int) (long) jsonObject.get("nHoresT")));
+                assignatura.add(String.valueOf((int) (long) jsonObject.get("nHoresL")));
+                assignatura.add(String.valueOf((int) (long) jsonObject.get("nHoresP")));
 
-                assignatures[i][8] = String.valueOf((int) (long) jsonObject.get("nGrupsMati"));
+                assignatura.add(String.valueOf((int) (long) jsonObject.get("nGrupsT")));
+                assignatura.add(String.valueOf((int) (long) jsonObject.get("nGrupsL")));
+                assignatura.add(String.valueOf((int) (long) jsonObject.get("nGrupsP")));
 
-                assignatures[i][9] = String.valueOf((int) (long) jsonObject.get("nAlumnesT"));
-                assignatures[i][10] = String.valueOf((int) (long) jsonObject.get("nAlumnesL"));
-                assignatures[i][11] = String.valueOf((int) (long) jsonObject.get("nAlumnesP"));
+                assignatura.add(String.valueOf((int) (long) jsonObject.get("nGrupsMati")));
 
-                assignatures[i][12] = String.valueOf((int) (long) jsonObject.get("horesBlocT"));
-                assignatures[i][13] = String.valueOf((int) (long) jsonObject.get("horesBlocL"));
-                assignatures[i][14] = String.valueOf((int) (long) jsonObject.get("horesBlocP"));
+                assignatura.add(String.valueOf((int) (long) jsonObject.get("nAlumnesT")));
+                assignatura.add(String.valueOf((int) (long) jsonObject.get("nAlumnesL")));
+                assignatura.add(String.valueOf((int) (long) jsonObject.get("nAlumnesP")));
 
+                assignatura.add(String.valueOf((int) (long) jsonObject.get("horesBlocT")));
+                assignatura.add(String.valueOf((int) (long) jsonObject.get("horesBlocL")));
+                assignatura.add(String.valueOf((int) (long) jsonObject.get("horesBlocP")));
 
-                // TODO
-                /*
-                Com fer lu dels correquisits ¿?
+                // Assignem els correquisits
+                JSONArray arrayCorrequisits = (JSONArray) jsonObject.get("correquisits");
 
-                for (int j = 0; j < jsonObject.size(); j++) {
-                    // Com llegir varis correquisits ¿?¿?
-                    assignatures[i][j] = (String) jsonObject.get("correquisits");
+                for (Object co : arrayCorrequisits) {
+                    String assig = co.toString();
+                    assignatura.add(assig);
                 }
-                */
+
+                assignatures.add(assignatura);
             }
 
 
@@ -133,7 +135,6 @@ public class CtrlPersistenciaCarregarDades {
             e.printStackTrace();
         }
 
-        //TODO
         return assignatures;
 
     }
@@ -162,7 +163,7 @@ public class CtrlPersistenciaCarregarDades {
         catch (Exception e) {
             e.printStackTrace();
         }
-        //TODO
+
         return plaEstudis;
 
     }

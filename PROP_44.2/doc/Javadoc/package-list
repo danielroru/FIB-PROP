@@ -1,6 +1,6 @@
 
 Dominio
 dominio.JSON
-dominio.JSON.parser
+persistencia.parser
 dominio.classes
 dominio.controladores

@@ -1,10 +1,9 @@
 package dominio.classes;
 
-import dominio.JSON.JSONArray;
-import dominio.JSON.JSONObject;
-import dominio.JSON.parser.JSONParser;
-import dominio.JSON.parser.ParseException;
-import dominio.controladores.CtrlDomini;
+import persistencia.JSONArray;
+import persistencia.JSONObject;
+import persistencia.parser.JSONParser;
+import persistencia.parser.ParseException;
 import javafx.util.Pair;
 
 import java.io.FileNotFoundException;
@@ -139,6 +138,8 @@ public class Horari {
         return false;
     }
 
+    //TODO ELIMINAR
+    /*
     public void escriure() {
         for (Sessio s : assignacio.keySet()) {
             System.out.println(s.getAssignatura().getNom() + " " + s.getIdGrup() + " " + s.getTipus());
@@ -151,6 +152,7 @@ public class Horari {
 
         }
     }
+    */
     public boolean assignacioCompleta(Sessio s) {
         if(assignacio.containsKey(s)) {
             int duracio = 0;

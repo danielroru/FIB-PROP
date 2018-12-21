@@ -1,10 +1,12 @@
 package dominio.controladores;
 
 
-import dominio.JSON.parser.ParseException;
+import persistencia.parser.ParseException;
 import dominio.classes.*;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashSet;
 
 public class CtrlDominiCarregarDades {
 
@@ -27,16 +29,9 @@ public class CtrlDominiCarregarDades {
     //////////////////////////
 
     public static void carregarDadesByFolder(String path) {
-        //TODO
-
-        String aules = path + "/aules.json";
-        String assignatures = path + "/assignatures.json";
-        String plaEstudis = path + "/plaEstudis.json";
-
-
-        carregarAules(aules);
-        carregarAssignatures(assignatures);
-        carregarPlaEstudis(plaEstudis);
+        carregarAules(path + "/aules.json");
+        carregarAssignatures(path + "/assignatures.json");
+        carregarPlaEstudis(path + "/plaEstudis.json");
 
     }
 
@@ -50,7 +45,6 @@ public class CtrlDominiCarregarDades {
     public static void carregarAules(String path) {
 
         String[][] aules = ctrlPersistencia.carregarAules(path);
-        ConjuntAules cjtAules = new ConjuntAules();
 
         // Comprovació Errors Aules
         try {
@@ -106,58 +100,69 @@ public class CtrlDominiCarregarDades {
 
     public static void carregarAssignatures(String path) {
 
-        String[][] assignatures = ctrlPersistencia.carregarAssignatures(path);
-        ConjuntAssignatures cjtAssignatures = new ConjuntAssignatures();
+        ArrayList<ArrayList<String>> assignatures = ctrlPersistencia.carregarAssignatures(path);
 
         try {
-            for (String[] a : assignatures) {
+            for (ArrayList<String> a : assignatures) {
 
-                if (Integer.parseInt(a[1]) < 0) throw new Exception("El nivell de l'assignatura " + a[0] + " no pot ser inferior a 0");
-                if (Integer.parseInt(a[2]) < 0) throw new Exception("El nHoresT de l'assignatura " + a[0] + " no pot ser inferior a 0");
-                if (Integer.parseInt(a[3]) < 0) throw new Exception("El nHoresL de l'assignatura " + a[0] + " no pot ser inferior a 0");
-                if (Integer.parseInt(a[4]) < 0) throw new Exception("El nHoresP de l'assignatura " + a[0] + " no pot ser inferior a 0");
-                if (Integer.parseInt(a[5]) < 0) throw new Exception("El nGrupsT de l'assignatura " + a[0] + " no pot ser inferior a 0");
-                if (Integer.parseInt(a[6]) < 0) throw new Exception("El nGrupsL de l'assignatura " + a[0] + " no pot ser inferior a 0");
-                if (Integer.parseInt(a[6]) > 9) throw new Exception("El nGrupsL de l'assignatura " + a[0] + " no pot ser superior a 9");
-                if (Integer.parseInt(a[7]) < 0) throw new Exception("El nGrupsP de l'assignatura " + a[0] + " no pot ser inferior a 0");
-                if (Integer.parseInt(a[7]) > 9) throw new Exception("El nGrupsP de l'assignatura " + a[0] + " no pot ser superior a 9");
-                if (Integer.parseInt(a[8]) < 0) throw new Exception("El nGrupsMati de l'assignatura " + a[0] + " no pot ser inferior a 0");
-                if (Integer.parseInt(a[8]) > Integer.parseInt(a[5])) throw new Exception("El nGrupsMati de l'assignatura " + a[0] + " no pot ser superior al nGrupsT");
-                if (Integer.parseInt(a[9]) < 0) throw new Exception("El nAlumnesT de l'assignatura " + a[0] + " no pot ser inferior a 0");
-                if (Integer.parseInt(a[10]) < 0) throw new Exception("El nAlumnesL de l'assignatura " + a[0] + " no pot ser inferior a 0");
-                if (Integer.parseInt(a[10]) > Integer.parseInt(a[9])) throw new Exception("El nAlumnesL de l'assignatura " + a[0] + " no pot ser superior nAlumnesT");
-                if (Integer.parseInt(a[11]) < 0) throw new Exception("El nAlumnesP de l'assignatura " + a[0] + " no pot ser inferior a 0");
-                if (Integer.parseInt(a[11]) > Integer.parseInt(a[9])) throw new Exception("El nAlumnesP de l'assignatura " + a[0] + " no pot ser superior nAlumnesT");
-                if (Integer.parseInt(a[12]) < 0) throw new Exception("El horesBlocT de l'assignatura " + a[0] + " no pot ser inferior a 0");
-                if (Integer.parseInt(a[12]) > Integer.parseInt(a[2])) throw new Exception("El horesBlocT de l'assignatura " + a[0] + " no pot ser superior a nHoresT");
-                if (Integer.parseInt(a[13]) < 0) throw new Exception("El horesBlocL de l'assignatura " + a[0] + " no pot ser inferior a 0");
-                if (Integer.parseInt(a[13]) > Integer.parseInt(a[2])) throw new Exception("El horesBlocL de l'assignatura " + a[0] + " no pot ser superior a nHoresL");
-                if (Integer.parseInt(a[14]) < 0) throw new Exception("El horesBlocP de l'assignatura " + a[0] + " no pot ser inferior a 0");
-                if (Integer.parseInt(a[14]) > Integer.parseInt(a[2])) throw new Exception("El horesBlocP de l'assignatura " + a[0] + " no pot ser superior a nHoresP");
+                String nom = a.get(0);
+
+                if (Integer.parseInt(a.get(1)) < 0) throw new Exception("El nivell de l'assignatura " + nom + " no pot ser inferior a 0");
+                if (Integer.parseInt(a.get(2)) < 0) throw new Exception("El nHoresT de l'assignatura " + nom + " no pot ser inferior a 0");
+                if (Integer.parseInt(a.get(3)) < 0) throw new Exception("El nHoresL de l'assignatura " + nom + " no pot ser inferior a 0");
+                if (Integer.parseInt(a.get(4)) < 0) throw new Exception("El nHoresP de l'assignatura " + nom + " no pot ser inferior a 0");
+                if (Integer.parseInt(a.get(5)) < 0) throw new Exception("El nGrupsT de l'assignatura " + nom + " no pot ser inferior a 0");
+                if (Integer.parseInt(a.get(6)) < 0) throw new Exception("El nGrupsL de l'assignatura " + nom + " no pot ser inferior a 0");
+                if (Integer.parseInt(a.get(6)) > 9) throw new Exception("El nGrupsL de l'assignatura " + nom + " no pot ser superior a 9");
+                if (Integer.parseInt(a.get(7)) < 0) throw new Exception("El nGrupsP de l'assignatura " + nom + " no pot ser inferior a 0");
+                if (Integer.parseInt(a.get(7)) > 9) throw new Exception("El nGrupsP de l'assignatura " + nom + " no pot ser superior a 9");
+                if (Integer.parseInt(a.get(8)) < 0) throw new Exception("El nGrupsMati de l'assignatura " + nom + " no pot ser inferior a 0");
+                if (Integer.parseInt(a.get(8)) > Integer.parseInt(a.get(5))) throw new Exception("El nGrupsMati de l'assignatura " + nom + " no pot ser superior al nGrupsT");
+                if (Integer.parseInt(a.get(9)) < 0) throw new Exception("El nAlumnesT de l'assignatura " + nom + " no pot ser inferior a 0");
+                if (Integer.parseInt(a.get(10)) < 0) throw new Exception("El nAlumnesL de l'assignatura " + nom + " no pot ser inferior a 0");
+                if (Integer.parseInt(a.get(10)) > Integer.parseInt(a.get(9))) throw new Exception("El nAlumnesL de l'assignatura " + nom + " no pot ser superior nAlumnesT");
+                if (Integer.parseInt(a.get(11)) < 0) throw new Exception("El nAlumnesP de l'assignatura " + nom + " no pot ser inferior a 0");
+                if (Integer.parseInt(a.get(11)) > Integer.parseInt(a.get(9))) throw new Exception("El nAlumnesP de l'assignatura " + nom + " no pot ser superior nAlumnesT");
+                if (Integer.parseInt(a.get(12)) < 0) throw new Exception("El horesBlocT de l'assignatura " + nom + " no pot ser inferior a 0");
+                if (Integer.parseInt(a.get(12)) > Integer.parseInt(a.get(2))) throw new Exception("El horesBlocT de l'assignatura " + nom + " no pot ser superior a nHoresT");
+                if (Integer.parseInt(a.get(13)) < 0) throw new Exception("El horesBlocL de l'assignatura " + nom + " no pot ser inferior a 0");
+                if (Integer.parseInt(a.get(13)) > Integer.parseInt(a.get(2))) throw new Exception("El horesBlocL de l'assignatura " + nom + " no pot ser superior a nHoresL");
+                if (Integer.parseInt(a.get(14)) < 0) throw new Exception("El horesBlocP de l'assignatura " + nom + " no pot ser inferior a 0");
+                if (Integer.parseInt(a.get(14)) > Integer.parseInt(a.get(2))) throw new Exception("El horesBlocP de l'assignatura " + nom + " no pot ser superior a nHoresP");
 
 
                 // Creració de l'Aula
                 Assignatura assig = new Assignatura();
-                assig.setNom(a[0]);
-                assig.setNivell(Integer.parseInt(a[1]));
+                assig.setNom(a.get(0));
+                assig.setNivell(Integer.parseInt(a.get(1)));
 
-                assig.setnHoresT(Integer.parseInt(a[2]));
-                assig.setnHoresL(Integer.parseInt(a[3]));
-                assig.setnHoresP(Integer.parseInt(a[4]));
+                assig.setnHoresT(Integer.parseInt(a.get(2)));
+                assig.setnHoresL(Integer.parseInt(a.get(3)));
+                assig.setnHoresP(Integer.parseInt(a.get(4)));
 
-                assig.setnGrupsT(Integer.parseInt(a[5]));
-                assig.setnGrupsL(Integer.parseInt(a[6]));
-                assig.setnGrupsP(Integer.parseInt(a[7]));
+                assig.setnGrupsT(Integer.parseInt(a.get(5)));
+                assig.setnGrupsL(Integer.parseInt(a.get(6)));
+                assig.setnGrupsP(Integer.parseInt(a.get(7)));
 
-                assig.setnGrupsMati(Integer.parseInt(a[8]));
+                assig.setnGrupsMati(Integer.parseInt(a.get(8)));
 
-                assig.setnAlumnesT(Integer.parseInt(a[9]));
-                assig.setnAlumnesL(Integer.parseInt(a[10]));
-                assig.setnAlumnesP(Integer.parseInt(a[11]));
+                assig.setnAlumnesT(Integer.parseInt(a.get(9)));
+                assig.setnAlumnesL(Integer.parseInt(a.get(10)));
+                assig.setnAlumnesP(Integer.parseInt(a.get(11)));
 
-                assig.setHoresBlocT(Integer.parseInt(a[12]));
-                assig.setHoresBlocL(Integer.parseInt(a[13]));
-                assig.setHoresBlocP(Integer.parseInt(a[14]));
+                assig.setHoresBlocT(Integer.parseInt(a.get(12)));
+                assig.setHoresBlocL(Integer.parseInt(a.get(13)));
+                assig.setHoresBlocP(Integer.parseInt(a.get(14)));
+
+                if (a.size() > 14) {
+                    HashSet<String> setCore = new HashSet<>();
+
+                    for (int i = 14; i < a.size(); i++) {
+                        setCore.add(a.get(i));
+                    }
+
+                    assig.setCorrequisits(setCore);
+                }
 
                 // Afagir en el Conjunt d'Aules
 

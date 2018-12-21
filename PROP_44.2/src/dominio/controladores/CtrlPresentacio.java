@@ -1,14 +1,13 @@
 package dominio.controladores;
 
-import dominio.swing.*;
+import dominio.persistencia.*;
 
-import dominio.swing.CarregarDades.*;
-import dominio.swing.EditarDades.*;
-import dominio.swing.GestionarHoraris.*;
-import dominio.swing.GestionarHoraris.AltresVistesGestionarHoraris.vistaGenerarHorari;
-import dominio.swing.EditarDades.AltresVistesEditarDades.*;
+import dominio.persistencia.CarregarDades.*;
+import dominio.persistencia.EditarDades.*;
+import dominio.persistencia.GestionarHoraris.*;
+import dominio.persistencia.GestionarHoraris.AltresVistesGestionarHoraris.vistaGenerarHorari;
+import dominio.persistencia.EditarDades.AltresVistesEditarDades.*;
 
-import dominio.swing.GestionarHoraris.AltresVistesGestionarHoraris.vistaGenerarHorari;
 import javafx.util.Pair;
 
 import java.util.ArrayList;
@@ -32,89 +31,33 @@ public class CtrlPresentacio {
     }
 
 
-    /*
-     *
-     *   MIRAR ERRORS SI NO HI HA INFO CORRECTE
-     *   --------------------------------------
-     *
-     * */
-
-    /* Retorna Informació de l'Aula:
-     *
-     *       · [0] ID
-     *       · [1] Capacitat
-     *       · [2] Tipus
-     * */
     public static String[] getAula(String id) {
-        String[] info = cD.getAula(id);
-        return info;
+        return cD.getAula(id);
     }
 
 
-    /* Retorna Informació de l'Assignatura:
-     *
-     *       · [0] Nom
-     *
-     *       · [1] Hores Teoria
-     *       · [2] Hores Laboratori
-     *       · [3] Hores Problemes
-     *
-     *       · [4] Grups Teoria
-     *       · [5] Grups Laboratori
-     *       · [6] Grups Problemes
-     *
-     *       · [7] Grups Matins
-     *
-     *       · [8] Hores Bloc Teoria
-     *       · [9] Hores Bloc Laboratori
-     *       · [10] Hores Bloc Problemes
-     *
-     *       · [11] Alumnes Teoria
-     *       · [12] Alumnes Laboratori
-     *       · [13] Alumnes Problemes
-     *
-     *       · [14] Nivell
-     *
-     *       · [15] "Correquisits"
-     *
-     * */
     public static String[] getAssig(String nom) {
-        String[] info = cD.getAssig(nom);
-        return info;
+        return cD.getAssig(nom);
     }
 
-    /* Retorna Informació de Hores Pla Estudis :
-     *
-     *       · [0] Hora Inici
-     *       · [1] Hora Fi
-     *       · [2] Hora Canvi Franja
-     *
-     * */
 
     public static String[] getHores() {
-        String[] info = cD.getHores();
-        return info;
+        return cD.getHores();
     }
 
 
     // Retornem tots els ID de les Aules
 
     public static String[] llistarAules() {
-        String[] llista = cD.llistarAules();
-        return llista;
+        return cD.llistarAules();
     }
 
     // Retornem tots els noms de les Assignatures
 
     public static String[] llistarAssigs() {
-        String[] llista = cD.llistarAssigs();
-        return llista;
+        return cD.llistarAssigs();
     }
 
-
-    /* S'ha de tenir en conta els Horaris
-     * creats amb les condicions anteriors
-     * hauria de donar error ¿? */
 
     public static void modificarAula() {}
     public static void modificarAssig() {}
@@ -129,8 +72,6 @@ public class CtrlPresentacio {
 
     // Vista Menú Principal
 
-    // Aquí cridem a la Vista Principal
-    // On hi ha el Menú en cada opció
 
     public static void inicialitzarPresentacio() {
 
@@ -140,9 +81,6 @@ public class CtrlPresentacio {
     // ------------------------
     // ------------------------
     // Opció 1 : Carregar Dades
-
-    //   · carregarDades:
-    //          És allà on hi ha la vista.
 
     public void vistaCarregarDades() {
         vistaCarregarDades vCD = new vistaCarregarDades();
@@ -156,8 +94,6 @@ public class CtrlPresentacio {
     }
 
 
-    //   · carregarInformacio:
-    //          És la crida CD per carregar fitxer.
     public void carregarDadesAules(String fitxer) {
         cD.carregarDadesAules(fitxer);
         dadesAules = 1;
@@ -222,36 +158,25 @@ public class CtrlPresentacio {
         vistaHorari(horari, null, complet);
     }
 
-    // ------------------------
-    // ------------------------
-    // Opció 5 : Modificar Horari
-
-    //  · vistaModificarHorari()
-    //      És allà on hi ha la vista.
-
 
     // ------------------------
     // ------------------------
     // Opció 6 : Editar Dades
 
 
-    //  · vistaEditarDades()
-    //      És allà on hi ha la vista.
-
-    public void vistaEditarDades() {
-        //cD.editarDades();
+    public void anarVistaEditarDades() {
         vistaEditarDades vED = new vistaEditarDades();
     }
 
-    public void vistaEditarAula() {
+    public void anarVistaEditarAula() {
         vistaEditarAula vEA = new vistaEditarAula();
     }
 
-    public void vistaEditarAssignatures() {
+    public void anarVistaEditarAssignatures() {
         vistaEditarAssignatures vEA = new vistaEditarAssignatures();
     }
 
-    public void vistaEditarPlaEstudis() {
+    public void anarVistaEditarPlaEstudis() {
         vistaEditarPlaEstudis vEPE = new vistaEditarPlaEstudis();
     }
 
