@@ -246,7 +246,7 @@ public class CtrlPresentacio {
 
     public void vistaEditarDades() {
         //cD.editarDades();
-        vistaEditarDades vED = new vistaEditarDades();
+        vistaEditarDades vED = new vistaEditarDades(complet);
     }
 
     public void vistaEditarAula() {

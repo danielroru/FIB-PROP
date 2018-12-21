@@ -21,7 +21,7 @@ public class vistaEditarDades extends JFrame {
 
     private CtrlPresentacio iCtrlPresentacio = CtrlPresentacio.getInstance();
 
-    public vistaEditarDades() {
+    public vistaEditarDades(boolean valid) {
         setSize(400, 600);
         setLocationRelativeTo(null);
         setLayout(null);
@@ -38,11 +38,11 @@ public class vistaEditarDades extends JFrame {
 
         /* Selecció Aules */
 
-        /*
+
         if (valid) {
-            String[] idAules = Cerca CjtAules
+            String[] idAules = iCtrlPresentacio.llistarAules();
             aules = new JComboBox(idAules);
-        } */
+        }
 
         aules.setBounds(50,220,300,30);
         add(aules);
@@ -54,11 +54,11 @@ public class vistaEditarDades extends JFrame {
 
         /* Selecció Assignatures */
 
-        /*
+
         if (valid) {
-            String[] nomAssig = Cerca CjtAssig;
-            aules = new JComboBox(idAssig);
-        }  */
+            String[] nomAssig = iCtrlPresentacio.llistarAssigs();
+            aules = new JComboBox(nomAssig);
+        }
 
         assignatures.setBounds(50,300,300,30);
         add(assignatures);

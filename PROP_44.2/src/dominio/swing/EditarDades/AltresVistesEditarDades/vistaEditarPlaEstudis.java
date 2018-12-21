@@ -9,9 +9,9 @@ import java.awt.event.ActionListener;
 
 public class vistaEditarPlaEstudis extends JFrame {
 
-    String horaInici = "8";
-    String horaCanviFranja = "14";
-    String horaFi = "20";
+    String horaInici = "";
+    String horaCanviFranja = "";
+    String horaFi = "";
 
     private JLabel titolVista = new JLabel("Editar Pla Estudis");
 

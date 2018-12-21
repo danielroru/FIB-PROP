@@ -8,14 +8,22 @@
   <component name="ChangeListManager">
     <list default="true" id="c56956a0-ea30-4d3a-a964-fb7f39382e8f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/classes/Horari.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/classes/Horari.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/swing/GestionarHoraris/AltresVistesGestionarHoraris/vistaGenerarHorari$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/swing/GestionarHoraris/AltresVistesGestionarHoraris/vistaGenerarHorari$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/swing/GestionarHoraris/AltresVistesGestionarHoraris/vistaGenerarHorari.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dominio/classes/Horari.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dominio/classes/Horari.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dominio/controladores/CtrlDomini.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dominio/controladores/CtrlDomini.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dominio/controladores/CtrlDominiGenerarHorari.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dominio/controladores/CtrlDominiGenerarHorari.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/controladores/CtrlDomini.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/controladores/CtrlDomini.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/controladores/CtrlDominiGenerarHorari.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/controladores/CtrlDominiGenerarHorari.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/controladores/CtrlPresentacio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/controladores/CtrlPresentacio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/swing/EditarDades/AltresVistesEditarDades/vistaEditarPlaEstudis.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/swing/EditarDades/AltresVistesEditarDades/vistaEditarPlaEstudis.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/swing/EditarDades/vistaEditarDades$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/swing/EditarDades/vistaEditarDades$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/swing/EditarDades/vistaEditarDades$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/swing/EditarDades/vistaEditarDades$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/swing/EditarDades/vistaEditarDades$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/swing/EditarDades/vistaEditarDades$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/swing/EditarDades/vistaEditarDades$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/swing/EditarDades/vistaEditarDades$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/swing/EditarDades/vistaEditarDades.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/swing/EditarDades/vistaEditarDades.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/swing/GestionarHoraris/AltresVistesGestionarHoraris/vistaGenerarHorari$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/swing/GestionarHoraris/AltresVistesGestionarHoraris/vistaGenerarHorari$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/swing/GestionarHoraris/AltresVistesGestionarHoraris/vistaGenerarHorari$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/swing/GestionarHoraris/AltresVistesGestionarHoraris/vistaGenerarHorari$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/swing/GestionarHoraris/AltresVistesGestionarHoraris/vistaGenerarHorari$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/swing/GestionarHoraris/AltresVistesGestionarHoraris/vistaGenerarHorari$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/swing/GestionarHoraris/AltresVistesGestionarHoraris/vistaGenerarHorari.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/swing/GestionarHoraris/AltresVistesGestionarHoraris/vistaGenerarHorari.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dominio/controladores/CtrlPresentacio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dominio/controladores/CtrlPresentacio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dominio/swing/EditarDades/AltresVistesEditarDades/vistaEditarPlaEstudis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dominio/swing/EditarDades/AltresVistesEditarDades/vistaEditarPlaEstudis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dominio/swing/EditarDades/vistaEditarDades.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dominio/swing/EditarDades/vistaEditarDades.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dominio/swing/GestionarHoraris/AltresVistesGestionarHoraris/vistaGenerarHorari.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dominio/swing/GestionarHoraris/AltresVistesGestionarHoraris/vistaGenerarHorari.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -101,23 +109,23 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="form" value="1" />
-          <entry key="java" value="16" />
+          <entry key="java" value="18" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="GUI_DESIGNER_FORM" value="1" />
-          <entry key="JAVA" value="16" />
+          <entry key="JAVA" value="18" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="3433" />
+          <entry key="java" value="3480" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="3433" />
+          <entry key="JAVA" value="3480" />
         </counts>
       </usages-collector>
     </session>
@@ -127,17 +135,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dominio/swing/GestionarHoraris/AltresVistesGestionarHoraris/vistaGenerarHorari.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="213" column="100" lean-forward="true" selection-start-line="213" selection-start-column="16" selection-end-line="213" selection-end-column="100" />
+            <state relative-caret-position="-37">
+              <caret line="168" column="34" selection-start-line="168" selection-start-column="34" selection-end-line="168" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/dominio/controladores/CtrlPresentacio.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="215" column="76" selection-start-line="215" selection-start-column="26" selection-end-line="215" selection-end-column="76" />
+            <state relative-caret-position="157">
+              <caret line="17" column="68" lean-forward="true" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="68" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -148,7 +156,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dominio/controladores/CtrlDomini.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
+            <state relative-caret-position="503">
               <caret line="84" column="84" lean-forward="true" selection-start-line="83" selection-start-column="23" selection-end-line="84" selection-end-column="84" />
               <folding>
                 <element signature="e#1004#1005#0" expanded="true" />
@@ -158,14 +166,32 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dominio/controladores/CtrlDominiGenerarHorari.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="592">
+            <state relative-caret-position="1875">
               <caret line="141" column="8" selection-start-line="141" selection-start-column="8" selection-end-line="141" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dominio/swing/EditarDades/vistaEditarDades.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="10" column="65" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="65" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dominio/swing/EditarDades/AltresVistesEditarDades/vistaEditarPlaEstudis.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -223,15 +249,6 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dominio/swing/CarregarDades/vistaCarregarDades.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1059">
-              <caret line="117" column="120" selection-start-line="117" selection-start-column="120" selection-end-line="117" selection-end-column="120" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -243,7 +260,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>getAules</find>
       <find>vista</find>
       <find>llegir</find>
       <find>ultim</find>
@@ -271,8 +287,9 @@
       <find>Syste</find>
       <find>syste</find>
       <find>sys</find>
-      <find>informacioHorari</find>
+      <find>vistaEditarDades</find>
       <find>generarHorari</find>
+      <find>informacioHorari</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -281,8 +298,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/dominio/swing/Prova.form" />
-        <option value="$PROJECT_DIR$/src/dominio/swing/Prova.java" />
         <option value="$PROJECT_DIR$/src/dominio/swing/vistaGestionarDades.java" />
         <option value="$PROJECT_DIR$/src/dominio/swing/06-EditarDades/vistaModificarAula.form" />
         <option value="$PROJECT_DIR$/src/dominio/swing/02-GenerarHorari/vistaResultatHorari.java" />
@@ -328,10 +343,12 @@
         <option value="$PROJECT_DIR$/src/dominio/swing/GestionarHoraris/vistaGestionarHoraris.java" />
         <option value="$PROJECT_DIR$/src/dominio/swing/asdf.form" />
         <option value="$PROJECT_DIR$/src/dominio/classes/Horari.java" />
-        <option value="$PROJECT_DIR$/src/dominio/swing/GestionarHoraris/AltresVistesGestionarHoraris/vistaGenerarHorari.java" />
-        <option value="$PROJECT_DIR$/src/dominio/controladores/CtrlPresentacio.java" />
         <option value="$PROJECT_DIR$/src/dominio/controladores/CtrlDomini.java" />
         <option value="$PROJECT_DIR$/src/dominio/controladores/CtrlDominiGenerarHorari.java" />
+        <option value="$PROJECT_DIR$/src/dominio/swing/EditarDades/vistaEditarDades.java" />
+        <option value="$PROJECT_DIR$/src/dominio/controladores/CtrlPresentacio.java" />
+        <option value="$PROJECT_DIR$/src/dominio/swing/EditarDades/AltresVistesEditarDades/vistaEditarPlaEstudis.java" />
+        <option value="$PROJECT_DIR$/src/dominio/swing/GestionarHoraris/AltresVistesGestionarHoraris/vistaGenerarHorari.java" />
       </list>
     </option>
   </component>
@@ -411,6 +428,15 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="dominio" type="462c0819:PsiDirectoryNode" />
               <item name="swing" type="462c0819:PsiDirectoryNode" />
+              <item name="EditarDades" type="462c0819:PsiDirectoryNode" />
+              <item name="AltresVistesEditarDades" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PROP_44.2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PROP_44.2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="dominio" type="462c0819:PsiDirectoryNode" />
+              <item name="swing" type="462c0819:PsiDirectoryNode" />
               <item name="GestionarHoraris" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -431,7 +457,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545362144167" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545371725018" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
   </component>
@@ -518,7 +544,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/dominio/vistes/VistaPrincipal.java" />
     <entry file="file://$PROJECT_DIR$/src/dominio/vistes/VistaEscriureHorari.java" />
     <entry file="file://$PROJECT_DIR$/src/dominio/swing/vistaCarregarDades2.java" />
     <entry file="file://$PROJECT_DIR$/src/dominio/JSON/parser/JSONParser.java">
@@ -705,13 +730,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dominio/swing/EditarDades/vistaEditarDades.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dominio/swing/vistaPrincipal.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -809,16 +827,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dominio/swing/GestionarHoraris/AltresVistesGestionarHoraris/vistaGenerarHorari.java">
+    <entry file="file://$PROJECT_DIR$/src/dominio/controladores/CtrlDominiGenerarHorari.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="213" column="100" lean-forward="true" selection-start-line="213" selection-start-column="16" selection-end-line="213" selection-end-column="100" />
+        <state relative-caret-position="1875">
+          <caret line="141" column="8" selection-start-line="141" selection-start-column="8" selection-end-line="141" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dominio/controladores/CtrlDomini.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
+        <state relative-caret-position="503">
           <caret line="84" column="84" lean-forward="true" selection-start-line="83" selection-start-column="23" selection-end-line="84" selection-end-column="84" />
           <folding>
             <element signature="e#1004#1005#0" expanded="true" />
@@ -827,20 +848,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dominio/controladores/CtrlPresentacio.java">
+    <entry file="file://$PROJECT_DIR$/src/dominio/swing/EditarDades/vistaEditarDades.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="215" column="76" selection-start-line="215" selection-start-column="26" selection-end-line="215" selection-end-column="76" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="90">
+          <caret line="10" column="65" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="65" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dominio/controladores/CtrlDominiGenerarHorari.java">
+    <entry file="file://$PROJECT_DIR$/src/dominio/swing/EditarDades/AltresVistesEditarDades/vistaEditarPlaEstudis.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="592">
-          <caret line="141" column="8" selection-start-line="141" selection-start-column="8" selection-end-line="141" selection-end-column="8" />
+        <state relative-caret-position="105">
+          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dominio/swing/GestionarHoraris/AltresVistesGestionarHoraris/vistaGenerarHorari.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-37">
+          <caret line="168" column="34" selection-start-line="168" selection-start-column="34" selection-end-line="168" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dominio/controladores/CtrlPresentacio.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="17" column="68" lean-forward="true" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="68" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

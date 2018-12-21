@@ -160,13 +160,13 @@ public class vistaGenerarHorari extends JFrame {
         titolOld.setBounds(50,490,150,30);
         add(titolOld);
 
-        OLDd.setBounds(50,520,100,30);
+        OLDd.setBounds(50,520,120,30);
         add(OLDd);
 
-        OLDh.setBounds(150,520,70,30);
+        OLDh.setBounds(170,520,70,30);
         add(OLDh);
 
-        OLDa.setBounds(220,520,290,30);
+        OLDa.setBounds(240,520,280,30);
         add(OLDa);
 
 
@@ -175,13 +175,13 @@ public class vistaGenerarHorari extends JFrame {
         titolNew.setBounds(50,570,120,30);
         add(titolNew);
 
-        NEWd.setBounds(50,600,100,30);
+        NEWd.setBounds(50,600,120,30);
         add(NEWd);
 
-        NEWh.setBounds(150,600,70,30);
+        NEWh.setBounds(170,600,70,30);
         add(NEWh);
 
-        NEWa.setBounds(220,600,290,30);
+        NEWa.setBounds(240,600,280,30);
         add(NEWa);
 
 
