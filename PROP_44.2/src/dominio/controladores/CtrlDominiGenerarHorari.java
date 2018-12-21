@@ -148,6 +148,10 @@ public class CtrlDominiGenerarHorari {
         return UAHlaboratori;
     }
 
+    public static HashSet<UAH> getUAHs() {
+        return UAHs;
+    }
+
     public static Queue<Sessio> getSessions() {
         return sessions;
     }

@@ -5,6 +5,7 @@ import dominio.JSON.JSONObject;
 import dominio.JSON.parser.JSONParser;
 import dominio.JSON.parser.ParseException;
 import dominio.controladores.CtrlDomini;
+import dominio.controladores.CtrlDominiGenerarHorari;
 import javafx.util.Pair;
 
 import java.io.FileNotFoundException;
@@ -12,6 +13,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
+
 
 public class Horari {
 
@@ -206,7 +208,7 @@ public class Horari {
     }
 
     //TODO DELETE
-    /*
+
     public void imprimirHorari() {
         try {
             int nSess = 0;
@@ -258,7 +260,7 @@ public class Horari {
                 }
             }
             io.writeln("");
-            CtrlDomini.comptaSessions();
+            CtrlDominiGenerarHorari.comptaSessions();
             io.writeln(nSess + " sessions imprimides");
         }
         catch (Exception e) {
@@ -266,7 +268,7 @@ public class Horari {
         }
 
 
-    }*/
+    }
 
     @SuppressWarnings("unchecked")
     public void guardarHorari(String nomfitxer){
