@@ -28,22 +28,14 @@ public class vistaEditarAula extends JFrame {
     private JButton endarrereButton = new JButton("Endarrere");
 
 
-    public vistaEditarAula(String id) {
+    public vistaEditarAula(String[] aula, boolean complet) {
         group.add(teoriaRadioButton);
         group.add(laboratoriRadioButton);
-
-        String[] aula = CtrlPresentacio.getAula(id);
-
-        textID = new JTextField(aula[0]);
-        textCapacitat = new JTextField(aula[1]);
 
         if (aula[2].equals("TEORIA")){
             teoriaRadioButton.setSelected(true);
         }
         else laboratoriRadioButton.setSelected(true);
-
-
-        teoriaRadioButton.setSelected(true);
 
         setSize(400, 600);
         setLocationRelativeTo(null);
@@ -61,11 +53,13 @@ public class vistaEditarAula extends JFrame {
         titolID.setBounds(50,250,100,30);
         add(titolID);
 
+        if(complet) textID = new JTextField(aula[0]);
         textID.setBounds(150,250,200,30);
         add(textID);
 
         /* Capacitat */
 
+        if(complet) textCapacitat = new JTextField(aula[1]);
         titolCapacitat.setBounds(50,300,100,30);
         add(titolCapacitat);
 
@@ -93,6 +87,7 @@ public class vistaEditarAula extends JFrame {
         laboratoriRadioButton.setBounds(270,350,120,30);
         add(laboratoriRadioButton);
 
+
         /* ------------------------------------------------------ */
 
         /* Botó Editar Dades */
@@ -111,6 +106,19 @@ public class vistaEditarAula extends JFrame {
         ActionListener editarInformacio = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
+                String[] aula = new String[3];
+
+                aula[0] = textID.getText();
+                aula[1] = textCapacitat.getText();
+                System.out.println(group.getSelection());
+                if (teoriaRadioButton.isSelected()) {
+                    aula[2] = "TEORIA";
+                } else {
+                    aula[2] = "LABORATORI";
+                }
+
+                CtrlPresentacio.guardarAula(aula);
                 CtrlPresentacio.anarVistaEditarDades();
                 setVisible(false);
             }

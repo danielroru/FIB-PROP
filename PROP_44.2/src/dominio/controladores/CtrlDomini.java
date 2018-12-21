@@ -29,10 +29,10 @@ public class CtrlDomini {
     }
 
     /*
-    *   ------------
-    *   Opcions Menú
-    *   ------------
-    * */
+     *   ------------
+     *   Opcions Menú
+     *   ------------
+     * */
 
 
     // [ Opció 2 ] Generar Horari
@@ -113,6 +113,62 @@ public class CtrlDomini {
         info[12] = String.valueOf(assig.getHoresBlocT());
         info[13] = String.valueOf(assig.getHoresBlocL());
         info[14] = String.valueOf(assig.getHoresBlocP());
+        return info;
+    }
+
+    public static void guardarAssignatura(String[] assignatura) {
+        Assignatura a = new Assignatura();
+
+        a.setNom(assignatura[0]);
+        a.setNivell(Integer.valueOf(assignatura[1]));
+
+        a.setnHoresT(Integer.valueOf(assignatura[2]));
+        a.setnHoresL(Integer.valueOf(assignatura[3]));
+        a.setnHoresP(Integer.valueOf(assignatura[4]));
+
+        a.setnGrupsT(Integer.valueOf(assignatura[5]));
+        a.setnGrupsL(Integer.valueOf(assignatura[6]));
+        a.setnGrupsP(Integer.valueOf(assignatura[7]));
+
+        a.setnGrupsMati(Integer.valueOf(assignatura[8]));
+
+        a.setnAlumnesT(Integer.valueOf(assignatura[9]));
+        a.setnAlumnesL(Integer.valueOf(assignatura[10]));
+        a.setnAlumnesP(Integer.valueOf(assignatura[11]));
+
+        a.setHoresBlocT(Integer.valueOf(assignatura[12]));
+        a.setHoresBlocL(Integer.valueOf(assignatura[13]));
+        a.setHoresBlocP(Integer.valueOf(assignatura[14]));
+
+        plaEstudis.editarAssignatura(a);
+
+    }
+
+    public static void guardarAula(String[] aula) {
+        Aula a = new Aula();
+
+        a.setId(aula[0]);
+        a.setCapacitat(Integer.valueOf(aula[1]));
+        a.setTipus(Enumeracio.TipusAula.valueOf(aula[2]));
+
+        plaEstudis.editarAula(a);
+
+    }
+
+    public static void editarInformacio(String[] infoPE) {
+            plaEstudis.setHoraInici(Integer.valueOf(infoPE[0]));
+            plaEstudis.setHoraCanviFranja(Integer.valueOf(infoPE[1]));
+            plaEstudis.setHoraFi(Integer.valueOf(infoPE[2]));
+    }
+
+    public static String[] cercarInfoPE() {
+
+        String[] info = new String[3];
+
+        info[0] = String.valueOf(plaEstudis.getHoraInici());
+        info[1] = String.valueOf(plaEstudis.getHoraCanviFranja());
+        info[2] = String.valueOf(plaEstudis.getHoraFi());
+
         return info;
     }
 

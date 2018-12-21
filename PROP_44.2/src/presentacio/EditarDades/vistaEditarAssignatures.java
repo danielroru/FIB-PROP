@@ -48,7 +48,7 @@ public class vistaEditarAssignatures extends JFrame{
     private JButton endarrereButton = new JButton("Endarrere");
 
 
-    public vistaEditarAssignatures() {
+    public vistaEditarAssignatures(String[] assignatura, boolean complet) {
 
         setSize(800, 500);
         setLocationRelativeTo(null);
@@ -66,6 +66,7 @@ public class vistaEditarAssignatures extends JFrame{
         nom.setBounds(50, 90, 100, 30);
         add(nom);
 
+        if (complet) TNom = new JTextField(assignatura[0]);
         TNom.setBounds(190, 90, 200, 30);
         add(TNom);
 
@@ -73,9 +74,12 @@ public class vistaEditarAssignatures extends JFrame{
 
         /* Editar Hora Teoria */
 
+        // (Integer)miJSpinner.getValue();
+
         HTeo.setBounds(50, 130, 140,30);
         add(HTeo);
 
+        if (complet) SHTeo.setValue(Integer.valueOf(assignatura[2]));
         SHTeo.setBounds(190, 130, 70, 30);
         add(SHTeo);
 
@@ -84,6 +88,7 @@ public class vistaEditarAssignatures extends JFrame{
         HLab.setBounds(280, 130, 160,30);
         add(HLab);
 
+        if (complet) SHLab.setValue(Integer.valueOf(assignatura[3]));
         SHLab.setBounds(440, 130, 70, 30);
         add(SHLab);
 
@@ -92,6 +97,7 @@ public class vistaEditarAssignatures extends JFrame{
         HProb.setBounds(520, 130, 160,30);
         add(HProb);
 
+        if (complet) SHProb.setValue(Integer.valueOf(assignatura[4]));
         SHProb.setBounds(680, 130, 70, 30);
         add(SHProb);
 
@@ -102,6 +108,7 @@ public class vistaEditarAssignatures extends JFrame{
         NGrupsT.setBounds(50, 170, 140,30);
         add(NGrupsT);
 
+        if (complet) SNGrupsT.setValue(Integer.valueOf(assignatura[5]));
         SNGrupsT.setBounds(190, 170, 70, 30);
         add(SNGrupsT);
 
@@ -110,6 +117,7 @@ public class vistaEditarAssignatures extends JFrame{
         NGrupsL.setBounds(280, 170, 160,30);
         add(NGrupsL);
 
+        if (complet) SNGrupsL.setValue(Integer.valueOf(assignatura[6]));
         SNGrupsL.setBounds(440, 170, 70, 30);
         add(SNGrupsL);
 
@@ -118,6 +126,7 @@ public class vistaEditarAssignatures extends JFrame{
         NGrupsP.setBounds(520, 170, 160,30);
         add(NGrupsP);
 
+        if (complet) SNGrupsP.setValue(Integer.valueOf(assignatura[7]));
         SNGrupsP.setBounds(680, 170, 70, 30);
         add(SNGrupsP);
 
@@ -128,6 +137,7 @@ public class vistaEditarAssignatures extends JFrame{
         NGrupsFranjaMati.setBounds(50, 210, 140, 30);
         add(NGrupsFranjaMati);
 
+        if (complet) SNGrupsFranjaMati.setValue(Integer.valueOf(assignatura[8]));
         SNGrupsFranjaMati.setBounds(190, 210, 200, 30);
         add(SNGrupsFranjaMati);
 
@@ -138,6 +148,7 @@ public class vistaEditarAssignatures extends JFrame{
         BHoresT.setBounds(50, 250, 140,30);
         add(BHoresT);
 
+        if (complet) SBHoresT.setValue(Integer.valueOf(assignatura[12]));
         SBHoresT.setBounds(190, 250, 70, 30);
         add(SBHoresT);
 
@@ -146,6 +157,7 @@ public class vistaEditarAssignatures extends JFrame{
         BHoresL.setBounds(280, 250, 160,30);
         add(BHoresL);
 
+        if (complet) SBHoresL.setValue(Integer.valueOf(assignatura[13]));
         SBHoresL.setBounds(440, 250, 70, 30);
         add(SBHoresL);
 
@@ -154,6 +166,7 @@ public class vistaEditarAssignatures extends JFrame{
         BHoresP.setBounds(520, 250, 160,30);
         add(BHoresP);
 
+        if (complet) SBHoresP.setValue(Integer.valueOf(assignatura[14]));
         SBHoresP.setBounds(680, 250, 70, 30);
         add(SBHoresP);
 
@@ -164,6 +177,7 @@ public class vistaEditarAssignatures extends JFrame{
         NAlumnesT.setBounds(50, 290, 140,30);
         add(NAlumnesT);
 
+        if (complet) SNAlumnesT.setValue(Integer.valueOf(assignatura[9]));
         SNAlumnesT.setBounds(190, 290, 70, 30);
         add(SNAlumnesT);
 
@@ -172,6 +186,7 @@ public class vistaEditarAssignatures extends JFrame{
         NAlumnesL.setBounds(280, 290, 160,30);
         add(NAlumnesL);
 
+        if (complet) SNAlumnesL.setValue(Integer.valueOf(assignatura[10]));
         SNAlumnesL.setBounds(440, 290, 70, 30);
         add(SNAlumnesL);
 
@@ -180,6 +195,7 @@ public class vistaEditarAssignatures extends JFrame{
         NAlumnesP.setBounds(520, 290, 160,30);
         add(NAlumnesP);
 
+        if (complet) SNAlumnesP.setValue(Integer.valueOf(assignatura[11]));
         SNAlumnesP.setBounds(680, 290, 70, 30);
         add(SNAlumnesP);
 
@@ -191,6 +207,7 @@ public class vistaEditarAssignatures extends JFrame{
         nivell.setBounds(50, 330, 100, 30);
         add(nivell);
 
+        if (complet) Snivell.setValue(Integer.valueOf(assignatura[1]));
         Snivell.setBounds(190, 330, 200, 30);
         add(Snivell);
 
@@ -212,7 +229,28 @@ public class vistaEditarAssignatures extends JFrame{
         ActionListener editarInformacio = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                CtrlPresentacio.anarVistaEditarDades();
+
+                String[] info = new String[15];
+                info[0] = TNom.getText();
+                info[1] = String.valueOf(Snivell.getValue());
+                info[2] = String.valueOf(SHTeo.getValue());
+                info[3] = String.valueOf(SHLab.getValue());
+                info[4] = String.valueOf(SHProb.getValue());
+                info[5] = String.valueOf(SNGrupsT.getValue());
+                info[6] = String.valueOf(SNGrupsL.getValue());
+                info[7] = String.valueOf(SNGrupsP.getValue());
+                info[8] = String.valueOf(SNGrupsFranjaMati.getValue());
+                info[9] = String.valueOf(SNAlumnesT.getValue());
+                info[10] = String.valueOf(SNAlumnesL.getValue());
+                info[11] = String.valueOf(SNAlumnesP.getValue());
+                info[12] = String.valueOf(SBHoresT.getValue());
+                info[13] = String.valueOf(SBHoresL.getValue());
+                info[14] = String.valueOf(SBHoresP.getValue());
+
+
+                iCtrlPresentacio.guardarAssignatura(info);
+
+                iCtrlPresentacio.anarVistaEditarDades();
                 setVisible(false);
             }
 

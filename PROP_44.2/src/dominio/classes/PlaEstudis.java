@@ -86,6 +86,14 @@ public class PlaEstudis {
         return cjtAssignatures.llistarAssignatures();
     }
 
+    public static void editarAssignatura(Assignatura a) {
+        cjtAssignatures.afegirAssignatura(a);
+    }
+
+    public static void editarAula(Aula a) {
+        cjtAules.afegirAula(a);
+    }
+
     public Horari getUltimHorari() {
         return ultimHorari;
     }
