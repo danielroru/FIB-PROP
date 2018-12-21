@@ -1,10 +1,13 @@
 package dominio.controladores;
 
 
+import com.google.gson.Gson;
 import persistencia.parser.ParseException;
 import dominio.classes.*;
 
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Writer;
 import java.util.ArrayList;
 import java.util.HashSet;
 
@@ -74,6 +77,18 @@ public class CtrlDominiCarregarDades {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        try (Writer writer = new FileWriter("/../data/dades/proves/Output.json")) {
+            Aula a = new Aula();
+            a.setCapacitat(30);
+            Gson gson = new Gson();
+            gson.toJson(PlaEstudis.getConjuntAules(), writer);
+        }
+
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
 
@@ -154,10 +169,10 @@ public class CtrlDominiCarregarDades {
                 assig.setHoresBlocL(Integer.parseInt(a.get(13)));
                 assig.setHoresBlocP(Integer.parseInt(a.get(14)));
 
-                if (a.size() > 14) {
+                if (a.size() > 15) {
                     HashSet<String> setCore = new HashSet<>();
 
-                    for (int i = 14; i < a.size(); i++) {
+                    for (int i = 15; i < a.size(); i++) {
                         setCore.add(a.get(i));
                     }
 

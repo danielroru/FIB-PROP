@@ -29,8 +29,7 @@ public class CtrlPersistenciaCarregarHorari {
         JSONParser parser = new JSONParser();
 
         try {
-            //TODO
-            JSONArray arrayAules = (JSONArray) parser.parse(new FileReader("src/persistencia/Horaris/" + nomfitxer + ".json"));
+            JSONArray arrayAules = (JSONArray) parser.parse(new FileReader("src/presentacio/Horaris/" + nomfitxer + ".json"));
 
             for (int z = 0; z < arrayAules.size(); z++) {
 
@@ -90,7 +89,6 @@ public class CtrlPersistenciaCarregarHorari {
         catch (Exception e) {
             e.printStackTrace();
         }
-        //TODO
         return horari;
     }
 

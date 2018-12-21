@@ -86,11 +86,11 @@ public class CtrlPersistenciaCarregarDades {
 
         try {
 
-            ArrayList<String> assignatura = new ArrayList<>();
+
             JSONArray arrayAssignatures = (JSONArray) parser.parse(new FileReader(dataPath));
 
             for (int i = 0; i < arrayAssignatures.size(); i++) {
-
+                ArrayList<String> assignatura = new ArrayList<>();
 
                 JSONObject jsonObject = (JSONObject) arrayAssignatures.get(i);
 

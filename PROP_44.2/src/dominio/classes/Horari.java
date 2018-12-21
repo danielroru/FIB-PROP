@@ -312,7 +312,7 @@ public class Horari {
         // try-with-resources statement based on post comment below :)
 
         try {
-            FileWriter file = new FileWriter("src/persistencia/Horaris/" + nomfitxer + ".json");
+            FileWriter file = new FileWriter("src/presentacio/Horaris/" + nomfitxer + ".json");
             file.write(aules.toJSONString());
             System.out.println("Horari Guardat");
             //System.out.println("\nJSON Object: " + aules);
@@ -330,7 +330,7 @@ public class Horari {
         JSONParser parser = new JSONParser();
 
         try {
-            JSONArray arrayAules = (JSONArray) parser.parse(new FileReader("src/persistencia/Horaris/" + nomfitxer + ".json"));
+            JSONArray arrayAules = (JSONArray) parser.parse(new FileReader("src/presentacio/Horaris/" + nomfitxer + ".json"));
 
             for (int z = 0; z < arrayAules.size(); z++) {
 

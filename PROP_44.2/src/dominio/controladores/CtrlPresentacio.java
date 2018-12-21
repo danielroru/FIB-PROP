@@ -1,12 +1,12 @@
 package dominio.controladores;
 
-import dominio.persistencia.*;
+import presentacio.*;
 
-import dominio.persistencia.CarregarDades.*;
-import dominio.persistencia.EditarDades.*;
-import dominio.persistencia.GestionarHoraris.*;
-import dominio.persistencia.GestionarHoraris.AltresVistesGestionarHoraris.vistaGenerarHorari;
-import dominio.persistencia.EditarDades.AltresVistesEditarDades.*;
+import presentacio.CarregarDades.*;
+import presentacio.EditarDades.*;
+import presentacio.GestionarHoraris.*;
+import presentacio.GestionarHoraris.AltresVistesGestionarHoraris.vistaGenerarHorari;
+import presentacio.EditarDades.AltresVistesEditarDades.*;
 
 import javafx.util.Pair;
 

@@ -64,7 +64,7 @@ public class CtrlPersistenciaGuardarHorari {
 
         try {
             //TODO
-            FileWriter file = new FileWriter("src/persistencia/Horaris/" + nomFitxer + ".json");
+            FileWriter file = new FileWriter("src/presentacio/Horaris/" + nomFitxer + ".json");
             file.write(aules.toJSONString());
             System.out.println("Horari Guardat");
             //System.out.println("\nJSON Object: " + aules);
