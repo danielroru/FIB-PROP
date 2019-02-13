@@ -22,19 +22,19 @@ public class vistaEditarDades extends JFrame {
     private JComboBox<String> assignatures = new JComboBox<String>(conjuntAssignatures);
     private JButton endarrereButton = new JButton("Endarrere");
 
-    public vistaEditarDades() {
+    public vistaEditarDades(boolean valid) {
         setSize(400, 600);
         setLocationRelativeTo(null);
         setLayout(null);
 
-        if (complet) {
-            String[] result = (CtrlPresentacio.llistarAssigs()).toArray(new String[CtrlPresentacio.llistarAssigs().size()]);
-            assignatures = new JComboBox<String>(result);
-        }
-
-        if (complet) {
+        if (valid) {
             String[] result = (CtrlPresentacio.llistarAules()).toArray(new String[CtrlPresentacio.llistarAules().size()]);
             aules = new JComboBox<String>(result);
+        }
+
+        if (valid) {
+            String[] result = (CtrlPresentacio.llistarAssigs()).toArray(new String[CtrlPresentacio.llistarAssigs().size()]);
+            assignatures = new JComboBox<String>(result);
         }
 
         /* Títol Vista */
@@ -82,7 +82,7 @@ public class vistaEditarDades extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 
                 String aula = aules.getSelectedItem().toString();
-                String[] resultat = iCtrlPresentacio.informacioAula(aula);
+                String[] resultat = CtrlPresentacio.informacioAula(aula);
                 CtrlPresentacio.anarVistaEditarAula(resultat);
                 setVisible(false);
             }
@@ -93,7 +93,7 @@ public class vistaEditarDades extends JFrame {
             public void actionPerformed(ActionEvent e) {
             
                 String assignatura = assignatures.getSelectedItem().toString();
-                String[] assig = iCtrlPresentacio.informacioAssignatura(assignatura);
+                String[] assig = CtrlPresentacio.informacioAssignatura(assignatura);
                 CtrlPresentacio.anarVistaEditarAssignatures(assig);
                 setVisible(false);
             }

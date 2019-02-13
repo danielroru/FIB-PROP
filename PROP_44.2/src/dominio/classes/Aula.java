@@ -35,7 +35,7 @@ public class Aula {
 
     /**
      * Constructora còpia
-     * @param as Assignatura a copiar
+     * @param a Assignatura a copiar
      */
     public Aula (Aula a) {
         this.id = a.id;

@@ -12,20 +12,76 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c56956a0-ea30-4d3a-a964-fb7f39382e8f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/data/dades/2/assignatures.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/dades/2/aules.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/dades/Correquisit/assignatures.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/dades/Correquisit/aules.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/dades/testing/plaEstudis.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dominio/classes/Auxiliar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PROP_44.2.zip" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PROP_44.2.jar" beforeDir="false" afterPath="$PROJECT_DIR$/PROP_44.2.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/Horaris/jesus/auxiliar.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/Horaris/jesus/auxiliar.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/Horaris/julia/assignatures.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/dades/testing/assignatures.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/Horaris/julia/aules.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/dades/testing/aules.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/Horaris/julia/auxiliar.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/Horaris/marc/assignatures.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/Horaris/marc/aules.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/Horaris/marc/horari.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/dades/1/assignatures.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/dades/1/assignatures.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/dades/2/assignatures.json~AlgorismeOK" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/dades/2/assignatures.json~HEAD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/dades/2/aules.json~AlgorismeOK" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/dades/2/aules.json~HEAD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/dades/2/plaEstudis.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/dades/2/plaEstudis.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/dades/Correquisit/assignatures.json~HEAD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/dades/Correquisit/assignatures.json~JUENTREGA" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/dades/Correquisit/aules.json~HEAD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/dades/Correquisit/aules.json~JUENTREGA" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/dades/Correquisit/plaEstudis.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/dades/Correquisit/plaEstudis.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/dades/Nivell/assignatures.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/dades/Nivell/assignatures.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/dades/Nivell/aules.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/dades/Nivell/aules.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/dades/Nivell/plaEstudis.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/dades/Nivell/plaEstudis.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/classes/GeneradorHorari.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/classes/GeneradorHorari.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/classes/Graph$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/classes/Graph$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/classes/Graph.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/classes/Graph.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/classes/Horari.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/classes/Horari.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/classes/PlaEstudis.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/classes/PlaEstudis.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/controladores/CtrlDomini.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/controladores/CtrlDomini.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/controladores/CtrlDominiCarregarHorari$Pestudis.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/controladores/CtrlDominiCarregarHorari$Pestudis.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/controladores/CtrlDominiCarregarDades.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/controladores/CtrlDominiCarregarDades.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/controladores/CtrlDominiCarregarHorari.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/controladores/CtrlDominiCarregarHorari.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/controladores/CtrlDominiGuardarHorari.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/GestionarHoraris/vistaGestionarHoraris$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/GestionarHoraris/vistaGestionarHoraris$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/GestionarHoraris/vistaGestionarHoraris$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/GestionarHoraris/vistaGestionarHoraris$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/GestionarHoraris/vistaGestionarHoraris$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/GestionarHoraris/vistaGestionarHoraris$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/GestionarHoraris/vistaGestionarHoraris.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/GestionarHoraris/vistaGestionarHoraris.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/controladores/CtrlDominiGenerarHorari.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/controladores/CtrlDominiGenerarHorari.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/controladores/CtrlDominiGuardarHorari$1Aux.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/controladores/CtrlDominiGuardarHorari.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/controladores/CtrlDominiGuardarHorari.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/controladores/CtrlPresentacio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/dominio/controladores/CtrlPresentacio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/EditarDades/vistaEditarAssignatures$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/EditarDades/vistaEditarAssignatures$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/EditarDades/vistaEditarAssignatures$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/EditarDades/vistaEditarAssignatures$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/EditarDades/vistaEditarAssignatures.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/EditarDades/vistaEditarAssignatures.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/EditarDades/vistaEditarAula$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/EditarDades/vistaEditarAula$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/EditarDades/vistaEditarAula$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/EditarDades/vistaEditarAula$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/EditarDades/vistaEditarAula.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/EditarDades/vistaEditarAula.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/EditarDades/vistaEditarDades$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/EditarDades/vistaEditarDades$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/EditarDades/vistaEditarDades$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/EditarDades/vistaEditarDades$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/EditarDades/vistaEditarDades$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/EditarDades/vistaEditarDades$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/EditarDades/vistaEditarDades$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/EditarDades/vistaEditarDades$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/EditarDades/vistaEditarDades.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/EditarDades/vistaEditarDades.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/EditarDades/vistaEditarPlaEstudis$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/EditarDades/vistaEditarPlaEstudis$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/EditarDades/vistaEditarPlaEstudis$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/EditarDades/vistaEditarPlaEstudis$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/EditarDades/vistaEditarPlaEstudis.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROP_44.2/presentacio/EditarDades/vistaEditarPlaEstudis.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dominio/classes/Aula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dominio/classes/Aula.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dominio/classes/ConjuntAssignatures.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dominio/classes/ConjuntAssignatures.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dominio/classes/GeneradorHorari.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dominio/classes/GeneradorHorari.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dominio/classes/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dominio/classes/Graph.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dominio/classes/Horari.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dominio/classes/Horari.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dominio/controladores/CtrlDomini.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dominio/controladores/CtrlDomini.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dominio/classes/PlaEstudis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dominio/classes/PlaEstudis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dominio/controladores/CtrlDominiCarregarDades.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dominio/controladores/CtrlDominiCarregarDades.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dominio/controladores/CtrlDominiCarregarHorari.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dominio/controladores/CtrlDominiCarregarHorari.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dominio/controladores/CtrlDominiGenerarHorari.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dominio/controladores/CtrlDominiGenerarHorari.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dominio/controladores/CtrlDominiGuardarHorari.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dominio/controladores/CtrlDominiGuardarHorari.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentacio/GestionarHoraris/vistaGestionarHoraris.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentacio/GestionarHoraris/vistaGestionarHoraris.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dominio/controladores/CtrlPresentacio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dominio/controladores/CtrlPresentacio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentacio/EditarDades/vistaEditarAssignatures.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentacio/EditarDades/vistaEditarAssignatures.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentacio/EditarDades/vistaEditarDades.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentacio/EditarDades/vistaEditarDades.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentacio/EditarDades/vistaEditarPlaEstudis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentacio/EditarDades/vistaEditarPlaEstudis.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -90,8 +146,8 @@
           <entry key="GUI_DESIGNER_FORM" value="6" />
           <entry key="HTML" value="1" />
           <entry key="Image" value="1" />
-          <entry key="JAVA" value="302" />
-          <entry key="JSON" value="30" />
+          <entry key="JAVA" value="321" />
+          <entry key="JSON" value="47" />
           <entry key="Manifest" value="1" />
           <entry key="PLAIN_TEXT" value="5" />
         </counts>
@@ -99,131 +155,102 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CLASS" value="2" />
-          <entry key="JAVA" value="9211" />
-          <entry key="JSON" value="62" />
+          <entry key="JAVA" value="9828" />
+          <entry key="JSON" value="64" />
           <entry key="PLAIN_TEXT" value="188" />
         </counts>
       </usages-collector>
-    </session>
-    <session id="115425388">
-      <usages-collector id="statistics.file.extensions.open">
+      <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="java" value="16" />
-          <entry key="json" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="JAVA" value="16" />
-          <entry key="JSON" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="java" value="2685" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="2685" />
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.opened" value="1" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/dades/Nivell/plaEstudis.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="65" selection-start-column="65" selection-end-column="65" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/dades/2/aules.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="442" selection-start-column="442" selection-end-column="442" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dominio/classes/Restriccions.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dominio/classes/RestriccioBinaria.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dominio/classes/RestriccioUnaria.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/dades/2/assignatures.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="1504" lean-forward="true" selection-start-column="1504" selection-end-column="1504" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/dades/testing/aules.json">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/dominio/controladores/CtrlDominiGuardarHorari.java">
+        <entry file="file://$PROJECT_DIR$/data/dades/testing/assignatures.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="48" column="20" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="20" />
+            <state>
+              <caret column="1510" selection-start-column="1510" selection-end-column="1510" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/Horaris/jesus/auxiliar.json">
+        <entry file="file://$PROJECT_DIR$/data/dades/1/assignatures.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2322">
+              <caret line="175" column="4" lean-forward="true" selection-start-line="175" selection-start-column="4" selection-end-line="175" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/dades/1/plaEstudis.json">
           <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/Horaris/julia/auxiliar.json">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dominio/controladores/CtrlDominiCarregarHorari.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="56" selection-start-line="56" selection-end-line="56" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dominio/controladores/CtrlDomini.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="152" selection-start-line="152" selection-end-line="152" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#4759#4760#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dominio/classes/PlaEstudis.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="30" selection-start-line="30" selection-end-line="30" />
-              <folding>
-                <element signature="e#641#642#0" expanded="true" />
-                <element signature="e#670#671#0" expanded="true" />
-                <element signature="e#699#700#0" expanded="true" />
-                <element signature="e#1917#1918#0" expanded="true" />
-                <element signature="e#1951#1952#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dominio/controladores/CtrlDominiCarregarDades.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="47" selection-start-line="47" selection-end-line="47" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dominio/classes/Assignatura.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="294" selection-start-line="294" selection-end-line="294" />
-              <folding>
-                <element signature="e#8974#9002#0" expanded="true" />
-                <element signature="e#10930#10952#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/presentacio/GestionarHoraris/vistaGestionarHoraris.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="89" column="37" selection-start-line="89" selection-start-column="37" selection-end-line="89" selection-end-column="37" />
-            </state>
-          </provider>
         </entry>
       </file>
     </leaf>
@@ -237,10 +264,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>carregar</find>
-      <find>defaut</find>
-      <find>+ a[0] + &quot; no pot ser inferior a 0&quot;);                 if (Integer.parseInt(a.get(2)) &lt; 0) throw new Exception(&quot;El nHoresT de l'assignatura &quot; + a[0] + &quot; no pot ser inferior a 0&quot;);                 if (Integer.parseInt(a.get(3)) &lt; 0) throw new Exception(&quot;El nHoresL de l'assignatura &quot; + a[0] + &quot; no pot ser inferior a 0&quot;);                 if (Integer.parseInt(a.get(4)) &lt; 0) throw new Exception(&quot;El nHoresP de l'assignatura &quot; + a[0] + &quot; no pot ser inferior a 0&quot;);                 if (Integer.parseInt(a.get(5)) &lt; 0) throw new Exception(&quot;El nGrupsT de l'assignatura &quot; + a[0] + &quot; no pot ser inferior a 0&quot;);                 if (Integer.parseInt(a.get(6)) &lt; 0) throw new Exception(&quot;El nGrupsL de l'assignatura &quot; + a[0] + &quot; no pot ser inferior a 0&quot;);                 if (Integer.parseInt(a.get(6)) &gt; 9) throw new Exception(&quot;El nGrupsL de l'assignatura &quot; + a[0] + &quot; no pot ser superior a 9&quot;);                 if (Integer.parseInt(a.get(7)) &lt; 0) throw new Exception(&quot;El nGrupsP de l'assignatura &quot; + a[0] + &quot; no pot ser inferior a 0&quot;);                 if (Integer.parseInt(a.get(7)) &gt; 9) throw new Exception(&quot;El nGrupsP de l'assignatura &quot; + a[0] + &quot; no pot ser superior a 9&quot;);                 if (Integer.parseInt(a.get(8)) &lt; 0) throw new Exception(&quot;El nGrupsMati de l'assignatura &quot; + a[0] + &quot; no pot ser inferior a 0&quot;);                 if (Integer.parseInt(a.get(8)) &gt; Integer.parseInt(a.get(5))) throw new Exception(&quot;El nGrupsMati de l'assignatura &quot; + a[0] + &quot; no pot ser superior al nGrupsT&quot;);                 if (Integer.parseInt(a.get(9)) &lt; 0) throw new Exception(&quot;El nAlumnesT de l'assignatura &quot; + a[0] + &quot; no pot ser inferior a 0&quot;);                 if (Integer.parseInt(a.get(10)) &lt; 0) throw new Exception(&quot;El nAlumnesL de l'assignatura &quot; + a[0] + &quot; no pot ser inferior a 0&quot;);                 if (Integer.parseInt(a.get(10)) &gt; Integer.parseInt(a.get(9))) throw new Exception(&quot;El nAlumnesL de l'assignatura &quot; + a[0] + &quot; no pot ser superior nAlumnesT&quot;);                 if (Integer.parseInt(a.get(11)) &lt; 0) throw new Exception(&quot;El nAlumnesP de l'assignatura &quot; + a[0] + &quot; no pot ser inferior a 0&quot;);                 if (Integer.parseInt(a.get(11)) &gt; Integer.parseInt(a.get(9))) throw new Exception(&quot;El nAlumnesP de l'assignatura &quot; + a[0] + &quot; no pot ser superior nAlumnesT&quot;);                 if (Integer.parseInt(a.get(12)) &lt; 0) throw new Exception(&quot;El horesBlocT de l'assignatura &quot; + a[0] + &quot; no pot ser inferior a 0&quot;);                 if (Integer.parseInt(a.get(12)) &gt; Integer.parseInt(a.get(2))) throw new Exception(&quot;El horesBlocT de l'assignatura &quot; + a[0] + &quot; no pot ser superior a nHoresT&quot;);                 if (Integer.parseInt(a.get(13)) &lt; 0) throw new Exception(&quot;El horesBlocL de l'assignatura &quot; + a[0] + &quot; no pot ser inferior a 0&quot;);                 if (Integer.parseInt(a.get(13)) &gt; Integer.parseInt(a.get(2))) throw new Exception(&quot;El horesBlocL de l'assignatura &quot; + a[0] + &quot; no pot ser superior a nHoresL&quot;);                 if (Integer.parseInt(a.get(14)) &lt; 0) throw new Exception(&quot;El horesBlocP de l'assignatura &quot; + a[0] + &quot; no pot ser inferior a 0&quot;);                 if (Integer.parseInt(a.get(14)) &gt; Integer.parseInt(a.get(2))) throw new Exception(&quot;El horesBlocP de l'assignatura &quot; + a[0] + &quot; no pot ser super</find>
-      <find>a[0]</find>
       <find>gson</find>
       <find>seleccionar</find>
       <find>horari</find>
@@ -267,6 +290,10 @@
       <find>generar</find>
       <find>static</find>
       <find>setHor</find>
+      <find>cD.</find>
+      <find>iCtrlPresentacio</find>
+      <find>gethorar</find>
+      <find>hor</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -274,6 +301,8 @@
       <replace>PlaEstudis</replace>
       <replace>CtrlDomini.getPlaEstudis().</replace>
       <replace>TXC</replace>
+      <replace>CtrlDomini.</replace>
+      <replace>CtrlPresentacio</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -282,20 +311,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/dominio/swing/vistaCarregarHorari.java" />
-        <option value="$PROJECT_DIR$/src/dominio/swing/vistaPrincipal.form" />
-        <option value="$PROJECT_DIR$/src/dominio/swing/vistaCarregarDades.form" />
-        <option value="$PROJECT_DIR$/src/dominio/classes/Aula.java" />
-        <option value="$PROJECT_DIR$/src/dominio/classes/Casella.java" />
-        <option value="$PROJECT_DIR$/src/dominio/swing/vistaCarregarDades.java" />
-        <option value="$PROJECT_DIR$/src/dominio/classes/Main.java" />
-        <option value="$PROJECT_DIR$/src/dominio/swing/vistaPrincipal.java" />
-        <option value="$PROJECT_DIR$/src/dominio/classes/Graph.java" />
-        <option value="$PROJECT_DIR$/src/dominio/classes/Sessio.java" />
-        <option value="$PROJECT_DIR$/src/dominio/swing/CarregarDades/vistaCarregarDades.java" />
-        <option value="$PROJECT_DIR$/src/dominio/persistencia/CarregarDades/vistaCarregarDades.java" />
-        <option value="$PROJECT_DIR$/data/Horaris/aaa.json" />
-        <option value="$PROJECT_DIR$/data/dades/1/assignatures.json" />
         <option value="$PROJECT_DIR$/data/dades/1/aules.json" />
         <option value="$PROJECT_DIR$/src/dominio/controladores/CtrlPersistenciaCarregarDades.java" />
         <option value="$PROJECT_DIR$/src/presentacio/GestionarHoraris/AltresVistesGestionarHoraris/vistaGenerarHorari.java" />
@@ -308,31 +323,45 @@
         <option value="$PROJECT_DIR$/manifest.txc" />
         <option value="$PROJECT_DIR$/manifest.txt" />
         <option value="$PROJECT_DIR$/src/dominio/classes/ConjuntAules.java" />
-        <option value="$PROJECT_DIR$/src/dominio/classes/ConjuntAssignatures.java" />
         <option value="$PROJECT_DIR$/src/dominio/classes/Matriu.java" />
         <option value="$PROJECT_DIR$/src/dominio/classes/Assignatura.java" />
         <option value="$PROJECT_DIR$/src/dominio/classes/RestriccioBinaria.java" />
         <option value="$PROJECT_DIR$/src/dominio/classes/RestriccioUnaria.java" />
-        <option value="$PROJECT_DIR$/src/presentacio/EditarDades/vistaEditarAssignatures.java" />
-        <option value="$PROJECT_DIR$/src/presentacio/EditarDades/vistaEditarPlaEstudis.java" />
         <option value="$PROJECT_DIR$/src/presentacio/CarregarDades/vistaCarregarDades.java" />
-        <option value="$PROJECT_DIR$/src/presentacio/EditarDades/vistaEditarDades.java" />
         <option value="$PROJECT_DIR$/src/presentacio/GestionarHoraris/vistaVeureHorari.java" />
         <option value="$PROJECT_DIR$/src/presentacio/EditarDades/vistaEditarAula.java" />
         <option value="$PROJECT_DIR$/src/presentacio/vistaPrincipal.java" />
-        <option value="$PROJECT_DIR$/src/dominio/classes/PlaEstudis.java" />
-        <option value="$PROJECT_DIR$/src/dominio/classes/GeneradorHorari.java" />
         <option value="$PROJECT_DIR$/src/dominio/controladores/CtrlPersistencia.java" />
         <option value="$PROJECT_DIR$/src/dominio/classes/ModificadorHorari.java" />
-        <option value="$PROJECT_DIR$/src/dominio/controladores/CtrlDominiGenerarHorari.java" />
-        <option value="$PROJECT_DIR$/src/dominio/controladores/CtrlDominiCarregarDades.java" />
-        <option value="$PROJECT_DIR$/src/dominio/controladores/CtrlPresentacio.java" />
         <option value="$PROJECT_DIR$/data/dades/2/assignatures.json~AlgorismeOK" />
-        <option value="$PROJECT_DIR$/src/dominio/classes/Horari.java" />
-        <option value="$PROJECT_DIR$/src/dominio/controladores/CtrlDominiCarregarHorari.java" />
         <option value="$PROJECT_DIR$/src/dominio/controladores/CtrlDomini.java" />
         <option value="$PROJECT_DIR$/src/presentacio/GestionarHoraris/vistaGestionarHoraris.java" />
+        <option value="$PROJECT_DIR$/src/presentacio/EditarDades/vistaEditarPlaEstudis.java" />
+        <option value="$PROJECT_DIR$/src/presentacio/EditarDades/vistaEditarAssignatures.java" />
+        <option value="$PROJECT_DIR$/src/dominio/controladores/CtrlPresentacio.java" />
+        <option value="$PROJECT_DIR$/src/presentacio/EditarDades/vistaEditarDades.java" />
+        <option value="$PROJECT_DIR$/src/dominio/classes/ConjuntAssignatures.java" />
+        <option value="$PROJECT_DIR$/src/dominio/classes/Horari.java" />
+        <option value="$PROJECT_DIR$/src/dominio/classes/PlaEstudis.java" />
+        <option value="$PROJECT_DIR$/src/dominio/classes/Graph.java" />
+        <option value="$PROJECT_DIR$/src/dominio/classes/GeneradorHorari.java" />
+        <option value="$PROJECT_DIR$/src/dominio/classes/Aula.java" />
+        <option value="$PROJECT_DIR$/src/dominio/controladores/CtrlDominiGenerarHorari.java" />
+        <option value="$PROJECT_DIR$/src/dominio/classes/Auxiliar.java" />
         <option value="$PROJECT_DIR$/src/dominio/controladores/CtrlDominiGuardarHorari.java" />
+        <option value="$PROJECT_DIR$/src/dominio/controladores/CtrlDominiCarregarHorari.java" />
+        <option value="$PROJECT_DIR$/src/dominio/controladores/CtrlDominiCarregarDades.java" />
+        <option value="$PROJECT_DIR$/data/dades/2/assignatures.json" />
+        <option value="$PROJECT_DIR$/data/dades/2/aules.json" />
+        <option value="$PROJECT_DIR$/data/dades/2/plaEstudis.json" />
+        <option value="$PROJECT_DIR$/data/dades/Correquisit/assignatures.json" />
+        <option value="$PROJECT_DIR$/data/dades/Correquisit/aules.json" />
+        <option value="$PROJECT_DIR$/data/dades/Correquisit/plaEstudis.json" />
+        <option value="$PROJECT_DIR$/data/dades/Nivell/assignatures.json" />
+        <option value="$PROJECT_DIR$/data/dades/Nivell/aules.json" />
+        <option value="$PROJECT_DIR$/data/dades/Nivell/plaEstudis.json" />
+        <option value="$PROJECT_DIR$/data/dades/1/assignatures.json" />
+        <option value="$PROJECT_DIR$/data/dades/testing/assignatures.json" />
       </list>
     </option>
   </component>
@@ -346,8 +375,8 @@
     <scope name="JavaDoc" pattern="src:dominio.classes.*||src:dominio.controladores.*||src:presentacio.*" />
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="1680" />
-    <option name="height" value="1050" />
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -366,14 +395,13 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -410,6 +438,27 @@
               <item name="PROP_44.2" type="b2602c69:ProjectViewProjectNode" />
               <item name="PROP_44.2" type="462c0819:PsiDirectoryNode" />
               <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="dades" type="462c0819:PsiDirectoryNode" />
+              <item name="Correquisit" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PROP_44.2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PROP_44.2" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="dades" type="462c0819:PsiDirectoryNode" />
+              <item name="Nivell" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PROP_44.2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PROP_44.2" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="dades" type="462c0819:PsiDirectoryNode" />
+              <item name="testing" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PROP_44.2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PROP_44.2" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
               <item name="Horaris" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -418,13 +467,6 @@
               <item name="data" type="462c0819:PsiDirectoryNode" />
               <item name="Horaris" type="462c0819:PsiDirectoryNode" />
               <item name="jesus" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PROP_44.2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PROP_44.2" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-              <item name="Horaris" type="462c0819:PsiDirectoryNode" />
-              <item name="julia" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PROP_44.2" type="b2602c69:ProjectViewProjectNode" />
@@ -462,6 +504,12 @@
               <item name="PROP_44.2" type="b2602c69:ProjectViewProjectNode" />
               <item name="PROP_44.2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="persistencia" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PROP_44.2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PROP_44.2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="presentacio" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -476,6 +524,13 @@
               <item name="PROP_44.2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="presentacio" type="462c0819:PsiDirectoryNode" />
+              <item name="EditarDades" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PROP_44.2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PROP_44.2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="presentacio" type="462c0819:PsiDirectoryNode" />
               <item name="GestionarHoraris" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -483,12 +538,11 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="TODO_SCOPE" value="All Places" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545413763086" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545150965448" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
@@ -497,15 +551,16 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/persistencia" />
       <recent name="$PROJECT_DIR$/data" />
       <recent name="$PROJECT_DIR$/src/dominio/swing" />
       <recent name="$PROJECT_DIR$/src/dominio/swing/02-GenerarHorari" />
       <recent name="$PROJECT_DIR$/src/dominio/swing/06-EditarDades" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/data/dades" />
+      <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -555,14 +610,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="UI Designer" order="1" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.27968526" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.2832618" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
@@ -571,7 +625,7 @@
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" weight="0.31325302" />
       <window_info anchor="bottom" id="Run" order="6" weight="0.40481928" />
-      <window_info active="true" anchor="bottom" id="Debug" order="7" visible="true" weight="0.3554217" />
+      <window_info anchor="bottom" id="Debug" order="7" weight="0.3554217" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="10" weight="0.32970297" />
@@ -583,7 +637,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
-      <window_info anchor="right" id="Json Parser" order="8" weight="0.44706723" />
+      <window_info anchor="right" id="Json Parser" order="8" visible="true" weight="0.44706723" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -593,14 +647,8 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/dominio/controladores/CtrlDominiCarregarHorari.java</url>
-          <line>54</line>
-          <properties />
-          <option name="timeStamp" value="97" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/dominio/controladores/CtrlDominiGuardarHorari.java</url>
-          <line>56</line>
+          <line>47</line>
           <properties />
           <option name="timeStamp" value="98" />
         </line-breakpoint>
@@ -611,177 +659,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/data/Horaris/bbb" />
-    <entry file="file://$PROJECT_DIR$/src/dominio/classes/Sessio.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
-          <folding>
-            <element signature="e#699#700#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dominio/classes/ConjuntAssignatures.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="73" column="53" selection-start-line="73" selection-start-column="53" selection-end-line="73" selection-end-column="53" />
-          <folding>
-            <element signature="e#632#633#0" expanded="true" />
-            <element signature="e#694#695#0" expanded="true" />
-            <element signature="e#755#756#0" expanded="true" />
-            <element signature="e#799#800#0" expanded="true" />
-            <element signature="e#864#865#0" expanded="true" />
-            <element signature="e#908#909#0" expanded="true" />
-            <element signature="e#961#962#0" expanded="true" />
-            <element signature="e#1008#1009#0" expanded="true" />
-            <element signature="e#1895#1896#0" expanded="true" />
-            <element signature="e#1952#1953#0" expanded="true" />
-            <element signature="e#2004#2005#0" expanded="true" />
-            <element signature="e#2042#2043#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dominio/classes/Enumeracio.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manifest.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="35" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/dominio/classes/Main.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#330#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/dominio/controladores/CtrlDomini.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="25" column="68" lean-forward="true" selection-start-line="25" selection-start-column="57" selection-end-line="25" selection-end-column="68" />
-          <folding>
-            <element signature="e#0#5363#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dominio/classes/Graph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1050">
-          <caret line="76" selection-start-line="76" selection-end-line="76" />
-          <folding>
-            <element signature="e#1741#1759#0" expanded="true" />
-            <element signature="e#2139#2140#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dominio/classes/Matriu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="92" selection-start-line="6" selection-start-column="92" selection-end-line="6" selection-end-column="92" />
-          <folding>
-            <element signature="e#238#239#0" expanded="true" />
-            <element signature="e#292#293#0" expanded="true" />
-            <element signature="e#577#578#0" expanded="true" />
-            <element signature="e#638#639#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dominio/classes/RestriccioBinaria.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="31" column="55" selection-start-line="31" selection-start-column="55" selection-end-line="31" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dominio/classes/RestriccioUnaria.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="57" column="51" selection-start-line="57" selection-start-column="51" selection-end-line="57" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/src.zip!/java/util/HashMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="338" selection-start-line="338" selection-end-line="338" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/Horaris/hola.json" />
-    <entry file="file://$PROJECT_DIR$/src/presentacio/EditarDades/vistaEditarAssignatures.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="214" column="39" lean-forward="true" selection-start-line="214" selection-start-column="39" selection-end-line="214" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/presentacio/EditarDades/vistaEditarPlaEstudis.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="103" column="31" selection-start-line="103" selection-start-column="31" selection-end-line="103" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/presentacio/EditarDades/vistaEditarAula.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="42" column="53" lean-forward="true" selection-start-line="39" selection-start-column="8" selection-end-line="42" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/jre/lib/rt.jar!/com/apple/laf/AquaRootPaneUI.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="235" selection-start-line="235" selection-end-line="235" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dominio/classes/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dominio/classes/GeneradorHorari.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="154" column="33" selection-start-line="154" selection-start-column="33" selection-end-line="154" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dominio/classes/ModificadorHorari.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="31" column="24" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dominio/controladores/CtrlPersistencia.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="32" column="36" lean-forward="true" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/persistencia/dades/2/assignatures.json" />
     <entry file="file://$PROJECT_DIR$/src/META-INF/MANIFEST.MF">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -789,22 +666,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="558" selection-start-line="558" selection-end-line="558" />
-          <folding>
-            <element signature="e#17982#17983#0" expanded="true" />
-            <element signature="e#18045#18046#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dominio/controladores/CtrlPresentacio.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="109" selection-start-line="109" selection-end-line="109" />
-          <folding>
-            <element signature="e#989#990#0" expanded="true" />
-            <element signature="e#1038#1039#0" expanded="true" />
-            <element signature="e#2689#2690#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -812,9 +673,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="21" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <element signature="e#705#706#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -822,25 +680,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="e#646#647#0" expanded="true" />
-            <element signature="e#1333#1334#0" expanded="true" />
-            <element signature="e#1392#1393#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dominio/controladores/CtrlDominiGenerarHorari.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="146" selection-start-line="146" selection-end-line="146" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/presentacio/EditarDades/vistaEditarDades.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="125" column="13" selection-start-line="125" selection-start-column="13" selection-end-line="125" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -880,9 +719,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="245">
           <caret line="74" selection-start-line="74" selection-end-line="74" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -890,47 +726,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="439">
           <caret line="231" column="31" selection-start-line="231" selection-start-column="31" selection-end-line="231" selection-end-column="31" />
-          <folding>
-            <element signature="e#1747#1755#0" expanded="true" />
-            <element signature="e#1813#1821#0" expanded="true" />
-            <element signature="e#1880#1888#0" expanded="true" />
-            <element signature="e#2017#2025#0" expanded="true" />
-            <element signature="e#2083#2091#0" expanded="true" />
-            <element signature="e#2150#2158#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/dades/1/plaEstudis.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/dades/1/assignatures.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="10" selection-end-column="4109" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/dades/2/assignatures.json~AlgorismeOK">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/Horaris/marc/horari.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dominio/controladores/CtrlDominiCarregarDades.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="47" selection-start-line="47" selection-end-line="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/data/Horaris/marc/horari.json" />
     <entry file="file://$PROJECT_DIR$/src/presentacio/GestionarHoraris/vistaGestionarHoraris.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="338">
@@ -938,65 +737,238 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dominio/controladores/CtrlDominiCarregarHorari.java">
+    <entry file="file://$PROJECT_DIR$/data/Horaris/julia/auxiliar.json" />
+    <entry file="file://$PROJECT_DIR$/data/Horaris/jesus/horari.json" />
+    <entry file="file://$PROJECT_DIR$/src/presentacio/EditarDades/vistaEditarPlaEstudis.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="56" selection-start-line="56" selection-end-line="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="390">
+          <caret line="34" column="49" selection-start-line="34" selection-start-column="49" selection-end-line="34" selection-end-column="49" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dominio/classes/PlaEstudis.java">
+    <entry file="file://$PROJECT_DIR$/src/presentacio/EditarDades/vistaEditarAssignatures.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
-          <folding>
-            <element signature="e#641#642#0" expanded="true" />
-            <element signature="e#670#671#0" expanded="true" />
-            <element signature="e#699#700#0" expanded="true" />
-            <element signature="e#1917#1918#0" expanded="true" />
-            <element signature="e#1951#1952#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="378">
+          <caret line="252" column="31" selection-start-line="252" selection-start-column="31" selection-end-line="252" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dominio/classes/Horari.java">
+    <entry file="file://$PROJECT_DIR$/src/dominio/controladores/CtrlPresentacio.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="294" selection-start-line="294" selection-end-line="294" />
-          <folding>
-            <element signature="e#8974#9002#0" expanded="true" />
-            <element signature="e#10930#10952#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="152">
+          <caret line="184" column="18" selection-start-line="184" selection-start-column="18" selection-end-line="184" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dominio/controladores/CtrlDomini.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="152" selection-start-line="152" selection-end-line="152" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4759#4760#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="149">
+          <caret line="197" selection-start-line="197" selection-end-line="197" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/Horaris/julia/auxiliar.json">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/src/presentacio/EditarDades/vistaEditarAula.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-423">
+          <caret line="42" lean-forward="true" selection-start-line="39" selection-start-column="8" selection-end-line="42" />
+        </state>
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/Horaris/jesus/horari.json">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/src/presentacio/EditarDades/vistaEditarDades.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="36" column="24" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dominio/classes/ConjuntAssignatures.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dominio/classes/PlaEstudis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dominio/classes/Graph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="35" column="7" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dominio/classes/GeneradorHorari.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="71">
+          <caret line="44" selection-start-line="44" selection-end-line="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dominio/classes/Aula.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="40" column="23" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dominio/classes/Horari.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="206" column="39" selection-start-line="206" selection-start-column="31" selection-end-line="206" selection-end-column="39" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data/Horaris/jesus/auxiliar.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dominio/controladores/CtrlDominiGuardarHorari.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="48" column="20" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="20" />
+        <state relative-caret-position="286">
+          <caret line="35" column="11" selection-start-line="35" selection-start-column="11" selection-end-line="54" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dominio/controladores/CtrlDominiGenerarHorari.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="86">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dominio/controladores/CtrlDominiCarregarHorari.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dominio/controladores/CtrlDominiCarregarDades.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="50" column="54" selection-start-line="50" selection-start-column="54" selection-end-line="50" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dominio/classes/Auxiliar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="44" column="29" selection-start-line="44" selection-start-column="29" selection-end-line="44" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/dades/1/aules.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="14" selection-start-column="2" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/dades/2/plaEstudis.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="65" selection-start-column="65" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/dades/Correquisit/assignatures.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="1281" selection-start-column="1281" selection-end-column="1281" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/dades/Correquisit/aules.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="851" selection-start-column="851" selection-end-column="851" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/dades/Nivell/aules.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="1003" selection-start-column="1003" selection-end-column="1003" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/dades/Correquisit/plaEstudis.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="65" selection-start-column="65" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/dades/Nivell/assignatures.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="1406" selection-start-column="1406" selection-end-column="1406" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/dades/1/plaEstudis.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/dades/Nivell/plaEstudis.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="65" selection-start-column="65" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dominio/classes/Restriccions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dominio/classes/RestriccioBinaria.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dominio/classes/RestriccioUnaria.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/dades/testing/aules.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/dades/2/aules.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="442" selection-start-column="442" selection-end-column="442" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/dades/2/assignatures.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="1504" lean-forward="true" selection-start-column="1504" selection-end-column="1504" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/dades/1/assignatures.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2322">
+          <caret line="175" column="4" lean-forward="true" selection-start-line="175" selection-start-column="4" selection-end-line="175" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/dades/testing/assignatures.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="1510" selection-start-column="1510" selection-end-column="1510" />
         </state>
       </provider>
     </entry>

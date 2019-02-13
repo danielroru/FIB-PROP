@@ -33,7 +33,6 @@ public class Graph {
      * Afegeix arestes de s1 cap a s2
      * @param s1 sessió a la que s'afageixen l'aresta
      * @param s2 sessió cap on va dirigida l'aresta
-     * @return la instància amb l'aresta afegida
      */
     public void afegirArestes(Sessio s1, Sessio s2) {
         Set<Sessio> newSet = arestes.get(s1);

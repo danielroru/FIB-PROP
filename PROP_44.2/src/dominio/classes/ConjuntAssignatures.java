@@ -42,10 +42,10 @@ public class ConjuntAssignatures {
 
     // Afegir Assignatura
 
+
     /**
      * Afegeix una assignatura a la instància
-     *
-     * @param  assig Assignatura a afegir
+     * @param assig Assignatura a afegir
      */
     public void afegirAssignatura(Assignatura assig) {
         this.cjtAssignatures.put(assig.getNom(), assig);
@@ -63,7 +63,7 @@ public class ConjuntAssignatures {
 
     /**
      * Retorna bool segons l'existència de l'assignatura a la instància
-     * @param  assig nom de l'Assignatura
+     * @param assig nom de l'Assignatura
      * @return true si l'Assignatura amb nom assig està dins de la instància i false altrament
      */
     public boolean existeixAssignatura(String assig) {

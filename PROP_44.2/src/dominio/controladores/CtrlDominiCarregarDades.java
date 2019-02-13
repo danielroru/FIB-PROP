@@ -46,9 +46,9 @@ public class CtrlDominiCarregarDades {
         Gson gson = new Gson();
         String json = CtrlPersistencia.llegirfitxer(path);
 
-        ConjuntAssignatures cjtAssignatures = gson.fromJson(json, ConjuntAssignatures.class);
+        ConjuntAssignatures cjtAssig  = gson.fromJson(json, ConjuntAssignatures.class);
 
-        CtrlDomini.getPlaEstudis().setCjtAssignatures(cjtAssignatures);
+        CtrlDomini.getPlaEstudis().setCjtAssignatures(cjtAssig);
     }
 
     private class hores {

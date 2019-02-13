@@ -32,7 +32,7 @@ public class vistaEditarPlaEstudis extends JFrame {
         setLayout(null);
 
         if (complet) {
-            String[] horas = iCtrlPresentacio.cercaInfoPE();
+            String[] horas = CtrlPresentacio.cercaInfoPE();
             textHoraInici = new JTextField(horas[0]);
             textHoraCanviFranja = new JTextField(horas[1]);
             textHoraFi = new JTextField(horas[2]);

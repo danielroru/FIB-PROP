@@ -43,23 +43,13 @@ public class CtrlDominiGuardarHorari {
             CtrlPersistencia.guardarFitxer(json, path + "/aules.json");
             System.out.println("Aules guardades");
 
-            class Aux {
 
-                public Aux() {
 
-                }
-                public int horaInici;
-                public int horaFi;
-                public int horaCanviFranja;
-                public Map<String, Matriu> horari;
-            }
-
-            Aux a = new Aux();
-            a.horari = CtrlDomini.getPlaEstudis().getUltimHorari().getHorari();
-            a.horaInici = CtrlDomini.getPlaEstudis().getHoraInici();
-            a.horaFi = CtrlDomini.getPlaEstudis().getHoraFi();
-            a.horaCanviFranja = CtrlDomini.getPlaEstudis().getHoraCanviFranja();
-
+            Auxiliar a = new Auxiliar();
+            a.setHorari(CtrlDomini.getPlaEstudis().getUltimHorari().getHorari());
+            a.setHoraInici(CtrlDomini.getPlaEstudis().getHoraInici());
+            a.setHoraFi(CtrlDomini.getPlaEstudis().getHoraFi());
+            a.setHoraFranja(CtrlDomini.getPlaEstudis().getHoraCanviFranja());
             json = gson.toJson(a);
             CtrlPersistencia.guardarFitxer(json, path + "/auxiliar.json");
             System.out.println("Horari guardat");

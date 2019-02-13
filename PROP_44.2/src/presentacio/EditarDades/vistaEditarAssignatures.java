@@ -248,9 +248,9 @@ public class vistaEditarAssignatures extends JFrame{
                 info[14] = String.valueOf(SBHoresP.getValue());
 
 
-                iCtrlPresentacio.guardarAssignatura(info);
+                CtrlPresentacio.guardarAssignatura(info);
 
-                iCtrlPresentacio.anarVistaEditarDades();
+                CtrlPresentacio.anarVistaEditarDades();
                 setVisible(false);
             }
 

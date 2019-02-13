@@ -32,14 +32,6 @@ public class CtrlDominiCarregarHorari {
 
         Gson gson = new Gson();
 
-        Path folder = Paths.get(path);
-        if(!Files.exists(folder)) {
-            try {
-                Files.createDirectories(folder);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
 
         String json = CtrlPersistencia.llegirfitxer(path + "/assignatures.json");
         CtrlDomini.getPlaEstudis().setCjtAssignatures(gson.fromJson(json, ConjuntAssignatures.class));
@@ -47,12 +39,16 @@ public class CtrlDominiCarregarHorari {
 
         json = CtrlPersistencia.llegirfitxer(path + "/aules.json");
         CtrlDomini.getPlaEstudis().setCjtAules(gson.fromJson(json, ConjuntAules.class));
-        System.out.println("Aules carregades");
+        System.out.println("Assig carregades");
 
-        Map<String, Matriu> instance = new HashMap<>();
-        json = CtrlPersistencia.llegirfitxer(path + "/horari.json");
-        CtrlDomini.getPlaEstudis().getUltimHorari().setHorari(gson.fromJson(json, instance.getClass()));
-        System.out.println("Aules carregades");
+        json = CtrlPersistencia.llegirfitxer(path + "/auxiliar.json");
+        Auxiliar a = gson.fromJson(json, Auxiliar.class);
+        CtrlDomini.getPlaEstudis().setHoraInici(a.getHoraInici());
+        CtrlDomini.getPlaEstudis().setHoraFi(a.getHoraFi());
+        CtrlDomini.getPlaEstudis().setHoraCanviFranja(a.getHoraFranja());
+        CtrlDomini.getPlaEstudis().getUltimHorari().setHorari(a.getHorari());
+        System.out.println("Auxiliar carregades");
+
 
     }
 

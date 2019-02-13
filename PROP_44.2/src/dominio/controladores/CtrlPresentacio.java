@@ -167,22 +167,22 @@ public class CtrlPresentacio {
     // Editar Dades
 
 
-    public void anarVistaEditarDades() {
+    public static void anarVistaEditarDades() {
         vistaEditarDades vED = new vistaEditarDades(complet);
     }
 
 
-    public void anarVistaEditarAssignatures(String[] assigatura) {
+    public static void anarVistaEditarAssignatures(String[] assigatura) {
 
         vistaEditarAssignatures vEA = new vistaEditarAssignatures(assigatura, complet);
     }
 
-    public void anarVistaEditarAula(String[] assigatura) {
+    public static void anarVistaEditarAula(String[] assigatura) {
 
         vistaEditarAula vEA = new vistaEditarAula(assigatura, complet);
     }
 
-    public void anarVistaEditarPlaEstudis() {
+    public static void anarVistaEditarPlaEstudis() {
         vistaEditarPlaEstudis vEPE = new vistaEditarPlaEstudis(complet);
     }
 
@@ -190,31 +190,31 @@ public class CtrlPresentacio {
         return CtrlDomini.getAula(id);
     }
 
-    public String[] informacioAssignatura (String assignatura) {
-       String[] assig = cD.getAssig(assignatura);
+    public static  String[] informacioAssignatura (String assignatura) {
+       String[] assig = CtrlDomini.getAssig(assignatura);
        return assig;
     }
 
-    public String[] informacioAula (String aula) {
-        String[] resultat = cD.getAula(aula);
+    public static String[] informacioAula (String aula) {
+        String[] resultat = CtrlDomini.getAula(aula);
         return resultat;
     }
 
-    public void guardarAssignatura(String[] info) {
-        cD.guardarAssignatura(info);
+    public static void guardarAssignatura(String[] info) {
+        CtrlDomini.guardarAssignatura(info);
     }
 
-    public void guardarAula(String[] info) {
-        cD.guardarAula(info);
+    public static void guardarAula(String[] info) {
+        CtrlDomini.guardarAula(info);
     }
 
-    public String[] cercaInfoPE() {
-        String[] info = cD.cercarInfoPE();
+    public static String[] cercaInfoPE() {
+        String[] info = CtrlDomini.cercarInfoPE();
         return info;
     }
 
-    public void editarInformacio(String[] info) {
-        cD.editarInformacio(info);
+    public static void editarInformacio(String[] info) {
+        CtrlDomini.editarInformacio(info);
     }
 
 }

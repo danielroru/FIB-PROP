@@ -1,5 +1,8 @@
 package dominio.classes;
 
+import dominio.controladores.CtrlDomini;
+import sun.util.resources.cldr.ta.CurrencyNames_ta;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -56,7 +59,7 @@ public class PlaEstudis {
 
     /**
      * Obtenim un conjunt d'aules
-     * @post retornem un ConjuntAules
+     * @return retornem un ConjuntAules
      */
     public ConjuntAules getConjuntAules() {
         return cjtAules;
@@ -64,7 +67,7 @@ public class PlaEstudis {
 
     /**
      * Obtenim un conjunt d'assignatures
-     * @post retornem un ConjuntAssignatures
+     * @return retornem un ConjuntAssignatures
      */
     public ConjuntAssignatures getConjuntAssignatures() {
         return cjtAssignatures;
@@ -87,11 +90,11 @@ public class PlaEstudis {
     }
 
     public static void editarAssignatura(Assignatura a) {
-        cjtAssignatures.afegirAssignatura(a);
+        CtrlDomini.getPlaEstudis().getConjuntAssignatures().afegirAssignatura(a);
     }
 
     public static void editarAula(Aula a) {
-        cjtAules.afegirAula(a);
+        CtrlDomini.getPlaEstudis().getConjuntAules().afegirAula(a);
     }
 
     public Horari getUltimHorari() {

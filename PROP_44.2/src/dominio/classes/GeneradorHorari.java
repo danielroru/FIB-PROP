@@ -42,12 +42,13 @@ public class GeneradorHorari {
         return true;
     }
 
+
     /**
      * Fa propagació de restriccions d'una sessió
      * @param sFutures sessions amb UAHs pendents a assignar
      * @param sActual sessió a la qual apliquem la propagació de restriccions
+     * @param uah UAH
      */
-
     private static void propagar_restriccions(Queue<Sessio> sFutures, Sessio sActual, UAH uah) {
         //iterem per totes les sessions que no tenen valor assignat
         for (Sessio s : sFutures) {

@@ -28,9 +28,6 @@ public class CtrlDominiGenerarHorari {
         UAHs = new HashSet<>();
     }
 
-    /**
-     * Inicialitza el graf amb tots els vèrtexs i arestes corresponents segons les dades entrades
-     */
     public static Graph iniGraf() {
         Graph G = new Graph();
         for (Sessio s : sessions) {
